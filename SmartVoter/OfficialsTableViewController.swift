@@ -20,7 +20,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
