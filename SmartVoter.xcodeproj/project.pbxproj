@@ -23,6 +23,11 @@
 		21E727111D9099DB00ADC64F /* Official.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727101D9099DB00ADC64F /* Official.swift */; };
 		21E727131D9099FB00ADC64F /* Election.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727121D9099FB00ADC64F /* Election.swift */; };
 		21E727161D909A3700ADC64F /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727151D909A3700ADC64F /* ImageController.swift */; };
+		21E727181D919D2300ADC64F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727171D919D2300ADC64F /* Profile.storyboard */; };
+		21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727191D919D4600ADC64F /* OfficialDetail.storyboard */; };
+		21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */; };
+		21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */; };
+		21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,11 @@
 		21E727101D9099DB00ADC64F /* Official.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Official.swift; path = ../Official.swift; sourceTree = "<group>"; };
 		21E727121D9099FB00ADC64F /* Election.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Election.swift; path = ../Election.swift; sourceTree = "<group>"; };
 		21E727151D909A3700ADC64F /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		21E727171D919D2300ADC64F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		21E7271A1D919D4600ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialDetail.storyboard; sourceTree = "<group>"; };
+		21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionDetail.storyboard; sourceTree = "<group>"; };
+		21E7271F1D919D7E00ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialTableView.storyboard; sourceTree = "<group>"; };
+		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionTableView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,11 @@
 				21E7270D1D90996F00ADC64F /* Model Controller */,
 				21E727041D90958400ADC64F /* View Controller */,
 				21E726E21D90914900ADC64F /* Main.storyboard */,
+				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
+				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
+				21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */,
+				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
+				21E727171D919D2300ADC64F /* Profile.storyboard */,
 				21E726E51D90914900ADC64F /* Assets.xcassets */,
 				21E726E71D90914900ADC64F /* LaunchScreen.storyboard */,
 				21E726EA1D90914900ADC64F /* Info.plist */,
@@ -233,8 +248,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				21E726E91D90914900ADC64F /* LaunchScreen.storyboard in Resources */,
+				21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */,
+				21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */,
 				21E726E61D90914900ADC64F /* Assets.xcassets in Resources */,
+				21E727181D919D2300ADC64F /* Profile.storyboard in Resources */,
 				21E726E41D90914900ADC64F /* Main.storyboard in Resources */,
+				21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */,
+				21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +320,22 @@
 				21E726E81D90914900ADC64F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		21E727191D919D4600ADC64F /* OfficialDetail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21E7271A1D919D4600ADC64F /* Base */,
+			);
+			name = OfficialDetail.storyboard;
+			sourceTree = "<group>";
+		};
+		21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21E7271F1D919D7E00ADC64F /* Base */,
+			);
+			name = OfficialTableView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -453,6 +489,7 @@
 				21E726FA1D90914900ADC64F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21E726FB1D90914900ADC64F /* Build configuration list for PBXNativeTarget "SmartVoterTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +498,7 @@
 				21E726FD1D90914900ADC64F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

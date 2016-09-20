@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="frc-dJ-pPb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Elections-->
+        <scene sceneID="VTj-eB-f5P">
+            <objects>
+                <viewController id="frc-dJ-pPb" userLabel="Elections" customClass="ElectionTableViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QaE-py-bkq"/>
+                        <viewControllerLayoutGuide type="bottom" id="DeY-dN-31h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B2Q-6K-1ce">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-Oa-3Xv">
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="electionCell" id="xON-X5-OoR">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xON-X5-OoR" id="2j6-g3-sqr">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="rau-QR-Ekh" kind="show" id="BHC-2L-88h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="frc-dJ-pPb" id="MUa-8Q-41b"/>
+                                    <outlet property="delegate" destination="frc-dJ-pPb" id="yq2-fG-VBc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DeY-dN-31h" firstAttribute="top" secondItem="Rxh-Oa-3Xv" secondAttribute="bottom" id="cmv-qJ-LF6"/>
+                            <constraint firstItem="Rxh-Oa-3Xv" firstAttribute="leading" secondItem="B2Q-6K-1ce" secondAttribute="leading" id="f2S-aW-FG6"/>
+                            <constraint firstAttribute="trailing" secondItem="Rxh-Oa-3Xv" secondAttribute="trailing" id="i1y-su-t29"/>
+                            <constraint firstItem="Rxh-Oa-3Xv" firstAttribute="top" secondItem="QaE-py-bkq" secondAttribute="bottom" id="x74-Yd-tih"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Elections" id="zLP-OA-ZVb"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Rxh-Oa-3Xv" id="7yG-ty-Mc9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CgK-es-XCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="6"/>
+        </scene>
+        <!--ElectionDetail-->
+        <scene sceneID="oYk-fZ-b2N">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ElectionDetail" id="rau-QR-Ekh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERU-Ez-7X4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1470" y="79"/>
+        </scene>
+    </scenes>
+</document>
