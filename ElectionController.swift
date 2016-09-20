@@ -53,7 +53,6 @@ class ElectionController {
             let contests = contestsDictionary.flatMap{Election(dictionary: $0)}
             completion(contests)
             self.elections = contests
-            print(contests)
             
             
             guard let pollingLocationDictionary = jsonDictionary["pollingLocations"] as? [[String: AnyObject]] else {
