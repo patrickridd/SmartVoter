@@ -24,25 +24,24 @@ class ElectionController {
             return
         }
         
-        let urlParameters = ["address":address,"key":apiKey]
+        let urlParameters = ["address":"\(address)", "electionId": "2000","key":"\(apiKey)"]
         
         NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters, body: nil) { (data, error) in
             guard let data = data,
-                jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String:AnyObject] else {
-//                electionDictionary = jsonDictionary["election"] as? [String:String],
-//                date = electionDictionary["electionDay"],
-//                electionName = electionDictionary["name"],
-//                contestsDictionary = jsonDictionary["contests"] as? [String:AnyObject] else {
+                jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String:AnyObject],
+                electionDictionary = jsonDictionary["election"] as? [String:String],
+                date = electionDictionary["electionDay"],
+                electionName = electionDictionary["name"],
+                contestsDictionary = jsonDictionary["contests"] as? [[String:AnyObject]] else {
                     completion(nil)
                     return
             }
             
-//            self.electionName = electionName
-//            self.electionDate = date
-//            print(electionName)
-//            print(electionDate)
-//            print(data)
-        print(jsonDictionary)
+            self.electionName = electionName
+            self.electionDate = date
+            print(electionName)
+            print(electionDate)
+            
             
         }
         
