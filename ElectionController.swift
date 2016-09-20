@@ -54,13 +54,14 @@ class ElectionController {
             completion(contests)
             self.elections = contests
             
+            
+            
             guard let pollingLocationDictionary = jsonDictionary["pollingLocations"] as? [[String: AnyObject]] else {
                 return
             }
             
-        // TODO: initialize polling locations and place in PollingController for geocoding 
-          //  let pollingLocations = pollingLocationDictionary.flatMap({PollingLocation($0)})
-            
+            let pollingLocations = pollingLocationDictionary.flatMap({PollingLocation(jsonDictionary: $0)})
+            PollingLocationController.sharedController.pollingLocations = pollingLocations
         }
         
         

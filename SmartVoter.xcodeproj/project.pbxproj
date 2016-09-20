@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E691D91DF3B00B966ED /* PollingLocation.swift */; };
+		21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */; };
 		21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E726DE1D90914900ADC64F /* AppDelegate.swift */; };
 		21E726E41D90914900ADC64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E21D90914900ADC64F /* Main.storyboard */; };
 		21E726E61D90914900ADC64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E51D90914900ADC64F /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		21648E691D91DF3B00B966ED /* PollingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocation.swift; sourceTree = "<group>"; };
+		21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocationController.swift; sourceTree = "<group>"; };
 		21E726DB1D90914900ADC64F /* SmartVoter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartVoter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E726DE1D90914900ADC64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E726E31D90914900ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				21E727091D90996300ADC64F /* OfficialController.swift */,
 				21E7270B1D90996A00ADC64F /* ElectionController.swift */,
+				21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */,
 				21E7270E1D9099BB00ADC64F /* NetworkController.swift */,
 				21E727151D909A3700ADC64F /* ImageController.swift */,
 			);
@@ -281,6 +284,7 @@
 				21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */,
 				21E727011D90948400ADC64F /* OfficialsTableViewController.swift in Sources */,
 				21E726FF1D90941E00ADC64F /* ProfileViewController.swift in Sources */,
+				21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */,
 				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
 				21E7270A1D90996300ADC64F /* OfficialController.swift in Sources */,
 				21E727081D9095AB00ADC64F /* OfficialTableViewCell.swift in Sources */,
