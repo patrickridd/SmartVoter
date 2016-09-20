@@ -7,8 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class ElectionController {
+    
+        let dateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .ShortStyle
+        formatter.doesRelativeDateFormatting = true
+        formatter.timeStyle = .ShortStyle
+        return formatter
+    }()
     
     static var elections = [Election]()
     static let sharedController = ElectionController()
@@ -16,6 +25,7 @@ class ElectionController {
     static let baseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
     static var electionDate = String()
     static var electionName = String()
+    static var pollingLocation = [String]()
     
     
     static func getContest(address: String, completion: ([Election]?) -> Void) {
@@ -44,10 +54,37 @@ class ElectionController {
             completion(contests)
             self.elections = contests
             
+            guard let pollingLocationDictionary = jsonDictionary["pollingLocations"] as? [[String: AnyObject]] else {
+                return
+            }
+            
+        // TODO: initialize polling locations and place in PollingController for geocoding 
+          //  let pollingLocations = pollingLocationDictionary.flatMap({PollingLocation($0)})
+            
         }
         
         
     }
+    
+    func scheduleLocalNotification() {
+        
+        guard let date = dateFormatter.dateFromString(ElectionController.electionDate) else {
+            return
+        }
+        
+        let localNotification = UILocalNotification()
+        localNotification.alertTitle = "\(ElectionController.electionName)"
+        localNotification.alertBody = "Don't forget to Vote Today"
+        localNotification.category = "VoteTime"
+        localNotification.fireDate = date
+        
+        
+    }
+    
+    
+    
+    
+    
     
     
     
