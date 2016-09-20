@@ -15,20 +15,20 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
 
         ElectionController.getContest("2026 terra linda drive, 84124, Holladay, Utah") { (contests) in
-            
-            
         }
     }
 
-
+    // MARK: - Table view data source
     
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return ElectionController.elections.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("electionCell", forIndexPath: indexPath) as? ElectionTableViewCell
+        
+        cell?.updateWithElection()
+        
         return cell ?? UITableViewCell()
     }
     
