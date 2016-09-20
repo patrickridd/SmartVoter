@@ -31,6 +31,8 @@
 		21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */; };
 		21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */; };
 		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
+		640411621D91DF2800B57A4C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411611D91DF2800B57A4C /* Address.swift */; };
+		640411641D91E25400B57A4C /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411631D91E25400B57A4C /* Social.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		21E7271F1D919D7E00ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialTableView.storyboard; sourceTree = "<group>"; };
 		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ElectionTableView.storyboard; path = SmartVoter/ElectionTableView.storyboard; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		640411611D91DF2800B57A4C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		640411631D91E25400B57A4C /* Social.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 				21E727101D9099DB00ADC64F /* Official.swift */,
 				A21C52231D91CA9500909C0C /* Candidate.swift */,
 				21648E691D91DF3B00B966ED /* PollingLocation.swift */,
+				640411611D91DF2800B57A4C /* Address.swift */,
+				640411631D91E25400B57A4C /* Social.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 				21E727011D90948400ADC64F /* OfficialsTableViewController.swift in Sources */,
 				21E726FF1D90941E00ADC64F /* ProfileViewController.swift in Sources */,
 				21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */,
+				640411621D91DF2800B57A4C /* Address.swift in Sources */,
 				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
 				21E7270A1D90996300ADC64F /* OfficialController.swift in Sources */,
 				21E727081D9095AB00ADC64F /* OfficialTableViewCell.swift in Sources */,
@@ -295,6 +302,7 @@
 				A21C52241D91CA9500909C0C /* Candidate.swift in Sources */,
 				21E727061D90959C00ADC64F /* ElectionTableViewCell.swift in Sources */,
 				21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */,
+				640411641D91E25400B57A4C /* Social.swift in Sources */,
 				21E727161D909A3700ADC64F /* ImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
