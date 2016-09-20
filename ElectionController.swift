@@ -20,12 +20,12 @@ class ElectionController {
     }()
     
     static var elections = [Election]()
-    static let sharedController = ElectionController()
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     static let baseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
     static var electionDate = String()
     static var electionName = String()
     static var pollingLocation = [String]()
+    
     
     
     static func getContest(address: String, completion: ([Election]?) -> Void) {
@@ -53,7 +53,7 @@ class ElectionController {
             let contests = contestsDictionary.flatMap{Election(dictionary: $0)}
             completion(contests)
             self.elections = contests
-            
+            print(contests)
             
             
             guard let pollingLocationDictionary = jsonDictionary["pollingLocations"] as? [[String: AnyObject]] else {
