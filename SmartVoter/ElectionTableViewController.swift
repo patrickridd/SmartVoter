@@ -14,13 +14,13 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        ElectionController.getContest("2026 terra linda drive, 84124, Holladay, Utah") { (contests) in
+            
+            
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

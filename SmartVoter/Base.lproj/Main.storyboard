@@ -92,13 +92,13 @@
             </objects>
             <point key="canvasLocation" x="411" y="708"/>
         </scene>
-        <!--Candidate-->
+        <!--OfficialDetail-->
         <scene sceneID="JoA-bL-HEd">
             <objects>
-                <viewControllerPlaceholder storyboardName="Candidate" id="foL-O2-bbg" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="OfficialDetail" id="foL-O2-bbg" userLabel="OfficialDetail" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91H-Br-XNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="458"/>
+            <point key="canvasLocation" x="952" y="466"/>
         </scene>
         <!--ElectionDetail-->
         <scene sceneID="oYk-fZ-b2N">
