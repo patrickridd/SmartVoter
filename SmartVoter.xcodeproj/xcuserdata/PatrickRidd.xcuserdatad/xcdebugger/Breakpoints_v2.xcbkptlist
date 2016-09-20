@@ -10,9 +10,10 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElectionController.swift"
-            timestampString = "496101897.353591"
+            timestampString = "496102460.150286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "getContest(_:completion:)"
@@ -63,6 +64,10 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
+=======
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+>>>>>>> feature/PollingController
             landmarkName = "getContest(_:completion:)"
             landmarkType = "5">
             <Locations>

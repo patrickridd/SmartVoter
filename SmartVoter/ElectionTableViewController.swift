@@ -14,7 +14,13 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+<<<<<<< HEAD
         ElectionController.getContest("2026 terra linda drive, 84124, Holladay, Utah") { (contests) in
+=======
+        ElectionController.getContest("1566 East Evergreen Lane 84106, Salt Lake City Utah") { (contests) in
+            
+            
+>>>>>>> feature/PollingController
         }
     }
 

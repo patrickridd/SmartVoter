@@ -23,7 +23,7 @@ class PollingLocation {
     let state: String
     let zip: String
     var locationName: String
-    var pollingHours: String
+    var pollingHours: String?
     
     init(address: String, city: String, state: String, zip: String, locationName: String, pollingHours: String) {
         self.streetName = address
