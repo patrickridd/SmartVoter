@@ -65,7 +65,7 @@
                 <viewControllerPlaceholder storyboardName="ElectionDetail" id="rau-QR-Ekh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERU-Ez-7X4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="79"/>
+            <point key="canvasLocation" x="1329" y="42"/>
         </scene>
     </scenes>
 </document>
