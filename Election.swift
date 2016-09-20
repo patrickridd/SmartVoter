@@ -13,7 +13,7 @@ class Election {
     var type: String
     var office: String?
     var scope: String
-    var candidates: [Official]?
+    var candidates: [Candidate]?
     
     init?(dictionary: [String: AnyObject]) {
         guard let type = dictionary["type"] as? String,
@@ -22,17 +22,17 @@ class Election {
             scope = districtDictionary["scope"] as? String,
             candidatesArray = dictionary["candidates"] as? [[String : AnyObject]] else { return nil }
         
-        var candidates: [Official] = []
+        var candidates: [Candidate] = []
         
-        for candidate in candidatesArray {
-            guard let name = candidate["name"] as? String,
-                party = candidate["party"] as? String,
-                webAddress = candidate["candidateUrl"] as? String,
-                phoneNumber = candidate["phone"] as? String,
-                emailAddress = candidate["email"] as? String else { return nil }
+        for candidateDictionary in candidatesArray {
+            guard let name = candidateDictionary["name"] as? String,
+                party = candidateDictionary["party"] as? String,
+                webAddress = candidateDictionary["candidateUrl"] as? String,
+                phoneNumber = candidateDictionary["phone"] as? String,
+                emailAddress = candidateDictionary["email"] as? String else { return nil }
             
-            let official = Official()
-            candidates.append(official)
+            let candidate = Candidate(name: name, party: party, websiteURL: webAddress, phone: phoneNumber, email: emailAddress)
+            candidates.append(candidate)
         }
         
         self.type = type
