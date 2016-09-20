@@ -9,16 +9,25 @@
 import UIKit
 
 class OfficialTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var officialsImageView: UIImageView!
+    @IBOutlet weak var officialsNameLabel: UILabel!
+    @IBOutlet weak var officialsOfficeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func updateOfficialsCell(office: Office, official: Official) {
+        officialsNameLabel.text = official.name
+        officialsOfficeLabel.text = office.name
+        
+        ImageController.imageForURL(official.photoURL) { (image) in
+            guard let image = image else {return}
+            self.officialsImageView.image = image
+        }
+        
     }
 
 }
