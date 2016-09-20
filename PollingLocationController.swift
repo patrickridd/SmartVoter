@@ -13,8 +13,5 @@ class PollingLocationController {
     static let sharedController = PollingLocationController()
     
     var pollingLocations = [PollingLocation]()
-    
-    
-    
-    
+     
 }

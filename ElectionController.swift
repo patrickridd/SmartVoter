@@ -67,7 +67,7 @@ class ElectionController {
         
     }
     
-    func scheduleLocalNotification() {
+    func scheduleElectionNotification() {
         
         guard let date = dateFormatter.dateFromString(ElectionController.electionDate) else {
             return
@@ -78,7 +78,8 @@ class ElectionController {
         localNotification.alertBody = "Don't forget to Vote Today"
         localNotification.category = "VoteTime"
         localNotification.fireDate = date
-        
+        UIApplication.sharedApplication().presentLocalNotificationNow(localNotification)
+
         
     }
     
