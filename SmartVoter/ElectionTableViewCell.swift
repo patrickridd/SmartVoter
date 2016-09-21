@@ -36,8 +36,25 @@ class ElectionTableViewCell: UITableViewCell {
             let title = election.referendumTitle
             let type = election.type
             
-            electionNameLabel.text = title
-            electionDateLabel.text = type
+            electionNameLabel.text = title?.capitalizedString
+            electionDateLabel.text = type.capitalizedString
+        }
+        
+        if election.scope.lowercaseString.containsString("state") {
+//            let image = UIImage(named: "\()")
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
