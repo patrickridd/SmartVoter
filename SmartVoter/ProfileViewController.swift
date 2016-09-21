@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLabels()
-        
+        populateMapView()
     }
     
     /// User to site where they can register to vote.
