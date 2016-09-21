@@ -65,7 +65,7 @@
                                             <outlet property="officialsImageView" destination="Lpo-ex-RLx" id="HBD-y4-if3"/>
                                             <outlet property="officialsNameLabel" destination="dCe-N9-GF9" id="tqb-jZ-2uk"/>
                                             <outlet property="officialsOfficeLabel" destination="s6p-i6-rwL" id="XL1-hg-eid"/>
-                                            <segue destination="lOB-dJ-TdX" kind="show" id="Gju-0Y-1AN"/>
+                                            <segue destination="lOB-dJ-TdX" kind="show" identifier="toOfficialDetail" id="Gju-0Y-1AN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,13 +74,46 @@
                                     <outlet property="delegate" destination="Liv-xM-jBU" id="lXh-wC-llh"/>
                                 </connections>
                             </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gT-VM-Sxc">
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tCS-38-1Yt">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Full Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUy-wO-a9p">
+                                            <rect key="frame" x="8" y="55" width="304" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pL-Ud-a83">
+                                            <rect key="frame" x="135" y="113" width="51" height="30"/>
+                                            <state key="normal" title="Submit"/>
+                                            <connections>
+                                                <action selector="addressSubmitButtonTapped:" destination="Liv-xM-jBU" eventType="touchUpInside" id="8cC-hO-KXn"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="leading" secondItem="tCS-38-1Yt" secondAttribute="leadingMargin" id="70J-bX-FiL"/>
+                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="trailing" secondItem="tCS-38-1Yt" secondAttribute="trailingMargin" id="PTo-Iw-EKc"/>
+                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="top" secondItem="tCS-38-1Yt" secondAttribute="top" constant="55" id="R2z-Jz-pHF"/>
+                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="centerX" secondItem="1pL-Ud-a83" secondAttribute="centerX" id="ZLf-4s-SMg"/>
+                                        <constraint firstItem="1pL-Ud-a83" firstAttribute="top" secondItem="ZUy-wO-a9p" secondAttribute="bottom" constant="28" id="ycU-qt-OuV"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="top" secondItem="EVA-Cm-Y1r" secondAttribute="top" id="9s3-zz-GSf"/>
                             <constraint firstAttribute="trailing" secondItem="EVA-Cm-Y1r" secondAttribute="trailing" id="Oiq-tV-6mC"/>
+                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="bottom" secondItem="ytR-nc-aSK" secondAttribute="top" id="XYX-Qs-WHg"/>
                             <constraint firstItem="EVA-Cm-Y1r" firstAttribute="top" secondItem="cZV-je-hQT" secondAttribute="bottom" id="iQu-3m-vTR"/>
+                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="trailing" secondItem="EVA-Cm-Y1r" secondAttribute="trailing" id="nRg-7h-tH5"/>
                             <constraint firstItem="EVA-Cm-Y1r" firstAttribute="leading" secondItem="TUM-Wu-ALc" secondAttribute="leading" id="oPN-IF-M7B"/>
                             <constraint firstItem="ytR-nc-aSK" firstAttribute="top" secondItem="EVA-Cm-Y1r" secondAttribute="bottom" id="qJr-za-DMX"/>
+                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="leading" secondItem="EVA-Cm-Y1r" secondAttribute="leading" id="xzR-Zy-7wZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Officials" id="X2X-dj-sLO"/>
@@ -88,6 +121,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="addressInput" destination="ZUy-wO-a9p" id="6kt-NS-wkW"/>
+                        <outlet property="blurView" destination="4gT-VM-Sxc" id="R0d-9x-3JE"/>
                         <outlet property="tableView" destination="EVA-Cm-Y1r" id="eOs-hw-8w7"/>
                     </connections>
                 </viewController>

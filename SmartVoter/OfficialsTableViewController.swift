@@ -12,12 +12,22 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var blurView: UIVisualEffectView!
     
+    @IBOutlet weak var addressInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        blurView.hidden = true
+        guard let address = ProfileController.sharedController.loadAddress() else {
+            blurView.hidden = false
+            return
+        }
+        OfficialController.getOfficials(address) { 
+            self.tableView.reloadData()
+        }
+        
     }
 
 
@@ -41,17 +51,29 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     
+    @IBAction func addressSubmitButtonTapped(sender: AnyObject) {
+        guard let address = addressInput.text else {return}
+        OfficialController.getOfficials(address) { 
+            self.tableView.reloadData()
+        }
+        blurView.hidden = true
+        ProfileController.sharedController.saveAddressToUserDefault(address)
+    }
     
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toOfficialDetail" {
+            
+            
+            
+        }
+        
     }
-    */
+ 
 
 }
