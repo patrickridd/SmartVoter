@@ -30,22 +30,35 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("electionCell", forIndexPath: indexPath) as? ElectionTableViewCell
+        guard let cell = tableView.dequeueReusableCellWithIdentifier("electionCell", forIndexPath: indexPath) as? ElectionTableViewCell else { return UITableViewCell() }
         let contest = ElectionController.elections[indexPath.row]
-        cell?.updateWithElection(contest)
         
-        return cell ?? UITableViewCell()
+        cell.updateWithElection(contest)
+        
+        return cell
     }
     
-    
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toElectionDetailSegue" {
+            guard let destinationVC = segue.destinationViewController as? ElectionDetailViewController, indexPath = tableView.indexPathForSelectedRow else { return }
+            let contest = ElectionController.elections[indexPath.row]
+            destinationVC.contest = contest
+        }
     }
-    */
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
