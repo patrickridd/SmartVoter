@@ -26,17 +26,17 @@ class ElectionTableViewCell: UITableViewCell {
     }
 
     func updateWithElection(election: Election) {
-        if election.office != nil {
+        if election.type == "General" {
             let office = election.office
             let type = election.type
             
             electionNameLabel.text = office
             electionDateLabel.text = type
-        } else if election.office == nil {
-//            let title = election.referendumTitle
+        } else if election.type == "Referendum" {
+            let title = election.referendumTitle
             let type = election.type
             
-//            electionNameLabel.text = title
+            electionNameLabel.text = title
             electionDateLabel.text = type
         }
     }
