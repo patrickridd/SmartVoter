@@ -23,7 +23,7 @@ class OfficialTableViewCell: UITableViewCell {
         officialsNameLabel.text = official.name
         officialsOfficeLabel.text = office.name
         
-        ImageController.imageForURL(official.photoURL) { (image) in
+        ImageController.imageForURL(official.photoURL ?? "") { (image) in
             guard let image = image else {return}
             self.officialsImageView.image = image
         }
