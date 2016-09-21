@@ -18,26 +18,42 @@ class OfficialDetailViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
   
-    var officialNameLabel: String?
-    var officeLabel: String?
-    var webAddress: String?
-    var emailAddress: String?
-    var phoneNumber: String?
-    var socialLabel: String? 
     
+    var official: Official?
+    var address: Address?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let official = official,
+            address = address
+            else {
+            return
+        }
+        updateOfficials(official, address: address)
 
     }
 
-    func updateOfficials() {
+    func updateOfficials(official: Official, address: Address) {
         
+       officialName.text = official.name
+        officialOfficeLabel.text = official.office
+        webAddressLabel.text = official.url
+        streetAddressLabel.text = address.asAString
+        emailLabel.text = official.
         
     }
     
 
+    @IBAction func webButtonTapped(sender: AnyObject) {
+    }
+    @IBAction func addressButtonTapped(sender: AnyObject) {
+    }
+    @IBAction func emailButtonTapped(sender: AnyObject) {
+    }
+    @IBAction func phoneButtonTapped(sender: AnyObject) {
+    }
+    @IBAction func socialButtonTapped(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 

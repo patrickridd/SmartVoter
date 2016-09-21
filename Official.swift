@@ -24,6 +24,7 @@ struct Official {
     private let kSocial = "channels"
     private let kType = "type"
     private let kId = "id"
+    private let kEmail = "emails"
     
     var name: String?
     var address: Address?
@@ -35,6 +36,7 @@ struct Official {
     var url: String?
     var social: Social?
     var office: String?
+    var email: String? 
     
     init?(dictionary: [String: AnyObject], office: String)  {
         
@@ -73,6 +75,9 @@ struct Official {
             else { return nil }
         let social = Social(type: type, id: id)
         self.social = social
+        
+        guard let emailArray = dictionary[kEmail] as? [String],
+            email = emailArray.first 
         
     }
     
