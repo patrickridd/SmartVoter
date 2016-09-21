@@ -76,7 +76,7 @@
 		21E7271A1D919D4600ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialDetail.storyboard; sourceTree = "<group>"; };
 		21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionDetail.storyboard; sourceTree = "<group>"; };
 		21E7271F1D919D7E00ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialTableView.storyboard; sourceTree = "<group>"; };
-		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ElectionTableView.storyboard; path = SmartVoter/ElectionTableView.storyboard; sourceTree = "<group>"; };
+		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionTableView.storyboard; sourceTree = "<group>"; };
 		640411611D91DF2800B57A4C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		640411631D91E25400B57A4C /* Social.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 		21E726D21D90914900ADC64F = {
 			isa = PBXGroup;
 			children = (
-				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
 				21E726DD1D90914900ADC64F /* SmartVoter */,
 				21E726F21D90914900ADC64F /* SmartVoterTests */,
 				21E726DC1D90914900ADC64F /* Products */,
@@ -126,11 +125,7 @@
 				21E727141D909A0600ADC64F /* Model */,
 				21E7270D1D90996F00ADC64F /* Model Controller */,
 				21E727041D90958400ADC64F /* View Controller */,
-				21E726E21D90914900ADC64F /* Main.storyboard */,
-				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
-				21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */,
-				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
-				21E727171D919D2300ADC64F /* Profile.storyboard */,
+				A209C9291D92F2CD00F4F8B6 /* Storyboards */,
 				21E726E51D90914900ADC64F /* Assets.xcassets */,
 				21E726E71D90914900ADC64F /* LaunchScreen.storyboard */,
 				21E726EA1D90914900ADC64F /* Info.plist */,
@@ -185,6 +180,19 @@
 				640411631D91E25400B57A4C /* Social.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A209C9291D92F2CD00F4F8B6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				21E726E21D90914900ADC64F /* Main.storyboard */,
+				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
+				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
+				21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */,
+				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
+				21E727171D919D2300ADC64F /* Profile.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
