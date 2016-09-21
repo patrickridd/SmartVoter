@@ -27,7 +27,7 @@ class ElectionController {
     static var pollingLocation = [String]()
     
     
-    
+    /// Gets an Array of upcomming elections for ElectionTableViewController
     static func getContest(address: String, completion: ([Election]?) -> Void) {
         
         guard let url = baseURL else {
@@ -66,6 +66,7 @@ class ElectionController {
         
     }
     
+    /// Schedules Notification of when the Election is
     func scheduleElectionNotification() {
         
         guard let date = dateFormatter.dateFromString(ElectionController.electionDate) else {

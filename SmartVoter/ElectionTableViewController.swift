@@ -13,14 +13,13 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let livingAddress = ProfileController.sharedController.loadAddress() else {
+            // Present login view controller.
+            return
+        }
+        ElectionController.getContest(livingAddress) { (contests) in
 
-<<<<<<< HEAD
-        ElectionController.getContest("2026 terra linda drive, 84124, Holladay, Utah") { (contests) in
-=======
-        ElectionController.getContest("1566 East Evergreen Lane 84106, Salt Lake City Utah") { (contests) in
-            
-            
->>>>>>> feature/PollingController
         }
     }
 
