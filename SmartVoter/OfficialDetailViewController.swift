@@ -59,6 +59,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     @IBAction func addressButtonTapped(sender: AnyObject) {
+        guard let vc = storyboard?.instantiateViewControllerWithIdentifier("addressMapView") else {
+            return
+        }
+        presentViewController(vc, animated: true, completion: nil)
         
     }
     
@@ -115,14 +119,16 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     @IBAction func socialButtonTapped(sender: AnyObject) {
         
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "addressMapView" {
+            
+            guard let detailViewController = segue.destinationViewController as? OfficialAddressMapViewController else { return }
+            guard let address = address?.asAString else { return }
+            detailViewController.address = address
+        }
+    }
 }

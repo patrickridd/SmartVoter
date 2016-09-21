@@ -35,6 +35,7 @@
 		640411621D91DF2800B57A4C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411611D91DF2800B57A4C /* Address.swift */; };
 		640411641D91E25400B57A4C /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411631D91E25400B57A4C /* Social.swift */; };
 		64B6AC101D92F604006BF1D7 /* OfficialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6AC0F1D92F604006BF1D7 /* OfficialDetailViewController.swift */; };
+		64C72D591D933DE900C68143 /* OfficialAddressMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C72D581D933DE900C68143 /* OfficialAddressMapViewController.swift */; };
 		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		640411611D91DF2800B57A4C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		640411631D91E25400B57A4C /* Social.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
 		64B6AC0F1D92F604006BF1D7 /* OfficialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailViewController.swift; sourceTree = "<group>"; };
+		64C72D581D933DE900C68143 /* OfficialAddressMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialAddressMapViewController.swift; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
 				21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */,
 				64B6AC0F1D92F604006BF1D7 /* OfficialDetailViewController.swift */,
+				64C72D581D933DE900C68143 /* OfficialAddressMapViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				21E727111D9099DB00ADC64F /* Official.swift in Sources */,
 				64B6AC101D92F604006BF1D7 /* OfficialDetailViewController.swift in Sources */,
 				21E727131D9099FB00ADC64F /* Contest.swift in Sources */,
+				64C72D591D933DE900C68143 /* OfficialAddressMapViewController.swift in Sources */,
 				21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */,
 				A21C52241D91CA9500909C0C /* Candidate.swift in Sources */,
 				21E727061D90959C00ADC64F /* ElectionTableViewCell.swift in Sources */,

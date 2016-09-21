@@ -79,6 +79,7 @@
                                                 <state key="normal" image="Map Marker-50"/>
                                                 <connections>
                                                     <action selector="addressButtonTapped:" destination="otu-jh-ZBj" eventType="touchUpInside" id="9Vv-vw-Tk3"/>
+                                                    <segue destination="plL-Ab-7rP" kind="show" id="rqj-ET-BU9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -178,6 +179,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCv-mz-qqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1299" y="656"/>
+        </scene>
+        <!--Official Address Map View Controller-->
+        <scene sceneID="N68-hI-F6n">
+            <objects>
+                <viewController storyboardIdentifier="addressMapView" id="plL-Ab-7rP" customClass="OfficialAddressMapViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uKy-Xt-lnm"/>
+                        <viewControllerLayoutGuide type="bottom" id="58T-lH-lAF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="24F-2h-ZWO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XVO-Qa-Ibt">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XVO-Qa-Ibt" firstAttribute="leading" secondItem="24F-2h-ZWO" secondAttribute="leading" id="0Ub-Vb-Gc5"/>
+                            <constraint firstItem="XVO-Qa-Ibt" firstAttribute="top" secondItem="uKy-Xt-lnm" secondAttribute="bottom" id="1O1-Vj-mN9"/>
+                            <constraint firstAttribute="trailing" secondItem="XVO-Qa-Ibt" secondAttribute="trailing" id="iQW-nU-eBo"/>
+                            <constraint firstItem="58T-lH-lAF" firstAttribute="top" secondItem="XVO-Qa-Ibt" secondAttribute="bottom" id="vf0-Ue-8jh"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTf-ga-z4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682" y="656"/>
         </scene>
     </scenes>
     <resources>
