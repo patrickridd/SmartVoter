@@ -15,7 +15,6 @@ class OfficialController {
     static let officialIndicesKey = "officialIndices"
     
     static let baseURl = NSURL(string: "https://www.googleapis.com/civicinfo/v2/representatives?")
-    
     static var officials: [Official] = []
     static var offices: [Office] = []
     
