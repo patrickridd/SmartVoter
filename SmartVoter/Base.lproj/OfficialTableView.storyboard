@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Liv-xM-jBU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Liv-xM-jBU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Officials-->
@@ -17,19 +18,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EVA-Cm-Y1r">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EVA-Cm-Y1r">
                                 <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="officialCell" id="EEY-Tt-Q9S">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="officialCell" rowHeight="69" id="EEY-Tt-Q9S" customClass="OfficialTableViewCell" customModule="SmartVoter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EEY-Tt-Q9S" id="atZ-Ho-xKb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barrack Obama" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCe-N9-GF9">
+                                                    <rect key="frame" x="63" y="8" width="194" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="4ty-fV-eVG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="President of United States of America" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6p-i6-rwL">
+                                                    <rect key="frame" x="62" y="37" width="240" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lpo-ex-RLx">
+                                                    <rect key="frame" x="8" y="11" width="46" height="47"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s6p-i6-rwL" firstAttribute="top" secondItem="dCe-N9-GF9" secondAttribute="bottom" constant="8" symbolic="YES" id="2Xf-fJ-t8G"/>
+                                                <constraint firstItem="Lpo-ex-RLx" firstAttribute="top" secondItem="atZ-Ho-xKb" secondAttribute="topMargin" constant="3" id="4b3-SC-Pt1"/>
+                                                <constraint firstItem="s6p-i6-rwL" firstAttribute="leading" secondItem="Lpo-ex-RLx" secondAttribute="trailing" constant="8" symbolic="YES" id="6Va-mG-c5p"/>
+                                                <constraint firstItem="Lpo-ex-RLx" firstAttribute="leading" secondItem="atZ-Ho-xKb" secondAttribute="leadingMargin" id="6zA-tK-Nad"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="s6p-i6-rwL" secondAttribute="trailing" constant="10" id="DM2-vc-VuN"/>
+                                                <constraint firstItem="Lpo-ex-RLx" firstAttribute="bottom" secondItem="s6p-i6-rwL" secondAttribute="bottom" id="Ovw-YR-Jml"/>
+                                                <constraint firstItem="dCe-N9-GF9" firstAttribute="leading" secondItem="Lpo-ex-RLx" secondAttribute="trailing" constant="9" id="div-cK-Efh"/>
+                                                <constraint firstItem="dCe-N9-GF9" firstAttribute="top" secondItem="atZ-Ho-xKb" secondAttribute="topMargin" id="f0b-EA-HqS"/>
+                                                <constraint firstItem="Lpo-ex-RLx" firstAttribute="centerY" secondItem="atZ-Ho-xKb" secondAttribute="centerY" id="gan-PH-Zrj"/>
+                                                <constraint firstItem="dCe-N9-GF9" firstAttribute="centerX" secondItem="atZ-Ho-xKb" secondAttribute="centerX" id="lGZ-HP-qgW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="foL-O2-bbg" kind="show" id="48X-iA-bZK"/>
+                                            <outlet property="officialsImageView" destination="Lpo-ex-RLx" id="HBD-y4-if3"/>
+                                            <outlet property="officialsNameLabel" destination="dCe-N9-GF9" id="tqb-jZ-2uk"/>
+                                            <outlet property="officialsOfficeLabel" destination="s6p-i6-rwL" id="XL1-hg-eid"/>
+                                            <segue destination="lOB-dJ-TdX" kind="show" id="Gju-0Y-1AN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -60,12 +96,12 @@
             <point key="canvasLocation" x="939" y="594"/>
         </scene>
         <!--OfficialDetail-->
-        <scene sceneID="JoA-bL-HEd">
+        <scene sceneID="db0-bM-cIU">
             <objects>
-                <viewControllerPlaceholder storyboardName="OfficialDetail" id="foL-O2-bbg" userLabel="OfficialDetail" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="91H-Br-XNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="OfficialDetail" id="lOB-dJ-TdX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ia-zT-hid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299" y="656"/>
+            <point key="canvasLocation" x="1274.5" y="620"/>
         </scene>
     </scenes>
 </document>

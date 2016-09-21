@@ -11,6 +11,9 @@ import UIKit
 class OfficialsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,13 +23,27 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return OfficialController.officials.count
     }
+    
+    
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("officialCell", forIndexPath: indexPath) as? OfficialTableViewCell
+        
+        let office = OfficialController.offices[indexPath.row]
+        let official = OfficialController.officials[indexPath.row]
+        
+        cell?.updateOfficialsCell(office, official: official)
+        
         return cell ?? UITableViewCell()
     }
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
