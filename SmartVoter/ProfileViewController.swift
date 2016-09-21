@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var registerToVoteLabel: UIButton!
     @IBOutlet weak var placesToVoteLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var saveButtonLabel: UIButton!
+    @IBOutlet weak var addressTextField: UITextField!
     
     
     var livingAddress: String?
@@ -42,6 +44,9 @@ class ProfileViewController: UIViewController {
         
     }
     
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+        
+    }
     /// Updates VC's labels.
     func updateLabels() {
         self.livingAddress = ProfileController.sharedController.loadAddress()
