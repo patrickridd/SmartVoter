@@ -20,7 +20,9 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
 //            return
 //        }
         ElectionController.getContest("1566 East Evergreen Lane, 84106, SLC, Utah") { (contests) in
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
         }
     }
 

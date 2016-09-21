@@ -37,10 +37,11 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             blurView.hidden = false
             return
         }
-        OfficialController.getOfficials(address) { 
-            self.tableView.reloadData()
+        OfficialController.getOfficials(address) {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                      self.tableView.reloadData()
+            })
         }
-        
     }
 
 
@@ -103,8 +104,9 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toOfficialDetail" {
        
-            
+        }
     }
+        
  
 
 }
