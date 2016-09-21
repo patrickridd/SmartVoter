@@ -14,12 +14,12 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let livingAddress = ProfileController.sharedController.loadAddress() else {
-            // Present login view controller.
-            return
-        }
-        ElectionController.getContest(livingAddress) { (contests) in
-
+//        guard let livingAddress = ProfileController.sharedController.loadAddress() else {
+//            // Present login view controller.
+//            return
+//        }
+        ElectionController.getContest("1566 East Evergreen Lane, 84106, SLC, Utah") { (contests) in
+            self.tableView.reloadData()
         }
     }
 
@@ -31,8 +31,8 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("electionCell", forIndexPath: indexPath) as? ElectionTableViewCell
-        
-        cell?.updateWithElection()
+        let contest = ElectionController.elections[indexPath.row]
+        cell?.updateWithElection(contest)
         
         return cell ?? UITableViewCell()
     }

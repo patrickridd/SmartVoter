@@ -25,11 +25,19 @@ class ElectionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func updateWithElection() {
-        let name = ElectionController.electionName
-        let date = ElectionController.electionDate
-        
-        electionNameLabel.text = name
-        electionDateLabel.text = date
+    func updateWithElection(election: Election) {
+        if election.office != nil {
+            let office = election.office
+            let type = election.type
+            
+            electionNameLabel.text = office
+            electionDateLabel.text = type
+        } else if election.office == nil {
+//            let title = election.referendumTitle
+            let type = election.type
+            
+//            electionNameLabel.text = title
+            electionDateLabel.text = type
+        }
     }
 }

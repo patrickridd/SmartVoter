@@ -51,9 +51,9 @@ class ElectionController {
             self.electionDate = date
             self.electionName = electionName
             let contests = contestsDictionary.flatMap{Election(dictionary: $0)}
-            completion(contests)
             self.elections = contests
-            
+            completion(contests)
+
             
             guard let pollingLocationDictionary = jsonDictionary["pollingLocations"] as? [[String: AnyObject]] else {
                 return
