@@ -1,5 +1,5 @@
 //
-//  Election.swift
+//  Contest.swift
 //  SmartVoter
 //
 //  Created by Patrick Ridd on 9/19/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Election {
+class Contest {
     
     var type: String
     var scope: String
@@ -17,8 +17,11 @@ class Election {
     var referendumTitle: String?
     var referendumSubtitle: String?
     var referendumUrl: String?
+    let electionDay: String
+    let electionName: String
     
-    init?(dictionary: [String: AnyObject]) {
+    
+    init?(dictionary: [String: AnyObject], electionName: String, electionDay: String) {
         guard let type = dictionary["type"] as? String,
             districtDictionary = dictionary["district"] as? [String : AnyObject],
             scope = districtDictionary["scope"] as? String else { return nil }
@@ -59,6 +62,8 @@ class Election {
         self.type = type
         self.scope = scope
         self.candidates = candidates
+        self.electionDay = electionDay
+        self.electionName = electionName
     }
 }
 

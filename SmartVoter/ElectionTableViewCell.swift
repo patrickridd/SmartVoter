@@ -25,7 +25,7 @@ class ElectionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func updateWithElection(election: Election) {
+    func updateWithElection(election: Contest) {
         if election.type == "General" {
             let office = election.office
             let type = election.type
