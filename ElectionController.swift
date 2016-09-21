@@ -21,7 +21,8 @@ class ElectionController {
     
     static var elections = [Election]()
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
-    static let baseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
+    static let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
+    static let electionURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/elections")
     static var electionDate = String()
     static var electionName = String()
     static var pollingLocation = [String]()
@@ -30,7 +31,27 @@ class ElectionController {
     /// Gets an Array of upcomming elections for ElectionTableViewController
     static func getContest(address: String, completion: ([Election]?) -> Void) {
         
-        guard let url = baseURL else {
+        guard let electionURL = electionURL else {
+            completion(nil)
+            return
+        }
+        
+        let parameters = ["key":apiKey]
+        
+        NetworkController.performRequestForURL(electionURL, httpMethod: .Get, urlParameters: parameters, body: nil) { (data, error) in
+            guard let data = data, jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)),
+            electionsArray = jsonDictionary["elections"] as? [[String:String]] else {
+                return
+            }
+            
+            
+            //let electionTuple: [(id: String, electionName: String, electionDate: String)] = electionsArray.flatMap({$0})
+            
+            
+            print(data)
+        
+        
+        guard let url = infoBaseURL else {
             completion(nil)
             return
         }
@@ -63,7 +84,7 @@ class ElectionController {
             PollingLocationController.sharedController.pollingLocations = pollingLocations
         }
         
-        
+        }
     }
     
     /// Schedules Notification of when the Election is
