@@ -45,14 +45,22 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
+        guard let newAddress = addressTextField.text where newAddress.characters.count > 0 else {
+            return
+        }
+        
+        ProfileController.sharedController.saveAddressToUserDefault(newAddress)
+        updateLabels()
         
     }
     /// Updates VC's labels.
     func updateLabels() {
         self.livingAddress = ProfileController.sharedController.loadAddress()
-        livingAddressLabel.text = livingAddress ?? ""
-        
+        livingAddressLabel.text = livingAddress ?? "No Address Found"
         self.registrationURL = ProfileController.sharedController.loadURL()
+        saveButtonLabel.layer.masksToBounds = true
+        saveButtonLabel.layer.cornerRadius = 8.0
+        
     }
     
     /// Gets User's Polling Locations as CLLocations and populates them on a map.
