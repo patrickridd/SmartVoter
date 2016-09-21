@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q3d-bq-PoO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q3d-bq-PoO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -16,8 +16,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Kye-lJ-oBN" kind="relationship" relationship="viewControllers" id="NIj-mj-EMN"/>
                         <segue destination="Uqa-U5-aTp" kind="relationship" relationship="viewControllers" id="cdG-go-ch1"/>
+                        <segue destination="Kye-lJ-oBN" kind="relationship" relationship="viewControllers" id="NIj-mj-EMN"/>
                         <segue destination="F8Q-hO-PuZ" kind="relationship" relationship="viewControllers" id="HYd-kw-GVz"/>
                     </connections>
                 </tabBarController>
@@ -29,7 +29,7 @@
         <scene sceneID="yI1-mq-xCx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kye-lJ-oBN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Elections" id="lSG-Vf-E9C"/>
+                    <tabBarItem key="tabBarItem" title="Elections" image="Elections-50" id="lSG-Vf-E9C"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fR-fR-jqh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -44,11 +44,11 @@
             </objects>
             <point key="canvasLocation" x="469" y="-271"/>
         </scene>
-        <!--My Representatives-->
+        <!--Representatives-->
         <scene sceneID="e6p-Jl-yXz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uqa-U5-aTp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Representatives" id="Bog-5w-0Bs"/>
+                    <tabBarItem key="tabBarItem" title="Representatives" image="Conference-50" id="Bog-5w-0Bs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Ai-Ow-u3a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -67,7 +67,7 @@
         <scene sceneID="cYl-Sj-Xos">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8Q-hO-PuZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="Jtk-Tf-A7U"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="User-50" id="Jtk-Tf-A7U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7oS-xx-fzd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -129,4 +129,9 @@
             <point key="canvasLocation" x="798" y="-278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Conference-50" width="25" height="25"/>
+        <image name="Elections-50" width="25" height="25"/>
+        <image name="User-50" width="25" height="25"/>
+    </resources>
 </document>
