@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Liv-xM-jBU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Liv-xM-jBU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EVA-Cm-Y1r">
-                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="officialCell" rowHeight="69" id="EEY-Tt-Q9S" customClass="OfficialTableViewCell" customModule="SmartVoter" customModuleProvider="target">
@@ -35,13 +35,13 @@
                                                         <constraint firstAttribute="height" constant="21" id="4ty-fV-eVG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="President of United States of America" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6p-i6-rwL">
                                                     <rect key="frame" x="62" y="37" width="240" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lpo-ex-RLx">
@@ -133,10 +133,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="top" secondItem="EVA-Cm-Y1r" secondAttribute="top" id="9s3-zz-GSf"/>
+                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="top" secondItem="EVA-Cm-Y1r" secondAttribute="top" constant="64" id="9s3-zz-GSf"/>
                             <constraint firstAttribute="trailing" secondItem="EVA-Cm-Y1r" secondAttribute="trailing" id="Oiq-tV-6mC"/>
                             <constraint firstItem="4gT-VM-Sxc" firstAttribute="bottom" secondItem="ytR-nc-aSK" secondAttribute="top" id="XYX-Qs-WHg"/>
-                            <constraint firstItem="EVA-Cm-Y1r" firstAttribute="top" secondItem="cZV-je-hQT" secondAttribute="bottom" id="iQu-3m-vTR"/>
+                            <constraint firstItem="EVA-Cm-Y1r" firstAttribute="top" secondItem="cZV-je-hQT" secondAttribute="bottom" constant="-64" id="iQu-3m-vTR"/>
                             <constraint firstItem="4gT-VM-Sxc" firstAttribute="trailing" secondItem="EVA-Cm-Y1r" secondAttribute="trailing" id="nRg-7h-tH5"/>
                             <constraint firstItem="EVA-Cm-Y1r" firstAttribute="leading" secondItem="TUM-Wu-ALc" secondAttribute="leading" id="oPN-IF-M7B"/>
                             <constraint firstItem="ytR-nc-aSK" firstAttribute="top" secondItem="EVA-Cm-Y1r" secondAttribute="bottom" id="qJr-za-DMX"/>
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibo-nc-5iD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pickerView contentMode="scaleToFill" id="g88-w4-wQr">
-                    <rect key="frame" x="0.0" y="0.0" width="304" height="77"/>
+                    <rect key="frame" x="0.0" y="0.0" width="304" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </pickerView>
             </objects>

@@ -15,11 +15,11 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        guard let livingAddress = ProfileController.sharedController.loadAddress() else {
-//            // Present login view controller.
-//            return
-//        }
-        ElectionController.getContest("1566 East Evergreen Lane, 84106, SLC, Utah") { (contests) in
+        guard let livingAddress = ProfileController.sharedController.loadAddress() else {
+            // Present login view controller.
+            return
+        }
+        ElectionController.getContest(livingAddress) { (contests) in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
             })
