@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SafariServices
+import MessageUI
 
-class OfficialDetailViewController: UIViewController {
+class OfficialDetailViewController: UIViewController, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var officialImageView: UIImageView!
     @IBOutlet weak var officialName: UILabel!
@@ -39,16 +41,36 @@ class OfficialDetailViewController: UIViewController {
         officialOfficeLabel.text = official.office
         webAddressLabel.text = official.url
         streetAddressLabel.text = address.asAString
-        emailLabel.text = official.
+        emailLabel.text = official.email
         
     }
     
 
     @IBAction func webButtonTapped(sender: AnyObject) {
+        guard let official = official else { return }
+        guard let officialWebsite = official.url else { return }
+        guard let urls = NSURL(string: officialWebsite) else { return }
+        
+        let safariVC = SFSafariViewController(URL: urls)
+        presentViewController(safariVC, animated: true, completion: nil)
     }
     @IBAction func addressButtonTapped(sender: AnyObject) {
     }
     @IBAction func emailButtonTapped(sender: AnyObject) {
+        guard MFMailComposeViewController.canSendMail()
+            else {
+            return
+        }
+        guard let officialEmail = official?.email else { return }
+        
+        let mailController = MFMailComposeViewController()
+        mailController.mailComposeDelegate = self
+        
+        mailController.setToRecipients([officialEmail])
+        print(officialEmail)
+        
+    presentViewController(mailController, animated: true , completion: nil)
+    
     }
     @IBAction func phoneButtonTapped(sender: AnyObject) {
     }

@@ -77,7 +77,8 @@ struct Official {
         self.social = social
         
         guard let emailArray = dictionary[kEmail] as? [String],
-            email = emailArray.first 
+            email = emailArray.first else { return nil }
+        self.email = email 
         
     }
     
