@@ -10,6 +10,7 @@
 		21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E691D91DF3B00B966ED /* PollingLocation.swift */; };
 		21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */; };
 		21648E701D922E5800B966ED /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6F1D922E5800B966ED /* ProfileController.swift */; };
+		21648E741D92EFBC00B966ED /* Election.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E731D92EFBC00B966ED /* Election.swift */; };
 		21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E726DE1D90914900ADC64F /* AppDelegate.swift */; };
 		21E726E41D90914900ADC64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E21D90914900ADC64F /* Main.storyboard */; };
 		21E726E61D90914900ADC64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E51D90914900ADC64F /* Assets.xcassets */; };
@@ -24,18 +25,17 @@
 		21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E7270B1D90996A00ADC64F /* ElectionController.swift */; };
 		21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E7270E1D9099BB00ADC64F /* NetworkController.swift */; };
 		21E727111D9099DB00ADC64F /* Official.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727101D9099DB00ADC64F /* Official.swift */; };
+		21E727131D9099FB00ADC64F /* Contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727121D9099FB00ADC64F /* Contest.swift */; };
 		21E727161D909A3700ADC64F /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727151D909A3700ADC64F /* ImageController.swift */; };
 		21E727181D919D2300ADC64F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727171D919D2300ADC64F /* Profile.storyboard */; };
 		21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727191D919D4600ADC64F /* OfficialDetail.storyboard */; };
 		21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */; };
 		21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */; };
 		21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */; };
-		518E624C1D92EB90008AAC2C /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518E624B1D92EB90008AAC2C /* Office.swift */; };
-		519B09781D92F43B00D3149F /* Election.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B09771D92F43A00D3149F /* Election.swift */; };
-		519B097A1D92F48000D3149F /* Contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B09791D92F48000D3149F /* Contest.swift */; };
 		640411621D91DF2800B57A4C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411611D91DF2800B57A4C /* Address.swift */; };
 		640411641D91E25400B57A4C /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411631D91E25400B57A4C /* Social.swift */; };
-		A209C92D1D93215F00F4F8B6 /* ElectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209C92C1D93215F00F4F8B6 /* ElectionDetailViewController.swift */; };
+		64B6AC101D92F604006BF1D7 /* OfficialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6AC0F1D92F604006BF1D7 /* OfficialDetailViewController.swift */; };
+		64C72D591D933DE900C68143 /* OfficialAddressMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C72D581D933DE900C68143 /* OfficialAddressMapViewController.swift */; };
 		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +53,7 @@
 		21648E691D91DF3B00B966ED /* PollingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocation.swift; sourceTree = "<group>"; };
 		21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocationController.swift; sourceTree = "<group>"; };
 		21648E6F1D922E5800B966ED /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		21648E731D92EFBC00B966ED /* Election.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Election.swift; sourceTree = "<group>"; };
 		21E726DB1D90914900ADC64F /* SmartVoter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartVoter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E726DE1D90914900ADC64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E726E31D90914900ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,18 +72,17 @@
 		21E7270B1D90996A00ADC64F /* ElectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionController.swift; sourceTree = "<group>"; };
 		21E7270E1D9099BB00ADC64F /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		21E727101D9099DB00ADC64F /* Official.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Official.swift; path = ../Official.swift; sourceTree = "<group>"; };
+		21E727121D9099FB00ADC64F /* Contest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contest.swift; path = ../Contest.swift; sourceTree = "<group>"; };
 		21E727151D909A3700ADC64F /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		21E727171D919D2300ADC64F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		21E7271A1D919D4600ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialDetail.storyboard; sourceTree = "<group>"; };
 		21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionDetail.storyboard; sourceTree = "<group>"; };
 		21E7271F1D919D7E00ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialTableView.storyboard; sourceTree = "<group>"; };
 		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionTableView.storyboard; sourceTree = "<group>"; };
-		518E624B1D92EB90008AAC2C /* Office.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
-		519B09771D92F43A00D3149F /* Election.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Election.swift; sourceTree = "<group>"; };
-		519B09791D92F48000D3149F /* Contest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contest.swift; sourceTree = "<group>"; };
 		640411611D91DF2800B57A4C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		640411631D91E25400B57A4C /* Social.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
-		A209C92C1D93215F00F4F8B6 /* ElectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionDetailViewController.swift; sourceTree = "<group>"; };
+		64B6AC0F1D92F604006BF1D7 /* OfficialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailViewController.swift; sourceTree = "<group>"; };
+		64C72D581D933DE900C68143 /* OfficialAddressMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialAddressMapViewController.swift; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,8 +129,9 @@
 				21E727141D909A0600ADC64F /* Model */,
 				21E7270D1D90996F00ADC64F /* Model Controller */,
 				21E727041D90958400ADC64F /* View Controller */,
-				A209C92E1D9321EC00F4F8B6 /* Storyboards */,
+				A209C9291D92F2CD00F4F8B6 /* Storyboards */,
 				21E726E51D90914900ADC64F /* Assets.xcassets */,
+				21E726E71D90914900ADC64F /* LaunchScreen.storyboard */,
 				21E726EA1D90914900ADC64F /* Info.plist */,
 			);
 			path = SmartVoter;
@@ -149,11 +150,12 @@
 			isa = PBXGroup;
 			children = (
 				21E727021D90949800ADC64F /* ElectionTableViewController.swift */,
-				A209C92C1D93215F00F4F8B6 /* ElectionDetailViewController.swift */,
 				21E727001D90948400ADC64F /* OfficialsTableViewController.swift */,
 				21E726FE1D90941E00ADC64F /* ProfileViewController.swift */,
 				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
 				21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */,
+				64B6AC0F1D92F604006BF1D7 /* OfficialDetailViewController.swift */,
+				64C72D581D933DE900C68143 /* OfficialAddressMapViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -175,28 +177,26 @@
 		21E727141D909A0600ADC64F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				519B09771D92F43A00D3149F /* Election.swift */,
+				21E727121D9099FB00ADC64F /* Contest.swift */,
+				21648E731D92EFBC00B966ED /* Election.swift */,
 				21E727101D9099DB00ADC64F /* Official.swift */,
 				A21C52231D91CA9500909C0C /* Candidate.swift */,
-				519B09791D92F48000D3149F /* Contest.swift */,
 				21648E691D91DF3B00B966ED /* PollingLocation.swift */,
 				640411611D91DF2800B57A4C /* Address.swift */,
 				640411631D91E25400B57A4C /* Social.swift */,
-				518E624B1D92EB90008AAC2C /* Office.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		A209C92E1D9321EC00F4F8B6 /* Storyboards */ = {
+		A209C9291D92F2CD00F4F8B6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				21E726E21D90914900ADC64F /* Main.storyboard */,
+				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
 				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
 				21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */,
-				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
 				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
 				21E727171D919D2300ADC64F /* Profile.storyboard */,
-				21E726E71D90914900ADC64F /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -307,24 +307,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				519B097A1D92F48000D3149F /* Contest.swift in Sources */,
 				21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */,
-				518E624C1D92EB90008AAC2C /* Office.swift in Sources */,
 				21E727011D90948400ADC64F /* OfficialsTableViewController.swift in Sources */,
 				21E726FF1D90941E00ADC64F /* ProfileViewController.swift in Sources */,
 				21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */,
 				640411621D91DF2800B57A4C /* Address.swift in Sources */,
 				21648E701D922E5800B966ED /* ProfileController.swift in Sources */,
+				21648E741D92EFBC00B966ED /* Election.swift in Sources */,
 				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
 				21E7270A1D90996300ADC64F /* OfficialController.swift in Sources */,
 				21E727081D9095AB00ADC64F /* OfficialTableViewCell.swift in Sources */,
 				21E727031D90949800ADC64F /* ElectionTableViewController.swift in Sources */,
 				21E727111D9099DB00ADC64F /* Official.swift in Sources */,
+				64B6AC101D92F604006BF1D7 /* OfficialDetailViewController.swift in Sources */,
+				21E727131D9099FB00ADC64F /* Contest.swift in Sources */,
+				64C72D591D933DE900C68143 /* OfficialAddressMapViewController.swift in Sources */,
 				21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */,
 				A21C52241D91CA9500909C0C /* Candidate.swift in Sources */,
 				21E727061D90959C00ADC64F /* ElectionTableViewCell.swift in Sources */,
-				A209C92D1D93215F00F4F8B6 /* ElectionDetailViewController.swift in Sources */,
-				519B09781D92F43B00D3149F /* Election.swift in Sources */,
 				21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */,
 				640411641D91E25400B57A4C /* Social.swift in Sources */,
 				21E727161D909A3700ADC64F /* ImageController.swift in Sources */,
