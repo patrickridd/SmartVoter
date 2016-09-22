@@ -28,7 +28,6 @@ class Contest {
         
         if type == "General" {
             let office = dictionary["office"] as? String
-            
             self.office = office
             
         } else if type == "Referendum" {
@@ -53,6 +52,7 @@ class Contest {
                 let webAddress = candidateDictionary["candidateUrl"] as? String
                 let phoneNumber = candidateDictionary["phone"] as? String
                 let emailAddress = candidateDictionary["email"] as? String
+                
                 
                 let candidate = Candidate(name: name, party: party, websiteURL: webAddress, phone: phoneNumber, email: emailAddress)
                 candidates.append(candidate)
