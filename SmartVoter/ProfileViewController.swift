@@ -15,15 +15,18 @@ import SafariServices
 class ProfileViewController: UIViewController {
     
     
-    @IBOutlet weak var livingAddressLabel: UILabel!
+//    @IBOutlet weak var livingAddressLabel: UILabel!
     @IBOutlet weak var registerToVoteLabel: UIButton!
     @IBOutlet weak var placesToVoteLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var saveButtonLabel: UIButton!
-    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var zipTextField: UITextField!
+    @IBOutlet weak var updateLabel: UIBarButtonItem!
     
     static let addressChangedNotification = "Address Changed"
-    var livingAddress: String?
+    var livingAddress: Address?
     var pollingLocations: [CLLocation]?
     var registrationURL: String?
     
@@ -33,6 +36,37 @@ class ProfileViewController: UIViewController {
         updateLabels()
         populateMapView()
     }
+    
+    
+    @IBAction func updateButtonTapped(sender: AnyObject) {
+        if updateLabel.title == "Update" {
+            updateLabel.title = "Save"
+            registerToVoteLabel.hidden = true
+            streetTextField.hidden = false
+            cityTextField.hidden = false
+            stateTextField.hidden = false
+            zipTextField.hidden = false
+        } else {
+            updateLabel.title = "Update"
+    
+            guard let stateText = stateTextField.text where stateText.characters.count > 0,
+                let cityText = cityTextField.text where cityText.characters.count > 0,
+                let streetText = streetTextField.text where streetText.characters.count > 0,
+                let zipText = zipTextField.text where zipText.characters.count > 0  else {
+                return
+            }
+            
+            let newAddress = Address(line1: streetText, city: cityText, state: stateText, zip: zipText)
+            ProfileController.sharedController.saveAddressToUserDefault(newAddress)
+            updateLabels()
+
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let nc = NSNotificationCenter.defaultCenter()
+                nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
+            })
+        }
+    }
+    
     
     /// User to site where they can register to vote.
     @IBAction func registerToVoteButtonTapped(sender: AnyObject) {
@@ -44,26 +78,21 @@ class ProfileViewController: UIViewController {
         
     }
     
-    @IBAction func saveButtonTapped(sender: AnyObject) {
-        guard let newAddress = addressTextField.text where newAddress.characters.count > 0 else {
+        /// Updates VC's labels.
+    func updateLabels() {
+        registerToVoteLabel.hidden = false
+        streetTextField.hidden = true
+        cityTextField.hidden = true
+        stateTextField.hidden = true
+        zipTextField.hidden = true
+        guard let livingAddress = ProfileController.sharedController.loadAddress() else {
             return
         }
-        
-        ProfileController.sharedController.saveAddressToUserDefault(newAddress)
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let nc = NSNotificationCenter.defaultCenter()
-            nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
-        })
-        updateLabels()
-        
-    }
-    /// Updates VC's labels.
-    func updateLabels() {
-        self.livingAddress = ProfileController.sharedController.loadAddress()
-        livingAddressLabel.text = livingAddress ?? "No Address Found"
+        self.livingAddress = livingAddress
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Helvetica", size: 14)!]
+        self.navigationItem.title = self.livingAddress?.line1 ?? "No Address Found"
         self.registrationURL = ProfileController.sharedController.loadURL()
-        saveButtonLabel.layer.masksToBounds = true
-        saveButtonLabel.layer.cornerRadius = 8.0
+       
         
     }
     

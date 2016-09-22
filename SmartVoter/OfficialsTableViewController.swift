@@ -39,7 +39,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             return
         }
         
-        OfficialController.getOfficials(address) {
+        OfficialController.getOfficials(address.asAString) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
             })
@@ -80,7 +80,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             blurView.hidden = false
             return
         }
-        OfficialController.getOfficials(address) {
+        OfficialController.getOfficials(address.asAString) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
             })
@@ -112,7 +112,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             self.tableView.reloadData()
         }
         blurView.hidden = true
-        ProfileController.sharedController.saveAddressToUserDefault(address.asAString)
+        ProfileController.sharedController.saveAddressToUserDefault(address)
     }
     
     

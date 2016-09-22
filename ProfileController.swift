@@ -12,22 +12,25 @@ class ProfileController {
     
     let urlKey = "urlKey"
     let addressKey = "addressKey"
-    
-    var address = [String]()
-    
+        
     static let sharedController = ProfileController()
     
     
-    func saveAddressToUserDefault(address: String) {
-        NSUserDefaults.standardUserDefaults().setObject(address, forKey: addressKey)
+    func saveAddressToUserDefault(address: Address) {
+        let data = NSKeyedArchiver.archivedDataWithRootObject(address)
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: addressKey)
     }
     func saveRegisterToVoteURL(url: String) {
         NSUserDefaults.standardUserDefaults().setObject(url, forKey: urlKey)
     }
-    func loadAddress() ->String? {
-        let address = NSUserDefaults.standardUserDefaults().objectForKey(addressKey) as? String
-        
-        return address ?? nil
+    
+    func loadAddress() ->Address? {
+        if let data = NSUserDefaults.standardUserDefaults().objectForKey(addressKey) as? NSData {
+        let address = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Address
+            return address
+        } else {
+            return nil
+        }
     }
     
     func loadURL() -> String? {

@@ -8,22 +8,41 @@
 
 import Foundation
 
-struct Address {
+class Address: NSObject, NSCoding {
 
     var line1: String
     var city: String
     var state: String
     var zip: String
     
-    var asAString: String {
-        return "\(line1), \(city.capitalizedString), \(state), \(zip)"
-    }
     
     init(line1: String, city: String, state: String, zip: String) {
+        
         self.line1 = line1
         self.city = city
         self.state = state
         self.zip = zip
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+       guard let line1 = aDecoder.decodeObjectForKey("line1") as? String,
+        let city = aDecoder.decodeObjectForKey("city") as? String,
+        let state = aDecoder.decodeObjectForKey("state") as? String,
+        let zip = aDecoder.decodeObjectForKey("zip") as? String else {
+            return nil
+        }
+        self.init(line1: line1, city: city, state: state, zip: zip)
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.line1, forKey: "line1")
+        aCoder.encodeObject(self.city, forKey: "city")
+        aCoder.encodeObject(self.state, forKey: "state")
+        aCoder.encodeObject(self.zip, forKey: "zip")
+    }
+    
+    var asAString: String {
+        return "\(line1), \(city.capitalizedString), \(state), \(zip)"
     }
     
     

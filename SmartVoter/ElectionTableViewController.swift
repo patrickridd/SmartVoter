@@ -19,7 +19,7 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
             // Present login view controller.
             return
         }
-        ElectionController.getContest(livingAddress) { (contests) in
+        ElectionController.getContest(livingAddress.asAString) { (contests) in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
             })
@@ -35,7 +35,7 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
             // Present login view controller.
             return
         }
-        ElectionController.getContest(livingAddress) { (contests) in
+        ElectionController.getContest(livingAddress.asAString) { (contests) in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
             })
