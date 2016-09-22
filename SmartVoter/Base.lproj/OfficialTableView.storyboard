@@ -80,12 +80,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barrack Obama" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCe-N9-GF9">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="President of United States of America" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6p-i6-rwL">
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="President of United States" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6p-i6-rwL">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -101,7 +101,7 @@
                                                 <constraint firstItem="Lpo-ex-RLx" firstAttribute="leading" secondItem="dCe-N9-GF9" secondAttribute="trailing" constant="8" id="IVN-ey-6Sf"/>
                                                 <constraint firstItem="Lpo-ex-RLx" firstAttribute="leading" secondItem="s6p-i6-rwL" secondAttribute="trailing" constant="8" id="JkG-LK-ngl"/>
                                                 <constraint firstItem="s6p-i6-rwL" firstAttribute="leading" secondItem="atZ-Ho-xKb" secondAttribute="leading" constant="8" id="XXU-dc-rZV"/>
-                                                <constraint firstItem="s6p-i6-rwL" firstAttribute="top" secondItem="dCe-N9-GF9" secondAttribute="bottom" constant="8" id="dT8-6M-prJ"/>
+                                                <constraint firstItem="s6p-i6-rwL" firstAttribute="top" secondItem="dCe-N9-GF9" secondAttribute="bottom" constant="1" id="dT8-6M-prJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="Lpo-ex-RLx" secondAttribute="bottom" constant="2" id="hwT-H1-cwt"/>
                                                 <constraint firstItem="Lpo-ex-RLx" firstAttribute="top" secondItem="atZ-Ho-xKb" secondAttribute="top" constant="2" id="wS7-Eo-2zI"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lpo-ex-RLx" secondAttribute="trailing" constant="8" id="xs5-N0-6z4"/>

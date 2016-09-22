@@ -48,6 +48,8 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         cell.textLabel?.text = candidate.name
         cell.detailTextLabel?.text = candidate.party
         
+        
+        
         return cell
     }
 
