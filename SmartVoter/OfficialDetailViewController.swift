@@ -20,6 +20,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var socialMediaLabel: UILabel!
+    @IBOutlet weak var socialMediaButton: UIButton!
     
     
     var official: Official?
@@ -36,7 +37,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     func updateOfficials(official: Official) {
-    
+        
         let address = official.address
         self.address = address
         officialName.text = official.name
@@ -63,10 +64,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     @IBAction func addressButtonTapped(sender: AnyObject) {
-    //    guard let vc = storyboard?.instantiateViewControllerWithIdentifier("addressMapView") else {
-    //        return
-    //    }
-    //    presentViewController(vc, animated: true, completion: nil)
+        //    guard let vc = storyboard?.instantiateViewControllerWithIdentifier("addressMapView") else {
+        //        return
+        //    }
+        //    presentViewController(vc, animated: true, completion: nil)
         
     }
     
@@ -122,7 +123,31 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     
     @IBAction func socialButtonTapped(sender: AnyObject) {
         
+        if official?.social?.type == "Facebook" {
+            guard let id = official?.social?.id else { return }
+            let facebookURL = "https://www.facebook.com/\(id)"
+            guard let urls = NSURL(string: facebookURL) else { return }
+            
+            let safariVC = SFSafariViewController(URL: urls)
+            presentViewController(safariVC, animated: true, completion: nil)
+        } else if official?.social?.type == "GooglePlus"  {
+            guard let id = official?.social?.id else { return }
+            let googlePlusURL = "https://plus.google.com/\(id)"
+            guard let urls = NSURL(string: googlePlusURL) else { return }
+            
+            let safariVC = SFSafariViewController(URL: urls)
+            presentViewController(safariVC, animated: true, completion: nil)
+        } else if official?.social?.type == "Twitter" {
+            guard let id = official?.social?.id else { return }
+            let twitterURL = "https://www.twitter.com/\(id)"
+            guard let urls = NSURL(string: twitterURL) else { return }
+            
+            let safariVC = SFSafariViewController(URL: urls)
+            presentViewController(safariVC, animated: true, completion: nil)
+        }
     }
+    
+    
     
     // MARK: - Navigation
     
