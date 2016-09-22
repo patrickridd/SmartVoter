@@ -22,26 +22,27 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     
     
     var official: Official?
-    var address: String?
+    var address: Address?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let official = official,
-            address = address
+        guard let official = official
             else {
                 return
         }
-        updateOfficials(official, address: address)
+        updateOfficials(official)
         
     }
     
-    func updateOfficials(official: Official, address: String) {
-        
+    func updateOfficials(official: Official) {
+    
+        let address = official.address
+        self.address = address
         officialName.text = official.name
         phoneNumberLabel.text = official.phone ?? "No phone number was provided"
         officialOfficeLabel.text = official.office
         webAddressLabel.text = official.url ?? "No website found"
-        streetAddressLabel.text = address ?? "No address provided"
+        streetAddressLabel.text = address?.asAString ?? "No address provided"
         emailLabel.text = official.email ?? "No email provided"
         guard let photoURL = official.photoURL else { return }
         ImageController.imageForURL(photoURL) { (image) in
@@ -129,7 +130,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             
             guard let detailViewController = segue.destinationViewController as? OfficialAddressMapViewController else { return }
             guard let address = address else { return }
-            detailViewController.address = address
+            detailViewController.address = address.asAString
         }
     }
 }
