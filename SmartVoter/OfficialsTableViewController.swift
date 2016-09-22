@@ -44,10 +44,12 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
                       self.tableView.reloadData()
             })
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
     }
 
 
-    
+    //MARK: - UIPicker Setup
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -67,8 +69,21 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         stateTextField.text = Address.states[row].rawValue
-        
-        
+    }
+    
+    // MARK: - Table view data source
+    
+    func reloadTableView() {
+        guard let address = ProfileController.sharedController.loadAddress() else {
+            blurView.hidden = false
+            return
+        }
+        self.address = address
+        OfficialController.getOfficials(address) {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
+        }
     }
     
     
