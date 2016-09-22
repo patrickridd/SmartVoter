@@ -89,7 +89,6 @@ class ProfileViewController: UIViewController {
             return
         }
         self.livingAddress = livingAddress
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Helvetica", size: 14)!]
         self.navigationItem.title = self.livingAddress?.line1 ?? "No Address Found"
         self.registrationURL = ProfileController.sharedController.loadURL()
        

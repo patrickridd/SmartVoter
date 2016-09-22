@@ -12,11 +12,13 @@ class ProfileController {
     
     let urlKey = "urlKey"
     let addressKey = "addressKey"
-        
+    
+    var address: Address?
     static let sharedController = ProfileController()
     
     
     func saveAddressToUserDefault(address: Address) {
+        self.address = address
         let data = NSKeyedArchiver.archivedDataWithRootObject(address)
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: addressKey)
     }
@@ -27,6 +29,7 @@ class ProfileController {
     func loadAddress() ->Address? {
         if let data = NSUserDefaults.standardUserDefaults().objectForKey(addressKey) as? NSData {
         let address = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Address
+            self.address = address
             return address
         } else {
             return nil
