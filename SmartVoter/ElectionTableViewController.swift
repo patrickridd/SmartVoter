@@ -24,9 +24,25 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
                 self.tableView.reloadData()
             })
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
     }
 
     // MARK: - Table view data source
+    
+    func reloadTableView() {
+        guard let livingAddress = ProfileController.sharedController.loadAddress() else {
+            // Present login view controller.
+            return
+        }
+        ElectionController.getContest(livingAddress) { (contests) in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
+        }
+        
+    }
+
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ElectionController.elections.count

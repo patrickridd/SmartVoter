@@ -44,6 +44,8 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
                 self.tableView.reloadData()
             })
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
     }
     
     
@@ -70,6 +72,26 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return OfficialController.officials.count
     }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        stateTextField.text = Address.states[row].rawValue
+    }
+    
+    // MARK: - Table view data source
+    
+    func reloadTableView() {
+        guard let address = ProfileController.sharedController.loadAddress() else {
+            blurView.hidden = false
+            return
+        }
+        self.address = address
+        OfficialController.getOfficials(address) {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
+        }
+    }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier("officialCell", forIndexPath: indexPath) as? OfficialTableViewCell else { return UITableViewCell() }

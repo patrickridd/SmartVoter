@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var saveButtonLabel: UIButton!
     @IBOutlet weak var addressTextField: UITextField!
     
-    
+    static let addressChangedNotification = "Address Changed"
     var livingAddress: String?
     var pollingLocations: [CLLocation]?
     var registrationURL: String?
@@ -50,6 +50,10 @@ class ProfileViewController: UIViewController {
         }
         
         ProfileController.sharedController.saveAddressToUserDefault(newAddress)
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            let nc = NSNotificationCenter.defaultCenter()
+            nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
+        })
         updateLabels()
         
     }
