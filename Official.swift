@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Official {
+struct Official {
     
     private let kOfficial = "officials"
     private let kName = "name"
@@ -48,11 +48,12 @@ class Official {
         self.name = name
         self.office = office
         
-        
+        // Get Party
         if let party = dictionary[kParty] as? String {
             self.party = party
         }
         
+        // Get Address
         if let  addressArray = dictionary[kAddress] as? [[String: AnyObject]],
             addressDictionary = addressArray.first,
             let line1 = addressDictionary[kAddressLine1] as? String,
@@ -62,8 +63,7 @@ class Official {
             let address = Address(line1: line1, city: city, state: state, zip: zip)
             self.address = address
         }
-        
-    
+
         // Get Phone Number
         if let phoneArray = dictionary[kPhone] as? [String],
             phoneNumber = phoneArray.first {
@@ -94,8 +94,6 @@ class Official {
             let social = Social(type: type, id: id)
             self.social = social
         }
-        
-        
     }
     
 }

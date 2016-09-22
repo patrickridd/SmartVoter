@@ -52,6 +52,7 @@ class OfficialController {
                     }
                 }
             }
+            
             OfficialController.officials = officiales
             completion()
         }

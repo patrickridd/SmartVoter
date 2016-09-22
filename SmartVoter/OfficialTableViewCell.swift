@@ -18,16 +18,16 @@ class OfficialTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     func updateOfficialsCell(official: Official) {
         officialsNameLabel.text = official.name
         officialsOfficeLabel.text = official.office
         
         ImageController.imageForURL(official.photoURL ?? "") { (image) in
-            guard let image = image else {return}
-            self.officialsImageView.image = image
+            guard let image = image else {
+                return
+            }
+                self.officialsImageView.image = image
         }
-        
     }
-
 }
