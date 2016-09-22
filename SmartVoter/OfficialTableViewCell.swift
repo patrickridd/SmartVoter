@@ -19,9 +19,9 @@ class OfficialTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func updateOfficialsCell(office: Office, official: Official) {
+    func updateOfficialsCell(official: Official) {
         officialsNameLabel.text = official.name
-        officialsOfficeLabel.text = office.name
+        officialsOfficeLabel.text = official.office
         
         ImageController.imageForURL(official.photoURL ?? "") { (image) in
             guard let image = image else {return}

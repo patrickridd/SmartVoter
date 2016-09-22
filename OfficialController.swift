@@ -34,7 +34,8 @@ class OfficialController {
             }
             
             guard let jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String: AnyObject],
-            officesArrayOfDictionaries = jsonDictionary["offices"] as? [[String: AnyObject]], officials = jsonDictionary["officials"] as? [[String:AnyObject]]
+            officesArrayOfDictionaries = jsonDictionary["offices"] as? [[String: AnyObject]],
+                officials = jsonDictionary["officials"] as? [[String:AnyObject]]
             else {
                 print("Unable to Serialize JSON: \(responseDataString)")
                 return}

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Official {
+class Official {
     
     private let kOfficial = "officials"
     private let kName = "name"
@@ -36,49 +36,65 @@ struct Official {
     var url: String?
     var social: Social?
     var office: String?
-    var email: String? 
+    var email: String?
     
     init?(dictionary: [String: AnyObject], office: String)  {
         
-        guard let name = dictionary[kName] as? String,
-            party = dictionary[kParty] as? String,
-            photoURL = dictionary[kPhoto] as? String else { return nil }
+        // Only Return nil if we can't get Official's name.
+        guard let name = dictionary[kName] as? String else {
+                return nil
+        }
+        
         self.name = name
-        self.party = party
-        self.photoURL = photoURL
         self.office = office
         
-        guard let  addressArray = dictionary[kAddress] as? [[String: AnyObject]],
+        
+        if let party = dictionary[kParty] as? String {
+            self.party = party
+        }
+        
+        if let  addressArray = dictionary[kAddress] as? [[String: AnyObject]],
             addressDictionary = addressArray.first,
             let line1 = addressDictionary[kAddressLine1] as? String,
             let city = addressDictionary[kAddressCity] as? String,
             let state = addressDictionary[kAddressState] as? String,
-            let zip = addressDictionary[kAddressZip] as? String
-            else { return nil }
+            let zip = addressDictionary[kAddressZip] as? String {
+            let address = Address(line1: line1, city: city, state: state, zip: zip)
+            self.address = address
+        }
         
-        let address = Address(line1: line1, city: city, state: state, zip: zip)
-        self.address = address
+    
+        // Get Phone Number
+        if let phoneArray = dictionary[kPhone] as? [String],
+            phoneNumber = phoneArray.first {
+            self.phone = phoneNumber
+        }
         
-        guard let phoneArray = dictionary[kPhone] as? [String],
-            phoneNumber = phoneArray.first,
-            urlArray = dictionary[kUrl] as? [String],
-            url = urlArray.first else { return nil }
-        self.phone = phoneNumber
-        self.url = url
-        		
+        // Get Official's website if available
+        if let urlArray = dictionary[kUrl] as? [String],
+            url = urlArray.first  {
+            self.url = url
+        }
         
+        // Get photo if available
+        if let photoURL = dictionary[kPhoto] as? String {
+            self.photoURL = photoURL
+        }
         
-        guard let socialArray = dictionary[kSocial] as? [[String: AnyObject]],
+        // Get email
+        if let emailArray = dictionary[kEmail] as? [String],
+            email = emailArray.first {
+            self.email = email
+        }
+        // Get Social media items
+        if let socialArray = dictionary[kSocial] as? [[String: AnyObject]],
             socialDictionary = socialArray.first,
             let type = socialDictionary[kType] as? String,
-            let id = socialDictionary[kId] as? String
-            else { return nil }
-        let social = Social(type: type, id: id)
-        self.social = social
+            let id = socialDictionary[kId] as? String {
+            let social = Social(type: type, id: id)
+            self.social = social
+        }
         
-        guard let emailArray = dictionary[kEmail] as? [String],
-            email = emailArray.first else { return nil }
-        self.email = email 
         
     }
     

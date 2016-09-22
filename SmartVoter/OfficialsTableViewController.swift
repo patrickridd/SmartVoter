@@ -74,10 +74,10 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("officialCell", forIndexPath: indexPath) as? OfficialTableViewCell
         
-        let office = OfficialController.offices[indexPath.row]
+       // let office = OfficialController.offices[indexPath.row]
         let official = OfficialController.officials[indexPath.row]
         
-        cell?.updateOfficialsCell(office, official: official)
+        cell?.updateOfficialsCell(official)
         
         return cell ?? UITableViewCell()
     }
