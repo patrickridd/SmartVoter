@@ -48,9 +48,7 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
             guard let coordinate = location?.coordinate else { return }
             annotation.coordinate = coordinate
             annotation.title = newAddress
-            
-            
-            
+            self.mapView.addAnnotation(annotation)
         }
     }
     
