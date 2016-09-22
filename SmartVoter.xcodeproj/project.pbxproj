@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */; };
 		21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E691D91DF3B00B966ED /* PollingLocation.swift */; };
 		21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */; };
 		21648E701D922E5800B966ED /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6F1D922E5800B966ED /* ProfileController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateTableViewCell.swift; sourceTree = "<group>"; };
 		21648E691D91DF3B00B966ED /* PollingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocation.swift; sourceTree = "<group>"; };
 		21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocationController.swift; sourceTree = "<group>"; };
 		21648E6F1D922E5800B966ED /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				21E726FE1D90941E00ADC64F /* ProfileViewController.swift */,
 				51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */,
 				51C2D3351D934CB50018109E /* OfficialDetailViewController.swift */,
+				2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */,
 				51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */,
 				51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */,
 				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
@@ -322,6 +325,7 @@
 				21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */,
 				51C2D3341D934CAF0018109E /* OfficialAddressMapViewController.swift in Sources */,
 				640411621D91DF2800B57A4C /* Address.swift in Sources */,
+				2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */,
 				21648E701D922E5800B966ED /* ProfileController.swift in Sources */,
 				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
 				51C2D3301D92FFCC0018109E /* OfficialsTableViewController.swift in Sources */,
