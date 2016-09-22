@@ -22,7 +22,7 @@ class OfficialTableViewCell: UITableViewCell {
     func updateOfficialsCell(official: Official) {
         
         officialsNameLabel.text = official.name
-        officialsOfficeLabel.text = official.office
+        officialsOfficeLabel.text = official.office?.name
         
         ImageController.imageForURL(official.photoURL ?? "") { (image) in
             guard let image = image else {

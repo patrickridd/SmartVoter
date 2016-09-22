@@ -13,18 +13,23 @@ struct Office {
     
     private let kName = "name"
     private let kIndicies = "officialIndices"
+    private let kDivisionID = "divisionId"
     
     let name: String
     var indicies: [Int]
+    var division: String
     
     init?(dictionary: [String: AnyObject]) {
         guard let name = dictionary[kName] as? String,
-            indicies = dictionary[kIndicies] as? [Int] else {return nil}
+            indicies = dictionary[kIndicies] as? [Int],
+            divisionID = dictionary[kDivisionID] as? String else {return nil}
         
         self.indicies = indicies
         self.name = name
-        
+        self.division = divisionID
     }
-    
-    
 }
+
+
+
+

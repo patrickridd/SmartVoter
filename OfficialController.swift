@@ -13,11 +13,25 @@ class OfficialController {
     static let sharedController = OfficialController()
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     static let officialIndicesKey = "officialIndices"
-    
     static let baseURl = NSURL(string: "https://www.googleapis.com/civicinfo/v2/representatives?")
     static var officials: [Official] = []
+    static var sortedOfficials: [[Official]] {
+        var federalOfficials: [Official] = []
+        var stateOfficials: [Official] = []
+        var localOfficials: [Official] = []
+        for official in OfficialController.officials {
+            guard let office = official.office else { return [] }
+            if office.division.containsString("county") {
+                localOfficials.append(official)
+            } else if office.division.containsString("state") {
+                stateOfficials.append(official)
+            } else if office.division.containsString("country") {
+                federalOfficials.append(official)
+            }
+        }
+        return [federalOfficials, stateOfficials, localOfficials]
+    }
     static var offices: [Office] = []
-    
     
     static func getOfficials(address: String, completion: ()-> Void) {
         guard let url = baseURl else {
@@ -47,7 +61,7 @@ class OfficialController {
             for i in offices {
                 for officialsIndex in i.indicies {
                     let officialDictionary = officials[officialsIndex]
-                    if let newOfficial = Official(dictionary: officialDictionary, office: i.name) {
+                    if let newOfficial = Official(dictionary: officialDictionary, office: i) {
                         officiales.append(newOfficial)
                     }
                 }

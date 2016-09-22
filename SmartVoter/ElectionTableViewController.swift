@@ -9,7 +9,7 @@
 import UIKit
 
 class ElectionTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
     }
-
+    
     // MARK: - Table view data source
     
     func reloadTableView() {
@@ -40,9 +40,7 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
                 self.tableView.reloadData()
             })
         }
-        
     }
-
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ElectionController.elections.count
@@ -58,7 +56,7 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     // MARK: - Navigation
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toElectionDetailSegue" {
             guard let destinationVC = segue.destinationViewController as? ElectionDetailViewController, indexPath = tableView.indexPathForSelectedRow else { return }

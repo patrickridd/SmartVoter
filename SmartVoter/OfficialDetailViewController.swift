@@ -40,7 +40,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         self.address = address
         officialName.text = official.name
         phoneNumberLabel.text = official.phone ?? "No phone number was provided"
-        officialOfficeLabel.text = official.office
+        officialOfficeLabel.text = official.office?.name
         webAddressLabel.text = official.url ?? "No website found"
         streetAddressLabel.text = address?.asAString ?? "No address provided"
         emailLabel.text = official.email ?? "No email provided"

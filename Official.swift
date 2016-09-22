@@ -35,10 +35,10 @@ struct Official {
     var id: String?
     var url: String?
     var social: Social?
-    var office: String?
+    var office: Office?
     var email: String?
     
-    init?(dictionary: [String: AnyObject], office: String)  {
+    init?(dictionary: [String: AnyObject], office: Office)  {
         
         // Only Return nil if we can't get Official's name.
         guard let name = dictionary[kName] as? String else {
