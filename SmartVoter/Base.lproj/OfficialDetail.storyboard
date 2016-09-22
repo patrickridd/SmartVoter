@@ -169,6 +169,7 @@
                         <outlet property="officialName" destination="FGC-P4-kGg" id="IdV-mO-Xa2"/>
                         <outlet property="officialOfficeLabel" destination="tNd-dh-oJE" id="wOB-Ez-pQg"/>
                         <outlet property="phoneNumberLabel" destination="iDg-ug-tUz" id="JIm-qB-dEp"/>
+                        <outlet property="socialMediaButton" destination="Le3-R0-MnY" id="kQw-fa-QQq"/>
                         <outlet property="socialMediaLabel" destination="GbI-TM-G9U" id="m2m-ya-kNr"/>
                         <outlet property="streetAddressLabel" destination="5NK-5E-7KV" id="bKb-hy-3TD"/>
                         <outlet property="webAddressLabel" destination="Xig-Ud-UU1" id="HOR-3Q-FwY"/>
