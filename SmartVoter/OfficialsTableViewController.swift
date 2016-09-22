@@ -73,10 +73,6 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
         return OfficialController.officials.count
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        stateTextField.text = Address.states[row].rawValue
-    }
-    
     // MARK: - Table view data source
     
     func reloadTableView() {
@@ -84,7 +80,6 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             blurView.hidden = false
             return
         }
-        self.address = address
         OfficialController.getOfficials(address) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
