@@ -20,6 +20,7 @@ class OfficialTableViewCell: UITableViewCell {
     }
     
     func updateOfficialsCell(official: Official) {
+        
         officialsNameLabel.text = official.name
         officialsOfficeLabel.text = official.office
         
@@ -27,7 +28,16 @@ class OfficialTableViewCell: UITableViewCell {
             guard let image = image else {
                 return
             }
-                self.officialsImageView.image = image
+            self.officialsImageView.image = image
         }
     }
+    
+    override func prepareForReuse() {
+        officialsImageView.image = nil
+    }
 }
+
+
+
+
+

@@ -77,7 +77,7 @@
 		21E7271A1D919D4600ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialDetail.storyboard; sourceTree = "<group>"; };
 		21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionDetail.storyboard; sourceTree = "<group>"; };
 		21E7271F1D919D7E00ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialTableView.storyboard; sourceTree = "<group>"; };
-		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ElectionTableView.storyboard; path = SmartVoter/ElectionTableView.storyboard; sourceTree = "<group>"; };
+		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionTableView.storyboard; sourceTree = "<group>"; };
 		518E624B1D92EB90008AAC2C /* Office.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
 		519B09771D92F43A00D3149F /* Election.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Election.swift; sourceTree = "<group>"; };
 		519B09791D92F48000D3149F /* Contest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contest.swift; sourceTree = "<group>"; };
@@ -111,7 +111,6 @@
 		21E726D21D90914900ADC64F = {
 			isa = PBXGroup;
 			children = (
-				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
 				21E726DD1D90914900ADC64F /* SmartVoter */,
 				21E726F21D90914900ADC64F /* SmartVoterTests */,
 				21E726DC1D90914900ADC64F /* Products */,
@@ -134,13 +133,8 @@
 				21E727141D909A0600ADC64F /* Model */,
 				21E7270D1D90996F00ADC64F /* Model Controller */,
 				21E727041D90958400ADC64F /* View Controller */,
-				21E726E21D90914900ADC64F /* Main.storyboard */,
-				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
-				21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */,
-				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
-				21E727171D919D2300ADC64F /* Profile.storyboard */,
+				A223503F1D9434280023F2BC /* Storyboards */,
 				21E726E51D90914900ADC64F /* Assets.xcassets */,
-				21E726E71D90914900ADC64F /* LaunchScreen.storyboard */,
 				21E726EA1D90914900ADC64F /* Info.plist */,
 			);
 			path = SmartVoter;
@@ -197,6 +191,20 @@
 				518E624B1D92EB90008AAC2C /* Office.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A223503F1D9434280023F2BC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				21E726E21D90914900ADC64F /* Main.storyboard */,
+				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
+				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
+				21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */,
+				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
+				21E727171D919D2300ADC64F /* Profile.storyboard */,
+				21E726E71D90914900ADC64F /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

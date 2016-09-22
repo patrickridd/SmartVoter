@@ -9,13 +9,13 @@
 import UIKit
 
 class OfficialsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var blurView: UIVisualEffectView!
     
     @IBOutlet weak var streetAddress: UITextField!
-   
+    
     @IBOutlet weak var cityTextField: UITextField!
     
     @IBOutlet weak var zipTextField: UITextField!
@@ -41,13 +41,13 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
         self.address = address
         OfficialController.getOfficials(address) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                      self.tableView.reloadData()
+                self.tableView.reloadData()
             })
         }
     }
-
-
     
+    
+    // MARK: - Picker View Delegate Functions
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -56,38 +56,38 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return Address.states.count
     }
+    
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return Address.states[row].rawValue
     }
     
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        stateTextField.text = Address.states[row].rawValue
+    }
+    
+    // MARK: - Table view data source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return OfficialController.officials.count
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        stateTextField.text = Address.states[row].rawValue
-        
-        
-    }
-    
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("officialCell", forIndexPath: indexPath) as? OfficialTableViewCell
+        guard let cell = tableView.dequeueReusableCellWithIdentifier("officialCell", forIndexPath: indexPath) as? OfficialTableViewCell else { return UITableViewCell() }
         
-       // let office = OfficialController.offices[indexPath.row]
+        // let office = OfficialController.offices[indexPath.row]
         let official = OfficialController.officials[indexPath.row]
         
-        cell?.updateOfficialsCell(official)
+        cell.updateOfficialsCell(official)
         
-        return cell ?? UITableViewCell()
+        return cell
     }
     
+    // MARK: - ACTIONS
     
     @IBAction func addressSubmitButtonTapped(sender: AnyObject) {
         guard let streetAddress = streetAddress.text,
-        city = cityTextField.text,
-        state = stateTextField.text,
+            city = cityTextField.text,
+            state = stateTextField.text,
             zip = zipTextField.text else {return}
         let address = Address(line1: streetAddress, city: city, state: state, zip: zip)
         self.address = address.asAString
@@ -102,7 +102,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toOfficialDetail" {
