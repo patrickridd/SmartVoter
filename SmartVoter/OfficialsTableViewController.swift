@@ -24,7 +24,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBOutlet weak var stateTextField: UITextField!
     
-    var address: Address?
+    var address: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             blurView.hidden = false
             return
         }
+        self.address = address
         OfficialController.getOfficials(address) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                       self.tableView.reloadData()
@@ -89,7 +90,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
         state = stateTextField.text,
             zip = zipTextField.text else {return}
         let address = Address(line1: streetAddress, city: city, state: state, zip: zip)
-        self.address = address
+        self.address = address.asAString
         OfficialController.getOfficials(address.asAString) {
             self.tableView.reloadData()
         }
