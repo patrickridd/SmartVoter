@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="87Y-Os-bYy">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="87Y-Os-bYy">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Profile-->
@@ -19,88 +19,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-pR-84w">
-                                <rect key="frame" x="0.0" y="239" width="320" height="192"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87v-47-IA2">
-                                <rect key="frame" x="12" y="121" width="292" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-pR-84w"/>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places to Vote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-xM-ueK">
-                                <rect key="frame" x="105" y="212" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-uw-e4G">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7K5-Qy-5vr">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3db-u2-8Ov">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gbl-uf-tUS">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
-                                <rect key="frame" x="103" y="76" width="113" height="30"/>
                                 <state key="normal" title="Register To Vote"/>
                                 <connections>
                                     <action selector="registerToVoteButtonTapped:" destination="87Y-Os-bYy" eventType="touchUpInside" id="eIl-7S-BWw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-if-GuZ">
-                                <rect key="frame" x="265" y="152" width="40" height="30"/>
-                                <color key="backgroundColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="6cZ-iP-ntv"/>
-                                </constraints>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-if-GuZ">
+                                <frame key="frameInset" minX="252" minY="215" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="87Y-Os-bYy" eventType="touchUpInside" id="RPC-pf-f7Y"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update your Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-uw-e4G">
-                                <rect key="frame" x="10" y="152" width="245" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JvO-if-GuZ" firstAttribute="leading" secondItem="kpi-uw-e4G" secondAttribute="trailing" constant="10" id="5nE-4e-f6r"/>
-                            <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="kpi-uw-e4G" secondAttribute="bottom" constant="30" id="6na-BB-auM"/>
+                            <constraint firstAttribute="trailing" secondItem="kpi-uw-e4G" secondAttribute="trailing" constant="10" id="52X-V9-pUI"/>
+                            <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="61" id="6CR-Eu-87X"/>
+                            <constraint firstItem="7K5-Qy-5vr" firstAttribute="top" secondItem="kpi-uw-e4G" secondAttribute="bottom" constant="5" id="8J0-aH-4hV"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="8oA-ej-pDd"/>
-                            <constraint firstItem="JvO-if-GuZ" firstAttribute="leading" secondItem="kpi-uw-e4G" secondAttribute="trailing" constant="29" id="BdU-7R-ccw"/>
                             <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="DIT-lg-pwH"/>
+                            <constraint firstAttribute="trailing" secondItem="3db-u2-8Ov" secondAttribute="trailing" constant="10" id="GlZ-F3-vGr"/>
+                            <constraint firstItem="Gbl-uf-tUS" firstAttribute="top" secondItem="3db-u2-8Ov" secondAttribute="bottom" constant="5" id="Gvf-GR-gYh"/>
                             <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="J7P-TP-BXo"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="MyQ-ey-yyM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JvO-if-GuZ" secondAttribute="trailing" constant="-1" id="QOZ-Ee-VzP"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="YYi-xM-ueK" secondAttribute="trailing" constant="-203" id="Rdq-lO-DZg"/>
-                            <constraint firstItem="87v-47-IA2" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="15" id="U1p-Yy-LRQ"/>
-                            <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="6" id="Uo9-xr-zXb"/>
-                            <constraint firstItem="JvO-if-GuZ" firstAttribute="top" secondItem="87v-47-IA2" secondAttribute="bottom" constant="10" id="X2v-ww-KAc"/>
-                            <constraint firstItem="87v-47-IA2" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="-4" id="a14-LE-1q2"/>
-                            <constraint firstItem="kpi-uw-e4G" firstAttribute="top" secondItem="87v-47-IA2" secondAttribute="bottom" constant="10" id="bhg-Kf-pp9"/>
+                            <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="5" id="Uo9-xr-zXb"/>
+                            <constraint firstItem="3db-u2-8Ov" firstAttribute="top" secondItem="7K5-Qy-5vr" secondAttribute="bottom" constant="5" id="bMX-Zg-W03"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="c3P-Dh-f0h"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="87v-47-IA2" secondAttribute="trailing" id="cqG-MO-SDq"/>
+                            <constraint firstItem="3db-u2-8Ov" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" constant="10" id="fun-hX-DCd"/>
                             <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="gCK-eA-PKq"/>
-                            <constraint firstItem="JvO-if-GuZ" firstAttribute="height" secondItem="kpi-uw-e4G" secondAttribute="height" id="oZU-lB-EC6"/>
-                            <constraint firstItem="JvO-if-GuZ" firstAttribute="width" secondItem="kpi-uw-e4G" secondAttribute="width" id="pA3-TC-MVy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JvO-if-GuZ" secondAttribute="trailing" constant="-1" id="rOR-X2-RaX"/>
-                            <constraint firstItem="kpi-uw-e4G" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" constant="10" id="rVj-RQ-1sK"/>
-                            <constraint firstItem="JvO-if-GuZ" firstAttribute="leading" secondItem="kpi-uw-e4G" secondAttribute="trailing" constant="12" id="ued-Tt-2Ey"/>
+                            <constraint firstAttribute="trailing" secondItem="Gbl-uf-tUS" secondAttribute="trailing" constant="10" id="j0f-mL-NLv"/>
+                            <constraint firstItem="kpi-uw-e4G" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" constant="10" id="leJ-cQ-HKy"/>
+                            <constraint firstItem="kpi-uw-e4G" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" constant="5" id="mUZ-wY-vkq"/>
+                            <constraint firstItem="Gbl-uf-tUS" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" constant="10" id="nUM-GO-G2V"/>
+                            <constraint firstAttribute="trailing" secondItem="7K5-Qy-5vr" secondAttribute="trailing" constant="10" id="qD9-Dl-jNT"/>
+                            <constraint firstItem="7K5-Qy-5vr" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" constant="10" id="v7v-Lb-a77"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Rdq-lO-DZg"/>
-                                <exclude reference="BdU-7R-ccw"/>
-                                <exclude reference="QOZ-Ee-VzP"/>
-                                <exclude reference="pA3-TC-MVy"/>
-                                <exclude reference="ued-Tt-2Ey"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addressTextField" destination="kpi-uw-e4G" id="bVh-JD-1Kz"/>
-                        <outlet property="livingAddressLabel" destination="87v-47-IA2" id="J23-G1-536"/>
                         <outlet property="mapView" destination="Jc5-pR-84w" id="C7V-ZH-dhI"/>
                         <outlet property="placesToVoteLabel" destination="YYi-xM-ueK" id="Ugz-2J-RCi"/>
                         <outlet property="registerToVoteLabel" destination="E3v-zm-v7r" id="PmZ-8h-pJr"/>
@@ -109,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km8-MV-VLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637" y="936"/>
+            <point key="canvasLocation" x="635.625" y="935"/>
         </scene>
     </scenes>
 </document>
