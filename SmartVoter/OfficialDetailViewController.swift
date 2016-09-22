@@ -19,6 +19,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     @IBOutlet weak var streetAddressLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var socialMediaLabel: UILabel!
     
     
     var official: Official?
@@ -44,6 +45,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         webAddressLabel.text = official.url ?? "No website found"
         streetAddressLabel.text = address?.asAString ?? "No address provided"
         emailLabel.text = official.email ?? "No email provided"
+        socialMediaLabel.text = official.social?.type ?? "NO link provided"
         guard let photoURL = official.photoURL else { return }
         ImageController.imageForURL(photoURL) { (image) in
             self.officialImageView.image = image
