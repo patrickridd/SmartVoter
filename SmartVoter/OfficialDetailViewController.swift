@@ -38,10 +38,11 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     func updateOfficials(official: Official, address: String) {
         
         officialName.text = official.name
+        phoneNumberLabel.text = official.phone ?? "No phone number was provided"
         officialOfficeLabel.text = official.office
-        webAddressLabel.text = official.url
-        streetAddressLabel.text = address
-        emailLabel.text = official.email
+        webAddressLabel.text = official.url ?? "No website found"
+        streetAddressLabel.text = address ?? "No address provided"
+        emailLabel.text = official.email ?? "No email provided"
         guard let photoURL = official.photoURL else { return }
         ImageController.imageForURL(photoURL) { (image) in
             self.officialImageView.image = image
@@ -59,10 +60,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     @IBAction func addressButtonTapped(sender: AnyObject) {
-        guard let vc = storyboard?.instantiateViewControllerWithIdentifier("addressMapView") else {
-            return
-        }
-        presentViewController(vc, animated: true, completion: nil)
+    //    guard let vc = storyboard?.instantiateViewControllerWithIdentifier("addressMapView") else {
+    //        return
+    //    }
+    //    presentViewController(vc, animated: true, completion: nil)
         
     }
     
@@ -86,9 +87,9 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         
         if let official = official {
             
-            let alertController = UIAlertController(title: "Would you like to representative \(official.name ?? "No Contact Found")", message: "Press Ok to call \(official.name).", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Would you like to call \(official.name ?? "No Contact Found")", message: "Press the call button to call \(official.name ?? "No Contact Name Found").", preferredStyle: .Alert)
             
-            let yesAction = UIAlertAction(title: "Yes", style: .Default) { (action) -> Void in
+            let yesAction = UIAlertAction(title: "Call", style: .Default) { (action) -> Void in
                 
                 guard let officialPhoneNumber = official.phone else { return }
                 var phoneNumberNoCharacter = officialPhoneNumber
@@ -105,7 +106,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 }
             }
             
-            let noAction = UIAlertAction(title: "No", style: .Cancel) { (action) -> Void in
+            let noAction = UIAlertAction(title: "Cancel Call", style: .Cancel) { (action) -> Void in
                 print("cancelled Call")
             }
             
