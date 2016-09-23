@@ -73,27 +73,21 @@ class ElectionController {
                     self.elections = contests
                     completion(contests)
                     
-                    // Gets Voter Registration URL
-                    guard let stateDictionary = jsonDictionary["state"] as? [[String:AnyObject]] else {
-                        return
-                    }
-                    if stateDictionary.count > 0 {
-                        let stateArray = stateDictionary[0]
-                        guard let electionBodyDictionary = stateArray["electionAdministrationBody"] as? [String:AnyObject],
+                }
+                // Gets Voter Registration URL
+                guard let stateDictionary = jsonDictionary["state"] as? [[String:AnyObject]] else {
+                    return
+                }
+                if stateDictionary.count > 0 {
+                    let stateArray = stateDictionary[0]
+                    guard let electionBodyDictionary = stateArray["electionAdministrationBody"] as? [String:AnyObject],
                         let registrationURL = electionBodyDictionary["electionRegistrationUrl"] as? String else {
                             return
-                        }
-                       ProfileController.sharedController.saveRegisterToVoteURL(registrationURL)
                     }
-                    
-                    
-                    guard let pollingLocationDictionary = jsonDictionary["pollingLocations"] as? [[String: AnyObject]] else {
-                        return
-                    }
-                    
-                    let pollingLocations = pollingLocationDictionary.flatMap({PollingLocation(jsonDictionary: $0)})
-                    PollingLocationController.sharedController.pollingLocations = pollingLocations
+                    ProfileController.sharedController.saveRegisterToVoteURL(registrationURL)
                 }
+                
+
                 
             }
         }

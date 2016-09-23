@@ -33,10 +33,21 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateLabels()
-        populateMapView()
+    
+        setupProfileViewController()
     }
     
+    func setupProfileViewController() {
+        self.updateLabels()
+
+        guard let address = self.livingAddress else {
+            return
+        }
+        print(address.asAString)
+        ProfileController.getPollingAddress(address) { 
+            self.populateMapView()
+        }
+    }
     
     @IBAction func updateButtonTapped(sender: AnyObject) {
         if updateLabel.title == "Update" {
@@ -53,13 +64,15 @@ class ProfileViewController: UIViewController {
                 let cityText = cityTextField.text where cityText.characters.count > 0,
                 let streetText = streetTextField.text where streetText.characters.count > 0,
                 let zipText = zipTextField.text where zipText.characters.count > 0  else {
+                    self.updateLabels()
                 return
             }
             
             let newAddress = Address(line1: streetText, city: cityText, state: stateText, zip: zipText)
             ProfileController.sharedController.saveAddressToUserDefault(newAddress)
+            livingAddress = newAddress
+            setupProfileViewController()
             updateLabels()
-
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let nc = NSNotificationCenter.defaultCenter()
                 nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
@@ -103,15 +116,25 @@ class ProfileViewController: UIViewController {
                 return
             }
             
-            let span = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
+            let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
             
             for (location, pollingLocation) in pollingLocationCLLocation {
                 let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = coordinate
-                annotation.title = pollingLocation.locationName
+                if let pollingHours = pollingLocation.pollingHours {
+                    annotation.title = "\(pollingLocation.locationName): Open \(pollingHours)"
+                } else {
+                    annotation.title = pollingLocation.locationName
+                }
+                
+                annotation.subtitle = pollingLocation.streetName
+        
                 let region = MKCoordinateRegion(center: coordinate, span: span)
+                self.mapView.showsUserLocation = true
                 self.mapView.setRegion(region, animated: true)
+                self.mapView.addAnnotation(annotation)
             }
         }
     }

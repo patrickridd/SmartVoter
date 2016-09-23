@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreLocation
-
+import MapKit
 
 class PollingLocationController {
     
@@ -26,17 +26,18 @@ class PollingLocationController {
                 
                 guard let placemark = placemark?.first,
                     let location = placemark.location else {
-                        completion(pollingLocationCLLocation: [])
                         return
                 }
                 locations.append(location: location, pollingLocation: pollingLocation)
+                completion(pollingLocationCLLocation: locations)
+
             }
         }
-        completion(pollingLocationCLLocation: locations)
     }
     
     /// This method formats the pollingLocations address properties into a single address and returns it as a String.
     func formatPollingAdress(pollingLocation: PollingLocation) -> String {
+    
         let address = "\(pollingLocation.streetName), \(pollingLocation.zip), \(pollingLocation.city), \(pollingLocation.state)"
         
         return address
