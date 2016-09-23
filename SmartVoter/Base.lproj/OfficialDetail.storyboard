@@ -60,7 +60,6 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNZ-fE-Q4A">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="KaQ-C6-ENo"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="U1F-BG-gw1"/>
                                                     <constraint firstAttribute="height" constant="40" id="lQm-xT-74T"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="mCI-Q3-5rU"/>
@@ -81,7 +80,6 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds5-ox-f7C">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="5Wg-TO-rdd"/>
                                                     <constraint firstAttribute="width" constant="40" id="OLp-qj-WoN"/>
                                                 </constraints>
                                                 <state key="normal" image="Map Marker-50"/>
@@ -91,9 +89,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="5NK-5E-7KV" firstAttribute="baseline" secondItem="Ds5-ox-f7C" secondAttribute="baseline" id="dFY-8T-S85"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hfN-9k-B8M">
                                         <subviews>
@@ -154,6 +149,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="hfN-9k-B8M" firstAttribute="top" secondItem="ab8-gx-oeq" secondAttribute="top" constant="101" id="RDN-06-8UV"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
