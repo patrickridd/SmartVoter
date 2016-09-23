@@ -8,6 +8,12 @@
 
 import UIKit
 
+//protocol CandidateTableViewCellDelegate {
+//    func presentEmail()
+//    func presentPhoneAlert()
+//    func
+//}
+
 class CandidateTableViewCell: UITableViewCell {
 
     
