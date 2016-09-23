@@ -207,6 +207,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="XVO-Qa-Ibt" id="zjn-jP-e9A"/>
+                        <segue destination="otu-jh-ZBj" kind="show" identifier="toDetailFromAnnotation" action="showDetailViewController:sender:" id="c8R-Et-4Xt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTf-ga-z4g" userLabel="First Responder" sceneMemberID="firstResponder"/>

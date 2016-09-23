@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var address: String?
@@ -41,7 +41,7 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
         forwardGeocodeAddress(newAddress) { (location) in
             let annotation = MKPointAnnotation()
             guard let coordinate = location?.coordinate else { return }
-           guard let officialNames = self.official?.name else { return }
+            guard let officialNames = self.official?.name else { return }
             annotation.coordinate = coordinate
             annotation.title = officialNames
             annotation.subtitle = newAddress
@@ -89,4 +89,33 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
             completion(location: location)
         }
     }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            
+            if let annotation = view.annotation {
+                guard let newAddress = address else { return }
+                forwardGeocodeAddress(newAddress) { (location) in
+                    let annotation = MKPointAnnotation()
+                    guard let coordinate = location?.coordinate else { return }
+                    guard let officialNames = self.official?.name else { return }
+                    annotation.coordinate = coordinate
+                    annotation.title = officialNames
+                    annotation.subtitle = newAddress
+                    
+                    self.performSegueWithIdentifier("toDetailFromAnnotation", sender: annotation)
+                }
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toDetailFromAnnotation"  {
+            
+            let detailVC = segue.destinationViewController as? OfficialDetailViewController
+            detailVC?.official = official
+        }
+    }
 }
+
+
