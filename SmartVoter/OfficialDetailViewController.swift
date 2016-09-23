@@ -200,6 +200,21 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         _ = UIAlertController(title:"Could Not Send Email" , message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
     }
     
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResult.Cancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResult.Saved.rawValue:
+            print("Mail saved")
+        case MFMailComposeResult.Sent.rawValue:
+            print("Mail sent")
+        case MFMailComposeResult.Failed.rawValue:
+            print("Mail sent failure: \(error!.localizedDescription)")
+        default:
+            break
+        }
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
     //  MARK: Helper Functions
     
     func upDateBackgroundColor () {
@@ -213,29 +228,6 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         }
     }
     
-    func updateFacebookButtonStatus () {
-        if official?.type == "Facebook" {
-            facebookButton.hidden = false
-        } else {
-            facebookButton.hidden = true
-        }
-    }
-    
-    func updateGooglePlusButtonStatus() {
-        if official?.type == "GooglePlus" {
-            googlePlusButton.hidden = false
-        } else {
-            googlePlusButton.hidden = true
-        }
-    }
-    
-    func updateTwitterButtonStatus () {
-        if official?.type == "Twitter" {
-            twitterButton.hidden = false
-        } else {
-            twitterButton.hidden = true
-        }
-    }
     
     func updateSocialButtons() {
         for social in (official?.social)! {
