@@ -18,8 +18,6 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     var contest: Contest?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +34,11 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         } else if contest.type == "Referendum" {
             electionTypeLabel.text = contest.referendumTitle?.capitalizedString
             descriptionLabel.text = contest.referendumSubtitle?.capitalizedString
+            tableView.hidden = true
         }
+        
+        guard let state = ProfileController.sharedController.address?.state.capitalizedString else { return }
+        iconImageView.image = UIImage(named: "\(state)-Flag-256")
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,8 +52,6 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         let candidate = candidates[indexPath.row]
         cell.updateWith(candidate)
         
-        
-        
         return cell
     }
 
@@ -60,17 +60,13 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let headerView = view as? UITableViewHeaderFooterView else {
-            return
-        }
+        guard let headerView = view as? UITableViewHeaderFooterView else { return }
         
         headerView.textLabel?.textColor = UIColor.whiteColor()
-        headerView.textLabel?.font = UIFont(name: "Avenir", size: 20.0)
-        headerView.contentView.backgroundColor = UIColor.redColor()
+        headerView.textLabel?.font = UIFont(name: "Avenir", size: 19.0)
+        headerView.contentView.backgroundColor = UIColor(red:0.10, green:0.36, blue:0.56, alpha:1.00)
         headerView.textLabel?.textAlignment = .Center
     }
-  
-    
 }
 
 

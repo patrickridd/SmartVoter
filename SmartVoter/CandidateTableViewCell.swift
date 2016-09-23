@@ -16,8 +16,9 @@ class CandidateTableViewCell: UITableViewCell {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
-    
-    
+    @IBOutlet weak var phoneButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var websiteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

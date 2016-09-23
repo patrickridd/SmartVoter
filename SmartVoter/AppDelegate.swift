@@ -16,10 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        guard let titleFont = UIFont(name: "Avenir", size: 18) else {
-            return true
-        }
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: titleFont]
+        guard let font = UIFont(name: "Avenir", size: 18) else { return true }
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UINavigationBar.appearance().tintColor = .whiteColor()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], forState: .Normal)
 
         return true
     }
