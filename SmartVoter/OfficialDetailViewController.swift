@@ -80,19 +80,13 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     @IBAction func emailButtonTapped(sender: AnyObject) {
-        guard MFMailComposeViewController.canSendMail()
-            else { return }
-        
-        guard let officialEmail = official?.email else { return }
-        
-        let mailController = MFMailComposeViewController()
-        mailController.mailComposeDelegate = self
-        
-        mailController.setToRecipients([officialEmail])
-        print(officialEmail)
-        
-        presentViewController(mailController, animated: true , completion: nil)
-        
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    
     }
     
     @IBAction func phoneButtonTapped(sender: AnyObject) {
@@ -160,6 +154,22 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             let safariVC = SFSafariViewController(URL: urls)
             presentViewController(safariVC, animated: true, completion: nil)
         }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        guard let officialEmail = self.official?.email else { return MFMailComposeViewController()}
+        mailComposerVC.setToRecipients([officialEmail])
+        mailComposerVC.setSubject("Sending you an in-app e-mail...")
+        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
     }
     
     // MARK: - Navigation
