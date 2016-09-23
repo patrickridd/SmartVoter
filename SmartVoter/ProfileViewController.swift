@@ -24,6 +24,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var zipTextField: UITextField!
     @IBOutlet weak var updateLabel: UIBarButtonItem!
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var stackBackGround: UIView!
     
     static let addressChangedNotification = "Address Changed"
     var livingAddress: Address?
@@ -52,6 +54,8 @@ class ProfileViewController: UIViewController {
     @IBAction func updateButtonTapped(sender: AnyObject) {
         if updateLabel.title == "Update" {
             updateLabel.title = "Save"
+            stackBackGround.hidden = false
+            blurView.hidden = false
             registerToVoteLabel.hidden = true
             streetTextField.hidden = false
             cityTextField.hidden = false
@@ -95,6 +99,8 @@ class ProfileViewController: UIViewController {
     
         /// Updates VC's labels.
     func updateLabels() {
+        stackBackGround.hidden = true
+        blurView.hidden = true
         registerToVoteLabel.hidden = false
         streetTextField.hidden = true
         cityTextField.hidden = true
@@ -113,7 +119,7 @@ class ProfileViewController: UIViewController {
     /// Gets User's Polling Locations as CLLocations and populates them on a map.
     func populateMapView() {
         PollingLocationController.sharedController.geoCodePollingAddresses { (pollingLocationCLLocation) in
-            if pollingLocationCLLocation.count == 0 {
+            if pollingLocationCLLocation.count == 0  {
                 self.placesToVoteLabel.text = "No Data found for your Polling Locations"
                 return
             }

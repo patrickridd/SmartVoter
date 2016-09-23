@@ -20,6 +20,10 @@ class PollingLocationController {
     func geoCodePollingAddresses(completion: (pollingLocationCLLocation: [(location: CLLocation, pollingLocation: PollingLocation)])->Void) {
         let geocoder = CLGeocoder()
         var locations = [(location:CLLocation, pollingLocation: PollingLocation)]()
+        if pollingLocations.count == 0 {
+            completion(pollingLocationCLLocation: [])
+            return
+        }
         for pollingLocation in pollingLocations {
             let formattedAddress = formatPollingAdress(pollingLocation)
             geocoder.geocodeAddressString(formattedAddress) { (placemark, error) in
