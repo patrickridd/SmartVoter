@@ -11,20 +11,13 @@ import MapKit
 
 class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    
     @IBOutlet weak var mapView: MKMapView!
     
     var address: String?
     var locationManager: CLLocationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 3000
-    var currertLocatoin: CLLocation?
     var coordinate: CLLocationCoordinate2D?
     var geocoder: CLGeocoder = CLGeocoder()
-    var regionSet: Bool = false
-    var region: MKCoordinateRegion?
-    
     var official: Official?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +52,6 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        
         guard !annotation.isKindOfClass(MKUserLocation) else {
             return nil
         }
@@ -76,16 +68,13 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
             av.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
             annotationView = av
         }
-        
         if let annotationView = annotationView {
-            // Configure your annotation view here
             annotationView.canShowCallout = true
             annotationView.image = UIImage(named: "liberty.png")
         }
         
         return annotationView
     }
-
     
     func forwardGeocodeAddress (address: String, completion: (location: CLLocation?) -> Void) {
         let geoCoder = CLGeocoder()
@@ -99,6 +88,5 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
             }
             completion(location: location)
         }
-        
     }
 }

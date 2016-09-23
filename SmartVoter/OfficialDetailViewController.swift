@@ -67,8 +67,6 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         }
     }
     
-    
-    
     @IBAction func webButtonTapped(sender: AnyObject) {
         guard let official = official else { return }
         guard let officialWebsite = official.url else { return }
@@ -163,8 +161,6 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             presentViewController(safariVC, animated: true, completion: nil)
         }
     }
-    
-    
     
     // MARK: - Navigation
     
