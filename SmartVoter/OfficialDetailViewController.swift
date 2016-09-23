@@ -53,7 +53,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             self.officialImageView.image = image
         }
     }
-  
+    
     func updateSocialButtonImage () {
         
         if official?.social?.type == "Facebook" {
@@ -66,7 +66,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             socialMediaButton.setImage(UIImage(named: "youTube.png"), forState: .Normal)
         }
     }
-
+    
     
     
     @IBAction func webButtonTapped(sender: AnyObject) {
@@ -79,11 +79,6 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     @IBAction func addressButtonTapped(sender: AnyObject) {
-        //    guard let vc = storyboard?.instantiateViewControllerWithIdentifier("addressMapView") else {
-        //        return
-        //    }
-        //    presentViewController(vc, animated: true, completion: nil)
-        
     }
     
     @IBAction func emailButtonTapped(sender: AnyObject) {
@@ -155,6 +150,13 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         } else if official?.social?.type == "Twitter" {
             guard let id = official?.social?.id else { return }
             let twitterURL = "https://www.twitter.com/\(id)"
+            guard let urls = NSURL(string: twitterURL) else { return }
+            
+            let safariVC = SFSafariViewController(URL: urls)
+            presentViewController(safariVC, animated: true, completion: nil)
+        } else if official?.social?.type == "YouTube" {
+            guard let id = official?.social?.id else { return }
+            let twitterURL = "https://www.youtube.com/user/\(id)"
             guard let urls = NSURL(string: twitterURL) else { return }
             
             let safariVC = SFSafariViewController(URL: urls)
