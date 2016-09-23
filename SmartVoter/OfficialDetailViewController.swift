@@ -33,6 +33,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 return
         }
         updateOfficials(official)
+        updateSocialButtonImage()
         
     }
     
@@ -53,6 +54,18 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         }
     }
     
+    func updateSocialButtonImage () {
+        
+        if official?.social?.type == "Facebook" {
+            socialMediaButton.setImage(UIImage(named:"facebook.png"), forState: .Normal)
+        } else if official?.social?.type == "GooglePlus" {
+            socialMediaButton.setImage(UIImage(named:"googlePlus.png"), forState: .Normal)
+        } else if official?.social?.type == "Twitter" {
+            socialMediaButton.setImage(UIImage(named: "twitter.png"), forState: .Normal)
+        } else if official?.social?.type == "YouTube" {
+            socialMediaButton.setImage(UIImage(named: "youTube.png"), forState: .Normal)
+        }
+    }
     
     @IBAction func webButtonTapped(sender: AnyObject) {
         guard let official = official else { return }
@@ -64,26 +77,15 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     @IBAction func addressButtonTapped(sender: AnyObject) {
-        //    guard let vc = storyboard?.instantiateViewControllerWithIdentifier("addressMapView") else {
-        //        return
-        //    }
-        //    presentViewController(vc, animated: true, completion: nil)
-        
     }
     
     @IBAction func emailButtonTapped(sender: AnyObject) {
-        guard MFMailComposeViewController.canSendMail()
-            else { return }
-        
-        guard let officialEmail = official?.email else { return }
-        
-        let mailController = MFMailComposeViewController()
-        mailController.mailComposeDelegate = self
-        
-        mailController.setToRecipients([officialEmail])
-        print(officialEmail)
-        
-        presentViewController(mailController, animated: true , completion: nil)
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
         
     }
     
@@ -144,10 +146,31 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             
             let safariVC = SFSafariViewController(URL: urls)
             presentViewController(safariVC, animated: true, completion: nil)
+        } else if official?.social?.type == "YouTube" {
+            guard let id = official?.social?.id else { return }
+            let twitterURL = "https://www.youtube.com/user/\(id)"
+            guard let urls = NSURL(string: twitterURL) else { return }
+            
+            let safariVC = SFSafariViewController(URL: urls)
+            presentViewController(safariVC, animated: true, completion: nil)
         }
     }
     
+    // MARK: Email helper functions
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        guard let officialEmail = self.official?.email else { return MFMailComposeViewController()}
+        mailComposerVC.setToRecipients([officialEmail])
+        mailComposerVC.setSubject("Sending you an in-app e-mail...")
+        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        
+        return mailComposerVC
+    }
     
+    func showSendMailErrorAlert() {
+        _ = UIAlertController(title:"Could Not Send Email" , message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
+    }
     
     // MARK: - Navigation
     
@@ -158,6 +181,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             guard let detailViewController = segue.destinationViewController as? OfficialAddressMapViewController else { return }
             guard let address = address else { return }
             detailViewController.address = address.asAString
+            detailViewController.official = official
         }
     }
 }

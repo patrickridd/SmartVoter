@@ -10,27 +10,22 @@ import UIKit
 import MapKit
 
 class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
     
     @IBOutlet weak var mapView: MKMapView!
     
     var address: String?
     var locationManager: CLLocationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 3000
-    var currertLocatoin: CLLocation?
     var coordinate: CLLocationCoordinate2D?
     var geocoder: CLGeocoder = CLGeocoder()
-    var regionSet: Bool = false
-    var region: MKCoordinateRegion?
-    
     var official: Official?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
         
     }
+    
+    //MARK: Map View Functions/Setup
     
     func setupMapView () {
         
@@ -46,12 +41,40 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
         forwardGeocodeAddress(newAddress) { (location) in
             let annotation = MKPointAnnotation()
             guard let coordinate = location?.coordinate else { return }
+            guard let officialNames = self.official?.name else { return }
             annotation.coordinate = coordinate
-            annotation.title = newAddress
+            annotation.title = officialNames
+            annotation.subtitle = newAddress
             self.mapView.addAnnotation(annotation)
+            let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 8000, 8000)
+            self.mapView.setRegion(region, animated: true)
         }
     }
     
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !annotation.isKindOfClass(MKUserLocation) else {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        
+        var annotationView: MKAnnotationView?
+        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(annotationIdentifier) {
+            annotationView = dequeuedAnnotationView
+            annotationView?.annotation = annotation
+        }
+        else {
+            let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            av.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+            annotationView = av
+        }
+        if let annotationView = annotationView {
+            annotationView.canShowCallout = true
+            annotationView.image = UIImage(named: "liberty.png")
+        }
+        
+        return annotationView
+    }
     
     func forwardGeocodeAddress (address: String, completion: (location: CLLocation?) -> Void) {
         let geoCoder = CLGeocoder()
@@ -65,6 +88,34 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
             }
             completion(location: location)
         }
-        
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            
+            if let annotation = view.annotation {
+                guard let newAddress = address else { return }
+                forwardGeocodeAddress(newAddress) { (location) in
+                    let annotation = MKPointAnnotation()
+                    guard let coordinate = location?.coordinate else { return }
+                    guard let officialNames = self.official?.name else { return }
+                    annotation.coordinate = coordinate
+                    annotation.title = officialNames
+                    annotation.subtitle = newAddress
+                    
+                    self.performSegueWithIdentifier("toDetailFromAnnotation", sender: annotation)
+                }
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toDetailFromAnnotation"  {
+            
+            let detailVC = segue.destinationViewController as? OfficialDetailViewController
+            detailVC?.official = official
+        }
     }
 }
+
+
