@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
     var livingAddress: Address?
     var pollingLocations: [CLLocation]?
     var registrationURL: String?
-    
+    var pollingAnnotations = [MKAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,8 @@ class ProfileViewController: UIViewController {
             let newAddress = Address(line1: streetText, city: cityText, state: stateText, zip: zipText)
             ProfileController.sharedController.saveAddressToUserDefault(newAddress)
             livingAddress = newAddress
+            mapView.removeAnnotations(self.pollingAnnotations)
+            self.pollingAnnotations.removeAll()
             setupProfileViewController()
             updateLabels()
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -124,12 +126,12 @@ class ProfileViewController: UIViewController {
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = coordinate
                 if let pollingHours = pollingLocation.pollingHours {
-                    annotation.title = "\(pollingLocation.locationName): Open \(pollingHours)"
+                    annotation.subtitle = "\(pollingLocation.streetName) - Open \(pollingHours)"
                 } else {
-                    annotation.title = pollingLocation.locationName
+                    annotation.subtitle = pollingLocation.streetName
                 }
-                
-                annotation.subtitle = pollingLocation.streetName
+                annotation.title = pollingLocation.locationName
+                self.pollingAnnotations.append(annotation)
         
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self.mapView.showsUserLocation = true

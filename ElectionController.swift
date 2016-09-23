@@ -85,10 +85,7 @@ class ElectionController {
                             return
                     }
                     ProfileController.sharedController.saveRegisterToVoteURL(registrationURL)
-                }
-                
-
-                
+                }   
             }
         }
     }
