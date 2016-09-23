@@ -22,13 +22,24 @@ class CandidateTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupButtons()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupButtons() {
+        let phoneImage = UIImage(named: "Phone-50")
+        let emailImage = UIImage(named: "New Message-48")
+        let websiteImage = UIImage(named: "Safari-48")
+        
+        phoneButton.setImage(phoneImage, forState: .Normal)
+        emailButton.setImage(emailImage, forState: .Normal)
+        websiteButton.setImage(websiteImage, forState: .Normal)
     }
     
     func updateWith(candidate: Candidate) {
@@ -38,7 +49,13 @@ class CandidateTableViewCell: UITableViewCell {
         phoneLabel.text = candidate.phone
         emailLabel.text = candidate.email
         websiteLabel.text = candidate.websiteURL
-        
     }
-
 }
+
+
+
+
+
+
+
+
