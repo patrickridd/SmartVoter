@@ -175,6 +175,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             guard let detailViewController = segue.destinationViewController as? OfficialAddressMapViewController else { return }
             guard let address = address else { return }
             detailViewController.address = address.asAString
+            detailViewController.official = official
         }
     }
 }
