@@ -33,6 +33,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 return
         }
         updateOfficials(official)
+        updateSocialButtonImage()
         
     }
     
@@ -52,6 +53,20 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             self.officialImageView.image = image
         }
     }
+  
+    func updateSocialButtonImage () {
+        
+        if official?.social?.type == "Facebook" {
+            socialMediaButton.setImage(UIImage(named:"facebook.png"), forState: .Normal)
+        } else if official?.social?.type == "GooglePlus" {
+            socialMediaButton.setImage(UIImage(named:"googlePlus.png"), forState: .Normal)
+        } else if official?.social?.type == "Twitter" {
+            socialMediaButton.setImage(UIImage(named: "twitter.png"), forState: .Normal)
+        } else if official?.social?.type == "YouTube" {
+            socialMediaButton.setImage(UIImage(named: "youTube.png"), forState: .Normal)
+        }
+    }
+
     
     
     @IBAction func webButtonTapped(sender: AnyObject) {
