@@ -137,11 +137,43 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-tJ-eJS">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="CZF-9Z-78O"/>
+                                                    <constraint firstAttribute="width" constant="35" id="e1G-pn-XgR"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="twitter"/>
+                                                <connections>
+                                                    <action selector="twitterButtonTapped:" destination="otu-jh-ZBj" eventType="touchUpInside" id="1v0-ac-fut"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJV-FX-O4E">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="bnx-JN-31k"/>
+                                                    <constraint firstAttribute="width" constant="35" id="jCt-Yh-NNw"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="youTube"/>
+                                                <connections>
+                                                    <action selector="youTubeButtonTapped:" destination="otu-jh-ZBj" eventType="touchUpInside" id="C2P-GK-LEa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgI-Vk-Dut">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="BdT-yP-U8t"/>
+                                                    <constraint firstAttribute="height" constant="35" id="qP9-Y6-89c"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="googlePlus"/>
+                                                <connections>
+                                                    <action selector="googlePlusButtonTapped:" destination="otu-jh-ZBj" eventType="touchUpInside" id="1tw-cW-CJo"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-R0-MnY">
                                                 <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="KQH-gB-YQ2"/>
                                                     <constraint firstAttribute="width" constant="35" id="he6-mG-wP6"/>
+                                                    <constraint firstAttribute="height" constant="35" id="tvw-hb-vyc"/>
                                                 </constraints>
-                                                <state key="normal" image="Safari-48"/>
+                                                <state key="normal" image="facebook"/>
                                                 <connections>
                                                     <action selector="socialButtonTapped:" destination="otu-jh-ZBj" eventType="touchUpInside" id="JKQ-x8-ZGF"/>
                                                 </connections>
@@ -183,15 +215,18 @@
                     <connections>
                         <outlet property="backgroundImage" destination="mUc-oB-gMR" id="6yf-Ky-ScZ"/>
                         <outlet property="emailLabel" destination="jYs-Aw-QeA" id="IF1-rx-R8U"/>
+                        <outlet property="facebookButton" destination="Le3-R0-MnY" id="HuS-zQ-OzK"/>
+                        <outlet property="googlePlusButton" destination="QgI-Vk-Dut" id="Z7C-dr-c5g"/>
                         <outlet property="officialImageView" destination="WBM-lO-rWQ" id="klc-Yz-yZO"/>
                         <outlet property="officialName" destination="FGC-P4-kGg" id="IdV-mO-Xa2"/>
                         <outlet property="officialOfficeLabel" destination="tNd-dh-oJE" id="wOB-Ez-pQg"/>
                         <outlet property="partyLabel" destination="bNP-Zi-ZZu" id="7by-Il-VpN"/>
                         <outlet property="phoneNumberLabel" destination="iDg-ug-tUz" id="JIm-qB-dEp"/>
-                        <outlet property="socialMediaButton" destination="Le3-R0-MnY" id="kQw-fa-QQq"/>
                         <outlet property="socialMediaLabel" destination="GbI-TM-G9U" id="m2m-ya-kNr"/>
                         <outlet property="streetAddressLabel" destination="5NK-5E-7KV" id="bKb-hy-3TD"/>
+                        <outlet property="twitterButton" destination="R1z-tJ-eJS" id="06l-vQ-1QP"/>
                         <outlet property="webAddressLabel" destination="Xig-Ud-UU1" id="HOR-3Q-FwY"/>
+                        <outlet property="youtubeButton" destination="vJV-FX-O4E" id="041-US-LZG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCv-mz-qqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,5 +270,9 @@
         <image name="New Message-48" width="24" height="24"/>
         <image name="Phone-50" width="25" height="25"/>
         <image name="Safari-48" width="24" height="24"/>
+        <image name="facebook" width="24" height="24"/>
+        <image name="googlePlus" width="24" height="24"/>
+        <image name="twitter" width="24" height="24"/>
+        <image name="youTube" width="24" height="24"/>
     </resources>
 </document>

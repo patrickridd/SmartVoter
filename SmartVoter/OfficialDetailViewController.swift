@@ -20,9 +20,12 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var socialMediaLabel: UILabel!
-    @IBOutlet weak var socialMediaButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var partyLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var googlePlusButton: UIButton!
+    @IBOutlet weak var youtubeButton: UIButton!
+    @IBOutlet weak var twitterButton: UIButton!
     
     
     var official: Official?
@@ -34,12 +37,17 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             else {
                 return
         }
-        updateOfficials(official)
-        updateSocialButtonImage()
-        upDateBackgroundColor()
+        facebookButton.hidden = true
+        twitterButton.hidden = true
+        googlePlusButton.hidden = true
+        youtubeButton.hidden = true
         
-     //   officialImageView.layer.cornerRadius = 9
-     //   officialImageView.layer.masksToBounds = true
+        updateOfficials(official)
+        upDateBackgroundColor()
+        updateSocialButtons()
+        
+        //   officialImageView.layer.cornerRadius = 9
+        //   officialImageView.layer.masksToBounds = true
     }
     
     func updateOfficials(official: Official) {
@@ -52,7 +60,9 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         webAddressLabel.text = official.url ?? "No website found"
         streetAddressLabel.text = address?.asAString ?? "No address provided"
         emailLabel.text = official.email ?? "No email provided"
-        socialMediaLabel.text = official.social?.type ?? "NO link provided"
+        socialMediaLabel.text = "Social Media"
+        
+        
         partyLabel.text = "\(official.party ?? "Representative did not provide party affiliation") Party"
         guard let photoURL = official.photoURL else { return }
         ImageController.imageForURL(photoURL) { (image) in
@@ -60,30 +70,6 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         }
     }
     
-    
-    func upDateBackgroundColor () {
-        
-        backgroundImage.image = backgroundImage.image?.imageWithRenderingMode(.AlwaysTemplate)
-        if official?.party == "Democratic" {
-        backgroundImage.backgroundColor = UIColor.bradsBlue()
-        } else if official?.party == "Republican" {
-        
-        backgroundImage.backgroundColor = UIColor.navigationRed()
-        }
-    }
-    
-    func updateSocialButtonImage () {
-        
-        if official?.social?.type == "Facebook" {
-            socialMediaButton.setImage(UIImage(named:"facebook.png"), forState: .Normal)
-        } else if official?.social?.type == "GooglePlus" {
-            socialMediaButton.setImage(UIImage(named:"googlePlus.png"), forState: .Normal)
-        } else if official?.social?.type == "Twitter" {
-            socialMediaButton.setImage(UIImage(named: "twitter.png"), forState: .Normal)
-        } else if official?.social?.type == "YouTube" {
-            socialMediaButton.setImage(UIImage(named: "youTube.png"), forState: .Normal)
-        }
-    }
     
     @IBAction func webButtonTapped(sender: AnyObject) {
         guard let official = official else { return }
@@ -142,37 +128,61 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     @IBAction func socialButtonTapped(sender: AnyObject) {
-        
-        if official?.social?.type == "Facebook" {
-            guard let id = official?.social?.id else { return }
-            let facebookURL = "https://www.facebook.com/\(id)"
-            guard let urls = NSURL(string: facebookURL) else { return }
-            
-            let safariVC = SFSafariViewController(URL: urls)
-            presentViewController(safariVC, animated: true, completion: nil)
-        } else if official?.social?.type == "GooglePlus"  {
-            guard let id = official?.social?.id else { return }
-            let googlePlusURL = "https://plus.google.com/\(id)"
-            guard let urls = NSURL(string: googlePlusURL) else { return }
-            
-            let safariVC = SFSafariViewController(URL: urls)
-            presentViewController(safariVC, animated: true, completion: nil)
-        } else if official?.social?.type == "Twitter" {
-            guard let id = official?.social?.id else { return }
-            let twitterURL = "https://www.twitter.com/\(id)"
-            guard let urls = NSURL(string: twitterURL) else { return }
-            
-            let safariVC = SFSafariViewController(URL: urls)
-            presentViewController(safariVC, animated: true, completion: nil)
-        } else if official?.social?.type == "YouTube" {
-            guard let id = official?.social?.id else { return }
-            let twitterURL = "https://www.youtube.com/user/\(id)"
-            guard let urls = NSURL(string: twitterURL) else { return }
-            
-            let safariVC = SFSafariViewController(URL: urls)
-            presentViewController(safariVC, animated: true, completion: nil)
+        guard let socialArray = official?.social else { return }
+        for social in socialArray {
+            if social.type == "Facebook" {
+                guard let id = social.id else { return }
+                let facebookURL = "https://www.facebook.com/\(id)"
+                guard let urls = NSURL(string: facebookURL) else { return }
+                
+                let safariVC = SFSafariViewController(URL: urls)
+                presentViewController(safariVC, animated: true, completion: nil)
+            }
         }
     }
+    
+    @IBAction func googlePlusButtonTapped(sender: AnyObject) {
+        guard let socialArray = official?.social else { return }
+        for social in socialArray {
+            if social.type == "GooglePlus"  {
+                guard let id = social.id else { return }
+                let googlePlusURL = "https://plus.google.com/\(id)"
+                guard let urls = NSURL(string: googlePlusURL) else { return }
+                
+                let safariVC = SFSafariViewController(URL: urls)
+                presentViewController(safariVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @IBAction func youTubeButtonTapped(sender: AnyObject) {
+        guard let socialArray = official?.social else { return }
+        for social in socialArray {
+            if social.type == "YouTube" {
+                guard let id = social.id else { return }
+                let twitterURL = "https://www.youtube.com/user/\(id)"
+                guard let urls = NSURL(string: twitterURL) else { return }
+                
+                let safariVC = SFSafariViewController(URL: urls)
+                presentViewController(safariVC, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    @IBAction func twitterButtonTapped(sender: AnyObject) {
+        guard let socialArray = official?.social else { return }
+        for social in socialArray {
+            if social.type == "Twitter" {
+                guard let id = social.id else { return }
+                let twitterURL = "https://www.twitter.com/\(id)"
+                guard let urls = NSURL(string: twitterURL) else { return }
+                
+                let safariVC = SFSafariViewController(URL: urls)
+                presentViewController(safariVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
     
     // MARK: Email helper functions
     func configuredMailComposeViewController() -> MFMailComposeViewController {
@@ -189,6 +199,67 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     func showSendMailErrorAlert() {
         _ = UIAlertController(title:"Could Not Send Email" , message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
     }
+    
+    //  MARK: Helper Functions
+    
+    func upDateBackgroundColor () {
+        
+        backgroundImage.image = backgroundImage.image?.imageWithRenderingMode(.AlwaysTemplate)
+        if official?.party == "Democratic" {
+            backgroundImage.backgroundColor = UIColor.bradsBlue()
+        } else if official?.party == "Republican" {
+            
+            backgroundImage.backgroundColor = UIColor.navigationRed()
+        }
+    }
+    
+    func updateFacebookButtonStatus () {
+        if official?.type == "Facebook" {
+            facebookButton.hidden = false
+        } else {
+            facebookButton.hidden = true
+        }
+    }
+    
+    func updateGooglePlusButtonStatus() {
+        if official?.type == "GooglePlus" {
+            googlePlusButton.hidden = false
+        } else {
+            googlePlusButton.hidden = true
+        }
+    }
+    
+    func updateTwitterButtonStatus () {
+        if official?.type == "Twitter" {
+            twitterButton.hidden = false
+        } else {
+            twitterButton.hidden = true
+        }
+    }
+    
+    func updateSocialButtons() {
+        for social in (official?.social)! {
+            if social.type == "YouTube" {
+                youtubeButton.hidden = false
+            }
+            if social.type == "Twitter" {
+                twitterButton.hidden = false
+            }
+            
+            if social.type == "GooglePlus" {
+                googlePlusButton.hidden = false
+            }
+            if social.type == "Facebook" {
+                facebookButton.hidden = false
+            }
+            //  if official?.type == "YouTube" {
+            //      youtubeButton.hidden = false
+            //  } else {
+            //      youtubeButton.hidden = true
+            //  }
+        }
+    }
+    
     
     // MARK: - Navigation
     

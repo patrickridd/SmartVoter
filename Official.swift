@@ -34,7 +34,7 @@ struct Official {
     var type: String?
     var id: String?
     var url: String?
-    var social: Social?
+    var social: [Social]
     var office: Office?
     var email: String?
     
@@ -42,7 +42,7 @@ struct Official {
         
         // Only Return nil if we can't get Official's name.
         guard let name = dictionary[kName] as? String else {
-                return nil
+            return nil
         }
         
         self.name = name
@@ -63,7 +63,7 @@ struct Official {
             let address = Address(line1: line1, city: city, state: state, zip: zip)
             self.address = address
         }
-
+        
         // Get Phone Number
         if let phoneArray = dictionary[kPhone] as? [String],
             phoneNumber = phoneArray.first {
@@ -87,14 +87,18 @@ struct Official {
             self.email = email
         }
         // Get Social media items
+        var temp = [Social]()
         if let socialArray = dictionary[kSocial] as? [[String: AnyObject]]{
-           for socialDictionary in socialArray {
-            type = socialDictionary[kType] as? String
-            id = socialDictionary[kId] as? String
-            let social = Social(type: type, id: id)
-            self.social = social
-          //  print(social.type)
+            for socialDictionary in socialArray {
+                type = socialDictionary[kType] as? String
+                id = socialDictionary[kId] as? String
+                let social = Social(type: type, id: id)
+                temp.append(social)
+            }
         }
+        self.social = temp
+        print(social)
+
     }
-    }
+    
 }
