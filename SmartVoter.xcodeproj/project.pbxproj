@@ -39,6 +39,7 @@
 		51C2D3361D934CB50018109E /* OfficialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C2D3351D934CB50018109E /* OfficialDetailViewController.swift */; };
 		640411621D91DF2800B57A4C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411611D91DF2800B57A4C /* Address.swift */; };
 		640411641D91E25400B57A4C /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411631D91E25400B57A4C /* Social.swift */; };
+		6473387F1D958BC2006C7442 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473387E1D958BC2006C7442 /* ColorPalette.swift */; };
 		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		51C2D3351D934CB50018109E /* OfficialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailViewController.swift; sourceTree = "<group>"; };
 		640411611D91DF2800B57A4C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		640411631D91E25400B57A4C /* Social.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		6473387E1D958BC2006C7442 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */,
 				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
 				21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */,
+				6473387E1D958BC2006C7442 /* ColorPalette.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */,
 				21648E701D922E5800B966ED /* ProfileController.swift in Sources */,
 				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
+				6473387F1D958BC2006C7442 /* ColorPalette.swift in Sources */,
 				51C2D3301D92FFCC0018109E /* OfficialsTableViewController.swift in Sources */,
 				21E7270A1D90996300ADC64F /* OfficialController.swift in Sources */,
 				21E727081D9095AB00ADC64F /* OfficialTableViewCell.swift in Sources */,
