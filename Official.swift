@@ -87,13 +87,14 @@ struct Official {
             self.email = email
         }
         // Get Social media items
-        if let socialArray = dictionary[kSocial] as? [[String: AnyObject]],
-            socialDictionary = socialArray.first,
-            let type = socialDictionary[kType] as? String,
-            let id = socialDictionary[kId] as? String {
+        if let socialArray = dictionary[kSocial] as? [[String: AnyObject]]{
+           for socialDictionary in socialArray {
+            type = socialDictionary[kType] as? String
+            id = socialDictionary[kId] as? String
             let social = Social(type: type, id: id)
             self.social = social
+          //  print(social.type)
         }
     }
-    
+    }
 }
