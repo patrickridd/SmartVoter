@@ -86,7 +86,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         } else {
             self.showSendMailErrorAlert()
         }
-    
+        
     }
     
     @IBAction func phoneButtonTapped(sender: AnyObject) {
@@ -156,9 +156,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         }
     }
     
+    // MARK: Email helper functions
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        mailComposerVC.mailComposeDelegate = self
         guard let officialEmail = self.official?.email else { return MFMailComposeViewController()}
         mailComposerVC.setToRecipients([officialEmail])
         mailComposerVC.setSubject("Sending you an in-app e-mail...")
@@ -168,8 +169,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     }
     
     func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
-        sendMailErrorAlert.show()
+        _ = UIAlertController(title:"Could Not Send Email" , message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
     }
     
     // MARK: - Navigation
