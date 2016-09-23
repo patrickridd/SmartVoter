@@ -51,14 +51,14 @@
                                     <constraint firstItem="BqR-Iz-l6B" firstAttribute="top" secondItem="ybu-qc-KSj" secondAttribute="bottom" constant="8" id="BtI-XG-7OK"/>
                                     <constraint firstItem="ybu-qc-KSj" firstAttribute="top" secondItem="bIS-4D-a3a" secondAttribute="bottom" constant="12" id="Gln-OG-f3d"/>
                                     <constraint firstAttribute="trailing" secondItem="PvS-QH-qMe" secondAttribute="trailing" constant="8" id="GqN-dO-MEI"/>
-                                    <constraint firstItem="bIS-4D-a3a" firstAttribute="top" secondItem="PvS-QH-qMe" secondAttribute="bottom" constant="8" id="H5L-d7-ZZ7"/>
+                                    <constraint firstItem="bIS-4D-a3a" firstAttribute="top" secondItem="PvS-QH-qMe" secondAttribute="bottom" constant="12" id="H5L-d7-ZZ7"/>
                                     <constraint firstItem="BqR-Iz-l6B" firstAttribute="leading" secondItem="dPB-aH-lO7" secondAttribute="leading" constant="8" id="Mda-rY-BWr"/>
                                     <constraint firstAttribute="trailing" secondItem="ybu-qc-KSj" secondAttribute="trailing" constant="8" id="RYn-87-6O7"/>
                                     <constraint firstItem="BqR-Iz-l6B" firstAttribute="top" secondItem="ybu-qc-KSj" secondAttribute="bottom" constant="8" id="axd-Qr-PmZ"/>
                                     <constraint firstItem="bIS-4D-a3a" firstAttribute="leading" secondItem="dPB-aH-lO7" secondAttribute="leading" constant="155" id="bCH-Gi-4dz"/>
                                     <constraint firstItem="ybu-qc-KSj" firstAttribute="leading" secondItem="dPB-aH-lO7" secondAttribute="leading" constant="8" id="d6U-Da-Tg1"/>
                                     <constraint firstAttribute="trailing" secondItem="bIS-4D-a3a" secondAttribute="trailing" constant="155" id="dAj-Ae-kji"/>
-                                    <constraint firstItem="bIS-4D-a3a" firstAttribute="top" secondItem="PvS-QH-qMe" secondAttribute="bottom" constant="8" id="eGx-D0-fma"/>
+                                    <constraint firstItem="bIS-4D-a3a" firstAttribute="top" secondItem="PvS-QH-qMe" secondAttribute="bottom" constant="12" id="eGx-D0-fma"/>
                                     <constraint firstItem="PvS-QH-qMe" firstAttribute="leading" secondItem="dPB-aH-lO7" secondAttribute="leading" constant="8" id="gzt-Zn-mGS"/>
                                     <constraint firstAttribute="trailing" secondItem="BqR-Iz-l6B" secondAttribute="trailing" constant="8" id="uyZ-HR-Ci3"/>
                                     <constraint firstItem="PvS-QH-qMe" firstAttribute="top" secondItem="dPB-aH-lO7" secondAttribute="top" constant="8" id="vcd-JN-Fkl"/>
@@ -71,7 +71,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uwv-ik-Tw2" id="duJ-yz-IUT">
-                                            <frame key="frameInset" width="375" height="164"/>
+                                            <frame key="frameInset" width="375" height="164.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-ph-vVX">
@@ -80,7 +80,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNh-fC-TqE">
-                                                    <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -113,16 +113,25 @@
                                                                     <state key="normal">
                                                                         <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="phoneButtonTappedWithSender:" destination="uwv-ik-Tw2" eventType="touchUpInside" id="WGT-Rv-jRa"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PT-6y-ryg">
                                                                     <state key="normal">
                                                                         <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="emailButtonTappedWithSender:" destination="uwv-ik-Tw2" eventType="touchUpInside" id="aRj-dG-Wi1"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6la-h2-dYN">
                                                                     <state key="normal">
                                                                         <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="websiteButtonTappedWithSender:" destination="uwv-ik-Tw2" eventType="touchUpInside" id="Agi-yO-X7A"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
