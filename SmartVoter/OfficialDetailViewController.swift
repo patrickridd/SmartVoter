@@ -21,6 +21,8 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var socialMediaLabel: UILabel!
     @IBOutlet weak var socialMediaButton: UIButton!
+    @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     
     var official: Official?
@@ -34,7 +36,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         }
         updateOfficials(official)
         updateSocialButtonImage()
+        upDateBackgroundColor()
         
+     //   officialImageView.layer.cornerRadius = 9
+     //   officialImageView.layer.masksToBounds = true
     }
     
     func updateOfficials(official: Official) {
@@ -48,9 +53,22 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         streetAddressLabel.text = address?.asAString ?? "No address provided"
         emailLabel.text = official.email ?? "No email provided"
         socialMediaLabel.text = official.social?.type ?? "NO link provided"
+        partyLabel.text = "\(official.party ?? "Representative did not provide party affiliation") Party"
         guard let photoURL = official.photoURL else { return }
         ImageController.imageForURL(photoURL) { (image) in
             self.officialImageView.image = image
+        }
+    }
+    
+    
+    func upDateBackgroundColor () {
+        
+        backgroundImage.image = backgroundImage.image?.imageWithRenderingMode(.AlwaysTemplate)
+        if official?.party == "Democratic" {
+        backgroundImage.backgroundColor = UIColor.bradsBlue()
+        } else if official?.party == "Republican" {
+        
+        backgroundImage.backgroundColor = UIColor.navigationRed()
         }
     }
     
