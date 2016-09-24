@@ -62,6 +62,7 @@ class ProfileController {
         NetworkController.performRequestForURL(electionURL, httpMethod: .Get, urlParameters: parameters, body: nil) { (data, error) in
             guard let data = data, jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)),
                 electionsArray = jsonDictionary["elections"] as? [[String:String]] else {
+                    completion()
                     return
             }
             let elections = electionsArray.flatMap{Election(jsonDictionary: $0)}
