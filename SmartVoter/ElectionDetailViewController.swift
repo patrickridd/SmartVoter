@@ -130,6 +130,11 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         guard let officialWebsite = candidate.websiteURL, url = NSURL(string: officialWebsite) else { return }
         
         let safariVC = SFSafariViewController(URL: url)
+        if #available(iOS 10.0, *) {
+            safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+        } else {
+            UIApplication.sharedApplication().statusBarStyle = .Default
+        }
         presentViewController(safariVC, animated: true, completion: nil)
     }
 }
