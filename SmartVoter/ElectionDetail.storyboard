@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,12 +74,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-ph-vVX">
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNh-fC-TqE">
-                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNh-fC-TqE">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -89,17 +88,17 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WZT-Qa-Ieg">
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-JP-AgL">
-                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHV-vi-Z5p">
-                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-1e-Qwx">
-                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -107,10 +106,14 @@
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-5p-GLA">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-5p-GLA">
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-gQ-eTb">
-                                                                    <state key="normal">
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="23" id="JaT-vf-kgA"/>
+                                                                        <constraint firstAttribute="width" constant="23" id="TEA-tC-eRj"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="Phone-100">
                                                                         <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
@@ -118,7 +121,11 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PT-6y-ryg">
-                                                                    <state key="normal">
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="23" id="WOL-Qj-4GL"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="YoT-ue-lyY"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="Message-100" backgroundImage="Message-100">
                                                                         <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
@@ -126,7 +133,11 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6la-h2-dYN">
-                                                                    <state key="normal">
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="23" id="JxI-yk-oNW"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="TPG-qb-pez"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="Safari-100">
                                                                         <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
@@ -134,30 +145,22 @@
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="80" id="jev-s8-X6V"/>
-                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstItem="DAy-5p-GLA" firstAttribute="width" secondItem="WZT-Qa-Ieg" secondAttribute="width" multiplier="1/5" id="fjO-Me-fnn"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1Sr-ph-vVX" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="0op-hY-dNu"/>
-                                                <constraint firstItem="VNh-fC-TqE" firstAttribute="top" secondItem="1Sr-ph-vVX" secondAttribute="bottom" constant="1" id="27r-as-ZCl"/>
-                                                <constraint firstItem="vaW-0I-ydh" firstAttribute="top" secondItem="VNh-fC-TqE" secondAttribute="bottom" constant="14" id="ECO-ai-db5"/>
-                                                <constraint firstItem="vaW-0I-ydh" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="LU9-w3-mhr"/>
-                                                <constraint firstAttribute="bottom" secondItem="vaW-0I-ydh" secondAttribute="bottom" constant="8" id="Ovh-on-L8n"/>
-                                                <constraint firstItem="VNh-fC-TqE" firstAttribute="top" secondItem="1Sr-ph-vVX" secondAttribute="bottom" constant="1" id="Pea-n3-J6a"/>
-                                                <constraint firstAttribute="trailing" secondItem="vaW-0I-ydh" secondAttribute="trailing" constant="8" id="PfR-oM-3Wh"/>
-                                                <constraint firstAttribute="trailing" secondItem="1Sr-ph-vVX" secondAttribute="trailing" constant="8" id="clL-zN-FBF"/>
-                                                <constraint firstItem="vaW-0I-ydh" firstAttribute="top" secondItem="VNh-fC-TqE" secondAttribute="bottom" constant="14" id="cti-xs-875"/>
-                                                <constraint firstItem="VNh-fC-TqE" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="dcI-H0-dlm"/>
-                                                <constraint firstItem="1Sr-ph-vVX" firstAttribute="top" secondItem="duJ-yz-IUT" secondAttribute="top" constant="8" id="ioj-Yy-LuK"/>
-                                                <constraint firstAttribute="trailing" secondItem="VNh-fC-TqE" secondAttribute="trailing" constant="8" id="oV5-Gk-YwT"/>
+                                                <constraint firstItem="1Sr-ph-vVX" firstAttribute="top" secondItem="duJ-yz-IUT" secondAttribute="top" constant="8" id="1MH-t8-eBT"/>
+                                                <constraint firstItem="VNh-fC-TqE" firstAttribute="top" secondItem="1Sr-ph-vVX" secondAttribute="bottom" constant="1" id="5cv-Oz-xhV"/>
+                                                <constraint firstItem="vaW-0I-ydh" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="O7q-G1-WWx"/>
+                                                <constraint firstItem="1Sr-ph-vVX" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="OLZ-Kz-AeO"/>
+                                                <constraint firstAttribute="bottom" secondItem="vaW-0I-ydh" secondAttribute="bottom" constant="6.5" id="P25-a2-RJt"/>
+                                                <constraint firstAttribute="trailing" secondItem="vaW-0I-ydh" secondAttribute="trailing" constant="8" id="Pkt-wP-vuO"/>
+                                                <constraint firstItem="VNh-fC-TqE" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="SZ6-PQ-BqR"/>
+                                                <constraint firstAttribute="trailing" secondItem="VNh-fC-TqE" secondAttribute="trailing" constant="8" id="hJT-c0-QE5"/>
+                                                <constraint firstItem="vaW-0I-ydh" firstAttribute="top" secondItem="VNh-fC-TqE" secondAttribute="bottom" constant="19" id="q3x-BN-4p5"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Sr-ph-vVX" secondAttribute="trailing" constant="8" id="yet-u7-YbF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -204,4 +207,9 @@
             <point key="canvasLocation" x="1469.5999999999999" y="78.710644677661179"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Message-100" width="50" height="50"/>
+        <image name="Phone-100" width="50" height="50"/>
+        <image name="Safari-100" width="50" height="50"/>
+    </resources>
 </document>

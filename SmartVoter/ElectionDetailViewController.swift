@@ -54,7 +54,7 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         let candidate = candidates[indexPath.row]
         cell.delegate = self
         cell.updateWith(candidate)
-        cell.setupButtonFor(candidate)
+//        cell.setupButtonFor(candidate)
         
         return cell
     }

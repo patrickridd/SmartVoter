@@ -21,10 +21,6 @@ class CandidateTableViewCell: UITableViewCell, MFMailComposeViewControllerDelega
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var websiteButton: UIButton!
     
-    let phoneImage = UIImage(named: "Phone-50")
-    let emailImage = UIImage(named: "New Message-48")
-    let websiteImage = UIImage(named: "Safari-48")
-    
     weak var delegate: CandidateTableViewCellDelegate?
     var candidate: Candidate?
     
@@ -37,9 +33,6 @@ class CandidateTableViewCell: UITableViewCell, MFMailComposeViewControllerDelega
     }
     
     func setupButtonFor(candidate: Candidate) {
-        phoneButton.setImage(phoneImage, forState: .Normal)
-        emailButton.setImage(emailImage, forState: .Normal)
-        websiteButton.setImage(websiteImage, forState: .Normal)
         
         if candidate.phone == nil {
             phoneButton.hidden = true
@@ -61,6 +54,16 @@ class CandidateTableViewCell: UITableViewCell, MFMailComposeViewControllerDelega
         phoneLabel.text = candidate.phone
         emailLabel.text = candidate.email
         websiteLabel.text = candidate.websiteURL
+        
+        setupButtonFor(candidate)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        phoneButton.hidden = false
+        emailButton.hidden = false
+        websiteButton.hidden = false
     }
     
     // MARK: - Actions
@@ -77,7 +80,6 @@ class CandidateTableViewCell: UITableViewCell, MFMailComposeViewControllerDelega
         } else {
             delegate?.showSendMailErrorAlert()
         }
-        print("I got tapped")
     }
     
     @IBAction func websiteButtonTappedWithSender(sender: AnyObject) {
