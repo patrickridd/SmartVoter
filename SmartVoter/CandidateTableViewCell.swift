@@ -51,15 +51,32 @@ class CandidateTableViewCell: UITableViewCell, MFMailComposeViewControllerDelega
         
         nameLabel.text = candidate.name
         partyLabel.text = candidate.party
-        phoneLabel.text = candidate.phone
-        emailLabel.text = candidate.email
-        websiteLabel.text = candidate.websiteURL
+        
+        if candidate.phone != nil {
+            phoneLabel.text = candidate.phone
+        } else {
+            phoneLabel.hidden = true
+        }
+        if candidate.email != nil {
+            emailLabel.text = candidate.email
+        } else {
+            emailLabel.hidden = true
+        }
+        if candidate.websiteURL != nil {
+            websiteLabel.text = candidate.websiteURL
+        } else {
+            websiteLabel.hidden = true
+        }
         
         setupButtonFor(candidate)
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        phoneLabel.hidden = false
+        emailLabel.hidden = false
+        websiteLabel.hidden = false
         
         phoneButton.hidden = false
         emailButton.hidden = false
