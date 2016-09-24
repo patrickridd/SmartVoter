@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        guard let font = UIFont(name: "Avenir", size: 18) else { return true }
+        guard let font = UIFont(name: "Avenir", size: 17) else { return true }
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()]

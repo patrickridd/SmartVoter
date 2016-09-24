@@ -32,40 +32,29 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="Eha-iG-NS0"/>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HN0-mj-hh1">
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bpd-MK-Mdh">
                                     <frame key="frameInset"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eha-iG-NS0"/>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Eha-iG-NS0" firstAttribute="leading" secondItem="bpd-MK-Mdh" secondAttribute="leading" id="1do-Xx-vzJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="Eha-iG-NS0" secondAttribute="trailing" id="aOV-Ah-8pP"/>
-                                        <constraint firstAttribute="bottom" secondItem="Eha-iG-NS0" secondAttribute="bottom" id="n3a-mO-58G"/>
-                                        <constraint firstItem="Eha-iG-NS0" firstAttribute="top" secondItem="bpd-MK-Mdh" secondAttribute="top" id="tZI-XW-im6"/>
-                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZa-0x-TSu">
-                                <color key="tintColor" red="0.1058823529" green="0.12549019610000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MOn-YN-XoT">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-uw-e4G">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Street" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-uw-e4G">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7K5-Qy-5vr">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7K5-Qy-5vr">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3db-u2-8Ov">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3db-u2-8Ov">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gbl-uf-tUS">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Zip" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gbl-uf-tUS">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                     </textField>
@@ -78,28 +67,29 @@
                             <constraint firstAttribute="trailing" secondItem="YYi-xM-ueK" secondAttribute="trailing" id="45X-JQ-SnC"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="centerX" secondItem="Jc5-pR-84w" secondAttribute="centerX" id="8Ed-h6-BNh"/>
-                            <constraint firstItem="AZa-0x-TSu" firstAttribute="width" secondItem="MOn-YN-XoT" secondAttribute="width" id="B71-ar-mog"/>
-                            <constraint firstItem="AZa-0x-TSu" firstAttribute="centerX" secondItem="MOn-YN-XoT" secondAttribute="centerX" id="D5S-2d-4oB"/>
-                            <constraint firstItem="AZa-0x-TSu" firstAttribute="centerY" secondItem="MOn-YN-XoT" secondAttribute="centerY" id="E6i-Iq-Dj4"/>
+                            <constraint firstAttribute="trailing" secondItem="Eha-iG-NS0" secondAttribute="trailing" id="8yD-1J-lH4"/>
                             <constraint firstItem="HN0-mj-hh1" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="GGH-8a-9xo"/>
                             <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="HN0-mj-hh1" secondAttribute="bottom" id="LsV-QQ-qlZ"/>
+                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="Eha-iG-NS0" secondAttribute="bottom" id="MDp-J5-aw0"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="height" secondItem="Jc5-pR-84w" secondAttribute="height" multiplier="2/3" id="QR3-D0-9Zp"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="U0i-pc-2Z1"/>
                             <constraint firstItem="HN0-mj-hh1" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="VRH-ay-Rzh"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="width" secondItem="Jc5-pR-84w" secondAttribute="width" constant="-20" id="Ya8-n9-jXQ"/>
                             <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="YjP-xg-fIh"/>
                             <constraint firstAttribute="trailing" secondItem="HN0-mj-hh1" secondAttribute="trailing" id="b36-9f-jxT"/>
+                            <constraint firstItem="Eha-iG-NS0" firstAttribute="top" secondItem="5s6-SN-HCw" secondAttribute="top" id="bC6-uR-seC"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="bLh-kx-mez"/>
+                            <constraint firstItem="MOn-YN-XoT" firstAttribute="centerY" secondItem="5s6-SN-HCw" secondAttribute="centerY" constant="-30" id="dv0-gw-dQs"/>
                             <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="50" id="eyb-HT-08B"/>
-                            <constraint firstItem="MOn-YN-XoT" firstAttribute="centerY" secondItem="Jc5-pR-84w" secondAttribute="centerY" id="fV7-9G-2NG"/>
+                            <constraint firstItem="Eha-iG-NS0" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="iIB-cQ-mWa"/>
                             <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="mDq-IE-rgb"/>
                             <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="50" id="nE4-Wf-tqO"/>
-                            <constraint firstItem="AZa-0x-TSu" firstAttribute="height" secondItem="MOn-YN-XoT" secondAttribute="height" id="qUD-wS-Y4A"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="zVR-3f-spc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG">
                         <barButtonItem key="rightBarButtonItem" title="Update" id="6A8-kQ-SAI">
+                            <color key="tintColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="updateButtonTapped:" destination="87Y-Os-bYy" id="UsR-he-lWh"/>
                             </connections>
@@ -108,12 +98,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backgroundBlurImage" destination="Eha-iG-NS0" id="gNW-Bx-FOl"/>
                         <outlet property="blurView" destination="HN0-mj-hh1" id="Td4-2f-buQ"/>
                         <outlet property="cityTextField" destination="7K5-Qy-5vr" id="sSK-sQ-TTl"/>
                         <outlet property="mapView" destination="Jc5-pR-84w" id="C7V-ZH-dhI"/>
                         <outlet property="placesToVoteLabel" destination="YYi-xM-ueK" id="Ugz-2J-RCi"/>
                         <outlet property="registerToVoteLabel" destination="E3v-zm-v7r" id="PmZ-8h-pJr"/>
-                        <outlet property="stackBackGround" destination="AZa-0x-TSu" id="Vsg-ww-dmo"/>
                         <outlet property="stateTextField" destination="3db-u2-8Ov" id="NiZ-9q-FN1"/>
                         <outlet property="streetTextField" destination="kpi-uw-e4G" id="0QJ-UV-Aso"/>
                         <outlet property="updateLabel" destination="6A8-kQ-SAI" id="tyV-hj-li8"/>
@@ -129,4 +119,7 @@
             <point key="canvasLocation" x="620.625" y="810"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="capitolBuilding" width="1920" height="1200"/>
+    </resources>
 </document>

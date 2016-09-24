@@ -12,7 +12,7 @@ import MapKit
 import SafariServices
 
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     
 //    @IBOutlet weak var livingAddressLabel: UILabel!
@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var zipTextField: UITextField!
     @IBOutlet weak var updateLabel: UIBarButtonItem!
     @IBOutlet weak var blurView: UIVisualEffectView!
-    @IBOutlet weak var stackBackGround: UIView!
+    @IBOutlet weak var backgroundBlurImage: UIImageView!
     
     static let addressChangedNotification = "Address Changed"
     var livingAddress: Address?
@@ -42,6 +42,11 @@ class ProfileViewController: UIViewController {
     func setupProfileViewController() {
         self.updateLabels()
 
+        cityTextField.delegate = self
+        stateTextField.delegate = self
+        zipTextField.delegate = self
+        streetTextField.delegate = self
+        
         guard let address = self.livingAddress else {
             return
         }
@@ -53,8 +58,8 @@ class ProfileViewController: UIViewController {
     
     @IBAction func updateButtonTapped(sender: AnyObject) {
         if updateLabel.title == "Update" {
+            backgroundBlurImage.hidden = false
             updateLabel.title = "Save"
-            stackBackGround.hidden = false
             blurView.hidden = false
             registerToVoteLabel.hidden = true
             streetTextField.hidden = false
@@ -87,7 +92,12 @@ class ProfileViewController: UIViewController {
     }
     
     
-    /// User to site where they can register to vote.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /// Takes user to website where they can register to vote.
     @IBAction func registerToVoteButtonTapped(sender: AnyObject) {
         guard let urlString = self.registrationURL, let url = NSURL(string: urlString) else {
             return
@@ -99,7 +109,7 @@ class ProfileViewController: UIViewController {
     
         /// Updates VC's labels.
     func updateLabels() {
-        stackBackGround.hidden = true
+        backgroundBlurImage.hidden = true
         blurView.hidden = true
         registerToVoteLabel.hidden = false
         streetTextField.hidden = true
@@ -119,11 +129,12 @@ class ProfileViewController: UIViewController {
     /// Gets User's Polling Locations as CLLocations and populates them on a map.
     func populateMapView() {
         PollingLocationController.sharedController.geoCodePollingAddresses { (pollingLocationCLLocation) in
-            if pollingLocationCLLocation.count == 0  {
+            if pollingLocationCLLocation.count == 0 {
                 self.placesToVoteLabel.text = "No Data found for your Polling Locations"
                 return
             }
-            
+            self.placesToVoteLabel.text = "Your Polling Locations"
+
             let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
             
             for (location, pollingLocation) in pollingLocationCLLocation {
