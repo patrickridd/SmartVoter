@@ -54,6 +54,15 @@ class ProfileController {
         return url ?? nil
     }
     
+    func formatNumberForCall(number: String) -> String {
+        let phoneWhite = number.lowercaseString.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).joinWithSeparator(" ")
+        let noPunc =  phoneWhite.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).joinWithSeparator("")
+        let noSpaces = noPunc.stringByReplacingOccurrencesOfString(" ", withString: "")
+        
+        return noSpaces
+    }
+
+    
     
     /// Network Call to get polling Locations.
     static func getPollingAddress(address: Address, completion: () -> Void) {

@@ -26,6 +26,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var updateLabel: UIBarButtonItem!
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var backgroundBlurImage: UIImageView!
+    @IBOutlet weak var electionWebsiteLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var safariButton: UIButton!
+    @IBOutlet weak var phoneNumberButton: UIButton!
     
     static let addressChangedNotification = "Address Changed"
     var livingAddress: Address?
@@ -58,6 +62,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func safariButtonTapped(sender: AnyObject) {
         guard let websiteString = ProfileController.electionWebsite, let url = NSURL(string: websiteString ) else {
+            electionWebsiteLabel.text = "Website: No website found"
+            safariButton.enabled = false
+            safariButton.hidden = true
+            
             return
         }
         
@@ -68,19 +76,52 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func phoneNumberButtonTapped(sender: AnyObject) {
+        guard let phoneNumber = ProfileController.electionPhoneNumber else {
+            phoneNumberLabel.text = "Phone Number: No number found"
+            phoneNumberButton.hidden = true
+            phoneNumberButton.enabled = false
+            return
+        }
+        let formattedNumber = ProfileController.sharedController.formatNumberForCall(phoneNumber)
         
+        guard let callURL = NSURL(string: "tel://\(formattedNumber)") else {
+            phoneNumberLabel.text = "Phone Number:" + " No number found"
+            phoneNumberButton.hidden = true
+            phoneNumberButton.enabled = false
+            return
+        }
+        print(formattedNumber)
+        let alert = UIAlertController(title: "Do you want to Call Elections Office", message: nil, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let callAction = UIAlertAction(title: "Call", style: .Default) { (_) in
+            UIApplication.sharedApplication().openURL(callURL)
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(callAction)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(alert, animated: true, completion: nil)
+        })
     }
     
     @IBAction func updateButtonTapped(sender: AnyObject) {
         if updateLabel.title == "Update" {
             backgroundBlurImage.hidden = false
-            updateLabel.title = "Save"
             blurView.hidden = false
+            electionWebsiteLabel.hidden = true
+            phoneNumberLabel.hidden = true
+            safariButton.hidden = true
+            safariButton.enabled = false
+            phoneNumberButton.hidden = true
+            phoneNumberButton.enabled = false
             registerToVoteLabel.hidden = true
             streetTextField.hidden = false
             cityTextField.hidden = false
             stateTextField.hidden = false
             zipTextField.hidden = false
+            updateLabel.title = "Save"
+
+            
         } else {
             updateLabel.title = "Update"
     
@@ -127,6 +168,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
         /// Updates VC's labels.
     func updateLabels() {
+        phoneNumberLabel.hidden = false
+        phoneNumberButton.hidden = false
+        phoneNumberButton.enabled = true
+        electionWebsiteLabel.hidden = false
+        safariButton.hidden = false
+        safariButton.enabled = true
+        
         backgroundBlurImage.hidden = true
         blurView.hidden = true
         registerToVoteLabel.hidden = false
