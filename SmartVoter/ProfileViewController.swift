@@ -12,10 +12,10 @@ import MapKit
 import SafariServices
 
 
-class ProfileViewController: UIViewController, UITextFieldDelegate {
+class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
-//    @IBOutlet weak var livingAddressLabel: UILabel!
+    //    @IBOutlet weak var livingAddressLabel: UILabel!
     @IBOutlet weak var registerToVoteLabel: UIButton!
     @IBOutlet weak var placesToVoteLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     func setupProfileViewController() {
         self.updateLabels()
-
+        
         cityTextField.delegate = self
         stateTextField.delegate = self
         zipTextField.delegate = self
@@ -54,7 +54,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         print(address.asAString)
-        ProfileController.getPollingAddress(address) { 
+        ProfileController.getPollingAddress(address) {
             self.populateMapView()
         }
     }
@@ -83,20 +83,17 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         let formattedNumber = ProfileController.sharedController.formatNumberForCall(phoneNumber)
-        
         guard let callURL = NSURL(string: "tel://\(formattedNumber)") else {
             phoneNumberLabel.text = "Phone Number:" + " No number found"
             phoneNumberButton.hidden = true
             phoneNumberButton.enabled = false
             return
         }
-        print(formattedNumber)
         let alert = UIAlertController(title: "Do you want to Call Elections Office", message: nil, preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         let callAction = UIAlertAction(title: "Call", style: .Default) { (_) in
             UIApplication.sharedApplication().openURL(callURL)
         }
-        
         alert.addAction(cancelAction)
         alert.addAction(callAction)
         dispatch_async(dispatch_get_main_queue(), {
@@ -104,53 +101,55 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
+    
     @IBAction func updateButtonTapped(sender: AnyObject) {
         if updateLabel.title == "Update" {
-            backgroundBlurImage.hidden = false
-            blurView.hidden = false
-            electionWebsiteLabel.hidden = true
-            phoneNumberLabel.hidden = true
-            safariButton.hidden = true
-            safariButton.enabled = false
-            phoneNumberButton.hidden = true
-            phoneNumberButton.enabled = false
-            registerToVoteLabel.hidden = true
-            streetTextField.hidden = false
-            cityTextField.hidden = false
-            stateTextField.hidden = false
-            zipTextField.hidden = false
-            updateLabel.title = "Save"
-
-            
+            ifUpdateButtonSaysUpdate()
         } else {
-            updateLabel.title = "Update"
-    
-            guard let stateText = stateTextField.text where stateText.characters.count > 0,
-                let cityText = cityTextField.text where cityText.characters.count > 0,
-                let streetText = streetTextField.text where streetText.characters.count > 0,
-                let zipText = zipTextField.text where zipText.characters.count > 0  else {
-                    self.updateLabels()
-                return
-            }
-            
-            let newAddress = Address(line1: streetText, city: cityText, state: stateText, zip: zipText)
-            ProfileController.sharedController.saveAddressToUserDefault(newAddress)
-            livingAddress = newAddress
-            mapView.removeAnnotations(self.pollingAnnotations)
-            self.pollingAnnotations.removeAll()
-            setupProfileViewController()
-            updateLabels()
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let nc = NSNotificationCenter.defaultCenter()
-                nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
-            })
+            ifUpdateButtonSaysSave()
         }
     }
     
+    // Helper Method that is called if Update button is tapped when it reads "Update"
+    func ifUpdateButtonSaysUpdate() {
+        backgroundBlurImage.hidden = false
+        blurView.hidden = false
+        electionWebsiteLabel.hidden = true
+        phoneNumberLabel.hidden = true
+        safariButton.hidden = true
+        safariButton.enabled = false
+        phoneNumberButton.hidden = true
+        phoneNumberButton.enabled = false
+        registerToVoteLabel.hidden = true
+        streetTextField.hidden = false
+        cityTextField.hidden = false
+        stateTextField.hidden = false
+        zipTextField.hidden = false
+        updateLabel.title = "Save"
+        
+    }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    // Helper Method that is called if Update button is tapped when it reads "Save"
+    func ifUpdateButtonSaysSave() {
+        updateLabel.title = "Update"
+        guard let stateText = stateTextField.text where stateText.characters.count > 0,
+            let cityText = cityTextField.text where cityText.characters.count > 0,
+            let streetText = streetTextField.text where streetText.characters.count > 0,
+            let zipText = zipTextField.text where zipText.characters.count > 0  else {
+                self.updateLabels()
+                return
+        }
+        let newAddress = Address(line1: streetText, city: cityText, state: stateText, zip: zipText)
+        ProfileController.sharedController.saveAddressToUserDefault(newAddress)
+        livingAddress = newAddress
+        mapView.removeAnnotations(self.pollingAnnotations)
+        self.pollingAnnotations.removeAll()
+        setupProfileViewController()
+        updateLabels()
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            let nc = NSNotificationCenter.defaultCenter()
+            nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
+        })
     }
     
     /// Takes user to website where they can register to vote.
@@ -162,11 +161,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         dispatch_async(dispatch_get_main_queue(), {
             self.presentViewController(safariVC, animated: true, completion: nil)
-
+            
         })
     }
     
-        /// Updates VC's labels.
+    /// Updates VC's labels.
     func updateLabels() {
         phoneNumberLabel.hidden = false
         phoneNumberButton.hidden = false
@@ -188,7 +187,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         self.livingAddress = livingAddress
         self.navigationItem.title = self.livingAddress?.line1 ?? "No Address Found"
         self.registrationURL = ProfileController.sharedController.loadURL()
-       
+        
         
     }
     
@@ -200,12 +199,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             self.placesToVoteLabel.text = "Your Polling Locations"
-
+            
             let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
             
             for (location, pollingLocation) in pollingLocationCLLocation {
                 let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            
+                
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = coordinate
                 if let pollingHours = pollingLocation.pollingHours {
@@ -215,7 +214,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 }
                 annotation.title = pollingLocation.locationName
                 self.pollingAnnotations.append(annotation)
-        
+                
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self.mapView.showsUserLocation = true
                 self.mapView.setRegion(region, animated: true)
@@ -224,5 +223,29 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Textfield Delegate Method
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // MARK: - Picker View Delegate Functions
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Address.states.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Address.states[row].rawValue
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        stateTextField.text = Address.states[row].rawValue
+    }
+
 }
