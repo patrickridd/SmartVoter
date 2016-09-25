@@ -35,7 +35,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         setupProfileViewController()
     }
     
@@ -54,6 +53,22 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         ProfileController.getPollingAddress(address) { 
             self.populateMapView()
         }
+    }
+    
+    
+    @IBAction func safariButtonTapped(sender: AnyObject) {
+        guard let websiteString = ProfileController.electionWebsite, let url = NSURL(string: websiteString ) else {
+            return
+        }
+        
+        let safariVC = SFSafariViewController(URL: url)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(safariVC, animated: true, completion: nil)
+        })
+    }
+    
+    @IBAction func phoneNumberButtonTapped(sender: AnyObject) {
+        
     }
     
     @IBAction func updateButtonTapped(sender: AnyObject) {
@@ -103,8 +118,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             return
         }
         let safariVC = SFSafariViewController(URL: url)
-        self.presentViewController(safariVC, animated: true, completion: nil)
         
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(safariVC, animated: true, completion: nil)
+
+        })
     }
     
         /// Updates VC's labels.
