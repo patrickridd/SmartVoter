@@ -96,8 +96,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YY-Bc-TzT">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="jLz-UK-dWT"/>
-                                                    <constraint firstAttribute="width" constant="40" id="vVI-Yo-1UQ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="ecX-ZG-EnF"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" image="New Message-48"/>

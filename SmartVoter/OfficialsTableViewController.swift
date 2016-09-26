@@ -14,11 +14,14 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     var address: Address?
     let logo = UIImage(named: "Logo Large")
+    let officialCell = OfficialTableViewCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
        
+        
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: SignUpViewController.addressAddedNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
         
@@ -55,7 +58,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
         let official = OfficialController.sortedOfficials[indexPath.section][indexPath.row]
         
         cell.updateOfficialsCell(official)
-        
+        cell.updateDefaultImage(official)
         return cell
     }
     

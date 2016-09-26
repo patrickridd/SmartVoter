@@ -14,10 +14,15 @@ class OfficialTableViewCell: UITableViewCell {
     @IBOutlet weak var officialsNameLabel: UILabel!
     @IBOutlet weak var officialsOfficeLabel: UILabel!
     
+    var official: Official?
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
     
     func updateOfficialsCell(official: Official) {
         
@@ -35,8 +40,24 @@ class OfficialTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         officialsImageView.image = nil
     }
+    
+    
+    
+    func updateDefaultImage(official: Official) {
+        
+        if officialsImageView.image == nil {
+            
+            if official.party == "Democratic" {
+                officialsImageView.image = UIImage(named: "democraticDonkey.png" )
+                
+            } else if  official.party == "Republican"{
+                officialsImageView.image = UIImage(named: "Republican.png")
+            } else if official.party == "Libertarian" {
+                officialsImageView.image = UIImage(named: "Libertarian.png")
+            }
+        }
+    }
 }
-
 
 
 
