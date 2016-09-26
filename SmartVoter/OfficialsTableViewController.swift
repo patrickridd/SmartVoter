@@ -110,7 +110,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toOfficialDetail" {
-            guard let viewController = segue.destinationViewController as? OfficialDetailViewController, indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let viewController = segue.destinationViewController as? OfficialDetailTableViewController, indexPath = tableView.indexPathForSelectedRow else { return }
             let official = OfficialController.sortedOfficials[indexPath.section][indexPath.row]
             viewController.official = official
         }
