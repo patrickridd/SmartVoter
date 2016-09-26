@@ -286,7 +286,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             emailLabel.hidden = true
             emailButton.hidden = true
         }
-        if streetAddressLabel.text == official?.address {
+        if streetAddressLabel.text == official?.address?.asAString.capitalizedString {
             streetAddressLabel.hidden = false
         } else {
             streetAddressLabel.hidden = true
