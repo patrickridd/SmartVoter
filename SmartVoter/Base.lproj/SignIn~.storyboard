@@ -92,13 +92,31 @@
             </objects>
             <point key="canvasLocation" x="318" y="1101"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="T9l-c1-zGz">
+            <objects>
+                <viewController id="27t-x3-DEN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hBt-nV-XCE"/>
+                        <viewControllerLayoutGuide type="bottom" id="8AO-H2-5Ab"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wad-cH-e0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5w-4K-Q5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-687" y="1711"/>
+        </scene>
         <!--OfficialDetail-->
         <scene sceneID="JoA-bL-HEd">
             <objects>
                 <viewControllerPlaceholder storyboardName="OfficialDetail" id="foL-O2-bbg" userLabel="OfficialDetail" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91H-Br-XNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="69"/>
+            <point key="canvasLocation" x="1699" y="383"/>
         </scene>
         <!--ElectionDetail-->
         <scene sceneID="oYk-fZ-b2N">
@@ -106,7 +124,7 @@
                 <viewControllerPlaceholder storyboardName="ElectionDetail" id="rau-QR-Ekh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERU-Ez-7X4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="-9"/>
+            <point key="canvasLocation" x="1757" y="-383"/>
         </scene>
         <!--OfficialTableView-->
         <scene sceneID="k9t-J1-ZIy">
@@ -127,14 +145,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3h-eA-P1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1398" y="-416"/>
-        </scene>
-        <!--SignUpViewController-->
-        <scene sceneID="Hdr-fp-lln">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SignUpViewController" storyboardName="SignUp" referencedIdentifier="SignUpViewController" id="397-UU-Psp" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fQh-da-Zor" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1830" y="178"/>
         </scene>
     </scenes>
     <resources>
