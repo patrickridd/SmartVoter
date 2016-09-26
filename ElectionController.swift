@@ -110,6 +110,11 @@ class ElectionController {
             return
         }
         
+        // If the day of the election is before the present day, don't schedule the notification because it has already happened.
+        if date.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
+            return
+        }
+        
         let localNotification = UILocalNotification()
         localNotification.alertTitle = "\(ElectionController.electionName)"
         localNotification.alertBody = "Don't forget to Vote Today"
