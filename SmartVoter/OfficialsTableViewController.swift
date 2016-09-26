@@ -86,22 +86,6 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
         }
     }
     
-    // MARK: - ACTIONS
-    
-//    @IBAction func addressSubmitButtonTapped(sender: AnyObject) {
-//        guard let streetAddress = streetAddress.text,
-//            city = cityTextField.text,
-//            state = stateTextField.text,
-//            zip = zipTextField.text else {return}
-//        let address = Address(line1: streetAddress, city: city, state: state, zip: zip)
-//        self.address = address
-//        OfficialController.getOfficials(address.asAString) {
-//            self.tableView.reloadData()
-//        }
-//        blurView.hidden = true
-//        ProfileController.sharedController.saveAddressToUserDefault(address)
-//    }
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
