@@ -95,11 +95,15 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             electionWebsiteLabel.text = "Website: No website found"
             safariButton.enabled = false
             safariButton.hidden = true
-            
             return
         }
-        
         let safariVC = SFSafariViewController(URL: url)
+        if #available(iOS 10.0, *) {
+            safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+        } else {
+            UIApplication.sharedApplication().statusBarStyle = .Default
+        }
+        
         dispatch_async(dispatch_get_main_queue(), {
             self.presentViewController(safariVC, animated: true, completion: nil)
         })
@@ -192,10 +196,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             return
         }
         let safariVC = SFSafariViewController(URL: url)
-        
+        if #available(iOS 10.0, *) {
+            safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+        } else {
+            UIApplication.sharedApplication().statusBarStyle = .Default
+        }
         dispatch_async(dispatch_get_main_queue(), {
             self.presentViewController(safariVC, animated: true, completion: nil)
-            
         })
     }
     
@@ -264,8 +271,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         datePicker.resignFirstResponder()
         return true
     }
-    
-    
     
     // MARK: - Picker View Delegate Functions
     

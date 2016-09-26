@@ -112,7 +112,7 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toDetailFromAnnotation"  {
             
-            let detailVC = segue.destinationViewController as? OfficialDetailViewController
+            let detailVC = segue.destinationViewController as? OfficialDetailTableViewController
             detailVC?.official = official
         }
     }

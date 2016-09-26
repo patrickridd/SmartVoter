@@ -84,8 +84,12 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         
         partyLabel.text = "\(official.party ?? "Representative did not provide party affiliation") Party"
         guard let photoURL = official.photoURL else { return }
-        ImageController.imageForURL(photoURL) { (image) in
-            self.officialImageView.image = image
+        if let photo = official.image {
+            self.officialImageView.image = photo
+        } else {
+            ImageController.imageForURL(photoURL) { (image) in
+                self.officialImageView.image = image
+            }
         }
     }
     
@@ -103,7 +107,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         
         presentViewController(safariVC, animated: true, completion: nil)
     }
-
+    
     @IBAction func addressButtonTapped(sender: AnyObject) {
     }
     
@@ -117,8 +121,8 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         //   dismissViewControllerAnimated(true, completion: nil)
         
     }
-
-
+    
+    
     @IBAction func phoneButtonTapped(sender: AnyObject) {
         if let official = official {
             
@@ -170,7 +174,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
-
+        
     }
     
     @IBAction func googlePlusButtonTapped(sender: AnyObject) {
@@ -232,7 +236,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             }
         }
     }
-
+    
     
     
     

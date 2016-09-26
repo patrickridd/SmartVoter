@@ -30,8 +30,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
                                 <color key="backgroundColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="C03-HI-I9E"/>
-                                    <constraint firstAttribute="height" constant="30" id="rD6-IM-yPg"/>
+                                    <constraint firstAttribute="height" constant="40" id="rD6-IM-yPg"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register To Vote">
@@ -157,6 +156,7 @@
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="centerY" secondItem="5s6-SN-HCw" secondAttribute="centerY" constant="-30" id="dv0-gw-dQs"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="gcE-ab-wuy"/>
                             <constraint firstItem="Eha-iG-NS0" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="iIB-cQ-mWa"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="width" secondItem="WfB-ht-Zj8" secondAttribute="width" multiplier="2/3" id="j9C-ge-SmS"/>
                             <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="mDq-IE-rgb"/>
                             <constraint firstItem="iX1-EJ-Jbo" firstAttribute="height" secondItem="YYi-xM-ueK" secondAttribute="height" id="nvK-P7-cz2"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="ox3-uz-gmG"/>
@@ -213,8 +213,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Phone-50" width="25" height="25"/>
-        <image name="Safari-48" width="24" height="24"/>
+        <image name="Phone-50" width="50" height="50"/>
+        <image name="Safari-48" width="48" height="48"/>
         <image name="capitolBuilding" width="1920" height="1200"/>
     </resources>
 </document>

@@ -38,7 +38,6 @@
 		51C2D3301D92FFCC0018109E /* OfficialsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */; };
 		51C2D3321D934C9E0018109E /* ElectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */; };
 		51C2D3341D934CAF0018109E /* OfficialAddressMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */; };
-		51C2D3361D934CB50018109E /* OfficialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C2D3351D934CB50018109E /* OfficialDetailViewController.swift */; };
 		640411621D91DF2800B57A4C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411611D91DF2800B57A4C /* Address.swift */; };
 		640411641D91E25400B57A4C /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411631D91E25400B57A4C /* Social.swift */; };
 		6473387F1D958BC2006C7442 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473387E1D958BC2006C7442 /* ColorPalette.swift */; };
@@ -93,7 +92,6 @@
 		51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialsTableViewController.swift; sourceTree = "<group>"; };
 		51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionDetailViewController.swift; sourceTree = "<group>"; };
 		51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialAddressMapViewController.swift; sourceTree = "<group>"; };
-		51C2D3351D934CB50018109E /* OfficialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailViewController.swift; sourceTree = "<group>"; };
 		640411611D91DF2800B57A4C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		640411631D91E25400B57A4C /* Social.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
 		6473387E1D958BC2006C7442 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				21E727021D90949800ADC64F /* ElectionTableViewController.swift */,
 				21E726FE1D90941E00ADC64F /* ProfileViewController.swift */,
 				51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */,
-				51C2D3351D934CB50018109E /* OfficialDetailViewController.swift */,
 				2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */,
 				51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */,
 				6473387E1D958BC2006C7442 /* ColorPalette.swift */,
@@ -350,7 +347,6 @@
 				21E7270A1D90996300ADC64F /* OfficialController.swift in Sources */,
 				21E727081D9095AB00ADC64F /* OfficialTableViewCell.swift in Sources */,
 				21E727031D90949800ADC64F /* ElectionTableViewController.swift in Sources */,
-				51C2D3361D934CB50018109E /* OfficialDetailViewController.swift in Sources */,
 				21E727111D9099DB00ADC64F /* Official.swift in Sources */,
 				21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */,
 				A21C52241D91CA9500909C0C /* Candidate.swift in Sources */,
