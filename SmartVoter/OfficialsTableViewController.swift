@@ -15,12 +15,19 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     var address: Address?
     let logo = UIImage(named: "Logo Large")
     let officialCell = OfficialTableViewCell()
+    let unselectedTabImage = UIImage(named: "RepsWhite")?.imageWithRenderingMode(.AlwaysOriginal)
+    let selectedImage = UIImage(named: "RepsFilled")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
        
         
+        let customTabBarItem: UITabBarItem = UITabBarItem(title: "Officials", image: unselectedTabImage, selectedImage: selectedImage)
+        self.tabBarItem = customTabBarItem
+        
+        let logoImageView = UIImageView(image: logo)
+        self.navigationItem.titleView = logoImageView
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: SignUpViewController.addressAddedNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)

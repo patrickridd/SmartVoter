@@ -11,10 +11,16 @@ import UIKit
 class ElectionTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
     let logo = UIImage(named: "Logo Large")
+    let unselectedTabImage = UIImage(named: "Elections")?.imageWithRenderingMode(.AlwaysOriginal)
+    let selectedImage = UIImage(named: "ElectionsFilled")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let customTabBarItem: UITabBarItem = UITabBarItem(title: "Elections", image: unselectedTabImage, selectedImage: selectedImage)
+        self.tabBarItem = customTabBarItem
         
         let logoImageView = UIImageView(image: logo)
         self.navigationItem.titleView = logoImageView

@@ -18,11 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         guard let font = UIFont(name: "Avenir", size: 17) else { return true }
         
+//        let unselectedTabImage = UIImage(named: "Elections")?.imageWithRenderingMode(.AlwaysOriginal)
+//        let selectedImage = UIImage(named: "ElectionsFilled")
+        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()]
         UINavigationBar.appearance().tintColor = .whiteColor()
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], forState: .Normal)
+        UITabBar.appearance().barTintColor = UIColor.navigationRed()
+        UITabBar.appearance().tintColor = UIColor.bradsBlue()
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.bradsBlue()], forState:.Selected)
+        
 
         return true
     }
