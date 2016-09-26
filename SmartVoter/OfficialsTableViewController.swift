@@ -20,9 +20,14 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     var address: Address?
     let logo = UIImage(named: "Logo Large")
+    let unselectedTabImage = UIImage(named: "RepsWhite")?.imageWithRenderingMode(.AlwaysOriginal)
+    let selectedImage = UIImage(named: "RepsFilled")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let customTabBarItem: UITabBarItem = UITabBarItem(title: "Officials", image: unselectedTabImage, selectedImage: selectedImage)
+        self.tabBarItem = customTabBarItem
         
         let logoImageView = UIImageView(image: logo)
         self.navigationItem.titleView = logoImageView

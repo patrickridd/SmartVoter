@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="2mz-Zs-P1c">
             <objects>
-                <tabBarController id="q3d-bq-PoO" sceneMemberID="viewController">
+                <tabBarController id="q3d-bq-PoO" customClass="CustomTabBarController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Ifp-GJ-K4b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,13 +23,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nax-aX-x4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="178"/>
+            <point key="canvasLocation" x="-426" y="181"/>
         </scene>
-        <!--Elections-->
+        <!--Navigation Controller-->
         <scene sceneID="yI1-mq-xCx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kye-lJ-oBN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Elections" image="Elections-50" id="lSG-Vf-E9C"/>
+                <navigationController storyboardIdentifier="ElectionsNav" automaticallyAdjustsScrollViewInsets="NO" id="Kye-lJ-oBN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="lSG-Vf-E9C"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fR-fR-jqh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -42,13 +42,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2p-GX-8CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="469" y="-271"/>
+            <point key="canvasLocation" x="410" y="-339"/>
         </scene>
-        <!--Representatives-->
+        <!--Navigation Controller-->
         <scene sceneID="e6p-Jl-yXz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uqa-U5-aTp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Representatives" image="Conference-50" id="Bog-5w-0Bs"/>
+                <navigationController storyboardIdentifier="OfficialsNav" automaticallyAdjustsScrollViewInsets="NO" id="Uqa-U5-aTp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="Bog-5w-0Bs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Ai-Ow-u3a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -61,13 +61,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgY-5x-I37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496" y="282"/>
+            <point key="canvasLocation" x="1145" y="233"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="cYl-Sj-Xos">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8Q-hO-PuZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="User-50" id="Jtk-Tf-A7U"/>
+                <navigationController storyboardIdentifier="ProfileNav" automaticallyAdjustsScrollViewInsets="NO" id="F8Q-hO-PuZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="Jtk-Tf-A7U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7oS-xx-fzd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -80,7 +80,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0l0-83-kkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="704"/>
+            <point key="canvasLocation" x="468" y="843"/>
         </scene>
         <!--Profile-->
         <scene sceneID="kJD-19-Qhc">
@@ -98,7 +98,7 @@
                 <viewControllerPlaceholder storyboardName="OfficialDetail" id="foL-O2-bbg" userLabel="OfficialDetail" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91H-Br-XNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="466"/>
+            <point key="canvasLocation" x="1637" y="592"/>
         </scene>
         <!--ElectionDetail-->
         <scene sceneID="oYk-fZ-b2N">
@@ -106,7 +106,7 @@
                 <viewControllerPlaceholder storyboardName="ElectionDetail" id="rau-QR-Ekh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERU-Ez-7X4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="-279"/>
+            <point key="canvasLocation" x="1112" y="-423"/>
         </scene>
         <!--OfficialTableView-->
         <scene sceneID="k9t-J1-ZIy">
@@ -116,7 +116,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYM-7x-bzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="469"/>
+            <point key="canvasLocation" x="1739" y="232"/>
         </scene>
         <!--ElectionTableView-->
         <scene sceneID="odd-iA-Anz">
@@ -126,12 +126,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3h-eA-P1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="-278"/>
+            <point key="canvasLocation" x="1030" y="-340"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Conference-50" width="25" height="25"/>
-        <image name="Elections-50" width="25" height="25"/>
-        <image name="User-50" width="25" height="25"/>
-    </resources>
 </document>
