@@ -93,6 +93,12 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         alert.addAction(ok)
         presentViewController(alert, animated: true, completion: nil)
     }
+  
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
     
     func makePhoneCall(candidate: Candidate) {
         

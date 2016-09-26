@@ -26,7 +26,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     @IBOutlet weak var googlePlusButton: UIButton!
     @IBOutlet weak var youtubeButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
-    
+    @IBOutlet weak var phoneButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var websiteButton: UIButton!
     
     var official: Official?
     var address: Address?
@@ -45,6 +48,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         updateOfficials(official)
         upDateBackgroundColor()
         updateSocialButtons()
+        hideTextField()
         
         //   officialImageView.layer.cornerRadius = 9
         //   officialImageView.layer.masksToBounds = true
@@ -55,10 +59,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         let address = official.address
         self.address = address
         officialName.text = official.name
-        phoneNumberLabel.text = official.phone ?? "No phone number was provided"
+        phoneNumberLabel.text = official.phone ?? "No data provided"
         officialOfficeLabel.text = official.office?.name
         webAddressLabel.text = official.url ?? "No website found"
-        streetAddressLabel.text = address?.asAString ?? "No address provided"
+        streetAddressLabel.text = address?.asAString.capitalizedString ?? "No address provided"
         emailLabel.text = official.email ?? "No email provided"
         socialMediaLabel.text = "Social Media"
         
@@ -77,6 +81,12 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         guard let urls = NSURL(string: officialWebsite) else { return }
         
         let safariVC = SFSafariViewController(URL: urls)
+        if #available(iOS 10.0, *) {
+            safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+        } else {
+            UIApplication.sharedApplication().statusBarStyle = .Default
+        }
+
         presentViewController(safariVC, animated: true, completion: nil)
     }
     
@@ -90,6 +100,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         } else {
             self.showSendMailErrorAlert()
         }
+     //   dismissViewControllerAnimated(true, completion: nil)
         
     }
     
@@ -136,6 +147,12 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 guard let urls = NSURL(string: facebookURL) else { return }
                 
                 let safariVC = SFSafariViewController(URL: urls)
+                if #available(iOS 10.0, *) {
+                    safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                } else {
+                    UIApplication.sharedApplication().statusBarStyle = .Default
+                }
+
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
@@ -150,6 +167,12 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 guard let urls = NSURL(string: googlePlusURL) else { return }
                 
                 let safariVC = SFSafariViewController(URL: urls)
+                if #available(iOS 10.0, *) {
+                    safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                } else {
+                    UIApplication.sharedApplication().statusBarStyle = .Default
+                }
+
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
@@ -164,6 +187,12 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 guard let urls = NSURL(string: twitterURL) else { return }
                 
                 let safariVC = SFSafariViewController(URL: urls)
+                if #available(iOS 10.0, *) {
+                    safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                } else {
+                    UIApplication.sharedApplication().statusBarStyle = .Default
+                }
+
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
@@ -178,6 +207,11 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 guard let urls = NSURL(string: twitterURL) else { return }
                 
                 let safariVC = SFSafariViewController(URL: urls)
+                if #available(iOS 10.0, *) {
+                    safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                } else {
+                    UIApplication.sharedApplication().statusBarStyle = .Default
+                }
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
@@ -185,6 +219,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     
     
     // MARK: Email helper functions
+ 
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
@@ -200,21 +235,12 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         _ = UIAlertController(title:"Could Not Send Email" , message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
     }
     
+      // MARK: MFMailComposeViewControllerDelegate Method
+    
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        switch result.rawValue {
-        case MFMailComposeResult.Cancelled.rawValue:
-            print("Mail cancelled")
-        case MFMailComposeResult.Saved.rawValue:
-            print("Mail saved")
-        case MFMailComposeResult.Sent.rawValue:
-            print("Mail sent")
-        case MFMailComposeResult.Failed.rawValue:
-            print("Mail sent failure: \(error!.localizedDescription)")
-        default:
-            break
-        }
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
+
     //  MARK: Helper Functions
     
     func upDateBackgroundColor () {
@@ -244,14 +270,36 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             if social.type == "Facebook" {
                 facebookButton.hidden = false
             }
-            //  if official?.type == "YouTube" {
-            //      youtubeButton.hidden = false
-            //  } else {
-            //      youtubeButton.hidden = true
-            //  }
         }
     }
     
+    func hideTextField() {
+        if phoneNumberLabel.text == official?.phone {
+            phoneNumberLabel.hidden = false
+        } else {
+            phoneNumberLabel.hidden = true
+            phoneButton.hidden = true
+        }
+        if emailLabel.text == official?.email {
+            emailLabel.hidden = false
+        } else {
+            emailLabel.hidden = true
+            emailButton.hidden = true
+        }
+        if streetAddressLabel.text == official?.address?.asAString.capitalizedString {
+            streetAddressLabel.hidden = false
+        } else {
+            streetAddressLabel.hidden = true
+            mapButton.hidden = true
+        }
+        if webAddressLabel.text == official?.url {
+            webAddressLabel.hidden = false
+        } else {
+            webAddressLabel.hidden = true
+            websiteButton.hidden = true
+        }
+    }
+
     
     // MARK: - Navigation
     
