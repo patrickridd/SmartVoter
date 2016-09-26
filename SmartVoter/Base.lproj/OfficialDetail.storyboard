@@ -44,11 +44,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-oB-gMR">
+                                <color key="backgroundColor" red="0.1738183142174865" green="0.62331730769230775" blue="0.074847579437025274" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="111" id="4wt-gs-DJZ"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-lO-rWQ"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePic" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-lO-rWQ"/>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ab8-gx-oeq">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="JqE-e9-SWg">
@@ -272,6 +273,7 @@
         <image name="Safari-48" width="24" height="24"/>
         <image name="facebook" width="24" height="24"/>
         <image name="googlePlus" width="24" height="24"/>
+        <image name="profilePic" width="52" height="52"/>
         <image name="twitter" width="24" height="24"/>
         <image name="youTube" width="24" height="24"/>
     </resources>

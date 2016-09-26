@@ -11,9 +11,13 @@ import UIKit
 class ElectionTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    let logo = UIImage(named: "Logo Large")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let logoImageView = UIImageView(image: logo)
+        self.navigationItem.titleView = logoImageView
         
         guard let livingAddress = ProfileController.sharedController.loadAddress() else {
             // Present login view controller.
