@@ -102,6 +102,17 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
         return title
     }
     
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let blueColor = UIColor.bradsBlue()
+        let font = UIFont(name: "avenir", size: 18)
+        
+        guard let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else { return }
+        header.contentView.backgroundColor = blueColor
+        header.textLabel?.font = font
+        header.textLabel?.textColor = .whiteColor()
+    }
+    
     func reloadTableView() {
         guard let address = ProfileController.sharedController.loadAddress() else {
             blurView.hidden = false
