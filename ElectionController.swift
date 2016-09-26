@@ -25,7 +25,20 @@ class ElectionController {
         formatter.timeStyle = .LongStyle
         return formatter
     }()
-    static var elections = [Contest]()
+    static var contests = [Contest]()
+    static var sortedContests: [[Contest]] {
+        var elections: [Contest] = []
+        var referendums: [Contest] = []
+        for contest in contests {
+            if contest.type == "General" {
+                elections.append(contest)
+            } else if contest.type == "Referendum" {
+                referendums.append(contest)
+            }
+        }
+        return [elections, referendums]
+    }
+    
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     static let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
     static let electionURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/elections")
@@ -83,7 +96,7 @@ class ElectionController {
                         self.scheduleElectionNotification()
                     }
                     let contests = contestsDictionary.flatMap{Contest(dictionary: $0, electionName: election.name, electionDay: election.electionDay)}
-                    self.elections = contests
+                    self.contests = contests
                     completion(contests)
                     
                 }

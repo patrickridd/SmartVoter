@@ -52,17 +52,47 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return ElectionController.sortedContests.count
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ElectionController.elections.count
+        return ElectionController.sortedContests[section].count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier("electionCell", forIndexPath: indexPath) as? ElectionTableViewCell else { return UITableViewCell() }
-        let contest = ElectionController.elections[indexPath.row]
+        let contest = ElectionController.sortedContests[indexPath.section][indexPath.row]
         
         cell.updateWithElection(contest)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        var title: String = ""
+        
+        switch section {
+        case 0:
+            title = "Elections"
+        case 1:
+            title = "Referendums"
+        default:
+            title = "Contests"
+        }
+        return title
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let blueColor = UIColor.bradsBlue()
+        let font = UIFont(name: "avenir", size: 18)
+        
+        guard let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else { return }
+        header.contentView.backgroundColor = blueColor
+        header.textLabel?.font = font
+        header.textLabel?.textColor = .whiteColor()
     }
     
     // MARK: - Navigation
@@ -70,7 +100,7 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toElectionDetailSegue" {
             guard let destinationVC = segue.destinationViewController as? ElectionDetailViewController, indexPath = tableView.indexPathForSelectedRow else { return }
-            let contest = ElectionController.elections[indexPath.row]
+            let contest = ElectionController.sortedContests[indexPath.section][indexPath.row]
             destinationVC.contest = contest
         }
     }
