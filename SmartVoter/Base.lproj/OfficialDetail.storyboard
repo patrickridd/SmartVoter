@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -80,8 +81,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds5-ox-f7C">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Sf7-rs-xcp"/>
-                                                    <constraint firstAttribute="width" constant="40" id="v2W-br-UFs"/>
+                                                    <constraint firstAttribute="width" secondItem="Ds5-ox-f7C" secondAttribute="height" multiplier="1:1" id="Omb-Cp-BAk"/>
                                                 </constraints>
                                                 <state key="normal" image="Map Marker-50"/>
                                                 <connections>
