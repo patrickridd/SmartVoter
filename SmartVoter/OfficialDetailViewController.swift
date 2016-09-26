@@ -107,7 +107,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                     "\\D", withString: "", options: .RegularExpressionSearch,
                     range: phoneNumberNoCharacter.startIndex..<phoneNumberNoCharacter.endIndex)
                 print(officialPhoneNumber)
-                if let phoneCallURL:NSURL = NSURL(string: "tel:\(officialPhoneNumber ?? "No Number Found")") {
+                if let phoneCallURL:NSURL = NSURL(string: "tel:\(phoneNumberNoCharacter ?? "No Number Found")") {
                     let application:UIApplication = UIApplication.sharedApplication()
                     if (application.canOpenURL(phoneCallURL)) {
                         application.openURL(phoneCallURL);
