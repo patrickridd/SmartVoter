@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         stateText.inputView = statePicker
         statePicker.delegate = self
         statePicker.dataSource = self
-        
+        textfieldDelegates()
         roundedEdges()
     }
     
@@ -45,6 +45,12 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             nc.postNotificationName(SignUpViewController.addressAddedNotification, object: self)
         })
         self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
+    func textfieldDelegates() {
+        streetText.delegate = self
+        cityText.delegate = self
+        zipText.delegate = self
     }
     
 
