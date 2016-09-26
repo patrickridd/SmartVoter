@@ -13,13 +13,18 @@ class ElectionController {
     
     static let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
-        formatter.dateStyle = .ShortStyle
-        formatter.dateFormat = "yyyy-MM-dd"
-        formatter.doesRelativeDateFormatting = true
-        formatter.timeStyle = .ShortStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         return formatter
     }()
     
+   static let dateToStringFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .ShortStyle
+        formatter.doesRelativeDateFormatting = true
+        formatter.timeStyle = .LongStyle
+        return formatter
+    }()
     static var elections = [Contest]()
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     static let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
@@ -101,7 +106,7 @@ class ElectionController {
     /// Schedules Notification of when the Election is
     static func scheduleElectionNotification() {
         
-        guard let date = dateFormatter.dateFromString(ElectionController.electionDate) else {
+        guard let date = dateFormatter.dateFromString(ElectionController.electionDate + "T00:00:00-00:00") else {
             return
         }
         
