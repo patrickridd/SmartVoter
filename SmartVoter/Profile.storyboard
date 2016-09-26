@@ -156,6 +156,7 @@
                         <outlet property="backgroundBlurImage" destination="Eha-iG-NS0" id="gNW-Bx-FOl"/>
                         <outlet property="blurView" destination="HN0-mj-hh1" id="Td4-2f-buQ"/>
                         <outlet property="cityTextField" destination="7K5-Qy-5vr" id="sSK-sQ-TTl"/>
+                        <outlet property="datePicker" destination="J5g-kL-chB" id="mF4-3q-Ply"/>
                         <outlet property="electionWebsiteLabel" destination="WfB-ht-Zj8" id="1PS-M0-fre"/>
                         <outlet property="mapView" destination="Jc5-pR-84w" id="C7V-ZH-dhI"/>
                         <outlet property="phoneNumberButton" destination="nab-QL-60O" id="Roi-5Q-3sq"/>

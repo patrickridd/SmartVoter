@@ -30,6 +30,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var safariButton: UIButton!
     @IBOutlet weak var phoneNumberButton: UIButton!
+    @IBOutlet var datePicker: UIPickerView!
     
     static let addressChangedNotification = "Address Changed"
     var livingAddress: Address?
@@ -39,8 +40,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        stateTextField.inputView = datePicker
         setupProfileViewController()
     }
+    
+    
     
     func setupProfileViewController() {
         self.updateLabels()
@@ -60,7 +64,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     
-    @IBAction func safariButtonTapped(sender: AnyObject) {
+    @IBAction func safariButtonTappedWithSender(sender: AnyObject) {
         guard let websiteString = ProfileController.electionWebsite, let url = NSURL(string: websiteString ) else {
             electionWebsiteLabel.text = "Website: No website found"
             safariButton.enabled = false
@@ -75,7 +79,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         })
     }
     
-    @IBAction func phoneNumberButtonTapped(sender: AnyObject) {
+    @IBAction func phoneNumberButtonTappedWithSender(sender: AnyObject) {
         guard let phoneNumber = ProfileController.electionPhoneNumber else {
             phoneNumberLabel.text = "Phone Number: No number found"
             phoneNumberButton.hidden = true
@@ -102,7 +106,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     
-    @IBAction func updateButtonTapped(sender: AnyObject) {
+    @IBAction func updateButtonTappedWithSender(sender: AnyObject) {
         if updateLabel.title == "Update" {
             ifUpdateButtonSaysUpdate()
         } else {
@@ -153,7 +157,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     /// Takes user to website where they can register to vote.
-    @IBAction func registerToVoteButtonTapped(sender: AnyObject) {
+    @IBAction func registerToVoteButtonTappedWithSender(sender: AnyObject) {
         guard let urlString = self.registrationURL, let url = NSURL(string: urlString) else {
             return
         }
@@ -227,6 +231,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        datePicker.resignFirstResponder()
         return true
     }
     

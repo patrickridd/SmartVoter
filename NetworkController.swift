@@ -20,14 +20,24 @@ class NetworkController {
     }
     
     static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String: String]? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) ->Void)?) {
-        
-        let requestUrl = urlFromParameters(url, urlParameters: urlParameters)
-        let request = NSMutableURLRequest(URL: requestUrl)
-        request.HTTPMethod = httpMethod.rawValue
-        request.HTTPBody = body
+        var request: NSMutableURLRequest?
+        if urlParameters != nil {
+            let requestUrl = urlFromParameters(url, urlParameters: urlParameters)
+            request = NSMutableURLRequest(URL: requestUrl)
+        } else {
+            request = NSMutableURLRequest(URL: url)
+        }
+        request?.HTTPMethod = httpMethod.rawValue
+        request?.HTTPBody = body
+        guard let newRequest = request else {
+            if let completion = completion {
+                completion(data: nil, error: nil)
+            }
+            return
+        }
         
         let session = NSURLSession.sharedSession()
-        let dataTask = session.dataTaskWithRequest(request) { (data, response, error) in
+        let dataTask = session.dataTaskWithRequest(newRequest) { (data, response, error) in
             if let completion = completion {
                 completion(data: data, error: error)
             }
