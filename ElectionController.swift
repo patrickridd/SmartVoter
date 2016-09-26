@@ -11,9 +11,10 @@ import UIKit
 
 class ElectionController {
     
-    let dateFormatter: NSDateFormatter = {
+    static let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
         formatter.dateStyle = .ShortStyle
+        formatter.dateFormat = "yyyy-MM-dd"
         formatter.doesRelativeDateFormatting = true
         formatter.timeStyle = .ShortStyle
         return formatter
@@ -69,6 +70,13 @@ class ElectionController {
                     
                     self.electionDate = date
                     self.electionName = electionName
+                    if let notificationIsSet = ProfileController.sharedController.loadNotificationStatus() {
+                        if !notificationIsSet {
+                            scheduleElectionNotification()
+                        }
+                    } else {
+                        self.scheduleElectionNotification()
+                    }
                     let contests = contestsDictionary.flatMap{Contest(dictionary: $0, electionName: election.name, electionDay: election.electionDay)}
                     self.elections = contests
                     completion(contests)
@@ -91,7 +99,7 @@ class ElectionController {
     }
     
     /// Schedules Notification of when the Election is
-    func scheduleElectionNotification() {
+    static func scheduleElectionNotification() {
         
         guard let date = dateFormatter.dateFromString(ElectionController.electionDate) else {
             return
@@ -103,7 +111,7 @@ class ElectionController {
         localNotification.category = "VoteTime"
         localNotification.fireDate = date
         UIApplication.sharedApplication().presentLocalNotificationNow(localNotification)
-        
+        ProfileController.sharedController.saveNotificationBool(true)
         
     }
     
