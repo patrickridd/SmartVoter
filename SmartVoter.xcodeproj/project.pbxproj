@@ -30,6 +30,8 @@
 		21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */; };
 		21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */; };
 		21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */; };
+		5159E6AA1D9995A200B41F65 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5159E6A81D9995A200B41F65 /* SignUp.storyboard */; };
+		5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */; };
 		518E624C1D92EB90008AAC2C /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518E624B1D92EB90008AAC2C /* Office.swift */; };
 		519B09781D92F43B00D3149F /* Election.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B09771D92F43A00D3149F /* Election.swift */; };
 		519B097A1D92F48000D3149F /* Contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B09791D92F48000D3149F /* Contest.swift */; };
@@ -81,6 +83,8 @@
 		21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionDetail.storyboard; sourceTree = "<group>"; };
 		21E7271F1D919D7E00ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialTableView.storyboard; sourceTree = "<group>"; };
 		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionTableView.storyboard; sourceTree = "<group>"; };
+		5159E6A91D9995A200B41F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
+		5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		518E624B1D92EB90008AAC2C /* Office.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
 		519B09771D92F43A00D3149F /* Election.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Election.swift; sourceTree = "<group>"; };
 		519B09791D92F48000D3149F /* Contest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contest.swift; sourceTree = "<group>"; };
@@ -162,10 +166,11 @@
 				51C2D3351D934CB50018109E /* OfficialDetailViewController.swift */,
 				2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */,
 				51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */,
-				51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */,
-				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
-				21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */,
 				6473387E1D958BC2006C7442 /* ColorPalette.swift */,
+				21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */,
+				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
+				51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */,
+				5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 		A223503F1D9434280023F2BC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				5159E6A81D9995A200B41F65 /* SignUp.storyboard */,
 				21E726E21D90914900ADC64F /* Main.storyboard */,
 				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
 				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
@@ -298,6 +304,7 @@
 			files = (
 				21E726E91D90914900ADC64F /* LaunchScreen.storyboard in Resources */,
 				21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */,
+				5159E6AA1D9995A200B41F65 /* SignUp.storyboard in Resources */,
 				21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */,
 				21E726E61D90914900ADC64F /* Assets.xcassets in Resources */,
 				21E727181D919D2300ADC64F /* Profile.storyboard in Resources */,
@@ -345,6 +352,7 @@
 				519B09781D92F43B00D3149F /* Election.swift in Sources */,
 				21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */,
 				640411641D91E25400B57A4C /* Social.swift in Sources */,
+				5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */,
 				21E727161D909A3700ADC64F /* ImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +406,14 @@
 				21E7271F1D919D7E00ADC64F /* Base */,
 			);
 			name = OfficialTableView.storyboard;
+			sourceTree = "<group>";
+		};
+		5159E6A81D9995A200B41F65 /* SignUp.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5159E6A91D9995A200B41F65 /* Base */,
+			);
+			name = SignUp.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
