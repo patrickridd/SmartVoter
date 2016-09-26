@@ -11,14 +11,20 @@ import UIKit
 
 class ElectionController {
     
-    let dateFormatter: NSDateFormatter = {
+    static let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
-        formatter.dateStyle = .ShortStyle
-        formatter.doesRelativeDateFormatting = true
-        formatter.timeStyle = .ShortStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         return formatter
     }()
     
+   static let dateToStringFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .ShortStyle
+        formatter.doesRelativeDateFormatting = true
+        formatter.timeStyle = .LongStyle
+        return formatter
+    }()
     static var elections = [Contest]()
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     static let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
@@ -69,6 +75,13 @@ class ElectionController {
                     
                     self.electionDate = date
                     self.electionName = electionName
+                    if let notificationIsSet = ProfileController.sharedController.loadNotificationStatus() {
+                        if !notificationIsSet {
+                            scheduleElectionNotification()
+                        }
+                    } else {
+                        self.scheduleElectionNotification()
+                    }
                     let contests = contestsDictionary.flatMap{Contest(dictionary: $0, electionName: election.name, electionDay: election.electionDay)}
                     self.elections = contests
                     completion(contests)
@@ -91,9 +104,9 @@ class ElectionController {
     }
     
     /// Schedules Notification of when the Election is
-    func scheduleElectionNotification() {
+    static func scheduleElectionNotification() {
         
-        guard let date = dateFormatter.dateFromString(ElectionController.electionDate) else {
+        guard let date = dateFormatter.dateFromString(ElectionController.electionDate + "T00:00:00-00:00") else {
             return
         }
         
@@ -103,7 +116,7 @@ class ElectionController {
         localNotification.category = "VoteTime"
         localNotification.fireDate = date
         UIApplication.sharedApplication().presentLocalNotificationNow(localNotification)
-        
+        ProfileController.sharedController.saveNotificationBool(true)
         
     }
     

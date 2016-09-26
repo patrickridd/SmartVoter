@@ -12,7 +12,7 @@ class ProfileController {
     
     let urlKey = "urlKey"
     let addressKey = "addressKey"
-    
+    let notificationBoolKey = "notificationBoolKey"
     
     static var electionWebsite: String?
     static var electionPhoneNumber: String?
@@ -21,7 +21,7 @@ class ProfileController {
     static let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
     static let electionURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/elections")
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
-
+    var notificationIsSet: Bool?
     
     
     // Saves User's Home Address to NSUserDefaults
@@ -36,6 +36,18 @@ class ProfileController {
         NSUserDefaults.standardUserDefaults().setObject(url, forKey: urlKey)
     }
     
+    // Saves election notification status
+    func saveNotificationBool(notificationIsSet: Bool) {
+        self.notificationIsSet = notificationIsSet
+        NSUserDefaults.standardUserDefaults().setObject(notificationIsSet, forKey: notificationBoolKey)
+    }
+    
+    // Loads notification bool to see if it has been set or not
+    func loadNotificationStatus() -> Bool? {
+        let status: Bool? = NSUserDefaults.standardUserDefaults().objectForKey(notificationBoolKey) as? Bool
+        self.notificationIsSet = status
+        return self.notificationIsSet ?? nil
+    }
     
     // Loads Users Address
     func loadAddress() ->Address? {
