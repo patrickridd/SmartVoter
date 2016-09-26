@@ -26,7 +26,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     @IBOutlet weak var googlePlusButton: UIButton!
     @IBOutlet weak var youtubeButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
-    
+    @IBOutlet weak var phoneButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var websiteButton: UIButton!
     
     var official: Official?
     var address: Address?
@@ -45,6 +48,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         updateOfficials(official)
         upDateBackgroundColor()
         updateSocialButtons()
+        hideTextField()
         
         //   officialImageView.layer.cornerRadius = 9
         //   officialImageView.layer.masksToBounds = true
@@ -55,10 +59,10 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         let address = official.address
         self.address = address
         officialName.text = official.name
-        phoneNumberLabel.text = official.phone ?? "No phone number was provided"
+        phoneNumberLabel.text = official.phone ?? "No data provided"
         officialOfficeLabel.text = official.office?.name
         webAddressLabel.text = official.url ?? "No website found"
-        streetAddressLabel.text = address?.asAString ?? "No address provided"
+        streetAddressLabel.text = address?.asAString.capitalizedString ?? "No address provided"
         emailLabel.text = official.email ?? "No email provided"
         socialMediaLabel.text = "Social Media"
         
@@ -269,6 +273,33 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         }
     }
     
+    func hideTextField() {
+        if phoneNumberLabel.text == official?.phone {
+            phoneNumberLabel.hidden = false
+        } else {
+            phoneNumberLabel.hidden = true
+            phoneButton.hidden = true
+        }
+        if emailLabel.text == official?.email {
+            emailLabel.hidden = false
+        } else {
+            emailLabel.hidden = true
+            emailButton.hidden = true
+        }
+        if streetAddressLabel.text == official?.address {
+            streetAddressLabel.hidden = false
+        } else {
+            streetAddressLabel.hidden = true
+            mapButton.hidden = true
+        }
+        if webAddressLabel.text == official?.url {
+            webAddressLabel.hidden = false
+        } else {
+            webAddressLabel.hidden = true
+            websiteButton.hidden = true
+        }
+    }
+
     
     // MARK: - Navigation
     
