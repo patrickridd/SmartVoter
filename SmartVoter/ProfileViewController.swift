@@ -11,11 +11,21 @@ import CoreLocation
 import MapKit
 import SafariServices
 
+private var kAssociationKeyNextField: UInt8 = 0
+
+extension UITextField {
+    var nextField: UITextField? {
+        get {
+            return objc_getAssociatedObject(self, &kAssociationKeyNextField) as? UITextField
+        }
+        set(newField) {
+            objc_setAssociatedObject(self, &kAssociationKeyNextField, newField, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+}
 
 class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-    //    @IBOutlet weak var livingAddressLabel: UILabel!
     @IBOutlet weak var registerToVoteLabel: UIButton!
     @IBOutlet weak var placesToVoteLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -31,6 +41,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var safariButton: UIButton!
     @IBOutlet weak var phoneNumberButton: UIButton!
     @IBOutlet var datePicker: UIPickerView!
+    @IBOutlet weak var userAddressLabel: UILabel!
     
     static let addressChangedNotification = "Address Changed"
     var livingAddress: Address?
@@ -38,17 +49,19 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var registrationURL: String?
     var pollingAnnotations = [MKAnnotation]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        stateTextField.inputView = datePicker
+        setupTextFields()
         setupProfileViewController()
     }
-    
-    
     
     func setupProfileViewController() {
         self.updateLabels()
         
+        
+        registerToVoteLabel.layer.masksToBounds = true
+        registerToVoteLabel.layer.cornerRadius = 8.0
         cityTextField.delegate = self
         stateTextField.delegate = self
         zipTextField.delegate = self
@@ -63,6 +76,19 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         }
     }
     
+    func setupTextFields() {
+        streetTextField.nextField = cityTextField
+        cityTextField.nextField = stateTextField
+        stateTextField.nextField = zipTextField
+        datePicker.delegate = self
+        datePicker.dataSource = self
+        stateTextField.inputView = datePicker
+
+    }
+    
+    @IBAction func screenTapped(sender: AnyObject) {
+        datePicker.resignFirstResponder()
+    }
     
     @IBAction func safariButtonTappedWithSender(sender: AnyObject) {
         guard let websiteString = ProfileController.electionWebsite, let url = NSURL(string: websiteString ) else {
@@ -135,6 +161,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     // Helper Method that is called if Update button is tapped when it reads "Save"
     func ifUpdateButtonSaysSave() {
+        stateTextField.resignFirstResponder()
+        zipTextField.resignFirstResponder()
+        cityTextField.resignFirstResponder()
+        streetTextField.resignFirstResponder()
         updateLabel.title = "Update"
         guard let stateText = stateTextField.text where stateText.characters.count > 0,
             let cityText = cityTextField.text where cityText.characters.count > 0,
@@ -189,7 +219,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             return
         }
         self.livingAddress = livingAddress
-        self.navigationItem.title = self.livingAddress?.line1 ?? "No Address Found"
+        self.userAddressLabel.text = livingAddress.line1 ?? "No Address Found"
         self.registrationURL = ProfileController.sharedController.loadURL()
         
         
@@ -234,6 +264,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         datePicker.resignFirstResponder()
         return true
     }
+    
+    
     
     // MARK: - Picker View Delegate Functions
     

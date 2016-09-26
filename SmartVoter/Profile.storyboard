@@ -21,14 +21,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-pR-84w"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX1-EJ-Jbo">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
-                                <state key="normal" title="Register To Vote"/>
+                                <color key="backgroundColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="C03-HI-I9E"/>
+                                    <constraint firstAttribute="height" constant="30" id="rD6-IM-yPg"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Register To Vote">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="registerToVoteButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="MnZ-Cx-4bH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places to Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-xM-ueK">
                                 <color key="backgroundColor" red="0.78352540731430054" green="0.3855588436126709" blue="0.38459816575050354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ob9-uL-ANx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -43,10 +60,15 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bpd-MK-Mdh">
                                     <frame key="frameInset"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="Cml-cI-nNG" appends="YES" id="V3r-Go-nkM"/>
+                                    </connections>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
+                                <frame key="frameInset" minX="26" minY="296" width="268" height="55"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
                                         <subviews>
@@ -112,18 +134,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="3RU-aO-pNt"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="3RV-ms-0fz"/>
                             <constraint firstAttribute="trailing" secondItem="YYi-xM-ueK" secondAttribute="trailing" id="45X-JQ-SnC"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="centerX" secondItem="Jc5-pR-84w" secondAttribute="centerX" id="8Ed-h6-BNh"/>
                             <constraint firstAttribute="trailing" secondItem="Eha-iG-NS0" secondAttribute="trailing" id="8yD-1J-lH4"/>
                             <constraint firstItem="HN0-mj-hh1" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="GGH-8a-9xo"/>
-                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="10" id="KoM-GB-S4g"/>
+                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="20" id="KoM-GB-S4g"/>
                             <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="HN0-mj-hh1" secondAttribute="bottom" id="LsV-QQ-qlZ"/>
                             <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="Eha-iG-NS0" secondAttribute="bottom" id="MDp-J5-aw0"/>
+                            <constraint firstItem="iX1-EJ-Jbo" firstAttribute="centerX" secondItem="Jc5-pR-84w" secondAttribute="centerX" id="MGI-Yi-8fv"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="MjY-YT-H2z"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="height" secondItem="Jc5-pR-84w" secondAttribute="height" multiplier="2/3" id="QR3-D0-9Zp"/>
+                            <constraint firstItem="iX1-EJ-Jbo" firstAttribute="width" secondItem="Jc5-pR-84w" secondAttribute="width" id="SKD-iU-VfE"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="U0i-pc-2Z1"/>
                             <constraint firstItem="HN0-mj-hh1" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="VRH-ay-Rzh"/>
                             <constraint firstItem="lmX-ey-Ufh" firstAttribute="centerX" secondItem="HN0-mj-hh1" secondAttribute="centerX" id="Xbm-j5-16U"/>
@@ -135,11 +158,14 @@
                             <constraint firstItem="xMH-8P-82t" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="gcE-ab-wuy"/>
                             <constraint firstItem="Eha-iG-NS0" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="iIB-cQ-mWa"/>
                             <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="mDq-IE-rgb"/>
+                            <constraint firstItem="iX1-EJ-Jbo" firstAttribute="height" secondItem="YYi-xM-ueK" secondAttribute="height" id="nvK-P7-cz2"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="ox3-uz-gmG"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="xMH-8P-82t" secondAttribute="bottom" constant="10" id="pTD-FA-JRV"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="xMH-8P-82t" secondAttribute="bottom" priority="750" constant="30" id="pTD-FA-JRV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xMH-8P-82t" secondAttribute="trailing" constant="10" id="seK-up-m5D"/>
-                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="lmX-ey-Ufh" secondAttribute="bottom" priority="750" constant="30" id="z86-Qs-DmA"/>
-                            <constraint firstItem="lmX-ey-Ufh" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="20" id="zFx-0p-qpA"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="lmX-ey-Ufh" secondAttribute="bottom" constant="30" id="z86-Qs-DmA"/>
+                            <constraint firstItem="lmX-ey-Ufh" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="10" id="zFx-0p-qpA"/>
+                            <constraint firstItem="iX1-EJ-Jbo" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="top" id="zeO-Ou-cTq"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="HN0-mj-hh1" secondAttribute="centerX" id="zm6-eZ-DdC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG">
@@ -167,6 +193,7 @@
                         <outlet property="stateTextField" destination="3db-u2-8Ov" id="NiZ-9q-FN1"/>
                         <outlet property="streetTextField" destination="kpi-uw-e4G" id="0QJ-UV-Aso"/>
                         <outlet property="updateLabel" destination="6A8-kQ-SAI" id="tyV-hj-li8"/>
+                        <outlet property="userAddressLabel" destination="iX1-EJ-Jbo" id="bwF-Kz-Ps6"/>
                         <outlet property="zipTextField" destination="Gbl-uf-tUS" id="z8N-oV-njy"/>
                     </connections>
                 </viewController>
@@ -175,6 +202,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                 </pickerView>
+                <tapGestureRecognizer id="Cml-cI-nNG">
+                    <connections>
+                        <action selector="screenTapped:" destination="87Y-Os-bYy" id="Pod-rq-nXA"/>
+                        <outlet property="delegate" destination="HN0-mj-hh1" id="MtF-Yd-SI1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="620.625" y="810"/>
         </scene>
