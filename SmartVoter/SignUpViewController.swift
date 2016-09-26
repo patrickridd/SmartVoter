@@ -19,19 +19,22 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        stateText.inputView = statePicker
+        statePicker.delegate = self
+        statePicker.dataSource = self
         
         roundedEdges()
     }
 
     
-    @IBAction func submitButtonTapped(sender: AnyObject) {
+    @IBAction func submitButtonTappedWithSender1566(sender: AnyObject) {
         guard let streetAddress = streetText.text,
             city = cityText.text,
             state = stateText.text,
             zip = zipText.text else {return}
         let address = Address(line1: streetAddress, city: city, state: state, zip: zip)
-        
-        
+        ProfileController.sharedController.saveAddressToUserDefault(address)
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
 

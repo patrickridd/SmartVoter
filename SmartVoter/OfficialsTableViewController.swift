@@ -8,33 +8,20 @@
 
 import UIKit
 
-class OfficialsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class OfficialsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var blurView: UIVisualEffectView!
-    @IBOutlet weak var streetAddress: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var zipTextField: UITextField!
-    @IBOutlet var statePickerView: UIPickerView!
-    @IBOutlet weak var stateTextField: UITextField!
     
     var address: Address?
     let logo = UIImage(named: "Logo Large")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let logoImageView = UIImageView(image: logo)
-        self.navigationItem.titleView = logoImageView
-        
-        stateTextField.inputView = statePickerView
-        blurView.hidden = true
-        
-        statePickerView.delegate = self
-        statePickerView.dataSource = self
-        
+ 
         guard let address = ProfileController.sharedController.loadAddress() else {
-            blurView.hidden = false
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let signUpViewController = storyboard.instantiateViewControllerWithIdentifier("SignUpViewController") as? SignUpViewController else {return}
+            self.presentViewController(signUpViewController, animated: true, completion: nil)
             return
         }
         
@@ -45,24 +32,6 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
-    }
-    
-    // MARK: - Picker View Delegate Functions
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Address.states.count
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Address.states[row].rawValue
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        stateTextField.text = Address.states[row].rawValue
     }
     
     // MARK: - Table view data source
@@ -115,7 +84,6 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     func reloadTableView() {
         guard let address = ProfileController.sharedController.loadAddress() else {
-            blurView.hidden = false
             return
         }
         OfficialController.getOfficials(address.asAString) {
