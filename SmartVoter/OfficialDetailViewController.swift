@@ -68,9 +68,13 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         
         
         partyLabel.text = "\(official.party ?? "Representative did not provide party affiliation") Party"
-        guard let photoURL = official.photoURL else { return }
-        ImageController.imageForURL(photoURL) { (image) in
-            self.officialImageView.image = image
+        if let photo = official.image {
+            self.officialImageView.image = photo
+        } else {
+            guard let photoURL = official.photoURL else { return }
+            ImageController.imageForURL(photoURL) { (image) in
+                self.officialImageView.image = image
+            }
         }
     }
     
@@ -86,7 +90,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         } else {
             UIApplication.sharedApplication().statusBarStyle = .Default
         }
-
+        
         presentViewController(safariVC, animated: true, completion: nil)
     }
     
@@ -100,7 +104,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         } else {
             self.showSendMailErrorAlert()
         }
-     //   dismissViewControllerAnimated(true, completion: nil)
+        //   dismissViewControllerAnimated(true, completion: nil)
         
     }
     
@@ -152,7 +156,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 } else {
                     UIApplication.sharedApplication().statusBarStyle = .Default
                 }
-
+                
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
@@ -172,7 +176,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 } else {
                     UIApplication.sharedApplication().statusBarStyle = .Default
                 }
-
+                
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
@@ -192,7 +196,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
                 } else {
                     UIApplication.sharedApplication().statusBarStyle = .Default
                 }
-
+                
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
@@ -219,7 +223,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
     
     
     // MARK: Email helper functions
- 
+    
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
@@ -235,12 +239,12 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
         _ = UIAlertController(title:"Could Not Send Email" , message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
     }
     
-      // MARK: MFMailComposeViewControllerDelegate Method
+    // MARK: MFMailComposeViewControllerDelegate Method
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
     //  MARK: Helper Functions
     
     func upDateBackgroundColor () {
@@ -299,7 +303,7 @@ class OfficialDetailViewController: UIViewController, MFMailComposeViewControlle
             websiteButton.hidden = true
         }
     }
-
+    
     
     // MARK: - Navigation
     

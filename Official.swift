@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct Official {
+class Official {
     
     private let kOfficial = "officials"
     private let kName = "name"
@@ -37,6 +38,12 @@ struct Official {
     var social: [Social]
     var office: Office?
     var email: String?
+    var image: UIImage?
+    
+    init() {
+        self.social = []
+    }
+    
     
     init?(dictionary: [String: AnyObject], office: Office)  {
         

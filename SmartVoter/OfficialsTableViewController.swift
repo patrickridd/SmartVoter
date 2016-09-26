@@ -44,9 +44,6 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
                 self.tableView.reloadData()
             })
         }
-        
-        
-       
     }
     
     // MARK: - Table view data source

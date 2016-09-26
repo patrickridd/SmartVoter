@@ -28,11 +28,15 @@ class OfficialTableViewCell: UITableViewCell {
         
         officialsNameLabel.text = official.name
         officialsOfficeLabel.text = official.office?.name
-        
+        if let image = official.image {
+            self.officialsImageView.image = image
+            return
+        }
         ImageController.imageForURL(official.photoURL ?? "") { (image) in
             guard let image = image else {
                 return
             }
+            official.image = image
             self.officialsImageView.image = image
         }
     }
