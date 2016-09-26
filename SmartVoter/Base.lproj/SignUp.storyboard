@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--OfficialTableView-->
+        <scene sceneID="k9t-J1-ZIy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OfficialTableView" id="abR-bb-BDz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="f8F-na-6ZA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYM-7x-bzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1483" y="536"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="MqC-Yf-uaY">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" id="cH9-Oo-EPV" customClass="SignUpViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8lG-bZ-ng9"/>
+                        <viewControllerLayoutGuide type="bottom" id="mE9-ek-UFx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fvD-O3-FjZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="united-states-capitol-building-picture" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-yS-8Sv"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy6-Oe-OH4">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dN6-wA-ElP">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="87c-Sg-TlJ">
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BlQ-G3-XK3">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jI-n8-88d">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkn-YH-9pB">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-Sh-wgW">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6F7-gx-GG5">
+                                            <color key="backgroundColor" red="0.72549019607843135" green="0.21176470588235294" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="124" id="xoE-Sq-DQ8"/>
+                                            </constraints>
+                                            <state key="normal" title="Submit">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smart Voter" translatesAutoresizingMaskIntoConstraints="NO" id="7AR-Go-BvL"/>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="87c-Sg-TlJ" firstAttribute="leading" secondItem="dN6-wA-ElP" secondAttribute="leadingMargin" id="0ku-b9-T8c"/>
+                                        <constraint firstItem="87c-Sg-TlJ" firstAttribute="centerY" secondItem="dN6-wA-ElP" secondAttribute="centerY" id="Hez-p5-in3"/>
+                                        <constraint firstItem="87c-Sg-TlJ" firstAttribute="top" secondItem="7AR-Go-BvL" secondAttribute="bottom" constant="56" id="L1v-aE-qnK"/>
+                                        <constraint firstItem="7AR-Go-BvL" firstAttribute="top" secondItem="dN6-wA-ElP" secondAttribute="top" constant="73" id="Nnh-6t-E39"/>
+                                        <constraint firstItem="6F7-gx-GG5" firstAttribute="top" secondItem="87c-Sg-TlJ" secondAttribute="bottom" constant="23" id="Srn-ao-Pz4"/>
+                                        <constraint firstItem="7AR-Go-BvL" firstAttribute="trailing" secondItem="6F7-gx-GG5" secondAttribute="trailing" id="YjA-Bv-lRZ"/>
+                                        <constraint firstItem="87c-Sg-TlJ" firstAttribute="trailing" secondItem="dN6-wA-ElP" secondAttribute="trailingMargin" id="krg-sf-Avf"/>
+                                        <constraint firstItem="7AR-Go-BvL" firstAttribute="leading" secondItem="6F7-gx-GG5" secondAttribute="leading" id="p1P-fR-oFr"/>
+                                        <constraint firstItem="87c-Sg-TlJ" firstAttribute="top" secondItem="dN6-wA-ElP" secondAttribute="top" constant="240" id="tSH-tu-Tp7"/>
+                                        <constraint firstItem="7AR-Go-BvL" firstAttribute="centerX" secondItem="87c-Sg-TlJ" secondAttribute="centerX" id="uP1-Gt-MvC"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dy6-Oe-OH4" firstAttribute="trailing" secondItem="d6H-yS-8Sv" secondAttribute="trailing" id="0Xy-ib-UUT"/>
+                            <constraint firstItem="d6H-yS-8Sv" firstAttribute="leading" secondItem="fvD-O3-FjZ" secondAttribute="leading" id="1r8-73-Cy9"/>
+                            <constraint firstItem="dy6-Oe-OH4" firstAttribute="bottom" secondItem="mE9-ek-UFx" secondAttribute="top" id="9ff-VU-IQR"/>
+                            <constraint firstItem="dy6-Oe-OH4" firstAttribute="top" secondItem="d6H-yS-8Sv" secondAttribute="top" id="MZZ-vn-k9q"/>
+                            <constraint firstItem="d6H-yS-8Sv" firstAttribute="bottom" secondItem="mE9-ek-UFx" secondAttribute="top" id="VB1-R9-HRc"/>
+                            <constraint firstAttribute="trailing" secondItem="d6H-yS-8Sv" secondAttribute="trailing" id="VSo-ml-zES"/>
+                            <constraint firstItem="dy6-Oe-OH4" firstAttribute="leading" secondItem="d6H-yS-8Sv" secondAttribute="leading" id="bLW-pc-HXl"/>
+                            <constraint firstItem="d6H-yS-8Sv" firstAttribute="top" secondItem="fvD-O3-FjZ" secondAttribute="top" id="io6-xR-oZ0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityText" destination="9jI-n8-88d" id="nIf-8G-rDH"/>
+                        <outlet property="statePicker" destination="vP3-J7-qvk" id="5NW-Hm-0TP"/>
+                        <outlet property="stateText" destination="Mkn-YH-9pB" id="xfJ-Bx-mfP"/>
+                        <outlet property="streetText" destination="BlQ-G3-XK3" id="9y7-OV-aCi"/>
+                        <outlet property="submitButton" destination="6F7-gx-GG5" id="OWB-ME-lmX"/>
+                        <outlet property="zipText" destination="yMl-Sh-wgW" id="rmB-Oe-eLn"/>
+                        <segue destination="abR-bb-BDz" kind="presentation" identifier="signUpSegue" id="oZD-zc-wuw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2OH-VL-Vck" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pickerView contentMode="scaleToFill" id="vP3-J7-qvk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <outlet property="dataSource" destination="cH9-Oo-EPV" id="rak-5I-LPV"/>
+                        <outlet property="delegate" destination="cH9-Oo-EPV" id="3au-iS-wGi"/>
+                    </connections>
+                </pickerView>
+            </objects>
+            <point key="canvasLocation" x="885.60000000000002" y="535.68215892053979"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Smart Voter" width="402" height="402"/>
+        <image name="united-states-capitol-building-picture" width="1920" height="1200"/>
+    </resources>
+</document>
