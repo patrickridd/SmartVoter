@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +24,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
                                 <state key="normal" title="Register To Vote"/>
                                 <connections>
-                                    <action selector="registerToVoteButtonTapped:" destination="87Y-Os-bYy" eventType="touchUpInside" id="eIl-7S-BWw"/>
+                                    <action selector="registerToVoteButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="MnZ-Cx-4bH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places to Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-xM-ueK">
                                 <color key="backgroundColor" red="0.78352540731430054" green="0.3855588436126709" blue="0.38459816575050354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Election Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmX-ey-Ufh">
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="Eha-iG-NS0"/>
@@ -40,6 +46,49 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-bl-H51">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="8T2-J5-LP4"/>
+                                                    <constraint firstAttribute="height" constant="20" id="UOE-R4-gA6"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Safari-48"/>
+                                                <connections>
+                                                    <action selector="safariButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="uRE-oL-2vg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
+                                                <state key="normal" backgroundImage="Phone-50"/>
+                                                <connections>
+                                                    <action selector="phoneNumberButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="YcJ-Ck-IoF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pCB-cP-Ll1" secondAttribute="trailing" id="C3c-A6-Vhc"/>
+                                            <constraint firstItem="pCB-cP-Ll1" firstAttribute="leading" secondItem="iV9-bl-H51" secondAttribute="leading" id="PRa-DB-Pvq"/>
+                                            <constraint firstItem="pCB-cP-Ll1" firstAttribute="top" secondItem="iV9-bl-H51" secondAttribute="top" id="SdU-ip-EBP"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MOn-YN-XoT">
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Street" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-uw-e4G">
@@ -63,35 +112,41 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="3RU-aO-pNt"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="3RV-ms-0fz"/>
                             <constraint firstAttribute="trailing" secondItem="YYi-xM-ueK" secondAttribute="trailing" id="45X-JQ-SnC"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="centerX" secondItem="Jc5-pR-84w" secondAttribute="centerX" id="8Ed-h6-BNh"/>
                             <constraint firstAttribute="trailing" secondItem="Eha-iG-NS0" secondAttribute="trailing" id="8yD-1J-lH4"/>
                             <constraint firstItem="HN0-mj-hh1" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="GGH-8a-9xo"/>
+                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="10" id="KoM-GB-S4g"/>
                             <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="HN0-mj-hh1" secondAttribute="bottom" id="LsV-QQ-qlZ"/>
                             <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="Eha-iG-NS0" secondAttribute="bottom" id="MDp-J5-aw0"/>
+                            <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="MjY-YT-H2z"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="height" secondItem="Jc5-pR-84w" secondAttribute="height" multiplier="2/3" id="QR3-D0-9Zp"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="U0i-pc-2Z1"/>
                             <constraint firstItem="HN0-mj-hh1" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="VRH-ay-Rzh"/>
+                            <constraint firstItem="lmX-ey-Ufh" firstAttribute="centerX" secondItem="HN0-mj-hh1" secondAttribute="centerX" id="Xbm-j5-16U"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="width" secondItem="Jc5-pR-84w" secondAttribute="width" constant="-20" id="Ya8-n9-jXQ"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="YjP-xg-fIh"/>
                             <constraint firstAttribute="trailing" secondItem="HN0-mj-hh1" secondAttribute="trailing" id="b36-9f-jxT"/>
                             <constraint firstItem="Eha-iG-NS0" firstAttribute="top" secondItem="5s6-SN-HCw" secondAttribute="top" id="bC6-uR-seC"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="bLh-kx-mez"/>
                             <constraint firstItem="MOn-YN-XoT" firstAttribute="centerY" secondItem="5s6-SN-HCw" secondAttribute="centerY" constant="-30" id="dv0-gw-dQs"/>
-                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="50" id="eyb-HT-08B"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="gcE-ab-wuy"/>
                             <constraint firstItem="Eha-iG-NS0" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="iIB-cQ-mWa"/>
                             <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="mDq-IE-rgb"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="50" id="nE4-Wf-tqO"/>
-                            <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="zVR-3f-spc"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="ox3-uz-gmG"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="xMH-8P-82t" secondAttribute="bottom" constant="10" id="pTD-FA-JRV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xMH-8P-82t" secondAttribute="trailing" constant="10" id="seK-up-m5D"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="lmX-ey-Ufh" secondAttribute="bottom" priority="750" constant="30" id="z86-Qs-DmA"/>
+                            <constraint firstItem="lmX-ey-Ufh" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="20" id="zFx-0p-qpA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG">
                         <barButtonItem key="rightBarButtonItem" title="Update" id="6A8-kQ-SAI">
                             <color key="tintColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="updateButtonTapped:" destination="87Y-Os-bYy" id="UsR-he-lWh"/>
+                                <action selector="updateButtonTappedWithSender:" destination="87Y-Os-bYy" id="Ieb-DN-CoU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -101,9 +156,14 @@
                         <outlet property="backgroundBlurImage" destination="Eha-iG-NS0" id="gNW-Bx-FOl"/>
                         <outlet property="blurView" destination="HN0-mj-hh1" id="Td4-2f-buQ"/>
                         <outlet property="cityTextField" destination="7K5-Qy-5vr" id="sSK-sQ-TTl"/>
+                        <outlet property="datePicker" destination="J5g-kL-chB" id="mF4-3q-Ply"/>
+                        <outlet property="electionWebsiteLabel" destination="WfB-ht-Zj8" id="1PS-M0-fre"/>
                         <outlet property="mapView" destination="Jc5-pR-84w" id="C7V-ZH-dhI"/>
+                        <outlet property="phoneNumberButton" destination="nab-QL-60O" id="Roi-5Q-3sq"/>
+                        <outlet property="phoneNumberLabel" destination="Wjf-SB-d26" id="0Or-FU-Q7r"/>
                         <outlet property="placesToVoteLabel" destination="YYi-xM-ueK" id="Ugz-2J-RCi"/>
                         <outlet property="registerToVoteLabel" destination="E3v-zm-v7r" id="PmZ-8h-pJr"/>
+                        <outlet property="safariButton" destination="pCB-cP-Ll1" id="56y-gP-ES4"/>
                         <outlet property="stateTextField" destination="3db-u2-8Ov" id="NiZ-9q-FN1"/>
                         <outlet property="streetTextField" destination="kpi-uw-e4G" id="0QJ-UV-Aso"/>
                         <outlet property="updateLabel" destination="6A8-kQ-SAI" id="tyV-hj-li8"/>
@@ -120,6 +180,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Phone-50" width="25" height="25"/>
+        <image name="Safari-48" width="24" height="24"/>
         <image name="capitolBuilding" width="1920" height="1200"/>
     </resources>
 </document>

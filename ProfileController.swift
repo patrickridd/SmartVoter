@@ -13,12 +13,16 @@ class ProfileController {
     let urlKey = "urlKey"
     let addressKey = "addressKey"
     
+    
+    static var electionWebsite: String?
+    static var electionPhoneNumber: String?
     var address: Address?
     static let sharedController = ProfileController()
     static let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
     static let electionURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/elections")
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
 
+    
     
     // Saves User's Home Address to NSUserDefaults
     func saveAddressToUserDefault(address: Address) {
@@ -31,6 +35,7 @@ class ProfileController {
     func saveRegisterToVoteURL(url: String) {
         NSUserDefaults.standardUserDefaults().setObject(url, forKey: urlKey)
     }
+    
     
     // Loads Users Address
     func loadAddress() ->Address? {
@@ -48,6 +53,15 @@ class ProfileController {
         let url = NSUserDefaults.standardUserDefaults().objectForKey(urlKey) as? String
         return url ?? nil
     }
+    
+    func formatNumberForCall(number: String) -> String {
+        let phoneWhite = number.lowercaseString.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).joinWithSeparator(" ")
+        let noPunc =  phoneWhite.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).joinWithSeparator("")
+        let noSpaces = noPunc.stringByReplacingOccurrencesOfString(" ", withString: "")
+        
+        return noSpaces
+    }
+
     
     
     /// Network Call to get polling Locations.
@@ -99,6 +113,21 @@ class ProfileController {
                                 completion()
                                 return
                         }
+                        if let electionWebsite = electionBodyDictionary["electionInfoUrl"] as? String {
+                            self.electionWebsite = electionWebsite
+                        }
+                        
+                        if let electionJurisdiction = stateArray["local_jurisdiction"] as? [String:AnyObject],
+                        let electionDictionary = electionJurisdiction["electionAdministrationBody"] as? [String:AnyObject],
+                            let officialsArray = electionDictionary["electionOfficials"] as? [[String:AnyObject]] {
+                            for official in officialsArray {
+                                let number = official["officePhoneNumber"] as? String
+                                self.electionPhoneNumber = number
+
+                            }
+                            
+                        }
+                        
                         ProfileController.sharedController.saveRegisterToVoteURL(registrationURL)
                         completion()
                     }
