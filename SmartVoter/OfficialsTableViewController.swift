@@ -19,9 +19,14 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var stateTextField: UITextField!
     
     var address: Address?
+    let logo = UIImage(named: "Logo Large")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let logoImageView = UIImageView(image: logo)
+        self.navigationItem.titleView = logoImageView
+        
         stateTextField.inputView = statePickerView
         blurView.hidden = true
         
