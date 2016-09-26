@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var streetText: UITextField!
     @IBOutlet weak var cityText: UITextField!
@@ -27,7 +27,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         roundedEdges()
     }
-
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func submitButtonTappedWithSender(sender: AnyObject) {
         guard let streetAddress = streetText.text,
