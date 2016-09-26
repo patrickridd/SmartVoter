@@ -17,7 +17,11 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        self.automaticallyAdjustsScrollViewInsets = false
+       
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: SignUpViewController.addressAddedNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
+        
         guard let address = ProfileController.sharedController.loadAddress() else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let signUpViewController = storyboard.instantiateViewControllerWithIdentifier("SignUpViewController") as? SignUpViewController else {return}
@@ -31,7 +35,8 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             })
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
+        
+       
     }
     
     // MARK: - Table view data source

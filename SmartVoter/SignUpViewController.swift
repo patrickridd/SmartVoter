@@ -16,6 +16,8 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var zipText: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet var statePicker: UIPickerView!
+    
+    static let addressAddedNotification = "addressAddedNotification"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +29,17 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
 
     
-    @IBAction func submitButtonTappedWithSender1566(sender: AnyObject) {
+    @IBAction func submitButtonTappedWithSender(sender: AnyObject) {
         guard let streetAddress = streetText.text,
             city = cityText.text,
             state = stateText.text,
             zip = zipText.text else {return}
         let address = Address(line1: streetAddress, city: city, state: state, zip: zip)
         ProfileController.sharedController.saveAddressToUserDefault(address)
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            let nc = NSNotificationCenter.defaultCenter()
+            nc.postNotificationName(SignUpViewController.addressAddedNotification, object: self)
+        })
         self.dismissViewControllerAnimated(false, completion: nil)
     }
     
