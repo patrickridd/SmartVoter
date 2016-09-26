@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,87 +69,23 @@
                                     <outlet property="delegate" destination="Liv-xM-jBU" id="lXh-wC-llh"/>
                                 </connections>
                             </tableView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gT-VM-Sxc">
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tCS-38-1Yt">
-                                    <frame key="frameInset"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pL-Ud-a83">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="51" id="eQf-J7-7ML"/>
-                                            </constraints>
-                                            <state key="normal" title="Submit"/>
-                                            <connections>
-                                                <action selector="addressSubmitButtonTapped:" destination="Liv-xM-jBU" eventType="touchUpInside" id="8cC-hO-KXn"/>
-                                            </connections>
-                                        </button>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mln-ti-Hj7">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nl1-kN-h7y">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHH-19-F1w">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUy-wO-a9p">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="trailing" secondItem="tCS-38-1Yt" secondAttribute="trailingMargin" id="BRe-jO-h6s"/>
-                                        <constraint firstItem="Mln-ti-Hj7" firstAttribute="leading" secondItem="nl1-kN-h7y" secondAttribute="leading" id="LSe-e6-F3m"/>
-                                        <constraint firstItem="nl1-kN-h7y" firstAttribute="leading" secondItem="cHH-19-F1w" secondAttribute="leading" id="LgV-es-4PG"/>
-                                        <constraint firstItem="nl1-kN-h7y" firstAttribute="trailing" secondItem="cHH-19-F1w" secondAttribute="trailing" id="Ok2-ou-1iF"/>
-                                        <constraint firstItem="Mln-ti-Hj7" firstAttribute="trailing" secondItem="nl1-kN-h7y" secondAttribute="trailing" id="U6Y-9A-2NC"/>
-                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="trailing" secondItem="Mln-ti-Hj7" secondAttribute="trailing" id="YYe-iX-Ffm"/>
-                                        <constraint firstItem="1pL-Ud-a83" firstAttribute="top" secondItem="cHH-19-F1w" secondAttribute="bottom" constant="23" id="cJV-yy-rp5"/>
-                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="top" secondItem="tCS-38-1Yt" secondAttribute="top" constant="225" id="hgo-el-6Rl"/>
-                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="leading" secondItem="Mln-ti-Hj7" secondAttribute="leading" id="mdA-fg-Bfb"/>
-                                        <constraint firstItem="cHH-19-F1w" firstAttribute="top" secondItem="nl1-kN-h7y" secondAttribute="bottom" constant="17" id="myY-zx-v1c"/>
-                                        <constraint firstItem="nl1-kN-h7y" firstAttribute="top" secondItem="Mln-ti-Hj7" secondAttribute="bottom" constant="23" id="qFJ-Nj-0Qg"/>
-                                        <constraint firstItem="ZUy-wO-a9p" firstAttribute="leading" secondItem="tCS-38-1Yt" secondAttribute="leadingMargin" id="sIS-cR-TjV"/>
-                                        <constraint firstItem="Mln-ti-Hj7" firstAttribute="top" secondItem="ZUy-wO-a9p" secondAttribute="bottom" constant="26" id="vuI-93-5jh"/>
-                                        <constraint firstItem="cHH-19-F1w" firstAttribute="centerX" secondItem="1pL-Ud-a83" secondAttribute="centerX" id="zLe-j9-vNz"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="top" secondItem="EVA-Cm-Y1r" secondAttribute="top" id="9s3-zz-GSf"/>
                             <constraint firstAttribute="trailing" secondItem="EVA-Cm-Y1r" secondAttribute="trailing" id="Oiq-tV-6mC"/>
-                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="bottom" secondItem="ytR-nc-aSK" secondAttribute="top" id="XYX-Qs-WHg"/>
                             <constraint firstItem="EVA-Cm-Y1r" firstAttribute="top" secondItem="cZV-je-hQT" secondAttribute="bottom" id="iQu-3m-vTR"/>
-                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="trailing" secondItem="EVA-Cm-Y1r" secondAttribute="trailing" id="nRg-7h-tH5"/>
                             <constraint firstItem="EVA-Cm-Y1r" firstAttribute="leading" secondItem="TUM-Wu-ALc" secondAttribute="leading" id="oPN-IF-M7B"/>
                             <constraint firstItem="ytR-nc-aSK" firstAttribute="top" secondItem="EVA-Cm-Y1r" secondAttribute="bottom" id="qJr-za-DMX"/>
-                            <constraint firstItem="4gT-VM-Sxc" firstAttribute="leading" secondItem="EVA-Cm-Y1r" secondAttribute="leading" id="xzR-Zy-7wZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Officials" id="X2X-dj-sLO"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="blurView" destination="4gT-VM-Sxc" id="R0d-9x-3JE"/>
-                        <outlet property="cityTextField" destination="Mln-ti-Hj7" id="TdS-Pb-X4B"/>
-                        <outlet property="statePickerView" destination="g88-w4-wQr" id="1rk-yx-uHv"/>
-                        <outlet property="stateTextField" destination="nl1-kN-h7y" id="AnG-kH-Jgh"/>
-                        <outlet property="streetAddress" destination="ZUy-wO-a9p" id="mEL-9N-MDR"/>
                         <outlet property="tableView" destination="EVA-Cm-Y1r" id="eOs-hw-8w7"/>
-                        <outlet property="zipTextField" destination="cHH-19-F1w" id="uRU-wH-DZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibo-nc-5iD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pickerView contentMode="scaleToFill" id="g88-w4-wQr">
-                    <rect key="frame" x="0.0" y="0.0" width="304" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </pickerView>
             </objects>
             <point key="canvasLocation" x="938.39999999999998" y="593.25337331334333"/>
         </scene>

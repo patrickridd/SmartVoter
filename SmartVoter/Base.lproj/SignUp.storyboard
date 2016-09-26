@@ -71,6 +71,9 @@
                                             <state key="normal" title="Submit">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="submitButtonTappedWithSender:" destination="cH9-Oo-EPV" eventType="touchUpInside" id="kAP-ff-0zw"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smart Voter" translatesAutoresizingMaskIntoConstraints="NO" id="7AR-Go-BvL"/>
                                     </subviews>
