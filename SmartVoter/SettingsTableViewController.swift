@@ -25,7 +25,7 @@ import UIKit
 class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     
-    @IBOutlet weak var updateLabel: UIBarButtonItem!
+    @IBOutlet weak var updateLabel: UIButton!
     @IBOutlet weak var zipTextField: UITextField!
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
@@ -34,9 +34,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     @IBOutlet weak var capitolImage: UIImageView!
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet var datePicker: UIPickerView!
+    @IBOutlet weak var saveButtonLabel: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableViewAutomaticDimension
         guard let address = ProfileController.sharedController.loadAddress() else {
             return
         }
@@ -46,45 +49,33 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         
     }
 
-    @IBAction func updateButtonTappedWithSenderWithSender(sender: AnyObject) {
-        if updateLabel.title == "Update" {
-            ifUpdateButtonSaysUpdate()
-        } else {
-            ifUpdateButtonSaysSave()
-        }
+  
+    @IBAction func updateAddressButtonTappedWithSender(sender: AnyObject) {
+        saveButtonLabel.title = "Save"
+        saveButtonLabel.enabled = true
+        
+        blurView.hidden = false
+        capitolImage.hidden = false
+        stateTextField.hidden = false
+        streetTextField.hidden = false
+        cityTextField.hidden = false
+        zipTextField.hidden = false
 
+        
     }
-    @IBAction func cancelButtonTappedWithSenderWithSender(sender: AnyObject) {
+    
+    @IBAction func doneButtonTapped(sender: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), {
             self.dismissViewControllerAnimated(true, completion: nil)
         })
 
     }
     
-    func updateLivingAddressLabel(address: Address) {
-        self.livingAddress.text = address.asAString
-    }
-    
-    // Helper Method that is called if Update button is tapped when it reads "Update"
-    func ifUpdateButtonSaysUpdate() {
-        blurView.hidden = false
-        blurView.hidden = false
-        capitolImage.hidden = false
-        streetTextField.hidden = false
-        cityTextField.hidden = false
-        stateTextField.hidden = false
-        zipTextField.hidden = false
-        updateLabel.title = "Save"
-        
-    }
-
-    // Helper Method that is called if Update button is tapped when it reads "Save"
-    func ifUpdateButtonSaysSave() {
+    @IBAction func saveButtonTapped(sender: AnyObject) {
         stateTextField.resignFirstResponder()
         zipTextField.resignFirstResponder()
         cityTextField.resignFirstResponder()
         streetTextField.resignFirstResponder()
-        updateLabel.title = "Update"
         guard let stateText = stateTextField.text where stateText.characters.count > 0,
             let cityText = cityTextField.text where cityText.characters.count > 0,
             let streetText = streetTextField.text where streetText.characters.count > 0,
@@ -95,20 +86,28 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         let newAddress = Address(line1: streetText, city: cityText, state: stateText, zip: zipText)
         ProfileController.sharedController.saveAddressToUserDefault(newAddress)
         updateLivingAddressLabel(newAddress)
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        setupView()
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
             let nc = NSNotificationCenter.defaultCenter()
             nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
         })
+
     }
+    
+    func updateLivingAddressLabel(address: Address) {
+        self.livingAddress.text = address.asAString
+    }
+    
 
     func setupView() {
+        saveButtonLabel.title = ""
+        saveButtonLabel.enabled = false
         blurView.hidden = true
         capitolImage.hidden = true
         stateTextField.hidden = true
         streetTextField.hidden = true
         cityTextField.hidden = true
         zipTextField.hidden = true
-
     }
     
     /// Sets delegate for textFields
@@ -119,9 +118,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         datePicker.delegate = self
         datePicker.dataSource = self
         UITextField.connectFields([streetTextField,cityTextField,stateTextField,zipTextField])
-        stateTextField.inputView = datePicker
-        
-        
+        stateTextField.inputView = datePicker            
     }
     
     
