@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartVoter/ElectionDetailViewController.swift"
-            timestampString = "496356233.575239"
+            timestampString = "496709364.579139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "presentMailComposeVC(candidate:)"
             landmarkType = "7">
          </BreakpointContent>

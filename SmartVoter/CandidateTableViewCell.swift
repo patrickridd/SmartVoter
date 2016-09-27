@@ -63,7 +63,8 @@ class CandidateTableViewCell: UITableViewCell, MFMailComposeViewControllerDelega
             emailLabel.hidden = true
         }
         if candidate.websiteURL != nil {
-            websiteLabel.text = candidate.websiteURL
+            websiteLabel.text = "Website"
+//            websiteLabel.text = candidate.websiteURL
         } else {
             websiteLabel.hidden = true
         }
