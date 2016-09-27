@@ -18,38 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zwY-QL-bBc">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="LBL-cH-cGX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="A61-kK-Xuf"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwY-QL-bBc">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LBL-cH-cGX">
                                     <frame key="frameInset"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by: Patrick Ridd, Brad Forsyth, Travis Sasselli, Steven Patterson" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGp-KA-dm4">
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smart Voter" translatesAutoresizingMaskIntoConstraints="NO" id="IbU-hn-pX6">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="207" id="LNw-bF-hZc"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IbU-hn-pX6" firstAttribute="top" secondItem="LBL-cH-cGX" secondAttribute="top" constant="141" id="4IS-Qf-8vK"/>
+                                        <constraint firstAttribute="trailing" secondItem="IbU-hn-pX6" secondAttribute="trailing" constant="8" id="ct1-uZ-bwa"/>
+                                        <constraint firstItem="yGp-KA-dm4" firstAttribute="leading" secondItem="LBL-cH-cGX" secondAttribute="leading" constant="16" id="ep4-5U-kbv"/>
+                                        <constraint firstItem="IbU-hn-pX6" firstAttribute="leading" secondItem="LBL-cH-cGX" secondAttribute="leading" constant="8" id="fOH-g4-wUn"/>
+                                        <constraint firstAttribute="trailing" secondItem="IbU-hn-pX6" secondAttribute="trailing" constant="8" id="p9a-UV-XRf"/>
+                                        <constraint firstAttribute="trailing" secondItem="yGp-KA-dm4" secondAttribute="trailing" constant="16" id="vWy-24-aBq"/>
+                                        <constraint firstItem="IbU-hn-pX6" firstAttribute="leading" secondItem="LBL-cH-cGX" secondAttribute="leading" constant="8" id="w9c-gX-HqL"/>
+                                        <constraint firstItem="yGp-KA-dm4" firstAttribute="top" secondItem="IbU-hn-pX6" secondAttribute="bottom" constant="241" id="waV-gA-kd4"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="A61-kK-Xuf">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IbU-hn-pX6">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="81" id="LNw-bF-hZc"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by: Patrick Ridd, Brad Forsyth, Travis Sasselli, Steven Patterson" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGp-KA-dm4">
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="yGp-KA-dm4" secondAttribute="bottom" constant="20" id="ABW-oX-ugA"/>
-                            <constraint firstItem="IbU-hn-pX6" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="B5k-C7-qPF"/>
-                            <constraint firstItem="yGp-KA-dm4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="DfZ-ri-ecv"/>
-                            <constraint firstItem="IbU-hn-pX6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="Fwe-eu-9JD"/>
-                            <constraint firstAttribute="trailing" secondItem="IbU-hn-pX6" secondAttribute="trailing" constant="8" id="R1e-js-SB9"/>
-                            <constraint firstAttribute="trailing" secondItem="yGp-KA-dm4" secondAttribute="trailing" constant="16" id="ZKX-0f-I2H"/>
+                            <constraint firstItem="zwY-QL-bBc" firstAttribute="top" secondItem="A61-kK-Xuf" secondAttribute="top" id="2TB-Y7-rsy"/>
+                            <constraint firstItem="A61-kK-Xuf" firstAttribute="trailing" secondItem="zwY-QL-bBc" secondAttribute="trailing" id="2Vd-p7-Z9c"/>
+                            <constraint firstItem="A61-kK-Xuf" firstAttribute="leading" secondItem="zwY-QL-bBc" secondAttribute="leading" id="7P2-1W-cel"/>
+                            <constraint firstItem="zwY-QL-bBc" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="LhG-3L-1Ov"/>
+                            <constraint firstItem="zwY-QL-bBc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="OM7-jU-nge"/>
+                            <constraint firstAttribute="trailing" secondItem="A61-kK-Xuf" secondAttribute="trailing" id="Qsv-CW-r2W"/>
+                            <constraint firstItem="A61-kK-Xuf" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="mkC-uk-cbg"/>
+                            <constraint firstItem="zwY-QL-bBc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yTo-ft-bkD"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -59,7 +68,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreenLogo" width="1016" height="148"/>
+        <image name="Smart Voter" width="402" height="402"/>
         <image name="capitolBuilding" width="1920" height="1200"/>
     </resources>
 </document>
