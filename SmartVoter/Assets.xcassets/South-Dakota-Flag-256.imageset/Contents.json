@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "South-Dakota-Flag-256.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "South-Dakota-Flag-256.png",
       "scale" : "2x"
     },
     {
