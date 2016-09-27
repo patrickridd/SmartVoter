@@ -272,6 +272,7 @@
 				TargetAttributes = {
 					21E726DA1D90914900ADC64F = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = CVQEUYD92N;
 						LastSwiftMigration = 0800;
 					};
 					21E726EE1D90914900ADC64F = {
@@ -515,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CVQEUYD92N;
 				INFOPLIST_FILE = SmartVoter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PatrickRidd.SmartVoter;
@@ -527,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CVQEUYD92N;
 				INFOPLIST_FILE = SmartVoter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PatrickRidd.SmartVoter;
