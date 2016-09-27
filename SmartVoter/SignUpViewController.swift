@@ -18,7 +18,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var statePicker: UIPickerView!
     
     static let addressAddedNotification = "addressAddedNotification"
-
+    
+    let toolbarView = UIView(frame: CGRectMake(0, 0, 10, 40))
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stateText.inputView = statePicker
@@ -26,7 +29,53 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         statePicker.dataSource = self
         textfieldDelegates()
         roundedEdges()
+        toolbarView.backgroundColor = .redColor()
+        setupKeyboardAccessoryView()
+        
     }
+    
+    
+    func customToolbarView() {
+        
+        let doneButton = UIButton(frame: CGRect(x: , y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+        let forward = UIButton()
+        let back = UIButton()
+        
+        doneButton.backgroundColor = .clearColor()
+        doneButton.setTitle("Done", forState: .Normal)
+        doneButton.setTitleColor(.blackColor(), forState: .Normal)
+        doneButton.addTarget(self, action: #selector(doneButtonTapped), forControlEvents: .TouchUpInside)
+        
+        forward.backgroundColor = .clearColor()
+        forward.setTitle(">", forState: .Normal)
+        forward.setTitleColor(.blackColor(), forState: .Normal)
+        forward.addTarget(self, action: #selector(forwardButtonTapped), forControlEvents: .TouchUpInside)
+        
+        back.backgroundColor = .clearColor()
+        back.setTitle("<", forState: .Normal)
+        back.setTitleColor(.blackColor(), forState: .Normal)
+        back.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
+    }
+    
+    func doneButtonTapped(sender: UIButton!) {
+        
+    }
+    
+    func forwardButtonTapped(sender: UIButton!) {
+        
+    }
+    
+    func backButtonTapped(sender: UIButton!) {
+        
+    }
+    
+    func setupKeyboardAccessoryView() {
+        streetText.inputAccessoryView = toolbarView
+        cityText.inputAccessoryView = toolbarView
+        stateText.inputAccessoryView = toolbarView
+        zipText.inputAccessoryView = toolbarView
+    }
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
