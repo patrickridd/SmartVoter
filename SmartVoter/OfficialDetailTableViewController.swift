@@ -50,8 +50,8 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         upDateBackgroundColor()
         updateSocialButtons()
         hideTextField()
-        
-      
+        tableView.estimatedRowHeight = 375
+        tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     
