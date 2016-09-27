@@ -64,7 +64,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         officialName.text = official.name
         phoneNumberLabel.text = official.phone ?? "No data provided"
         officialOfficeLabel.text = official.office?.name
-        webAddressLabel.text = official.url ?? "No website found"
+        webAddressLabel.text = "Website"
         streetAddressLabel.text = address?.asAString.capitalizedString ?? "No address provided"
         print(address?.asAString)
         emailLabel.text = email ?? "No email provided"
@@ -297,9 +297,8 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             streetAddressLabel.hidden = true
             mapButton.hidden = true
         }
-        if webAddressLabel.text == official?.url {
-            webAddressLabel.hidden = false
-        } else {
+        if official?.url == nil {
+            
             webAddressLabel.hidden = true
             websiteButton.hidden = true
         }
