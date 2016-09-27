@@ -224,10 +224,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         }
     }
     
-    
-    
-// updated tableview
-    
     // MARK: Email helper functions
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
