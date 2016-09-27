@@ -29,7 +29,8 @@ class ElectionTableViewCell: UITableViewCell {
         if election.type == "General" {
             let office = election.office
             let type = election.type
-            iconImageView.image = UIImage(named: "voteSmart.png")
+            
+            iconImageView.image = UIImage(named: "voteSmarts.png")
             electionNameLabel.text = office
             electionDateLabel.text = type
         } else if election.type == "Referendum" {
