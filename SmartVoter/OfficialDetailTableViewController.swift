@@ -51,26 +51,14 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         updateSocialButtons()
         hideTextField()
         
-        //   officialImageView.layer.cornerRadius = 9
-        //   officialImageView.layer.masksToBounds = true
+      
+        
     }
     
     // MARK: - Table view data source
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 6
-    }
-    
-    
-    
+       
     func updateOfficials(official: Official) {
-        
+        let email = official.email
         let address = official.address
         self.address = address
         officialName.text = official.name
@@ -78,9 +66,9 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         officialOfficeLabel.text = official.office?.name
         webAddressLabel.text = official.url ?? "No website found"
         streetAddressLabel.text = address?.asAString.capitalizedString ?? "No address provided"
-        emailLabel.text = official.email ?? "No email provided"
+        emailLabel.text = email ?? "No email provided"
+        print(official.email)
         socialMediaLabel.text = "Social Media"
-        
         
         partyLabel.text = "\(official.party ?? "Representative did not provide party affiliation") Party"
         guard let photoURL = official.photoURL else { return }
@@ -118,8 +106,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         } else {
             self.showSendMailErrorAlert()
         }
-        //   dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
     
@@ -236,9 +222,12 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             }
         }
     }
+<<<<<<< 3dd5882c91d7ebdeb0422ef1c093814f97a347a9
     
     
     
+=======
+>>>>>>> updated tableview
     
     // MARK: Email helper functions
     
@@ -276,7 +265,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         }
     }
     
-    
     func updateSocialButtons() {
         for social in (official?.social)! {
             if social.type == "YouTube" {
@@ -285,7 +273,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             if social.type == "Twitter" {
                 twitterButton.hidden = false
             }
-            
             if social.type == "GooglePlus" {
                 googlePlusButton.hidden = false
             }
@@ -321,7 +308,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             websiteButton.hidden = true
         }
     }
-    
     
     // MARK: - Navigation
     
