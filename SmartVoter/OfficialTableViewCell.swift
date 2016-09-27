@@ -25,8 +25,15 @@ class OfficialTableViewCell: UITableViewCell {
     
     
     func updateOfficialsCell(official: Official) {
-        
-        officialsNameLabel.text = official.name
+        if official.party == "Democratic" {
+        officialsNameLabel.text = "\(official.name ?? "No name found") (D)"
+        }
+        if official.party == "Republican" {
+            officialsNameLabel.text = "\(official.name ?? "No name found") (R)"
+        }
+        if official.party == "Libertarian" {
+            officialsNameLabel.text = "\(official.name ?? "No name found") (L)"
+        }
         officialsOfficeLabel.text = official.office?.name
         if let image = official.image {
             self.officialsImageView.image = image
