@@ -17,26 +17,19 @@
                         <viewControllerLayoutGuide type="bottom" id="Qm6-T3-eQo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5s6-SN-HCw">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-pR-84w"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmX-ey-Ufh">
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
                                 <color key="backgroundColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="rD6-IM-yPg"/>
-                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register To Vote">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerToVoteButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="MnZ-Cx-4bH"/>
+                                    <action selector="registerToVoteButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="1Gu-RU-Nkf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places to Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-xM-ueK">
@@ -48,29 +41,17 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="Eha-iG-NS0"/>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HN0-mj-hh1">
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bpd-MK-Mdh">
-                                    <frame key="frameInset"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <gestureRecognizers/>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="Cml-cI-nNG" appends="YES" id="V3r-Go-nkM"/>
-                                    </connections>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
-                                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="15"/>
                                                 <color key="textColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
-                                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="15"/>
                                                 <color key="textColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -80,22 +61,24 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="8T2-J5-LP4"/>
-                                                    <constraint firstAttribute="height" constant="30" id="UOE-R4-gA6"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="6Mv-gZ-VqN"/>
+                                                    <constraint firstAttribute="height" constant="40" id="CGY-zy-g3X"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="psZ-5x-dde"/>
+                                                    <constraint firstAttribute="width" constant="40" id="qSc-cy-cag"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="Safari-48"/>
                                                 <connections>
-                                                    <action selector="safariButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="uRE-oL-2vg"/>
+                                                    <action selector="safariButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="2Xw-2y-ydx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="HJh-75-pUQ"/>
-                                                    <constraint firstAttribute="height" constant="30" id="Onq-Lu-G1U"/>
+                                                    <constraint firstAttribute="width" constant="40" id="15B-C9-m5n"/>
+                                                    <constraint firstAttribute="height" constant="40" id="tls-FS-H4w"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="Phone-50"/>
                                                 <connections>
-                                                    <action selector="phoneNumberButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="YcJ-Ck-IoF"/>
+                                                    <action selector="phoneNumberButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="hyf-w3-YdA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -107,76 +90,37 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MOn-YN-XoT">
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Street" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-uw-e4G">
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7K5-Qy-5vr">
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3db-u2-8Ov">
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Zip" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gbl-uf-tUS">
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmX-ey-Ufh">
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="3RV-ms-0fz"/>
                             <constraint firstAttribute="trailing" secondItem="YYi-xM-ueK" secondAttribute="trailing" id="45X-JQ-SnC"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
-                            <constraint firstItem="MOn-YN-XoT" firstAttribute="centerX" secondItem="Jc5-pR-84w" secondAttribute="centerX" id="8Ed-h6-BNh"/>
-                            <constraint firstAttribute="trailing" secondItem="Eha-iG-NS0" secondAttribute="trailing" id="8yD-1J-lH4"/>
-                            <constraint firstItem="HN0-mj-hh1" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="GGH-8a-9xo"/>
-                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="20" id="KoM-GB-S4g"/>
-                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="HN0-mj-hh1" secondAttribute="bottom" id="LsV-QQ-qlZ"/>
-                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="Eha-iG-NS0" secondAttribute="bottom" id="MDp-J5-aw0"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="Ctn-N3-yAl"/>
+                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="20" id="GuF-Dp-2mS"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="MjY-YT-H2z"/>
-                            <constraint firstItem="MOn-YN-XoT" firstAttribute="height" secondItem="Jc5-pR-84w" secondAttribute="height" multiplier="2/3" id="QR3-D0-9Zp"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="U0i-pc-2Z1"/>
-                            <constraint firstItem="HN0-mj-hh1" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="VRH-ay-Rzh"/>
-                            <constraint firstItem="lmX-ey-Ufh" firstAttribute="centerX" secondItem="HN0-mj-hh1" secondAttribute="centerX" id="Xbm-j5-16U"/>
-                            <constraint firstItem="MOn-YN-XoT" firstAttribute="width" secondItem="Jc5-pR-84w" secondAttribute="width" constant="-20" id="Ya8-n9-jXQ"/>
-                            <constraint firstAttribute="trailing" secondItem="HN0-mj-hh1" secondAttribute="trailing" id="b36-9f-jxT"/>
-                            <constraint firstItem="Eha-iG-NS0" firstAttribute="top" secondItem="5s6-SN-HCw" secondAttribute="top" id="bC6-uR-seC"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="xMH-8P-82t" secondAttribute="bottom" constant="20" id="Vry-7W-E4h"/>
+                            <constraint firstItem="lmX-ey-Ufh" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="Zpd-xM-sgz"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="bLh-kx-mez"/>
-                            <constraint firstItem="MOn-YN-XoT" firstAttribute="centerY" secondItem="5s6-SN-HCw" secondAttribute="centerY" constant="-30" id="dv0-gw-dQs"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="gcE-ab-wuy"/>
-                            <constraint firstItem="Eha-iG-NS0" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="iIB-cQ-mWa"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="width" secondItem="WfB-ht-Zj8" secondAttribute="width" multiplier="2/3" id="j9C-ge-SmS"/>
+                            <constraint firstItem="lmX-ey-Ufh" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="10" id="lL8-kE-zLW"/>
                             <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="mDq-IE-rgb"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="ox3-uz-gmG"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="xMH-8P-82t" secondAttribute="bottom" constant="20" id="pTD-FA-JRV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xMH-8P-82t" secondAttribute="trailing" constant="10" id="seK-up-m5D"/>
-                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="lmX-ey-Ufh" secondAttribute="bottom" constant="10" id="z86-Qs-DmA"/>
-                            <constraint firstItem="lmX-ey-Ufh" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="10" id="zFx-0p-qpA"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="HN0-mj-hh1" secondAttribute="centerX" id="zm6-eZ-DdC"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="lmX-ey-Ufh" secondAttribute="bottom" constant="20" id="zHl-1D-73q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG">
-                        <barButtonItem key="rightBarButtonItem" title="Update" id="6A8-kQ-SAI">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="updateButtonTappedWithSender:" destination="87Y-Os-bYy" id="Ieb-DN-CoU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="backgroundBlurImage" destination="Eha-iG-NS0" id="gNW-Bx-FOl"/>
-                        <outlet property="blurView" destination="HN0-mj-hh1" id="Td4-2f-buQ"/>
-                        <outlet property="cityTextField" destination="7K5-Qy-5vr" id="sSK-sQ-TTl"/>
-                        <outlet property="datePicker" destination="J5g-kL-chB" id="mF4-3q-Ply"/>
                         <outlet property="electionWebsiteLabel" destination="WfB-ht-Zj8" id="1PS-M0-fre"/>
                         <outlet property="mapView" destination="Jc5-pR-84w" id="C7V-ZH-dhI"/>
                         <outlet property="phoneNumberButton" destination="nab-QL-60O" id="Roi-5Q-3sq"/>
@@ -184,30 +128,15 @@
                         <outlet property="placesToVoteLabel" destination="YYi-xM-ueK" id="Ugz-2J-RCi"/>
                         <outlet property="registerToVoteLabel" destination="E3v-zm-v7r" id="PmZ-8h-pJr"/>
                         <outlet property="safariButton" destination="pCB-cP-Ll1" id="56y-gP-ES4"/>
-                        <outlet property="stateTextField" destination="3db-u2-8Ov" id="NiZ-9q-FN1"/>
-                        <outlet property="streetTextField" destination="kpi-uw-e4G" id="0QJ-UV-Aso"/>
-                        <outlet property="updateLabel" destination="6A8-kQ-SAI" id="tyV-hj-li8"/>
-                        <outlet property="zipTextField" destination="Gbl-uf-tUS" id="z8N-oV-njy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km8-MV-VLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pickerView contentMode="scaleToFill" id="J5g-kL-chB">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                </pickerView>
-                <tapGestureRecognizer id="Cml-cI-nNG">
-                    <connections>
-                        <action selector="screenTapped:" destination="87Y-Os-bYy" id="Pod-rq-nXA"/>
-                        <outlet property="delegate" destination="HN0-mj-hh1" id="MtF-Yd-SI1"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="620.625" y="810"/>
+            <point key="canvasLocation" x="572" y="809.14542728635683"/>
         </scene>
     </scenes>
     <resources>
         <image name="Phone-50" width="50" height="50"/>
         <image name="Safari-48" width="48" height="48"/>
-        <image name="capitolBuilding" width="1920" height="1200"/>
     </resources>
 </document>

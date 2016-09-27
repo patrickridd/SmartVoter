@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q3d-bq-PoO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q3d-bq-PoO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -90,7 +90,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNi-LP-rsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318" y="1101"/>
+            <point key="canvasLocation" x="958" y="733"/>
         </scene>
         <!--OfficialDetail-->
         <scene sceneID="JoA-bL-HEd">
@@ -98,7 +98,7 @@
                 <viewControllerPlaceholder storyboardName="OfficialDetail" id="foL-O2-bbg" userLabel="OfficialDetail" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91H-Br-XNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637" y="592"/>
+            <point key="canvasLocation" x="1686" y="490"/>
         </scene>
         <!--ElectionDetail-->
         <scene sceneID="oYk-fZ-b2N">
