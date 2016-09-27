@@ -133,7 +133,7 @@ class ElectionController {
         localNotification.alertBody = "Don't forget to Vote Today"
         localNotification.category = "VoteTime"
         localNotification.fireDate = date
-        UIApplication.sharedApplication().presentLocalNotificationNow(localNotification)
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         ProfileController.sharedController.saveNotificationBool(true)
         
     }

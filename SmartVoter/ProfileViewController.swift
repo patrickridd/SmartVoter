@@ -41,7 +41,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var safariButton: UIButton!
     @IBOutlet weak var phoneNumberButton: UIButton!
     @IBOutlet var datePicker: UIPickerView!
-    @IBOutlet weak var userAddressLabel: UILabel!
     
     static let addressChangedNotification = "Address Changed"
     var livingAddress: Address?
@@ -104,7 +103,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         } else {
             UIApplication.sharedApplication().statusBarStyle = .Default
         }
-        
         dispatch_async(dispatch_get_main_queue(), {
             self.presentViewController(safariVC, animated: true, completion: nil)
         })
@@ -227,10 +225,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             return
         }
         self.livingAddress = livingAddress
-        self.userAddressLabel.text = livingAddress.line1 ?? "No Address Found"
         self.registrationURL = ProfileController.sharedController.loadURL()
-        
-        
     }
     
     /// Gets User's Polling Locations as CLLocations and populates them on a map.
@@ -246,7 +241,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             
             for (location, pollingLocation) in pollingLocationCLLocation {
                 let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-                
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = coordinate
                 if let pollingHours = pollingLocation.pollingHours {
@@ -265,16 +259,14 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         }
     }
     
-    // Textfield Delegate Method
-    
+    /// Textfield Delegate Method
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         datePicker.resignFirstResponder()
         return true
     }
     
-    // MARK: - Picker View Delegate Functions
-    
+    /// MARK: - Picker View Delegate Functions
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
