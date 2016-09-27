@@ -170,7 +170,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG">
                         <barButtonItem key="rightBarButtonItem" title="Update" id="6A8-kQ-SAI">
-                            <color key="tintColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="updateButtonTappedWithSender:" destination="87Y-Os-bYy" id="Ieb-DN-CoU"/>
                             </connections>

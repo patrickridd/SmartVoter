@@ -57,9 +57,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     func setupProfileViewController() {
+        let logo = UIImage(named: "Logo Large")
+        let logoImageView = UIImageView(image: logo)
+        self.navigationItem.titleView = logoImageView
         self.updateLabels()
-        
-        
         registerToVoteLabel.layer.masksToBounds = true
         registerToVoteLabel.layer.cornerRadius = 8.0
         cityTextField.delegate = self
