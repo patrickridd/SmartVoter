@@ -163,15 +163,15 @@
 			isa = PBXGroup;
 			children = (
 				21E727021D90949800ADC64F /* ElectionTableViewController.swift */,
-				21E726FE1D90941E00ADC64F /* ProfileViewController.swift */,
-				51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */,
-				2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */,
 				51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */,
-				6473387E1D958BC2006C7442 /* ColorPalette.swift */,
-				64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */,
 				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
+				51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */,
+				64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */,
 				51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */,
 				21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */,
+				21E726FE1D90941E00ADC64F /* ProfileViewController.swift */,
+				2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */,
+				6473387E1D958BC2006C7442 /* ColorPalette.swift */,
 				5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */,
 				A290B9291D99C54800A7C34C /* CustomTabBarController.swift */,
 			);

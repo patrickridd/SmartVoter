@@ -39,9 +39,11 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             return
         }
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         OfficialController.getOfficials(address.asAString) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false 
             })
         }
     }

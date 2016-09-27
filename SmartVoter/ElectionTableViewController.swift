@@ -29,9 +29,11 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
             // Present login view controller.
             return
         }
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         ElectionController.getContest(livingAddress.asAString) { (contests) in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             })
         }
         

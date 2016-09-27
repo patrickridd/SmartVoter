@@ -39,12 +39,16 @@ class OfficialTableViewCell: UITableViewCell {
             self.officialsImageView.image = image
             return
         }
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         ImageController.imageForURL(official.photoURL ?? "") { (image) in
             guard let image = image else {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 return
             }
             official.image = image
             self.officialsImageView.image = image
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
     
