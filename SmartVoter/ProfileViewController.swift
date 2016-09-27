@@ -115,21 +115,23 @@ class ProfileViewController: UIViewController {
         })
     }
     
+    
     func setRightButton() {
-        let image = UIImage(named: "Settings-100")
-        rightButton.imageView?.image = image
-        rightButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        rightButton.layer.cornerRadius = 20
-        rightButton.layer.masksToBounds = true
-        rightButton.clipsToBounds = true
+        let image = UIImage(named: "Settings-100")?.imageWithRenderingMode(.AlwaysTemplate)
+        rightButton.tintColor = UIColor.whiteColor()
+        rightButton.setImage(image, forState: .Normal)
+        rightButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         rightButton.contentMode = .ScaleAspectFit
-        self.navigationItem.rightBarButtonItem?.customView = rightButton
         rightButton.addTarget(self, action: #selector(presentSettingsTableViewController), forControlEvents: UIControlEvents.TouchUpInside)
+        let barButton = UIBarButtonItem()
+        barButton.customView = rightButton
+        self.navigationItem.rightBarButtonItem = barButton
     }
     
     func presentSettingsTableViewController() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let settingsTVC = storyBoard.instantiateViewControllerWithIdentifier("SettingsTVC")
+        let storyBoard = UIStoryboard(name: "Settings", bundle: nil)
+        let settingsTVC = storyBoard.instantiateViewControllerWithIdentifier("SettingNavigationController")
+        
         dispatch_async(dispatch_get_main_queue(), {
             self.presentViewController(settingsTVC, animated: true, completion: nil)
         })

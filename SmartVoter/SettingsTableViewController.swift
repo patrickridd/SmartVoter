@@ -41,16 +41,23 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             return
         }
         updateLivingAddressLabel(address)
+        setupView()
         setupTextFields()
         
     }
 
-    @IBAction func updateButtonTappedWithSender(sender: AnyObject) {
+    @IBAction func updateButtonTappedWithSenderWithSender(sender: AnyObject) {
         if updateLabel.title == "Update" {
             ifUpdateButtonSaysUpdate()
         } else {
             ifUpdateButtonSaysSave()
         }
+
+    }
+    @IBAction func cancelButtonTappedWithSenderWithSender(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
 
     }
     
@@ -62,6 +69,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     func ifUpdateButtonSaysUpdate() {
         blurView.hidden = false
         blurView.hidden = false
+        capitolImage.hidden = false
         streetTextField.hidden = false
         cityTextField.hidden = false
         stateTextField.hidden = false
@@ -81,6 +89,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             let cityText = cityTextField.text where cityText.characters.count > 0,
             let streetText = streetTextField.text where streetText.characters.count > 0,
             let zipText = zipTextField.text where zipText.characters.count > 0  else {
+                self.setupView()
                 return
         }
         let newAddress = Address(line1: streetText, city: cityText, state: stateText, zip: zipText)
@@ -92,6 +101,16 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         })
     }
 
+    func setupView() {
+        blurView.hidden = true
+        capitolImage.hidden = true
+        stateTextField.hidden = true
+        streetTextField.hidden = true
+        cityTextField.hidden = true
+        zipTextField.hidden = true
+
+    }
+    
     /// Sets delegate for textFields
     func setupTextFields() {
         streetTextField.delegate = self
@@ -102,8 +121,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         UITextField.connectFields([streetTextField,cityTextField,stateTextField,zipTextField])
         stateTextField.inputView = datePicker
         
+        
     }
-
+    
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -125,7 +146,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         stateTextField.text = Address.states[row].rawValue
     }
-
     
     /*
     // MARK: - Navigation
