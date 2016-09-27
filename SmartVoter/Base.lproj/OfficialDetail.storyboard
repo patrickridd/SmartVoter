@@ -22,7 +22,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="el7-OX-CBj" id="TJm-Za-ZYb">
-                                            <frame key="frameInset" width="375" height="665"/>
+                                            <frame key="frameInset" width="375" height="664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-oB-gMR">
@@ -64,6 +64,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds5-ox-f7C">
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="45" id="mL9-ut-zy4"/>
+                                                                    </constraints>
                                                                     <state key="normal" image="Map Marker-50"/>
                                                                     <connections>
                                                                         <action selector="addressButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="ZRL-8G-Vhj"/>
@@ -130,7 +133,7 @@
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-Wh-Nto">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-Wh-Nto">
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-TM-G9U">
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
@@ -139,7 +142,8 @@
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-tJ-eJS">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="40" id="oOw-lN-6kQ"/>
+                                                                        <constraint firstAttribute="width" constant="45" id="Rub-pk-i9V"/>
+                                                                        <constraint firstAttribute="height" constant="45" id="bTS-DO-wAv"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="twitter"/>
                                                                     <connections>
@@ -148,7 +152,8 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJV-FX-O4E">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="40" id="Azv-G7-z68"/>
+                                                                        <constraint firstAttribute="width" constant="45" id="Brs-PL-pRI"/>
+                                                                        <constraint firstAttribute="height" constant="45" id="VrM-IC-iqy"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="youTube"/>
                                                                     <connections>
@@ -157,7 +162,8 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgI-Vk-Dut">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="40" id="755-on-6rz"/>
+                                                                        <constraint firstAttribute="width" constant="45" id="HU3-M4-d3b"/>
+                                                                        <constraint firstAttribute="height" constant="45" id="SXE-4b-01C"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="googlePlus"/>
                                                                     <connections>
@@ -166,7 +172,8 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-R0-MnY">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="40" id="HGa-bN-kdS"/>
+                                                                        <constraint firstAttribute="width" constant="45" id="VVI-VX-oKa"/>
+                                                                        <constraint firstAttribute="height" constant="45" id="xsK-X3-hr3"/>
                                                                     </constraints>
                                                                     <state key="normal" image="facebook"/>
                                                                     <connections>
