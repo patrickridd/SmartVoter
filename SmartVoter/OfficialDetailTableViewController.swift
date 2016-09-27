@@ -66,6 +66,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         officialOfficeLabel.text = official.office?.name
         webAddressLabel.text = official.url ?? "No website found"
         streetAddressLabel.text = address?.asAString.capitalizedString ?? "No address provided"
+        print(address?.asAString)
         emailLabel.text = email ?? "No email provided"
         print(official.email)
         socialMediaLabel.text = "Social Media"
@@ -222,12 +223,10 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             }
         }
     }
-<<<<<<< 3dd5882c91d7ebdeb0422ef1c093814f97a347a9
     
     
     
-=======
->>>>>>> updated tableview
+// updated tableview
     
     // MARK: Email helper functions
     
@@ -291,6 +290,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         }
         if emailLabel.text == official?.email {
             emailLabel.hidden = false
+            emailButton.hidden = false
         } else {
             emailLabel.hidden = true
             emailButton.hidden = true

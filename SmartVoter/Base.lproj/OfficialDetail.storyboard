@@ -11,7 +11,7 @@
         <scene sceneID="ZqL-xz-WaN">
             <objects>
                 <tableViewController id="NEf-vV-1NR" customClass="OfficialDetailTableViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="371" sectionHeaderHeight="28" sectionFooterHeight="28" id="DFO-iT-Ke5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="371" sectionHeaderHeight="28" sectionFooterHeight="28" id="DFO-iT-Ke5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -22,7 +22,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="el7-OX-CBj" id="TJm-Za-ZYb">
-                                            <frame key="frameInset" width="375" height="664"/>
+                                            <frame key="frameInset" width="375" height="665"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-oB-gMR">
@@ -213,7 +213,7 @@
                     <connections>
                         <outlet property="backgroundImage" destination="mUc-oB-gMR" id="bfF-mO-gQX"/>
                         <outlet property="emailButton" destination="2YY-Bc-TzT" id="xCO-wI-u7i"/>
-                        <outlet property="emailLabel" destination="5NK-5E-7KV" id="rQD-CD-0e9"/>
+                        <outlet property="emailLabel" destination="jYs-Aw-QeA" id="kZ4-k8-37l"/>
                         <outlet property="facebookButton" destination="Le3-R0-MnY" id="bmi-Sa-8cs"/>
                         <outlet property="googlePlusButton" destination="QgI-Vk-Dut" id="6jG-CB-3RA"/>
                         <outlet property="mapButton" destination="Ds5-ox-f7C" id="F3e-h3-S6V"/>
