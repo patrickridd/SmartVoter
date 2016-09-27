@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="frc-dJ-pPb">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="frc-dJ-pPb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -19,19 +19,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-Oa-3Xv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-Oa-3Xv">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="electionCell" rowHeight="70" id="xON-X5-OoR" customClass="ElectionTableViewCell" customModule="SmartVoter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="electionCell" rowHeight="82" id="xON-X5-OoR" customClass="ElectionTableViewCell" customModule="SmartVoter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xON-X5-OoR" id="2j6-g3-sqr">
-                                            <frame key="frameInset" width="375" height="69.5"/>
+                                            <frame key="frameInset" width="375" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-cW-VzN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-cW-VzN">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="gtF-PV-aIj"/>
+                                                        <constraint firstAttribute="width" constant="69" id="jzW-C2-NTv"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-sO-Bdp">
@@ -46,15 +46,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Ywn-RB-M3n" firstAttribute="top" secondItem="zt8-sO-Bdp" secondAttribute="bottom" constant="5" id="1cv-2Z-LTk"/>
-                                                <constraint firstItem="zt8-sO-Bdp" firstAttribute="leading" secondItem="2j6-g3-sqr" secondAttribute="leadingMargin" id="7s6-K4-93o"/>
-                                                <constraint firstItem="Ywn-RB-M3n" firstAttribute="leading" secondItem="2j6-g3-sqr" secondAttribute="leading" constant="8" id="8Fm-eG-G6A"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ag4-cW-VzN" secondAttribute="trailing" constant="8" id="9h6-1y-PqN"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ag4-cW-VzN" secondAttribute="bottom" constant="8" id="D14-su-anm"/>
-                                                <constraint firstItem="zt8-sO-Bdp" firstAttribute="top" secondItem="2j6-g3-sqr" secondAttribute="topMargin" id="MhS-rE-FTr"/>
-                                                <constraint firstItem="Ag4-cW-VzN" firstAttribute="leading" secondItem="zt8-sO-Bdp" secondAttribute="trailing" constant="8" id="oS7-o5-jBq"/>
-                                                <constraint firstItem="Ag4-cW-VzN" firstAttribute="leading" secondItem="Ywn-RB-M3n" secondAttribute="trailing" constant="8" id="uAv-Pv-6cH"/>
-                                                <constraint firstItem="Ag4-cW-VzN" firstAttribute="top" secondItem="2j6-g3-sqr" secondAttribute="top" constant="8" id="zWS-ol-f2J"/>
+                                                <constraint firstItem="Ywn-RB-M3n" firstAttribute="leading" secondItem="2j6-g3-sqr" secondAttribute="leadingMargin" id="4kc-pU-rv6"/>
+                                                <constraint firstItem="Ag4-cW-VzN" firstAttribute="top" secondItem="2j6-g3-sqr" secondAttribute="top" id="7W3-0X-MTl"/>
+                                                <constraint firstItem="Ag4-cW-VzN" firstAttribute="bottom" secondItem="2j6-g3-sqr" secondAttribute="bottomMargin" id="FwN-XQ-9UC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ywn-RB-M3n" secondAttribute="bottom" constant="9" id="bnj-Z1-Qu5"/>
+                                                <constraint firstItem="Ag4-cW-VzN" firstAttribute="leading" secondItem="zt8-sO-Bdp" secondAttribute="trailing" constant="8" symbolic="YES" id="hXN-jm-haX"/>
+                                                <constraint firstItem="zt8-sO-Bdp" firstAttribute="leading" secondItem="Ywn-RB-M3n" secondAttribute="leading" id="pWy-LN-y94"/>
+                                                <constraint firstItem="zt8-sO-Bdp" firstAttribute="top" secondItem="2j6-g3-sqr" secondAttribute="topMargin" id="q1x-aB-L6r"/>
+                                                <constraint firstItem="Ag4-cW-VzN" firstAttribute="trailing" secondItem="2j6-g3-sqr" secondAttribute="trailingMargin" id="tAk-kR-yi3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

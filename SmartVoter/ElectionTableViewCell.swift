@@ -29,13 +29,13 @@ class ElectionTableViewCell: UITableViewCell {
         if election.type == "General" {
             let office = election.office
             let type = election.type
-            
+            iconImageView.image = UIImage(named: "voteSmart.png")
             electionNameLabel.text = office
             electionDateLabel.text = type
         } else if election.type == "Referendum" {
             let title = election.referendumTitle
             let type = election.type
-            
+            iconImageView.image = UIImage(named: "votePapers.png")
             electionNameLabel.text = title?.capitalizedString
             electionDateLabel.text = type.capitalizedString
         }
