@@ -184,19 +184,47 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2q-hi-sHp">
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="399" id="cR6-0k-pnQ"/>
+                                    <constraint firstAttribute="height" constant="361" id="cR6-0k-pnQ"/>
                                 </constraints>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDB-hx-Tv5">
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="eUz-D0-HNe">
+                                        <connections>
+                                            <action selector="goBack" destination="E2q-hi-sHp" id="Yaf-7Y-BDR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="oUn-n8-qle">
+                                        <connections>
+                                            <action selector="goForward" destination="E2q-hi-sHp" id="Af5-9Q-zeV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Je0-LH-3BJ"/>
+                                    <barButtonItem systemItem="refresh" id="gqR-D8-Tou">
+                                        <connections>
+                                            <action selector="reload" destination="E2q-hi-sHp" id="oIg-d3-Kxr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="stop" id="1I7-Gd-FP3">
+                                        <connections>
+                                            <action selector="stopLoading" destination="E2q-hi-sHp" id="fnC-4T-R7M"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="E2q-hi-sHp" firstAttribute="bottom" secondItem="hKL-Ht-fCq" secondAttribute="top" id="6Ef-zE-Gxv"/>
+                            <constraint firstItem="E2q-hi-sHp" firstAttribute="bottom" secondItem="hKL-Ht-fCq" secondAttribute="top" constant="-38" id="6Ef-zE-Gxv"/>
                             <constraint firstItem="dPB-aH-lO7" firstAttribute="leading" secondItem="AL8-mz-wth" secondAttribute="leading" id="9wp-Yr-uGz"/>
                             <constraint firstAttribute="trailing" secondItem="dPB-aH-lO7" secondAttribute="trailing" id="JPK-ZN-1lY"/>
+                            <constraint firstItem="jDB-hx-Tv5" firstAttribute="top" secondItem="E2q-hi-sHp" secondAttribute="bottom" id="Pfi-bZ-HrL"/>
+                            <constraint firstItem="jDB-hx-Tv5" firstAttribute="trailing" secondItem="E2q-hi-sHp" secondAttribute="trailing" id="Rdr-IN-dQ9"/>
                             <constraint firstAttribute="trailing" secondItem="sg3-Q6-3HF" secondAttribute="trailing" id="WYQ-Ah-vpF"/>
                             <constraint firstItem="E2q-hi-sHp" firstAttribute="leading" secondItem="AL8-mz-wth" secondAttribute="leadingMargin" constant="-16" id="d7U-2Y-F1Z"/>
                             <constraint firstItem="E2q-hi-sHp" firstAttribute="top" secondItem="dPB-aH-lO7" secondAttribute="bottom" constant="25" id="iyD-KK-Kr3"/>
                             <constraint firstItem="E2q-hi-sHp" firstAttribute="centerX" secondItem="sg3-Q6-3HF" secondAttribute="centerX" id="mMO-eq-bRM"/>
+                            <constraint firstItem="jDB-hx-Tv5" firstAttribute="leading" secondItem="E2q-hi-sHp" secondAttribute="leading" id="oMl-iJ-4Bb"/>
                             <constraint firstItem="sg3-Q6-3HF" firstAttribute="leading" secondItem="AL8-mz-wth" secondAttribute="leading" id="ozP-6v-1Wf"/>
                             <constraint firstItem="dPB-aH-lO7" firstAttribute="top" secondItem="f5h-6j-uIW" secondAttribute="bottom" id="wUb-qN-cxS"/>
                             <constraint firstItem="sg3-Q6-3HF" firstAttribute="top" secondItem="dPB-aH-lO7" secondAttribute="bottom" id="wrG-gG-scR"/>
@@ -211,6 +239,7 @@
                         <outlet property="electionTypeLabel" destination="PvS-QH-qMe" id="k0g-kc-xpU"/>
                         <outlet property="iconImageView" destination="bIS-4D-a3a" id="Kym-Vp-N4F"/>
                         <outlet property="tableView" destination="sg3-Q6-3HF" id="WaJ-hT-wQW"/>
+                        <outlet property="webToolbar" destination="jDB-hx-Tv5" id="pKq-Sq-5CG"/>
                         <outlet property="webView" destination="E2q-hi-sHp" id="cDA-3K-abh"/>
                     </connections>
                 </viewController>
