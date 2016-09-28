@@ -47,34 +47,33 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Election's Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election's Office Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-bl-H51">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="bp7-F2-aZG"/>
-                                                    <constraint firstAttribute="width" constant="32" id="taW-8V-FIt"/>
+                                                    <constraint firstAttribute="height" constant="40" id="h1F-Z4-b7C"/>
                                                 </constraints>
-                                                <state key="normal" image="BradSafariFade"/>
+                                                <state key="normal" backgroundImage="Safari-48"/>
                                                 <connections>
                                                     <action selector="safariButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="2Xw-2y-ydx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="KXK-P7-qBV"/>
-                                                    <constraint firstAttribute="width" constant="32" id="g5g-SR-xcy"/>
+                                                    <constraint firstAttribute="width" constant="40" id="MTw-UT-5Wx"/>
+                                                    <constraint firstAttribute="height" constant="40" id="NvG-DD-zdd"/>
                                                 </constraints>
-                                                <state key="normal" image="BradPhoneFade"/>
+                                                <state key="normal" backgroundImage="Phone-50"/>
                                                 <connections>
                                                     <action selector="phoneNumberButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="hyf-w3-YdA"/>
                                                 </connections>
@@ -103,6 +102,7 @@
                             <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="cRo-3A-EhA" secondAttribute="bottom" id="YKf-qD-sEt"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="bLh-kx-mez"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="byI-fm-IJw"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="height" secondItem="Wjf-SB-d26" secondAttribute="height" id="emq-C0-qSl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xMH-8P-82t" secondAttribute="trailing" constant="10" id="g4I-Ay-2RM"/>
                             <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="mDq-IE-rgb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E3v-zm-v7r" secondAttribute="trailing" constant="40" id="qu2-un-DLQ"/>
@@ -128,7 +128,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BradPhoneFade" width="50" height="50"/>
-        <image name="BradSafariFade" width="50" height="50"/>
+        <image name="Phone-50" width="50" height="50"/>
+        <image name="Safari-48" width="48" height="48"/>
     </resources>
 </document>

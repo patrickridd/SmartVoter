@@ -59,20 +59,33 @@
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-bl-H51">
                                         <subviews>
+<<<<<<< f37314d530373194e5c64e87850821c5b82760f5
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="h1F-Z4-b7C"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Safari-48"/>
+=======
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="bp7-F2-aZG"/>
                                                     <constraint firstAttribute="width" constant="32" id="taW-8V-FIt"/>
                                                 </constraints>
                                                 <state key="normal" image="BradSafariFade"/>
+>>>>>>> Changed color of pickerViews
                                                 <connections>
                                                     <action selector="safariButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="2Xw-2y-ydx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
                                                 <constraints>
+<<<<<<< f37314d530373194e5c64e87850821c5b82760f5
+                                                    <constraint firstAttribute="width" constant="40" id="MTw-UT-5Wx"/>
+                                                    <constraint firstAttribute="height" constant="40" id="NvG-DD-zdd"/>
+=======
                                                     <constraint firstAttribute="height" constant="32" id="KXK-P7-qBV"/>
                                                     <constraint firstAttribute="width" constant="32" id="g5g-SR-xcy"/>
+>>>>>>> Changed color of pickerViews
                                                 </constraints>
                                                 <state key="normal" image="BradPhoneFade"/>
                                                 <connections>
