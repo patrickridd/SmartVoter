@@ -45,6 +45,9 @@
                                                     <state key="normal" title="Update Address">
                                                         <color key="titleColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateAddressButtonTappedWithSender:" destination="bz1-MI-kn5" eventType="touchUpInside" id="3tu-ft-pK7"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="1Sp-tz-7ad"/>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0D-qR-Trr">
@@ -129,12 +132,12 @@
                         <barButtonItem key="leftBarButtonItem" title="Done" id="bSZ-1n-RuW">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="doneButtonTappedWithSender:" destination="bz1-MI-kn5" id="ySX-Tx-rXj"/>
+                                <action selector="doneButtonTappedWithSender:" destination="bz1-MI-kn5" id="9A2-Gj-f0M"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="rcM-nu-UVQ">
                             <connections>
-                                <action selector="saveButtonTappedWithSender:" destination="bz1-MI-kn5" id="bUW-Ga-fy3"/>
+                                <action selector="saveButtonTappedWithSenderWithSender:" destination="bz1-MI-kn5" id="qtF-oy-oJU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,6 +146,7 @@
                         <outlet property="capitolImage" destination="1Sp-tz-7ad" id="icu-kY-veX"/>
                         <outlet property="cityTextField" destination="TuF-Q3-aXq" id="A51-EA-I23"/>
                         <outlet property="datePicker" destination="QRd-4J-wet" id="yGo-Ou-fxI"/>
+                        <outlet property="doneButtonLabel" destination="bSZ-1n-RuW" id="5ms-JM-nta"/>
                         <outlet property="livingAddress" destination="bD5-dU-fbY" id="1vl-mJ-cHX"/>
                         <outlet property="saveButtonLabel" destination="rcM-nu-UVQ" id="5rb-I9-M3N"/>
                         <outlet property="stateTextField" destination="U0b-jO-Vew" id="aZE-Z4-1CB"/>

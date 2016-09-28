@@ -35,6 +35,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet var datePicker: UIPickerView!
     @IBOutlet weak var saveButtonLabel: UIBarButtonItem!
+    @IBOutlet weak var doneButtonLabel: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,27 +52,30 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
 
   
     @IBAction func updateAddressButtonTappedWithSender(sender: AnyObject) {
+        doneButtonLabel.title = "Cancel"
         saveButtonLabel.title = "Save"
         saveButtonLabel.enabled = true
-        
         blurView.hidden = false
         capitolImage.hidden = false
         stateTextField.hidden = false
         streetTextField.hidden = false
         cityTextField.hidden = false
         zipTextField.hidden = false
-
         
     }
     
-    @IBAction func doneButtonTapped(sender: AnyObject) {
+    @IBAction func doneButtonTappedWithSender(sender: AnyObject) {
+        if doneButtonLabel.title == "Cancel" {
+            doneButtonLabel.title = "Done"
+           setupView()
+        } else {
         dispatch_async(dispatch_get_main_queue(), {
             self.dismissViewControllerAnimated(true, completion: nil)
         })
-
+        }
     }
     
-    @IBAction func saveButtonTapped(sender: AnyObject) {
+    @IBAction func saveButtonTappedWithSender(sender: AnyObject) {
         stateTextField.resignFirstResponder()
         zipTextField.resignFirstResponder()
         cityTextField.resignFirstResponder()
