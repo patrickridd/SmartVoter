@@ -19,7 +19,7 @@ class NetworkController {
         
     }
     
-    static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String: String]? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) ->Void)?) {
+    static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String: String]? = nil, header: [String: String]? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) ->Void)?) {
         var request: NSMutableURLRequest?
         if urlParameters != nil {
             let requestUrl = urlFromParameters(url, urlParameters: urlParameters)
@@ -29,6 +29,7 @@ class NetworkController {
         }
         request?.HTTPMethod = httpMethod.rawValue
         request?.HTTPBody = body
+        request?.allHTTPHeaderFields = header
         guard let newRequest = request else {
             if let completion = completion {
                 completion(data: nil, error: nil)

@@ -18,7 +18,7 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var webView: UIWebView!
-    
+    @IBOutlet weak var webToolbar: UIToolbar!
     
     var contest: Contest?
     
@@ -39,11 +39,13 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
             electionTypeLabel.text = contest.office
             descriptionLabel.text = contest.scope.capitalizedString
             webView.hidden = true
+            webToolbar.hidden = true
         } else if contest.type == "Referendum" {
             electionTypeLabel.text = contest.referendumTitle?.capitalizedString
             descriptionLabel.text = contest.referendumSubtitle?.capitalizedString
             tableView.hidden = true
             webView.hidden = false
+            webToolbar.hidden = false 
             setupWebView()
         }
         
