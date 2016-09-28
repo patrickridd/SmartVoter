@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,16 +25,37 @@
                                             <frame key="frameInset" width="375" height="548"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by: Brad Forsyth, Travis Sasselli, Steven Patterson, Patrick Ridd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-WE-i6s">
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmartVoterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sZ0-9e-dp9">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaK-Mq-h2T">
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hho-Df-GPo">
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxs-J2-sTB">
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brad Forsyth, Patrick Ridd, Steven Patterson, Travis Sasselli" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-WE-i6s">
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="1rN-WE-i6s" secondAttribute="bottom" id="5hk-G3-FiB"/>
+                                                                <constraint firstItem="1rN-WE-i6s" firstAttribute="leading" secondItem="Hho-Df-GPo" secondAttribute="leading" constant="20" id="aWZ-wu-7NK"/>
+                                                                <constraint firstAttribute="trailing" secondItem="1rN-WE-i6s" secondAttribute="trailing" constant="20" id="gfi-aK-Sw9"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.1007932797" green="0.34896293280000001" blue="0.54417645930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="sZ0-9e-dp9" secondAttribute="height" multiplier="1/1" id="zx4-DB-R0o"/>
+                                                        <constraint firstItem="Hho-Df-GPo" firstAttribute="top" secondItem="QaK-Mq-h2T" secondAttribute="top" id="5wD-7J-L0z"/>
+                                                        <constraint firstAttribute="height" constant="80" id="Asi-V2-Ctl"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Hho-Df-GPo" secondAttribute="bottom" id="C0l-0s-hUK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Hho-Df-GPo" secondAttribute="trailing" id="q44-6X-1Cm"/>
+                                                        <constraint firstItem="Hho-Df-GPo" firstAttribute="leading" secondItem="QaK-Mq-h2T" secondAttribute="leading" id="qb4-zk-uVY"/>
                                                     </constraints>
-                                                </imageView>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="br0-Q9-Pva">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -55,6 +75,12 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="1Sp-tz-7ad"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Small" translatesAutoresizingMaskIntoConstraints="NO" id="Bzi-hO-wix">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="JPS-7W-oBx"/>
+                                                        <constraint firstAttribute="height" constant="40" id="KXx-JN-rDp"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0D-qR-Trr">
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8S6-Ka-TNo">
                                                         <frame key="frameInset"/>
@@ -100,25 +126,22 @@
                                                 </visualEffectView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sZ0-9e-dp9" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="1Tc-CS-Ig1"/>
-                                                <constraint firstItem="sZ0-9e-dp9" firstAttribute="top" secondItem="Wrv-bO-8sj" secondAttribute="topMargin" constant="10" id="4qS-vd-HMx"/>
+                                                <constraint firstItem="QaK-Mq-h2T" firstAttribute="top" secondItem="Bzi-hO-wix" secondAttribute="bottom" constant="20" id="0x3-uF-Xbq"/>
                                                 <constraint firstItem="1Sp-tz-7ad" firstAttribute="top" secondItem="Wrv-bO-8sj" secondAttribute="topMargin" constant="-8" id="6as-ia-hqB"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="1Sp-tz-7ad" secondAttribute="trailing" constant="-8" id="7Ob-cy-7Ep"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="1Sp-tz-7ad" secondAttribute="bottom" id="H4a-sK-2jn"/>
                                                 <constraint firstItem="bD5-dU-fbY" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" constant="5" id="JUN-3D-dTB"/>
-                                                <constraint firstItem="1rN-WE-i6s" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leading" id="Kin-h6-pAD"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="sZ0-9e-dp9" secondAttribute="trailing" constant="65" id="NYT-Rb-dfh"/>
+                                                <constraint firstItem="QaK-Mq-h2T" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" constant="-20" id="Oc1-3R-2pa"/>
                                                 <constraint firstAttribute="bottom" secondItem="k0D-qR-Trr" secondAttribute="bottom" id="OiZ-VX-gCn"/>
-                                                <constraint firstAttribute="trailing" secondItem="1rN-WE-i6s" secondAttribute="trailing" id="QXS-dH-BVK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QaK-Mq-h2T" secondAttribute="bottom" constant="-10" id="PKK-Qg-hQ7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QaK-Mq-h2T" secondAttribute="trailing" constant="-20" id="PLW-x0-CGD"/>
+                                                <constraint firstItem="Bzi-hO-wix" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="UO0-E8-r3f"/>
                                                 <constraint firstItem="br0-Q9-Pva" firstAttribute="bottom" secondItem="bD5-dU-fbY" secondAttribute="top" id="VbX-bz-lgn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bD5-dU-fbY" secondAttribute="trailing" constant="5" id="WFI-3o-YNL"/>
-                                                <constraint firstItem="bD5-dU-fbY" firstAttribute="top" secondItem="sZ0-9e-dp9" secondAttribute="bottom" constant="20" id="XoV-JK-iiU"/>
                                                 <constraint firstItem="br0-Q9-Pva" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="agS-Po-aCE"/>
-                                                <constraint firstItem="sZ0-9e-dp9" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" constant="65" id="fhI-mx-D18"/>
                                                 <constraint firstItem="mhx-yN-KHu" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="hVO-B1-caT"/>
                                                 <constraint firstItem="1Sp-tz-7ad" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" id="icC-lM-Uvl"/>
                                                 <constraint firstItem="bD5-dU-fbY" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="kod-dJ-dkJ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1rN-WE-i6s" secondAttribute="bottom" constant="20" id="nNF-8N-oJM"/>
                                                 <constraint firstAttribute="trailing" secondItem="k0D-qR-Trr" secondAttribute="trailing" id="qQG-h0-nyU"/>
                                                 <constraint firstItem="mhx-yN-KHu" firstAttribute="top" secondItem="bD5-dU-fbY" secondAttribute="bottom" constant="10" id="tN9-Kz-pYR"/>
                                                 <constraint firstItem="k0D-qR-Trr" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leading" id="xl2-TW-WRa"/>
@@ -190,7 +213,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SmartVoterIcon" width="512" height="512"/>
+        <image name="Logo Small" width="201" height="201"/>
         <image name="capitolBuilding" width="1920" height="1200"/>
     </resources>
 </document>
