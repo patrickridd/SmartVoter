@@ -55,13 +55,14 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         let address = official.address
         self.address = address
         officialName.text = official.name
-        phoneNumberLabel.text = official.phone ?? "No data provided"
+//        phoneNumberLabel.text = official.phone ?? "No data provided"
+        phoneNumberLabel.text = "Office Phone"
         officialOfficeLabel.text = official.office?.name
         webAddressLabel.text = "Website"
-        streetAddressLabel.text = address?.asAString.capitalizedString ?? "No address provided"
-        print(address?.asAString)
-        emailLabel.text = email ?? "No email provided"
-        print(official.email)
+//        streetAddressLabel.text = address?.asAString.capitalizedString ?? "No address provided"
+        streetAddressLabel.text = "Office Address"
+//        emailLabel.text = email ?? "No email provided"
+        emailLabel.text = "E-mail"
         socialMediaLabel.text = "Social Media"
         
         partyLabel.text = "\(official.party ?? "Representative did not provide party affiliation") Party"
@@ -284,30 +285,59 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     }
     
     func hideTextField() {
-        if phoneNumberLabel.text == official?.phone {
+        
+        guard let official = official else { return }
+        
+        if official.phone != nil {
             phoneNumberLabel.hidden = false
         } else {
             phoneNumberLabel.hidden = true
             phoneButton.hidden = true
         }
-        if emailLabel.text == official?.email {
+        if official.email != nil {
             emailLabel.hidden = false
             emailButton.hidden = false
         } else {
             emailLabel.hidden = true
             emailButton.hidden = true
         }
-        if streetAddressLabel.text == official?.address?.asAString.capitalizedString {
+        if official.address != nil {
             streetAddressLabel.hidden = false
         } else {
             streetAddressLabel.hidden = true
             mapButton.hidden = true
         }
-        if official?.url == nil {
-            
+        if official.url == nil {
             webAddressLabel.hidden = true
             websiteButton.hidden = true
         }
+        
+        /*
+        
+        if phoneNumberLabel.text == official.phone {
+            phoneNumberLabel.hidden = false
+        } else {
+            phoneNumberLabel.hidden = true
+            phoneButton.hidden = true
+        }
+        if emailLabel.text == official.email {
+            emailLabel.hidden = false
+            emailButton.hidden = false
+        } else {
+            emailLabel.hidden = true
+            emailButton.hidden = true
+        }
+        if streetAddressLabel.text == official.address?.asAString.capitalizedString {
+            streetAddressLabel.hidden = false
+        } else {
+            streetAddressLabel.hidden = true
+            mapButton.hidden = true
+        }
+        if official.url == nil {
+            webAddressLabel.hidden = true
+            websiteButton.hidden = true
+        }
+ */
     }
     
     // MARK: - Navigation
