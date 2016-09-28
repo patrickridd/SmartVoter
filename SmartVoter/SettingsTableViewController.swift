@@ -66,7 +66,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     
     @IBAction func doneButtonTappedWithSender(sender: AnyObject) {
         if doneButtonLabel.title == "Cancel" {
-            doneButtonLabel.title = "Done"
            setupView()
         } else {
         dispatch_async(dispatch_get_main_queue(), {
@@ -84,6 +83,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             let cityText = cityTextField.text where cityText.characters.count > 0,
             let streetText = streetTextField.text where streetText.characters.count > 0,
             let zipText = zipTextField.text where zipText.characters.count > 0  else {
+                
                 self.setupView()
                 return
         }
@@ -104,6 +104,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     
 
     func setupView() {
+        doneButtonLabel.title = "Done"
         saveButtonLabel.title = ""
         saveButtonLabel.enabled = false
         blurView.hidden = true

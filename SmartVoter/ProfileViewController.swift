@@ -28,13 +28,14 @@ class ProfileViewController: UIViewController {
     var livingAddress: Address?
     var pollingLocations: [CLLocation]?
     var registrationURL: String?
-    var pollingAnnotations = [MKAnnotation]()
     
     let rightButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProfileViewController()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updatePollingLocation), name: ProfileViewController.addressChangedNotification, object: nil)
+
     }
     
     func setupProfileViewController() {
@@ -138,6 +139,18 @@ class ProfileViewController: UIViewController {
     }
     
     
+    func updatePollingLocation() {
+        let allAnnotations = self.mapView.annotations
+
+        self.mapView.removeAnnotations(allAnnotations)
+        guard let address = ProfileController.sharedController.loadAddress() else {
+            return
+        }
+        ProfileController.getPollingAddress(address) {
+            self.populateMapView()
+        }
+    }
+    
     /// Updates VC's labels.
     func updateLabels() {
         phoneNumberLabel.hidden = false
@@ -171,7 +184,6 @@ class ProfileViewController: UIViewController {
                     annotation.subtitle = pollingLocation.streetName
                 }
                 annotation.title = pollingLocation.locationName
-                self.pollingAnnotations.append(annotation)
                 
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self.mapView.showsUserLocation = true

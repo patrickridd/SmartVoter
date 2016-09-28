@@ -137,7 +137,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="rcM-nu-UVQ">
                             <connections>
-                                <action selector="saveButtonTappedWithSenderWithSender:" destination="bz1-MI-kn5" id="qtF-oy-oJU"/>
+                                <action selector="saveButtonTappedWithSender:" destination="bz1-MI-kn5" id="O0c-hb-2wG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
