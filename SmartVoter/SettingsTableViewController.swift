@@ -47,7 +47,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         updateLivingAddressLabel(address)
         setupView()
         setupTextFields()
-        
+        setupKeyboardNotifications()
     }
 
   
@@ -67,6 +67,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     @IBAction func doneButtonTappedWithSender(sender: AnyObject) {
         if doneButtonLabel.title == "Cancel" {
            setupView()
+            zipTextField.resignFirstResponder()
+            streetTextField.resignFirstResponder()
+            cityTextField.resignFirstResponder()
+            stateTextField.resignFirstResponder()
         } else {
         dispatch_async(dispatch_get_main_queue(), {
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -122,16 +126,58 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         zipTextField.delegate = self
         datePicker.delegate = self
         datePicker.dataSource = self
-        UITextField.connectFields([streetTextField,cityTextField,stateTextField,zipTextField])
-        stateTextField.inputView = datePicker            
+        stateTextField.inputView = datePicker
     }
     
+    var keyboardShown = false
+    var keyboardHeight: CGFloat?
+    
+    func setupKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
+            raiseView(keyboardSize.height)
+        }
+    }
+    
+    func raiseView(height: CGFloat) {
+        if !keyboardShown {
+            view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - height)
+            keyboardShown = true
+        } else {
+            guard let keyBoardHeight = keyboardHeight else {
+                return
+            }
+            if keyBoardHeight > height {
+                let differenceHeight = keyBoardHeight - height
+                view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height + differenceHeight)
+            } else {
+                let differenceHeight = height - keyBoardHeight
+                view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - differenceHeight)
+            }
+        }
+        keyboardHeight = height
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height + keyboardSize.height)
+            keyboardShown = false
+        }
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        UITextField.connectFields([streetTextField,cityTextField,stateTextField,zipTextField])
         return true
     }
-
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return view.frame.height-60
+    }
+    
     // MARK: - PickerView
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
