@@ -13,46 +13,29 @@ import SafariServices
 
 private var kAssociationKeyNextField: UInt8 = 0
 
-extension UITextField {
-    var nextField: UITextField? {
-        get {
-            return objc_getAssociatedObject(self, &kAssociationKeyNextField) as? UITextField
-        }
-        set(newField) {
-            objc_setAssociatedObject(self, &kAssociationKeyNextField, newField, .OBJC_ASSOCIATION_RETAIN)
-        }
-    }
-}
 
-class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ProfileViewController: UIViewController {
     
     @IBOutlet weak var registerToVoteLabel: UIButton!
     @IBOutlet weak var placesToVoteLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var streetTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var stateTextField: UITextField!
-    @IBOutlet weak var zipTextField: UITextField!
-    @IBOutlet weak var updateLabel: UIBarButtonItem!
-    @IBOutlet weak var blurView: UIVisualEffectView!
-    @IBOutlet weak var backgroundBlurImage: UIImageView!
     @IBOutlet weak var electionWebsiteLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var safariButton: UIButton!
     @IBOutlet weak var phoneNumberButton: UIButton!
-    @IBOutlet var datePicker: UIPickerView!
     
     static let addressChangedNotification = "Address Changed"
     var livingAddress: Address?
     var pollingLocations: [CLLocation]?
     var registrationURL: String?
-    var pollingAnnotations = [MKAnnotation]()
     
+    let rightButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTextFields()
         setupProfileViewController()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updatePollingLocation), name: ProfileViewController.addressChangedNotification, object: nil)
+
     }
     
     func setupProfileViewController() {
@@ -62,33 +45,15 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         self.updateLabels()
         registerToVoteLabel.layer.masksToBounds = true
         registerToVoteLabel.layer.cornerRadius = 8.0
-        cityTextField.delegate = self
-        stateTextField.delegate = self
-        zipTextField.delegate = self
-        streetTextField.delegate = self
-        
-        guard let address = self.livingAddress else {
+        setRightButton()
+        guard let address = ProfileController.sharedController.loadAddress() else {
             return
         }
-        print(address.asAString)
         ProfileController.getPollingAddress(address) {
             self.populateMapView()
         }
     }
     
-    func setupTextFields() {
-        streetTextField.nextField = cityTextField
-        cityTextField.nextField = stateTextField
-        stateTextField.nextField = zipTextField
-        datePicker.delegate = self
-        datePicker.dataSource = self
-        stateTextField.inputView = datePicker
-
-    }
-    
-    @IBAction func screenTapped(sender: AnyObject) {
-        datePicker.resignFirstResponder()
-    }
     
     @IBAction func safariButtonTappedWithSender(sender: AnyObject) {
         guard let websiteString = ProfileController.electionWebsite, let url = NSURL(string: websiteString ) else {
@@ -135,60 +100,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     
-    @IBAction func updateButtonTappedWithSender(sender: AnyObject) {
-        if updateLabel.title == "Update" {
-            ifUpdateButtonSaysUpdate()
-        } else {
-            ifUpdateButtonSaysSave()
-        }
-    }
-    
-    // Helper Method that is called if Update button is tapped when it reads "Update"
-    func ifUpdateButtonSaysUpdate() {
-        backgroundBlurImage.hidden = false
-        blurView.hidden = false
-        electionWebsiteLabel.hidden = true
-        phoneNumberLabel.hidden = true
-        safariButton.hidden = true
-        safariButton.enabled = false
-        phoneNumberButton.hidden = true
-        phoneNumberButton.enabled = false
-        registerToVoteLabel.hidden = true
-        streetTextField.hidden = false
-        cityTextField.hidden = false
-        stateTextField.hidden = false
-        zipTextField.hidden = false
-        updateLabel.title = "Save"
-        
-    }
-    
-    // Helper Method that is called if Update button is tapped when it reads "Save"
-    func ifUpdateButtonSaysSave() {
-        stateTextField.resignFirstResponder()
-        zipTextField.resignFirstResponder()
-        cityTextField.resignFirstResponder()
-        streetTextField.resignFirstResponder()
-        updateLabel.title = "Update"
-        guard let stateText = stateTextField.text where stateText.characters.count > 0,
-            let cityText = cityTextField.text where cityText.characters.count > 0,
-            let streetText = streetTextField.text where streetText.characters.count > 0,
-            let zipText = zipTextField.text where zipText.characters.count > 0  else {
-                self.updateLabels()
-                return
-        }
-        let newAddress = Address(line1: streetText, city: cityText, state: stateText, zip: zipText)
-        ProfileController.sharedController.saveAddressToUserDefault(newAddress)
-        livingAddress = newAddress
-        mapView.removeAnnotations(self.pollingAnnotations)
-        self.pollingAnnotations.removeAll()
-        setupProfileViewController()
-        updateLabels()
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let nc = NSNotificationCenter.defaultCenter()
-            nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
-        })
-    }
-    
     /// Takes user to website where they can register to vote.
     @IBAction func registerToVoteButtonTappedWithSender(sender: AnyObject) {
         guard let urlString = self.registrationURL, let url = NSURL(string: urlString) else {
@@ -205,6 +116,41 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         })
     }
     
+    
+    func setRightButton() {
+        let image = UIImage(named: "Settings-100")?.imageWithRenderingMode(.AlwaysTemplate)
+        rightButton.tintColor = UIColor.whiteColor()
+        rightButton.setImage(image, forState: .Normal)
+        rightButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        rightButton.contentMode = .ScaleAspectFit
+        rightButton.addTarget(self, action: #selector(presentSettingsTableViewController), forControlEvents: UIControlEvents.TouchUpInside)
+        let barButton = UIBarButtonItem()
+        barButton.customView = rightButton
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    func presentSettingsTableViewController() {
+        let storyBoard = UIStoryboard(name: "Settings", bundle: nil)
+        let settingsTVC = storyBoard.instantiateViewControllerWithIdentifier("SettingNavigationController")
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(settingsTVC, animated: true, completion: nil)
+        })
+    }
+    
+    
+    func updatePollingLocation() {
+        let allAnnotations = self.mapView.annotations
+
+        self.mapView.removeAnnotations(allAnnotations)
+        guard let address = ProfileController.sharedController.loadAddress() else {
+            return
+        }
+        ProfileController.getPollingAddress(address) {
+            self.populateMapView()
+        }
+    }
+    
     /// Updates VC's labels.
     func updateLabels() {
         phoneNumberLabel.hidden = false
@@ -213,18 +159,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         electionWebsiteLabel.hidden = false
         safariButton.hidden = false
         safariButton.enabled = true
-        
-        backgroundBlurImage.hidden = true
-        blurView.hidden = true
         registerToVoteLabel.hidden = false
-        streetTextField.hidden = true
-        cityTextField.hidden = true
-        stateTextField.hidden = true
-        zipTextField.hidden = true
-        guard let livingAddress = ProfileController.sharedController.loadAddress() else {
-            return
-        }
-        self.livingAddress = livingAddress
         self.registrationURL = ProfileController.sharedController.loadURL()
     }
     
@@ -249,7 +184,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
                     annotation.subtitle = pollingLocation.streetName
                 }
                 annotation.title = pollingLocation.locationName
-                self.pollingAnnotations.append(annotation)
                 
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self.mapView.showsUserLocation = true
@@ -259,28 +193,5 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         }
     }
     
-    /// Textfield Delegate Method
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        datePicker.resignFirstResponder()
-        return true
-    }
     
-    /// MARK: - Picker View Delegate Functions
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Address.states.count
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Address.states[row].rawValue
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        stateTextField.text = Address.states[row].rawValue
-    }
-
 }

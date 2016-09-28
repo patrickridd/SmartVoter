@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */; };
+		215E6EA21D9ADC99009E75EC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215E6EA11D9ADC99009E75EC /* Settings.storyboard */; };
+		215E6EA41D9AE374009E75EC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */; };
 		21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E691D91DF3B00B966ED /* PollingLocation.swift */; };
 		21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */; };
 		21648E701D922E5800B966ED /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6F1D922E5800B966ED /* ProfileController.swift */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateTableViewCell.swift; sourceTree = "<group>"; };
+		215E6EA11D9ADC99009E75EC /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		21648E691D91DF3B00B966ED /* PollingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocation.swift; sourceTree = "<group>"; };
 		21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocationController.swift; sourceTree = "<group>"; };
 		21648E6F1D922E5800B966ED /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				6473387E1D958BC2006C7442 /* ColorPalette.swift */,
 				5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */,
 				A290B9291D99C54800A7C34C /* CustomTabBarController.swift */,
+				215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
 				21E727171D919D2300ADC64F /* Profile.storyboard */,
 				21E726E71D90914900ADC64F /* LaunchScreen.storyboard */,
+				215E6EA11D9ADC99009E75EC /* Settings.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				21E726E41D90914900ADC64F /* Main.storyboard in Resources */,
 				21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */,
 				21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */,
+				215E6EA21D9ADC99009E75EC /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +359,7 @@
 				21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */,
 				A21C52241D91CA9500909C0C /* Candidate.swift in Sources */,
 				21E727061D90959C00ADC64F /* ElectionTableViewCell.swift in Sources */,
+				215E6EA41D9AE374009E75EC /* SettingsTableViewController.swift in Sources */,
 				51C2D3321D934C9E0018109E /* ElectionDetailViewController.swift in Sources */,
 				519B09781D92F43B00D3149F /* Election.swift in Sources */,
 				21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */,

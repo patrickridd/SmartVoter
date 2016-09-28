@@ -135,11 +135,8 @@ class ProfileController {
                             for official in officialsArray {
                                 let number = official["officePhoneNumber"] as? String
                                 self.electionPhoneNumber = number
-
                             }
-                            
                         }
-                        
                         ProfileController.sharedController.saveRegisterToVoteURL(registrationURL)
                         completion()
                     }
