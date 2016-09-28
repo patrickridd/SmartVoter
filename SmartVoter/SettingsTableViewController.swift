@@ -48,6 +48,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         setupView()
         setupTextFields()
         setupKeyboardNotifications()
+        
+        datePicker.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.6)
     }
 
   
@@ -187,8 +189,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         return Address.states.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Address.states[row].rawValue
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = Address.states[row].rawValue
+        let title = NSAttributedString(string: titleData, attributes: [NSFontAttributeName: UIFont(name: "Avenir", size: 15.0)!,NSForegroundColorAttributeName: UIColor.whiteColor()])
+        return title
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

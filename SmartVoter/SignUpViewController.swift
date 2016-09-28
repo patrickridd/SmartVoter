@@ -15,7 +15,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var stateText: UITextField!
     @IBOutlet weak var zipText: UITextField!
     @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet var statePicker: UIPickerView!
     
     static let addressAddedNotification = "addressAddedNotification"
     
@@ -23,15 +22,20 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stateText.inputView = statePicker
+        
+        stateText.keyboardAppearance = .Default
+        
+        let statePicker = UIPickerView()
+        statePicker.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.6)
+        
         statePicker.delegate = self
         statePicker.dataSource = self
+        stateText.inputView = statePicker
         textfieldDelegates()
         roundedEdges()
         toolbarView.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.7)
         setupKeyboardAccessoryView()
         customToolbarView()
-        
     }
     
     
@@ -172,8 +176,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return Address.states.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Address.states[row].rawValue
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = Address.states[row].rawValue
+        let title = NSAttributedString(string: titleData, attributes: [NSFontAttributeName: UIFont(name: "Avenir", size: 15.0)!,NSForegroundColorAttributeName: UIColor.whiteColor()])
+        return title
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
