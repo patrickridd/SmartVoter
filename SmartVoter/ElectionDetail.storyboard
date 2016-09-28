@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Fh-0j-9Th">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Fh-0j-9Th">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -180,12 +181,21 @@
                                     <outlet property="delegate" destination="4Fh-0j-9Th" id="Hza-lb-c0B"/>
                                 </connections>
                             </tableView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2q-hi-sHp">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="416" id="cR6-0k-pnQ"/>
+                                </constraints>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="E2q-hi-sHp" firstAttribute="bottom" secondItem="hKL-Ht-fCq" secondAttribute="top" id="6Ef-zE-Gxv"/>
                             <constraint firstItem="dPB-aH-lO7" firstAttribute="leading" secondItem="AL8-mz-wth" secondAttribute="leading" id="9wp-Yr-uGz"/>
                             <constraint firstAttribute="trailing" secondItem="dPB-aH-lO7" secondAttribute="trailing" id="JPK-ZN-1lY"/>
                             <constraint firstAttribute="trailing" secondItem="sg3-Q6-3HF" secondAttribute="trailing" id="WYQ-Ah-vpF"/>
+                            <constraint firstItem="E2q-hi-sHp" firstAttribute="leading" secondItem="AL8-mz-wth" secondAttribute="leadingMargin" constant="-8" id="d7U-2Y-F1Z"/>
+                            <constraint firstItem="E2q-hi-sHp" firstAttribute="centerX" secondItem="sg3-Q6-3HF" secondAttribute="centerX" id="mMO-eq-bRM"/>
                             <constraint firstItem="sg3-Q6-3HF" firstAttribute="leading" secondItem="AL8-mz-wth" secondAttribute="leading" id="ozP-6v-1Wf"/>
                             <constraint firstItem="dPB-aH-lO7" firstAttribute="top" secondItem="f5h-6j-uIW" secondAttribute="bottom" id="wUb-qN-cxS"/>
                             <constraint firstItem="sg3-Q6-3HF" firstAttribute="top" secondItem="dPB-aH-lO7" secondAttribute="bottom" id="wrG-gG-scR"/>
@@ -200,6 +210,7 @@
                         <outlet property="electionTypeLabel" destination="PvS-QH-qMe" id="k0g-kc-xpU"/>
                         <outlet property="iconImageView" destination="bIS-4D-a3a" id="Kym-Vp-N4F"/>
                         <outlet property="tableView" destination="sg3-Q6-3HF" id="WaJ-hT-wQW"/>
+                        <outlet property="webView" destination="E2q-hi-sHp" id="cDA-3K-abh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aa-82-2Jm" userLabel="First Responder" sceneMemberID="firstResponder"/>

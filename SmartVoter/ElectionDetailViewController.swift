@@ -17,6 +17,8 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var webView: UIWebView!
+    
     
     var contest: Contest?
     
@@ -36,10 +38,13 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         if contest.type == "General" {
             electionTypeLabel.text = contest.office
             descriptionLabel.text = contest.scope.capitalizedString
+            webView.hidden = true
         } else if contest.type == "Referendum" {
             electionTypeLabel.text = contest.referendumTitle?.capitalizedString
             descriptionLabel.text = contest.referendumSubtitle?.capitalizedString
             tableView.hidden = true
+            webView.hidden = false
+            setupWebView()
         }
         
         guard let state = ProfileController.sharedController.address?.state.capitalizedString else { return }
@@ -57,7 +62,7 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         let candidate = candidates[indexPath.row]
         cell.delegate = self
         cell.updateWith(candidate)
-//        cell.setupButtonFor(candidate)
+        //        cell.setupButtonFor(candidate)
         
         return cell
     }
@@ -96,11 +101,11 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         alert.addAction(ok)
         presentViewController(alert, animated: true, completion: nil)
     }
-  
+    
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
     
     
     func makePhoneCall(candidate: Candidate) {
@@ -146,9 +151,25 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         }
         presentViewController(safariVC, animated: true, completion: nil)
     }
+    
+    func setupWebView() {
+        
+        guard let state = ProfileController.sharedController.address?.state else { return }
+       // guard let ref = contest?.referendumTitle else { return }
+        guard let escapedReferendumString = contest?.referendumTitle?.stringByReplacingOccurrencesOfString(" ", withString: "+") else { return }
+        print(escapedReferendumString)
+        let referendum = "\(escapedReferendumString)+\(state)"
+        let webID = "http://www.google.com/search?q=\(referendum)"
+        print(referendum)
+        print(webID)
+        if let url = NSURL(string: "http://www.google.com/search?q=\(referendum)") {
+            webView.loadRequest(NSURLRequest(URL: url))
+        } else {
+            print("Error")
+        }
+    }
+    
 }
-
-
 
 
 
