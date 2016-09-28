@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="87Y-Os-bYy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="T1n-Vg-0ZE">
+            <objects>
+                <viewController id="87Y-Os-bYy" customClass="ProfileViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ioK-8x-i9j"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qm6-T3-eQo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5s6-SN-HCw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-pR-84w"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places to Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-xM-ueK">
+                                <color key="backgroundColor" red="0.78352540731430054" green="0.3855588436126709" blue="0.38459816575050354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ob9-uL-ANx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRo-3A-EhA">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Election Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiQ-7f-Vmc">
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JiQ-7f-Vmc" secondAttribute="trailing" constant="40" id="AqM-jR-JNB"/>
+                                    <constraint firstItem="JiQ-7f-Vmc" firstAttribute="leading" secondItem="cRo-3A-EhA" secondAttribute="leading" constant="40" id="ZM0-ec-wBj"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
+                                <color key="backgroundColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Register To Vote">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerToVoteButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="1Gu-RU-Nkf"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Election's Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                <color key="textColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election's Office Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                <color key="textColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-bl-H51">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
+                                                <state key="normal" backgroundImage="Safari-48"/>
+                                                <connections>
+                                                    <action selector="safariButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="2Xw-2y-ydx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="MTw-UT-5Wx"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Phone-50"/>
+                                                <connections>
+                                                    <action selector="phoneNumberButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="hyf-w3-YdA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cRo-3A-EhA" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" id="0Xb-MC-9BH"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="40" id="2iv-su-9Yf"/>
+                            <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="3RV-ms-0fz"/>
+                            <constraint firstAttribute="trailing" secondItem="YYi-xM-ueK" secondAttribute="trailing" id="45X-JQ-SnC"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="JiQ-7f-Vmc" secondAttribute="bottom" constant="22" id="4zD-nj-Yw9"/>
+                            <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
+                            <constraint firstAttribute="trailing" secondItem="cRo-3A-EhA" secondAttribute="trailing" id="8Q5-H0-egF"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="Ctn-N3-yAl"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="centerY" secondItem="cRo-3A-EhA" secondAttribute="centerY" id="ENu-3c-NCt"/>
+                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="30" id="GuF-Dp-2mS"/>
+                            <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="MjY-YT-H2z"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="Wjf-SB-d26" secondAttribute="bottom" constant="13" id="QWi-my-nIg"/>
+                            <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="U0i-pc-2Z1"/>
+                            <constraint firstItem="cRo-3A-EhA" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="UIT-tG-Nca"/>
+                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="cRo-3A-EhA" secondAttribute="bottom" id="YKf-qD-sEt"/>
+                            <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="bLh-kx-mez"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="byI-fm-IJw"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="height" secondItem="Wjf-SB-d26" secondAttribute="height" id="emq-C0-qSl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xMH-8P-82t" secondAttribute="trailing" constant="10" id="g4I-Ay-2RM"/>
+                            <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="mDq-IE-rgb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E3v-zm-v7r" secondAttribute="trailing" constant="40" id="qu2-un-DLQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="electionWebsiteLabel" destination="WfB-ht-Zj8" id="1PS-M0-fre"/>
+                        <outlet property="mapView" destination="Jc5-pR-84w" id="C7V-ZH-dhI"/>
+                        <outlet property="phoneNumberButton" destination="nab-QL-60O" id="Roi-5Q-3sq"/>
+                        <outlet property="phoneNumberLabel" destination="Wjf-SB-d26" id="0Or-FU-Q7r"/>
+                        <outlet property="placesToVoteLabel" destination="YYi-xM-ueK" id="Ugz-2J-RCi"/>
+                        <outlet property="registerToVoteLabel" destination="E3v-zm-v7r" id="PmZ-8h-pJr"/>
+                        <outlet property="safariButton" destination="pCB-cP-Ll1" id="56y-gP-ES4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="km8-MV-VLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572" y="809.14542728635683"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Phone-50" width="50" height="50"/>
+        <image name="Safari-48" width="48" height="48"/>
+    </resources>
+</document>
