@@ -25,35 +25,26 @@
                                             <frame key="frameInset" width="375" height="548"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxs-J2-sTB">
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                    <color key="textColor" red="0.80784313725490198" green="0.39724013209342957" blue="0.39611327648162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaK-Mq-h2T">
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hho-Df-GPo">
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxs-J2-sTB">
-                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brad Forsyth, Patrick Ridd, Steven Patterson, Travis Sasselli" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-WE-i6s">
-                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="1rN-WE-i6s" secondAttribute="bottom" id="5hk-G3-FiB"/>
-                                                                <constraint firstItem="1rN-WE-i6s" firstAttribute="leading" secondItem="Hho-Df-GPo" secondAttribute="leading" constant="20" id="aWZ-wu-7NK"/>
-                                                                <constraint firstAttribute="trailing" secondItem="1rN-WE-i6s" secondAttribute="trailing" constant="20" id="gfi-aK-Sw9"/>
-                                                            </constraints>
-                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brad Forsyth, Patrick Ridd, Steven Patterson, Travis Sasselli" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-WE-i6s">
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.1007932797" green="0.34896293280000001" blue="0.54417645930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="Hho-Df-GPo" firstAttribute="top" secondItem="QaK-Mq-h2T" secondAttribute="top" id="5wD-7J-L0z"/>
+                                                        <constraint firstItem="1rN-WE-i6s" firstAttribute="leading" secondItem="QaK-Mq-h2T" secondAttribute="leading" constant="20" id="3Gt-au-plU"/>
                                                         <constraint firstAttribute="height" constant="80" id="Asi-V2-Ctl"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Hho-Df-GPo" secondAttribute="bottom" id="C0l-0s-hUK"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Hho-Df-GPo" secondAttribute="trailing" id="q44-6X-1Cm"/>
-                                                        <constraint firstItem="Hho-Df-GPo" firstAttribute="leading" secondItem="QaK-Mq-h2T" secondAttribute="leading" id="qb4-zk-uVY"/>
+                                                        <constraint firstItem="1rN-WE-i6s" firstAttribute="centerX" secondItem="QaK-Mq-h2T" secondAttribute="centerX" id="WQi-Zi-bo4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1rN-WE-i6s" secondAttribute="bottom" constant="1" id="l4q-j4-jNx"/>
+                                                        <constraint firstItem="1rN-WE-i6s" firstAttribute="top" secondItem="QaK-Mq-h2T" secondAttribute="top" constant="-1" id="zZU-uB-fvU"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="br0-Q9-Pva">
@@ -75,7 +66,8 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="1Sp-tz-7ad"/>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Small" translatesAutoresizingMaskIntoConstraints="NO" id="Bzi-hO-wix">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo Small" translatesAutoresizingMaskIntoConstraints="NO" id="Bzi-hO-wix">
+                                                    <frame key="frameInset" minX="168" minY="394" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="JPS-7W-oBx"/>
                                                         <constraint firstAttribute="height" constant="40" id="KXx-JN-rDp"/>
@@ -126,7 +118,6 @@
                                                 </visualEffectView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="QaK-Mq-h2T" firstAttribute="top" secondItem="Bzi-hO-wix" secondAttribute="bottom" constant="20" id="0x3-uF-Xbq"/>
                                                 <constraint firstItem="1Sp-tz-7ad" firstAttribute="top" secondItem="Wrv-bO-8sj" secondAttribute="topMargin" constant="-8" id="6as-ia-hqB"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="1Sp-tz-7ad" secondAttribute="trailing" constant="-8" id="7Ob-cy-7Ep"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="1Sp-tz-7ad" secondAttribute="bottom" id="H4a-sK-2jn"/>
@@ -135,10 +126,13 @@
                                                 <constraint firstAttribute="bottom" secondItem="k0D-qR-Trr" secondAttribute="bottom" id="OiZ-VX-gCn"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="QaK-Mq-h2T" secondAttribute="bottom" constant="-10" id="PKK-Qg-hQ7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QaK-Mq-h2T" secondAttribute="trailing" constant="-20" id="PLW-x0-CGD"/>
+                                                <constraint firstItem="pxs-J2-sTB" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="Tha-we-0yg"/>
                                                 <constraint firstItem="Bzi-hO-wix" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="UO0-E8-r3f"/>
                                                 <constraint firstItem="br0-Q9-Pva" firstAttribute="bottom" secondItem="bD5-dU-fbY" secondAttribute="top" id="VbX-bz-lgn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bD5-dU-fbY" secondAttribute="trailing" constant="5" id="WFI-3o-YNL"/>
+                                                <constraint firstItem="pxs-J2-sTB" firstAttribute="top" secondItem="Bzi-hO-wix" secondAttribute="bottom" constant="5" id="XH4-qO-2K3"/>
                                                 <constraint firstItem="br0-Q9-Pva" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="agS-Po-aCE"/>
+                                                <constraint firstItem="1rN-WE-i6s" firstAttribute="top" secondItem="pxs-J2-sTB" secondAttribute="bottom" constant="5" id="eRB-LS-rkb"/>
                                                 <constraint firstItem="mhx-yN-KHu" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="hVO-B1-caT"/>
                                                 <constraint firstItem="1Sp-tz-7ad" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" id="icC-lM-Uvl"/>
                                                 <constraint firstItem="bD5-dU-fbY" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="kod-dJ-dkJ"/>

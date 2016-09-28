@@ -48,6 +48,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         setupView()
         setupTextFields()
         setupKeyboardNotifications()
+        setupTitleView()
     }
 
   
@@ -106,7 +107,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         self.livingAddress.text = address.asAString
     }
     
-
+    func setupTitleView() {
+        let image = UIImage(named:"Logo Large")
+        let imageView = UIImageView(image: image)
+        navigationItem.titleView = imageView
+    }
+    
     func setupView() {
         doneButtonLabel.title = "Done"
         saveButtonLabel.title = ""
