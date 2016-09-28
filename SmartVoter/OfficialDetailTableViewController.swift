@@ -37,22 +37,15 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let official = official
-            else {
-                return
-        }
-        facebookButton.hidden = true
-        twitterButton.hidden = true
-        googlePlusButton.hidden = true
-        youtubeButton.hidden = true
+        guard let official = official else { return }
         
         updateOfficials(official)
         upDateBackgroundColor()
         updateSocialButtons()
         hideTextField()
+        
         tableView.estimatedRowHeight = 375
         tableView.rowHeight = UITableViewAutomaticDimension
-        
     }
     
     // MARK: - Table view data source
@@ -261,17 +254,30 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     }
     
     func updateSocialButtons() {
-        for social in (official?.social)! {
+        
+        socialMediaLabel.hidden = true
+        facebookButton.hidden = true
+        twitterButton.hidden = true
+        googlePlusButton.hidden = true
+        youtubeButton.hidden = true
+        
+        guard let official = official else { return }
+        
+        for social in (official.social) {
             if social.type == "YouTube" {
+                socialMediaLabel.hidden = false
                 youtubeButton.hidden = false
             }
             if social.type == "Twitter" {
+                socialMediaLabel.hidden = false
                 twitterButton.hidden = false
             }
             if social.type == "GooglePlus" {
+                socialMediaLabel.hidden = false
                 googlePlusButton.hidden = false
             }
             if social.type == "Facebook" {
+                socialMediaLabel.hidden = false
                 facebookButton.hidden = false
             }
         }
