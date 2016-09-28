@@ -18,7 +18,9 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var statePicker: UIPickerView!
     
     static let addressAddedNotification = "addressAddedNotification"
-
+    
+    let toolbarView = UIView(frame: CGRectMake(0, 0, 10, 40))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stateText.inputView = statePicker
@@ -26,7 +28,103 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         statePicker.dataSource = self
         textfieldDelegates()
         roundedEdges()
+        toolbarView.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.7)
+        setupKeyboardAccessoryView()
+        customToolbarView()
+        
     }
+    
+    
+    func customToolbarView() {
+        
+        let doneButton = UIButton()
+        let forward = UIButton()
+        let back = UIButton()
+        
+        toolbarView.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        back.translatesAutoresizingMaskIntoConstraints = false
+        forward.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        doneButton.backgroundColor = .clearColor()
+        doneButton.setTitle("Done", forState: .Normal)
+        doneButton.setTitleColor(.whiteColor(), forState: .Normal)
+        doneButton.addTarget(self, action: #selector(doneButtonTapped), forControlEvents: .TouchUpInside)
+        
+        forward.backgroundColor = .clearColor()
+        forward.setTitle("Next", forState: .Normal)
+        forward.setTitleColor(.whiteColor(), forState: .Normal)
+        forward.addTarget(self, action: #selector(forwardButtonTapped), forControlEvents: .TouchUpInside)
+        
+        back.backgroundColor = .clearColor()
+        back.setTitle("Prev", forState: .Normal)
+        back.setTitleColor(.whiteColor(), forState: .Normal)
+        back.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
+
+        let testView = UIView()
+        testView.backgroundColor = .whiteColor()
+        
+        toolbarView.addSubview(doneButton)
+        toolbarView.addSubview(forward)
+        toolbarView.addSubview(back)
+        toolbarView.addSubview(testView)
+        
+        doneButton.centerXAnchor.constraintEqualToAnchor(toolbarView.trailingAnchor, constant: -30).active = true
+        doneButton.centerYAnchor.constraintEqualToAnchor(toolbarView.centerYAnchor).active = true
+        doneButton.widthAnchor.constraintEqualToConstant(50)
+        doneButton.heightAnchor.constraintEqualToConstant(20).active = true
+        
+        back.centerXAnchor.constraintEqualToAnchor(toolbarView.leadingAnchor, constant: +28).active = true
+        back.centerYAnchor.constraintEqualToAnchor(toolbarView.centerYAnchor).active = true
+        back.widthAnchor.constraintEqualToConstant(50).active = true
+        back.heightAnchor.constraintEqualToConstant(20).active = true
+        
+        forward.centerXAnchor.constraintEqualToAnchor(toolbarView.leadingAnchor, constant: +80).active = true
+        forward.centerYAnchor.constraintEqualToAnchor(toolbarView.centerYAnchor).active = true
+        forward.widthAnchor.constraintEqualToConstant(50).active = true
+        forward.heightAnchor.constraintEqualToConstant(20).active = true
+       
+    }
+    
+    func doneButtonTapped(sender: UIButton!) {
+        print("Done Button Tapped")
+        [streetText, cityText, stateText, zipText].forEach { (textField) in
+            textField.resignFirstResponder()
+        }
+    }
+    
+    func forwardButtonTapped(sender: UIButton!)  {
+        if streetText.isFirstResponder() {
+            cityText.becomeFirstResponder()
+        } else if cityText.isFirstResponder() {
+            stateText.becomeFirstResponder()
+        } else if stateText.isFirstResponder() {
+            zipText.becomeFirstResponder()
+        } else {
+            zipText.resignFirstResponder()
+        }
+    }
+    
+    func backButtonTapped(sender: UIButton!) {
+        if zipText.isFirstResponder() {
+            stateText.becomeFirstResponder()
+        } else if stateText.isFirstResponder() {
+            cityText.becomeFirstResponder()
+        } else if cityText.isFirstResponder() {
+            streetText.becomeFirstResponder()
+        } else {
+            streetText.resignFirstResponder()
+        }
+    }
+    
+    func setupKeyboardAccessoryView() {
+        streetText.inputAccessoryView = toolbarView
+        cityText.inputAccessoryView = toolbarView
+        stateText.inputAccessoryView = toolbarView
+        zipText.inputAccessoryView = toolbarView
+    }
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -81,16 +179,4 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         stateText.text = Address.states[row].rawValue
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
