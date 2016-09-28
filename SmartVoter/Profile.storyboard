@@ -23,26 +23,12 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-pR-84w"/>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places to Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-xM-ueK">
                                 <color key="backgroundColor" red="0.78352540731430054" green="0.3855588436126709" blue="0.38459816575050354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ob9-uL-ANx"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRo-3A-EhA">
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Election Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiQ-7f-Vmc">
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="JiQ-7f-Vmc" secondAttribute="trailing" constant="40" id="AqM-jR-JNB"/>
-                                    <constraint firstItem="JiQ-7f-Vmc" firstAttribute="leading" secondItem="cRo-3A-EhA" secondAttribute="leading" constant="40" id="ZM0-ec-wBj"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
                                 <color key="backgroundColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,6 +60,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-bl-H51">
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="h1F-Z4-b7C"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="Safari-48"/>
                                                 <connections>
                                                     <action selector="safariButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="2Xw-2y-ydx"/>
@@ -82,6 +71,7 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="MTw-UT-5Wx"/>
+                                                    <constraint firstAttribute="height" constant="40" id="NvG-DD-zdd"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="Phone-50"/>
                                                 <connections>
@@ -99,8 +89,8 @@
                             <constraint firstItem="E3v-zm-v7r" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="40" id="2iv-su-9Yf"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="3RV-ms-0fz"/>
                             <constraint firstAttribute="trailing" secondItem="YYi-xM-ueK" secondAttribute="trailing" id="45X-JQ-SnC"/>
-                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="JiQ-7f-Vmc" secondAttribute="bottom" constant="22" id="4zD-nj-Yw9"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="centerY" secondItem="cRo-3A-EhA" secondAttribute="centerY" id="7p8-v7-SAZ"/>
                             <constraint firstAttribute="trailing" secondItem="cRo-3A-EhA" secondAttribute="trailing" id="8Q5-H0-egF"/>
                             <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="Ctn-N3-yAl"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="centerY" secondItem="cRo-3A-EhA" secondAttribute="centerY" id="ENu-3c-NCt"/>
