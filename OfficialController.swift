@@ -24,7 +24,11 @@ class OfficialController {
             if office.division.containsString("county") {
                 localOfficials.append(official)
             } else if office.division.containsString("state") {
-                stateOfficials.append(official)
+                if office.name.containsString("United States") {
+                    federalOfficials.append(official)
+                } else {
+                    stateOfficials.append(official)
+                }
             } else if office.division.containsString("country") {
                 federalOfficials.append(official)
             }
