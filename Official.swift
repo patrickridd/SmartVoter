@@ -104,7 +104,7 @@ class Official {
             }
         }
         self.social = temp
-        print(social)
+       // print(social)
 
     }
     

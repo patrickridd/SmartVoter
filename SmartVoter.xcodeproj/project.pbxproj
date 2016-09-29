@@ -45,6 +45,7 @@
 		6473387F1D958BC2006C7442 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473387E1D958BC2006C7442 /* ColorPalette.swift */; };
 		648BA9741D9DB99F00B95D31 /* Contributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9731D9DB99F00B95D31 /* Contributions.swift */; };
 		648BA9761D9DB9B800B95D31 /* CandidateID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9751D9DB9B800B95D31 /* CandidateID.swift */; };
+		648BA9781D9DBD9400B95D31 /* ContributorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9771D9DBD9400B95D31 /* ContributorController.swift */; };
 		64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */; };
 		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
 		A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A290B9291D99C54800A7C34C /* CustomTabBarController.swift */; };
@@ -103,6 +104,7 @@
 		6473387E1D958BC2006C7442 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		648BA9731D9DB99F00B95D31 /* Contributions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contributions.swift; sourceTree = "<group>"; };
 		648BA9751D9DB9B800B95D31 /* CandidateID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateID.swift; sourceTree = "<group>"; };
+		648BA9771D9DBD9400B95D31 /* ContributorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributorController.swift; sourceTree = "<group>"; };
 		64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailTableViewController.swift; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		A290B9291D99C54800A7C34C /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				21E727091D90996300ADC64F /* OfficialController.swift */,
+				648BA9771D9DBD9400B95D31 /* ContributorController.swift */,
 				21E7270B1D90996A00ADC64F /* ElectionController.swift */,
 				21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */,
 				21E7270E1D9099BB00ADC64F /* NetworkController.swift */,
@@ -348,6 +351,7 @@
 				519B097A1D92F48000D3149F /* Contest.swift in Sources */,
 				21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */,
 				518E624C1D92EB90008AAC2C /* Office.swift in Sources */,
+				648BA9781D9DBD9400B95D31 /* ContributorController.swift in Sources */,
 				648BA9741D9DB99F00B95D31 /* Contributions.swift in Sources */,
 				21E726FF1D90941E00ADC64F /* ProfileViewController.swift in Sources */,
 				21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */,
