@@ -36,6 +36,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     @IBOutlet var datePicker: UIPickerView!
     @IBOutlet weak var saveButtonLabel: UIBarButtonItem!
     @IBOutlet weak var doneButtonLabel: UIBarButtonItem!
+    @IBOutlet weak var changeSettingsButton: UIButton!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +50,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         setupView()
         setupTextFields()
         setupKeyboardNotifications()
-        
+        roundButtonCorners()
         datePicker.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.6)
         setupTitleView()
     }
 
-  
+    /// Changes the view to show textfields and blurview so the user can update their address.
     @IBAction func updateAddressButtonTappedWithSender(sender: AnyObject) {
         doneButtonLabel.title = "Cancel"
         saveButtonLabel.title = "Save"
@@ -64,9 +66,13 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         streetTextField.hidden = false
         cityTextField.hidden = false
         zipTextField.hidden = false
-        
+        segmentedControl.hidden = true
+        changeSettingsButton.hidden = true
+
     }
     
+    
+    /// Dismisses the SettingTableViewController
     @IBAction func doneButtonTappedWithSender(sender: AnyObject) {
         if doneButtonLabel.title == "Cancel" {
            setupView()
@@ -81,6 +87,15 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         }
     }
     
+    /// Allows user to change notification setting by taking them to ios Settings.
+    @IBAction func changeSettingsButtonTapped(sender: AnyObject) {
+        if let appSettings = NSURL(string: UIApplicationOpenSettingsURLString) {
+            UIApplication.sharedApplication().openURL(appSettings)
+        }
+
+    }
+    
+    /// Saves new address or returns to normal view if there is an incorrect input
     @IBAction func saveButtonTappedWithSender(sender: AnyObject) {
         stateTextField.resignFirstResponder()
         zipTextField.resignFirstResponder()
@@ -105,16 +120,28 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
 
     }
     
+    func roundButtonCorners() {
+        updateLabel.layer.masksToBounds = true
+        updateLabel.layer.cornerRadius = 8.0
+        changeSettingsButton.layer.masksToBounds = true
+        changeSettingsButton.layer.cornerRadius = 8.0
+    }
+    
+    /// Updates the label with a new address
     func updateLivingAddressLabel(address: Address) {
         self.livingAddress.text = address.asAString
     }
     
+    
+    /// Places the logo title in the navigation item's titleView
     func setupTitleView() {
         let image = UIImage(named:"Logo Large")
         let imageView = UIImageView(image: image)
         navigationItem.titleView = imageView
     }
     
+    
+    /// Sets initial view with blur view and textfields hidden
     func setupView() {
         doneButtonLabel.title = "Done"
         saveButtonLabel.title = ""
@@ -125,7 +152,11 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         streetTextField.hidden = true
         cityTextField.hidden = true
         zipTextField.hidden = true
+        segmentedControl.hidden = false
+        changeSettingsButton.hidden = false
+    
     }
+    
     
     /// Sets delegate for textFields
     func setupTextFields() {
@@ -151,6 +182,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         }
     }
     
+    /// Changes frame depending on the height of the keyboard, numberpad, and/or pickerView.
     func raiseView(height: CGFloat) {
         if !keyboardShown {
             view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - height)
@@ -170,6 +202,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         keyboardHeight = height
     }
     
+    /// Changes the view's frame back to default after keyboard hides.
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height + keyboardSize.height)
@@ -177,6 +210,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         }
     }
     
+    
+    /// Sets up textfield connections
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         UITextField.connectFields([streetTextField,cityTextField,stateTextField,zipTextField])
         return true
@@ -205,14 +240,4 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         stateTextField.text = Address.states[row].rawValue
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
