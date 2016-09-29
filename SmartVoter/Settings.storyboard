@@ -45,7 +45,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izM-NT-X29" userLabel="Notifications">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sH-1Q-tYo">
-                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -252,6 +252,7 @@
                         <outlet property="saveButtonLabel" destination="rcM-nu-UVQ" id="5rb-I9-M3N"/>
                         <outlet property="segmentedControl" destination="cg6-9p-C3v" id="Lhc-zp-Oyn"/>
                         <outlet property="stateTextField" destination="U0b-jO-Vew" id="aZE-Z4-1CB"/>
+                        <outlet property="statusLabel" destination="Ho0-jq-54z" id="WKg-YQ-wIs"/>
                         <outlet property="streetTextField" destination="EOS-9D-D12" id="cmn-ns-eRO"/>
                         <outlet property="updateLabel" destination="mhx-yN-KHu" id="5vD-pt-bav"/>
                         <outlet property="zipTextField" destination="kVt-u4-LBo" id="6ku-gd-1za"/>
