@@ -11,14 +11,14 @@ import UIKit
 class ElectionTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    let rightButton = UIButton()
     let logo = UIImage(named: "Logo Large")
     let unselectedTabImage = UIImage(named: "Elections")?.imageWithRenderingMode(.AlwaysOriginal)
     let selectedImage = UIImage(named: "ElectionsFilled")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setRightButton()
         let customTabBarItem: UITabBarItem = UITabBarItem(title: "Elections", image: unselectedTabImage, selectedImage: selectedImage)
         self.tabBarItem = customTabBarItem
         
@@ -39,6 +39,30 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
     }
+    
+    
+    func setRightButton() {
+        let image = UIImage(named: "Settings-100")?.imageWithRenderingMode(.AlwaysTemplate)
+        rightButton.tintColor = UIColor.whiteColor()
+        rightButton.setImage(image, forState: .Normal)
+        rightButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        rightButton.contentMode = .ScaleAspectFit
+        rightButton.addTarget(self, action: #selector(presentSettingsTableViewController), forControlEvents: UIControlEvents.TouchUpInside)
+        let barButton = UIBarButtonItem()
+        barButton.customView = rightButton
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    func presentSettingsTableViewController() {
+        let storyBoard = UIStoryboard(name: "Settings", bundle: nil)
+        let settingsTVC = storyBoard.instantiateViewControllerWithIdentifier("SettingNavigationController")
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(settingsTVC, animated: true, completion: nil)
+        })
+    }
+
+    
     
     // MARK: - Table view data source
     
