@@ -129,13 +129,14 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     
     /// Updates the label with a new address
     func updateLivingAddressLabel(address: Address) {
-        self.livingAddress.text = address.asAString
+        let allCapsAddress = address.asAString.uppercaseString
+        self.livingAddress.text = allCapsAddress
     }
     
     
     /// Places the logo title in the navigation item's titleView
     func setupTitleView() {
-        let image = UIImage(named:"Logo Large")
+        let image = UIImage(named:"SettingsWhiteBorder")
         let imageView = UIImageView(image: image)
         navigationItem.titleView = imageView
     }
@@ -148,9 +149,13 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         saveButtonLabel.enabled = false
         blurView.hidden = true
         capitolImage.hidden = true
+        stateTextField.text = ""
         stateTextField.hidden = true
+        streetTextField.text = ""
         streetTextField.hidden = true
+        cityTextField.text = ""
         cityTextField.hidden = true
+        zipTextField.text = ""
         zipTextField.hidden = true
         segmentedControl.hidden = false
         changeSettingsButton.hidden = false

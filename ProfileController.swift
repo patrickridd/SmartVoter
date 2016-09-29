@@ -24,32 +24,32 @@ class ProfileController {
     var notificationIsSet: Bool?
     
     
-    // Saves User's Home Address to NSUserDefaults
+    /// Saves User's Home Address to NSUserDefaults
     func saveAddressToUserDefault(address: Address) {
         self.address = address
         let data = NSKeyedArchiver.archivedDataWithRootObject(address)
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: addressKey)
     }
     
-    // Saves Voting Registration URL to NSUserDefaults
+    /// Saves Voting Registration URL to NSUserDefaults
     func saveRegisterToVoteURL(url: String) {
         NSUserDefaults.standardUserDefaults().setObject(url, forKey: urlKey)
     }
     
-    // Saves election notification status
+    /// Saves election notification status
     func saveNotificationBool(notificationIsSet: Bool) {
         self.notificationIsSet = notificationIsSet
         NSUserDefaults.standardUserDefaults().setObject(notificationIsSet, forKey: notificationBoolKey)
     }
     
-    // Loads notification bool to see if it has been set or not
+    /// Loads notification bool to see if it has been set or not
     func loadNotificationStatus() -> Bool? {
         let status: Bool? = NSUserDefaults.standardUserDefaults().objectForKey(notificationBoolKey) as? Bool
         self.notificationIsSet = status
         return self.notificationIsSet ?? nil
     }
     
-    // Loads Users Address
+    /// Loads Users Address
     func loadAddress() ->Address? {
         if let data = NSUserDefaults.standardUserDefaults().objectForKey(addressKey) as? NSData {
         let address = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Address
@@ -60,12 +60,13 @@ class ProfileController {
         }
     }
     
-    // Loads Voting Registration URL
+    /// Loads Voting Registration URL
     func loadURL() -> String? {
         let url = NSUserDefaults.standardUserDefaults().objectForKey(urlKey) as? String
         return url ?? nil
     }
     
+    /// Formats number to make telephone call.
     func formatNumberForCall(number: String) -> String {
         let phoneWhite = number.lowercaseString.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).joinWithSeparator(" ")
         let noPunc =  phoneWhite.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).joinWithSeparator("")
@@ -74,6 +75,8 @@ class ProfileController {
         return noSpaces
     }
 
+    
+    
     
     
     /// Network Call to get polling Locations.

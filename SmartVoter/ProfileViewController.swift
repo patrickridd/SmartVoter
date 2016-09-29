@@ -140,12 +140,14 @@ class ProfileViewController: UIViewController {
     
     
     func updatePollingLocation() {
-        let allAnnotations = self.mapView.annotations
-
-        self.mapView.removeAnnotations(allAnnotations)
         guard let address = ProfileController.sharedController.loadAddress() else {
             return
         }
+        let allAnnotations = self.mapView.annotations
+        for annotation in allAnnotations {
+            mapView.removeAnnotation(annotation)
+        }
+        
         ProfileController.getPollingAddress(address) {
             self.populateMapView()
         }
