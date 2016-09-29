@@ -53,18 +53,17 @@ class CandidateTableViewCell: UITableViewCell, MFMailComposeViewControllerDelega
         partyLabel.text = candidate.party
         
         if candidate.phone != nil {
-            phoneLabel.text = candidate.phone
+            phoneLabel.text = "Office Phone"
         } else {
             phoneLabel.hidden = true
         }
         if candidate.email != nil {
-            emailLabel.text = candidate.email
+            emailLabel.text = "E-mail"
         } else {
             emailLabel.hidden = true
         }
         if candidate.websiteURL != nil {
             websiteLabel.text = "Website"
-//            websiteLabel.text = candidate.websiteURL
         } else {
             websiteLabel.hidden = true
         }

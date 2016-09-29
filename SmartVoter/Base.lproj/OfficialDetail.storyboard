@@ -62,12 +62,12 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="U3e-rf-eBI">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="U3e-rf-eBI">
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds5-ox-f7C">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="32" id="4cN-gR-rN1"/>
-                                                                        <constraint firstAttribute="width" constant="32" id="4zf-4O-qlz"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="4cN-gR-rN1"/>
+                                                                        <constraint firstAttribute="width" constant="35" id="4zf-4O-qlz"/>
                                                                     </constraints>
                                                                     <state key="normal" image="BradMapFade"/>
                                                                     <connections>
@@ -77,8 +77,8 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-gg-EGZ">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="32" id="Eue-db-oJn"/>
-                                                                        <constraint firstAttribute="width" constant="32" id="it4-cc-VsM"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="Eue-db-oJn"/>
+                                                                        <constraint firstAttribute="width" constant="35" id="it4-cc-VsM"/>
                                                                     </constraints>
                                                                     <state key="normal" image="BradPhoneFade"/>
                                                                     <connections>
@@ -87,8 +87,8 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNZ-fE-Q4A">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="32" id="9TN-i9-phA"/>
-                                                                        <constraint firstAttribute="height" constant="32" id="dUs-pq-KxP"/>
+                                                                        <constraint firstAttribute="width" constant="35" id="9TN-i9-phA"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="dUs-pq-KxP"/>
                                                                     </constraints>
                                                                     <state key="normal" image="BradSafariFade"/>
                                                                     <connections>
@@ -97,8 +97,8 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YY-Bc-TzT">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="32" id="6wK-Xr-eBP"/>
-                                                                        <constraint firstAttribute="height" constant="32" id="dmD-bY-WYV"/>
+                                                                        <constraint firstAttribute="width" constant="35" id="6wK-Xr-eBP"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="dmD-bY-WYV"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                     <state key="normal" image="BradMailFade"/>
@@ -131,8 +131,8 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-tJ-eJS">
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="32" id="7lz-Uq-P67"/>
-                                                                <constraint firstAttribute="width" constant="32" id="IEV-6S-U93"/>
+                                                                <constraint firstAttribute="height" constant="35" id="7lz-Uq-P67"/>
+                                                                <constraint firstAttribute="width" constant="35" id="IEV-6S-U93"/>
                                                             </constraints>
                                                             <state key="normal" title="Button" image="twitter"/>
                                                             <connections>
@@ -141,8 +141,8 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJV-FX-O4E">
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="32" id="i0x-kp-hPS"/>
-                                                                <constraint firstAttribute="height" constant="32" id="r2g-Wf-tEa"/>
+                                                                <constraint firstAttribute="width" constant="35" id="i0x-kp-hPS"/>
+                                                                <constraint firstAttribute="height" constant="35" id="r2g-Wf-tEa"/>
                                                             </constraints>
                                                             <state key="normal" title="Button" image="youTube"/>
                                                             <connections>
@@ -151,8 +151,8 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgI-Vk-Dut">
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="32" id="3G8-kL-TGS"/>
-                                                                <constraint firstAttribute="width" constant="32" id="dFn-5j-190"/>
+                                                                <constraint firstAttribute="height" constant="35" id="3G8-kL-TGS"/>
+                                                                <constraint firstAttribute="width" constant="35" id="dFn-5j-190"/>
                                                             </constraints>
                                                             <state key="normal" title="Button" image="googlePlus"/>
                                                             <connections>
@@ -161,8 +161,8 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-R0-MnY">
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="32" id="jqd-by-spT"/>
-                                                                <constraint firstAttribute="width" constant="32" id="qWO-nJ-B5q"/>
+                                                                <constraint firstAttribute="height" constant="35" id="jqd-by-spT"/>
+                                                                <constraint firstAttribute="width" constant="35" id="qWO-nJ-B5q"/>
                                                             </constraints>
                                                             <state key="normal" image="facebook"/>
                                                             <connections>
@@ -171,14 +171,14 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-TM-G9U">
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party Affiliation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNP-Zi-ZZu">
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-TM-G9U">
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -196,11 +196,11 @@
                                                 <constraint firstItem="mUc-oB-gMR" firstAttribute="top" secondItem="TJm-Za-ZYb" secondAttribute="top" id="axP-l5-xxi"/>
                                                 <constraint firstItem="FGC-P4-kGg" firstAttribute="top" secondItem="WBM-lO-rWQ" secondAttribute="bottom" constant="6" id="cir-w1-gKF"/>
                                                 <constraint firstAttribute="trailing" secondItem="bNP-Zi-ZZu" secondAttribute="trailing" constant="8" id="dfS-hr-X6c"/>
-                                                <constraint firstAttribute="trailing" secondItem="qi9-Wh-Nto" secondAttribute="trailing" constant="15" id="dnc-5o-Fay"/>
+                                                <constraint firstAttribute="trailing" secondItem="qi9-Wh-Nto" secondAttribute="trailing" constant="16" id="dnc-5o-Fay"/>
                                                 <constraint firstItem="FGC-P4-kGg" firstAttribute="leading" secondItem="TJm-Za-ZYb" secondAttribute="leading" constant="8" id="fih-c8-8d2"/>
-                                                <constraint firstAttribute="trailing" secondItem="PpI-nn-RGg" secondAttribute="trailing" constant="15" id="g9C-Qn-JsC"/>
+                                                <constraint firstAttribute="trailing" secondItem="PpI-nn-RGg" secondAttribute="trailing" constant="16" id="g9C-Qn-JsC"/>
                                                 <constraint firstItem="PpI-nn-RGg" firstAttribute="leading" secondItem="TJm-Za-ZYb" secondAttribute="leading" constant="8" id="kU1-HB-NLn"/>
-                                                <constraint firstItem="GbI-TM-G9U" firstAttribute="top" secondItem="PpI-nn-RGg" secondAttribute="bottom" constant="10" id="pmH-3u-VSB"/>
+                                                <constraint firstItem="GbI-TM-G9U" firstAttribute="top" secondItem="PpI-nn-RGg" secondAttribute="bottom" constant="14" id="pmH-3u-VSB"/>
                                                 <constraint firstAttribute="trailing" secondItem="mUc-oB-gMR" secondAttribute="trailing" id="raL-RV-QJ6"/>
                                                 <constraint firstAttribute="trailing" secondItem="FGC-P4-kGg" secondAttribute="trailing" constant="8" id="sfz-eb-3qG"/>
                                                 <constraint firstItem="WBM-lO-rWQ" firstAttribute="top" secondItem="TJm-Za-ZYb" secondAttribute="top" constant="25" id="xJ2-K2-IJC"/>

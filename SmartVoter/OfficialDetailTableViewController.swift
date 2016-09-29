@@ -49,7 +49,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     }
     
     // MARK: - Table view data source
-       
+    
     func updateOfficials(official: Official) {
         let address = official.address
         self.address = address
@@ -103,7 +103,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     @IBAction func phoneButtonTapped(sender: AnyObject) {
         if let official = official {
             
-            let alertController = UIAlertController(title: "Would you like to call \(official.name ?? "No Contact Found")", message: "Press the call button to call \(official.name ?? "No Contact Name Found").", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Would you like to call the office of \(official.name ?? "No Contact Found")?", message: "Press the Call button to make a call.", preferredStyle: .Alert)
             
             let yesAction = UIAlertAction(title: "Call", style: .Default) { (action) -> Void in
                 
@@ -123,7 +123,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             }
             
             let noAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-                print("cancelled Call")
+                
             }
             
             alertController.addAction(yesAction)
@@ -151,7 +151,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
                 presentViewController(safariVC, animated: true, completion: nil)
             }
         }
-        
     }
     
     @IBAction func googlePlusButtonTapped(sender: AnyObject) {
@@ -221,8 +220,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         mailComposerVC.mailComposeDelegate = self
         guard let officialEmail = self.official?.email else { return MFMailComposeViewController()}
         mailComposerVC.setToRecipients([officialEmail])
-        mailComposerVC.setSubject("Sending you an in-app e-mail...")
-        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
         
         return mailComposerVC
     }

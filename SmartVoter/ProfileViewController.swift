@@ -87,7 +87,7 @@ class ProfileViewController: UIViewController {
             phoneNumberButton.enabled = false
             return
         }
-        let alert = UIAlertController(title: "Do you want to Call Elections Office", message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Would you like to call the Elections Office?", message: "Press the Call button to make a call.", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         let callAction = UIAlertAction(title: "Call", style: .Default) { (_) in
             UIApplication.sharedApplication().openURL(callURL)

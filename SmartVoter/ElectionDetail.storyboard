@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Fh-0j-9Th">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Fh-0j-9Th">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -80,12 +80,14 @@
                                             <frame key="frameInset" width="375" height="197"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-ph-vVX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-ph-vVX">
+                                                    <frame key="frameInset" minX="8" minY="8" width="359" height="33"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNh-fC-TqE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNh-fC-TqE">
+                                                    <frame key="frameInset" minX="8" minY="42" width="359" height="20"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -99,12 +101,12 @@
                                                                     <nil key="textColor"/>
                                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHV-vi-Z5p">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-1e-Qwx">
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-1e-Qwx">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHV-vi-Z5p">
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -117,8 +119,8 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-gQ-eTb">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="32" id="JaT-vf-kgA"/>
-                                                                        <constraint firstAttribute="width" constant="32" id="TEA-tC-eRj"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="JaT-vf-kgA"/>
+                                                                        <constraint firstAttribute="width" constant="35" id="TEA-tC-eRj"/>
                                                                     </constraints>
                                                                     <state key="normal" image="BradPhoneFade">
                                                                         <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -127,28 +129,28 @@
                                                                         <action selector="phoneButtonTappedWithSender:" destination="uwv-ik-Tw2" eventType="touchUpInside" id="WGT-Rv-jRa"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PT-6y-ryg">
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="32" id="WOL-Qj-4GL"/>
-                                                                        <constraint firstAttribute="height" constant="32" id="YoT-ue-lyY"/>
-                                                                    </constraints>
-                                                                    <state key="normal" image="BradMailFade">
-                                                                        <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </state>
-                                                                    <connections>
-                                                                        <action selector="emailButtonTappedWithSender:" destination="uwv-ik-Tw2" eventType="touchUpInside" id="aRj-dG-Wi1"/>
-                                                                    </connections>
-                                                                </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6la-h2-dYN">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="32" id="JxI-yk-oNW"/>
-                                                                        <constraint firstAttribute="height" constant="32" id="TPG-qb-pez"/>
+                                                                        <constraint firstAttribute="width" constant="35" id="JxI-yk-oNW"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="TPG-qb-pez"/>
                                                                     </constraints>
                                                                     <state key="normal" image="BradSafariFade">
                                                                         <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="websiteButtonTappedWithSender:" destination="uwv-ik-Tw2" eventType="touchUpInside" id="Agi-yO-X7A"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PT-6y-ryg">
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="35" id="WOL-Qj-4GL"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="YoT-ue-lyY"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="BradMailFade">
+                                                                        <color key="titleColor" red="0.098039215690000001" green="0.47450980390000003" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="emailButtonTappedWithSender:" destination="uwv-ik-Tw2" eventType="touchUpInside" id="aRj-dG-Wi1"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -164,7 +166,7 @@
                                                 <constraint firstItem="vaW-0I-ydh" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="O7q-G1-WWx"/>
                                                 <constraint firstItem="1Sr-ph-vVX" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="OLZ-Kz-AeO"/>
                                                 <constraint firstAttribute="bottom" secondItem="vaW-0I-ydh" secondAttribute="bottom" constant="6.5" id="P25-a2-RJt"/>
-                                                <constraint firstAttribute="trailing" secondItem="vaW-0I-ydh" secondAttribute="trailing" constant="8" id="Pkt-wP-vuO"/>
+                                                <constraint firstAttribute="trailing" secondItem="vaW-0I-ydh" secondAttribute="trailing" constant="16" id="Pkt-wP-vuO"/>
                                                 <constraint firstItem="VNh-fC-TqE" firstAttribute="leading" secondItem="duJ-yz-IUT" secondAttribute="leading" constant="8" id="SZ6-PQ-BqR"/>
                                                 <constraint firstAttribute="trailing" secondItem="VNh-fC-TqE" secondAttribute="trailing" constant="8" id="hJT-c0-QE5"/>
                                                 <constraint firstAttribute="trailing" secondItem="1Sr-ph-vVX" secondAttribute="trailing" constant="8" id="yet-u7-YbF"/>

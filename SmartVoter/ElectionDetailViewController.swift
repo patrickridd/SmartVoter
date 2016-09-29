@@ -91,8 +91,6 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
         mailComposerVC.setToRecipients([officialEmail])
-        mailComposerVC.setSubject("Sending you an in-app e-mail...")
-        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
         
         self.presentViewController(mailComposerVC, animated: true, completion: nil)
     }
@@ -112,7 +110,7 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func makePhoneCall(candidate: Candidate) {
         
-        let alertController = UIAlertController(title: "Would you like to call \(candidate.name ?? "No Contact Found")", message: "Press the call button to call \(candidate.name ?? "No Contact Name Found").", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Would you like to call the office of \(candidate.name ?? "No Contact Found")?", message: "Press the Call button to make a call.", preferredStyle: .Alert)
         
         let yesAction = UIAlertAction(title: "Call", style: .Default) { (action) -> Void in
             
@@ -131,8 +129,8 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
         
-        let noAction = UIAlertAction(title: "Cancel Call", style: .Cancel) { (action) -> Void in
-            print("cancelled Call")
+        let noAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
+
         }
         
         alertController.addAction(yesAction)
