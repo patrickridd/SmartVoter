@@ -18,6 +18,7 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        _ = ContributorController() 
         setRightButton()
         let customTabBarItem: UITabBarItem = UITabBarItem(title: "Elections", image: unselectedTabImage, selectedImage: selectedImage)
         self.tabBarItem = customTabBarItem
