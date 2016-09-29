@@ -13,7 +13,7 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     
     var address: Address?
-    let logo = UIImage(named: "Logo Large")
+    let logo = UIImage(named: "TextLogoNoCheck")
     let officialCell = OfficialTableViewCell()
     let unselectedTabImage = UIImage(named: "RepsWhite")?.imageWithRenderingMode(.AlwaysOriginal)
     let selectedImage = UIImage(named: "RepsFilled")
