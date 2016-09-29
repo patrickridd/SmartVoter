@@ -51,17 +51,13 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     // MARK: - Table view data source
        
     func updateOfficials(official: Official) {
-        let email = official.email
         let address = official.address
         self.address = address
         officialName.text = official.name
-//        phoneNumberLabel.text = official.phone ?? "No data provided"
         phoneNumberLabel.text = "Office Phone"
         officialOfficeLabel.text = official.office?.name
         webAddressLabel.text = "Website"
-//        streetAddressLabel.text = address?.asAString.capitalizedString ?? "No address provided"
         streetAddressLabel.text = "Office Address"
-//        emailLabel.text = email ?? "No email provided"
         emailLabel.text = "E-mail"
         socialMediaLabel.text = "Social Media"
         
@@ -126,7 +122,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
                 }
             }
             
-            let noAction = UIAlertAction(title: "Cancel Call", style: .Cancel) { (action) -> Void in
+            let noAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
                 print("cancelled Call")
             }
             
@@ -311,33 +307,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             webAddressLabel.hidden = true
             websiteButton.hidden = true
         }
-        
-        /*
-        
-        if phoneNumberLabel.text == official.phone {
-            phoneNumberLabel.hidden = false
-        } else {
-            phoneNumberLabel.hidden = true
-            phoneButton.hidden = true
-        }
-        if emailLabel.text == official.email {
-            emailLabel.hidden = false
-            emailButton.hidden = false
-        } else {
-            emailLabel.hidden = true
-            emailButton.hidden = true
-        }
-        if streetAddressLabel.text == official.address?.asAString.capitalizedString {
-            streetAddressLabel.hidden = false
-        } else {
-            streetAddressLabel.hidden = true
-            mapButton.hidden = true
-        }
-        if official.url == nil {
-            webAddressLabel.hidden = true
-            websiteButton.hidden = true
-        }
- */
     }
     
     // MARK: - Navigation
