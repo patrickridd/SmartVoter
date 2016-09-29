@@ -38,6 +38,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     @IBOutlet weak var doneButtonLabel: UIBarButtonItem!
     @IBOutlet weak var changeSettingsButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var statusLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,11 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         roundButtonCorners()
         datePicker.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.6)
         setupTitleView()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.setupNotificationLabel), name: WillEnterForeground, object: nil)
     }
+    
+    
+    
 
     /// Changes the view to show textfields and blurview so the user can update their address.
     @IBAction func updateAddressButtonTappedWithSender(sender: AnyObject) {
@@ -118,6 +123,43 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
         })
 
+    }
+    
+    
+    func setupNotificationLabel() {
+        let notificationStatus = checkIfNotificationsAreEnabled()
+        
+        if notificationStatus {
+            statusLabel.textColor = UIColor.bradsBlue()
+            statusLabel.text = "ON"
+        } else {
+            statusLabel.textColor = UIColor.navigationRed()
+            statusLabel.text = "OFF"
+        }
+        
+    }
+
+    
+    func checkIfNotificationsAreEnabled() -> Bool {
+        let settings =  UIApplication.sharedApplication().currentUserNotificationSettings()
+        if settings?.types == UIUserNotificationType.None {
+            return false
+        } else {
+            return true
+        }
+//        if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)]){ // Check it's iOS 8 and above
+//            UIUserNotificationSettings *grantedSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
+//            
+//            if (grantedSettings.types == UIUserNotificationTypeNone) {
+//                NSLog(@"No permiossion granted");
+//            }
+//            else if (grantedSettings.types & UIUserNotificationTypeSound & UIUserNotificationTypeAlert ){
+//                NSLog(@"Sound and alert permissions ");
+//            }
+//            else if (grantedSettings.types  & UIUserNotificationTypeAlert){
+//                NSLog(@"Alert Permission Granted");
+//            }
+//        }
     }
     
     func roundButtonCorners() {
