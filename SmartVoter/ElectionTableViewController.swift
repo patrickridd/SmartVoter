@@ -11,8 +11,9 @@ import UIKit
 class ElectionTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
     let rightButton = UIButton()
-    let logo = UIImage(named: "Logo Large")
+    let logo = UIImage(named: "TextLogoNoCheck")
     let unselectedTabImage = UIImage(named: "Elections")?.imageWithRenderingMode(.AlwaysOriginal)
     let selectedImage = UIImage(named: "ElectionsFilled")
     

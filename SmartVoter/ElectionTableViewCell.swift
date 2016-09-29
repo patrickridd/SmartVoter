@@ -30,20 +30,20 @@ class ElectionTableViewCell: UITableViewCell {
             let office = election.office
             let type = election.type
             
-            iconImageView.image = UIImage(named: "voteSmarts.png")
+//            iconImageView.image = UIImage(named: "voteSmarts.png")
             electionNameLabel.text = office
             electionDateLabel.text = type
         } else if election.type == "Referendum" {
             let title = election.referendumTitle
             let type = election.type
-            iconImageView.image = UIImage(named: "votePapers.png")
+//            iconImageView.image = UIImage(named: "votePapers.png")
             electionNameLabel.text = title?.capitalizedString
             electionDateLabel.text = type.capitalizedString
         }
         
-        if election.scope.lowercaseString.containsString("state") {
+//        if election.scope.lowercaseString.containsString("state") {
 //            let image = UIImage(named: "\()")
-        }
+//        }
     }
 }
 

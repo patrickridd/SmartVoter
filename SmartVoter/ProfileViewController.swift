@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setupProfileViewController() {
-        let logo = UIImage(named: "Logo Large")
+        let logo = UIImage(named: "TextLogoNoCheck")
         let logoImageView = UIImageView(image: logo)
         self.navigationItem.titleView = logoImageView
         self.updateLabels()
