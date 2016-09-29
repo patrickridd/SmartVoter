@@ -17,12 +17,13 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
     let officialCell = OfficialTableViewCell()
     let unselectedTabImage = UIImage(named: "RepsWhite")?.imageWithRenderingMode(.AlwaysOriginal)
     let selectedImage = UIImage(named: "RepsFilled")
+    let rightButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
        
-        
+        setRightButton()
         let customTabBarItem: UITabBarItem = UITabBarItem(title: "Officials", image: unselectedTabImage, selectedImage: selectedImage)
         self.tabBarItem = customTabBarItem
         
@@ -47,6 +48,30 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
             })
         }
     }
+    
+    
+    func setRightButton() {
+        let image = UIImage(named: "Settings-100")?.imageWithRenderingMode(.AlwaysTemplate)
+        rightButton.tintColor = UIColor.whiteColor()
+        rightButton.setImage(image, forState: .Normal)
+        rightButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        rightButton.contentMode = .ScaleAspectFit
+        rightButton.addTarget(self, action: #selector(presentSettingsTableViewController), forControlEvents: UIControlEvents.TouchUpInside)
+        let barButton = UIBarButtonItem()
+        barButton.customView = rightButton
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    func presentSettingsTableViewController() {
+        let storyBoard = UIStoryboard(name: "Settings", bundle: nil)
+        let settingsTVC = storyBoard.instantiateViewControllerWithIdentifier("SettingNavigationController")
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(settingsTVC, animated: true, completion: nil)
+        })
+    }
+    
+
     
     // MARK: - Table view data source
     
