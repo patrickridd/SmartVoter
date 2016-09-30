@@ -23,16 +23,11 @@ class CandidateID {
     
     init?(dictionary: [String: AnyObject])  {
         
-        guard let response = dictionary[kResponse] as? [String : AnyObject],
-            let legislatorsArray = response[kLegislator] as? [[String : AnyObject]]     else { return nil }
+        guard let attributesDictionary = dictionary[kAttributes] as? [String : AnyObject],
+            cid = attributesDictionary[kID] as? String,
+            fullName = attributesDictionary[kFullName] as? String else { return nil}
         
-        for legislator in legislatorsArray {
-            
-            guard let attributesDictionary = legislator[kAttributes] as? [String : AnyObject],
-                let cid = attributesDictionary[kID] as? String,
-                let fullName = attributesDictionary[kFullName] as? String else { return nil}
-            self.candidateId = cid
-            self.fullName = fullName
-        }
+        self.candidateId = cid
+        self.fullName = fullName
     }
 }
