@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,29 +32,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRo-3A-EhA">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
+                                        <color key="backgroundColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="6OU-tB-Tmq"/>
+                                            <constraint firstAttribute="height" constant="30" id="OsA-it-A4x"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Register To Vote">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerToVoteButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="1Gu-RU-Nkf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="E3v-zm-v7r" firstAttribute="leading" secondItem="cRo-3A-EhA" secondAttribute="leadingMargin" constant="53" id="AV6-Zd-UMv"/>
+                                    <constraint firstAttribute="bottom" secondItem="E3v-zm-v7r" secondAttribute="bottom" priority="750" constant="55" id="HWO-Tu-seU"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="E3v-zm-v7r" secondAttribute="trailing" constant="43" id="TKc-sW-b6N"/>
+                                    <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="cRo-3A-EhA" secondAttribute="centerX" constant="5" id="xuy-Cb-1vB"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
-                                <color key="backgroundColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Register To Vote">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="registerToVoteButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="1Gu-RU-Nkf"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Election's Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Election's Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election's Office Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election's Office Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -64,6 +77,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="pCB-cP-Ll1" secondAttribute="height" multiplier="1:1" id="XUP-xC-mPC"/>
                                                     <constraint firstAttribute="height" constant="32" id="bp7-F2-aZG"/>
                                                     <constraint firstAttribute="width" constant="32" id="taW-8V-FIt"/>
                                                 </constraints>
@@ -76,6 +90,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="KXK-P7-qBV"/>
                                                     <constraint firstAttribute="width" constant="32" id="g5g-SR-xcy"/>
+                                                    <constraint firstAttribute="width" secondItem="nab-QL-60O" secondAttribute="height" multiplier="1:1" id="n9w-fe-bMB"/>
                                                 </constraints>
                                                 <state key="normal" image="BradPhoneFade"/>
                                                 <connections>
@@ -90,24 +105,20 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cRo-3A-EhA" firstAttribute="bottom" secondItem="Qm6-T3-eQo" secondAttribute="top" id="2Jc-qa-Sih"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="40" id="2iv-su-9Yf"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="3RV-ms-0fz"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="trailing" secondItem="cRo-3A-EhA" secondAttribute="trailing" id="8i8-qt-mD5"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="Ctn-N3-yAl"/>
-                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="60" id="GuF-Dp-2mS"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="Wjf-SB-d26" secondAttribute="bottom" constant="25" id="QWi-my-nIg"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="ShD-E1-2qV"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="U0i-pc-2Z1"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="byI-fm-IJw"/>
                             <constraint firstItem="cRo-3A-EhA" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" constant="38" id="dlO-XB-ilH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xMH-8P-82t" secondAttribute="trailing" constant="10" id="g4I-Ay-2RM"/>
                             <constraint firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="mDq-IE-rgb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="E3v-zm-v7r" secondAttribute="trailing" constant="40" id="qu2-un-DLQ"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" relation="lessThanOrEqual" secondItem="xMH-8P-82t" secondAttribute="bottom" priority="997" constant="50" id="mMz-vz-jHh"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="sY3-2T-vc4"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="Jc5-pR-84w" secondAttribute="leading" id="t1K-zk-0X3"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="cRo-3A-EhA" secondAttribute="leading" id="wmJ-Gw-ZWb"/>
-                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="35" id="xkR-sq-heY"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="30" id="xkR-sq-heY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG"/>
