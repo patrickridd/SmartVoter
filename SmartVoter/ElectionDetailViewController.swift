@@ -26,7 +26,6 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         
         setupView()
-        
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
     }
