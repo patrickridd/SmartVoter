@@ -24,6 +24,8 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
+    
+    @IBOutlet weak var whenYouWantToBeNotified: UILabel!
     @IBOutlet weak var updateLabel: UIButton!
     @IBOutlet weak var zipTextField: UITextField!
     @IBOutlet weak var stateTextField: UITextField!
@@ -51,16 +53,24 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         setupKeyboardNotifications()
         roundButtonCorners()
         datePicker.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.6)
-        setupNotificationLabelAndSegmentControl()
+        setupTitleView()
+        SettingsController.getElectionDate(address) {
+            self.setupNotificationLabelAndSegmentControl()
+        }
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.setupNotificationLabelAndSegmentControl), name: WillEnterForeground, object: nil)
+
     }
     
-    // Changes the view to show textfields and blurview so the user can update their address.
-    
+    override func viewWillAppear(animated: Bool) {
+        setupNotificationLabelAndSegmentControl()
+    }
+
+    /// Changes the view to show textfields and blurview so the user can update their address.
     @IBAction func updateAddressButtonTappedWithSender(sender: AnyObject) {
         doneButtonLabel.title = "Cancel"
         saveButtonLabel.title = "Save"
         saveButtonLabel.enabled = true
+        whenYouWantToBeNotified.hidden = true
         blurView.hidden = false
         capitolImage.hidden = false
         stateTextField.hidden = false
@@ -126,13 +136,13 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     func scheduleNotifications() {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            break
+            SettingsController.scheduleDayOfNotification()
         case 1:
-            break
+            SettingsController.scheduleOneDayNotification()
         case 2:
-            break
+            SettingsController.scheduleOneWeekNotification()
         default:
-            break
+            SettingsController.scheduleNotficationForAllOptions()
         }
     }
     
@@ -143,14 +153,34 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             statusLabel.textColor = UIColor.bradsBlue()
             statusLabel.text = "ON"
             segmentedControl.enabled = true
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
+            checkForPreviousSetting()
             scheduleNotifications()
         } else {
             statusLabel.textColor = UIColor.navigationRed()
             statusLabel.text = "OFF"
+            //ProfileController.sharedController.loadNotificationStatus()
             segmentedControl.enabled = false
         }
     }
     
+    func checkForPreviousSetting() {
+        let setting = ProfileController.sharedController.loadNotificationSetting()
+        switch setting {
+        case "dayOf":
+            segmentedControl.selectedSegmentIndex = 0
+        case  "oneDay":
+            segmentedControl.selectedSegmentIndex = 1
+        case "oneWeek":
+            segmentedControl.selectedSegmentIndex = 2
+        case "all":
+            segmentedControl.selectedSegmentIndex = 3
+        default:
+            segmentedControl.selectedSegmentIndex = 0
+        }  
+    }
+
+
     func roundButtonCorners() {
         updateLabel.layer.masksToBounds = true
         updateLabel.layer.cornerRadius = 8.0
@@ -169,6 +199,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         doneButtonLabel.title = "Done"
         saveButtonLabel.title = ""
         saveButtonLabel.enabled = false
+        whenYouWantToBeNotified.hidden = false
         blurView.hidden = true
         capitolImage.hidden = true
         stateTextField.text = ""

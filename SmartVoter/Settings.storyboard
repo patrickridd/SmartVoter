@@ -281,6 +281,7 @@
                         <outlet property="statusLabel" destination="Ho0-jq-54z" id="WKg-YQ-wIs"/>
                         <outlet property="streetTextField" destination="EOS-9D-D12" id="cmn-ns-eRO"/>
                         <outlet property="updateLabel" destination="mhx-yN-KHu" id="5vD-pt-bav"/>
+                        <outlet property="whenYouWantToBeNotified" destination="eHP-C9-56L" id="hDA-9b-lug"/>
                         <outlet property="zipTextField" destination="kVt-u4-LBo" id="6ku-gd-1za"/>
                     </connections>
                 </tableViewController>

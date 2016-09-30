@@ -30,7 +30,7 @@ class ProfileController {
     enum NotificationSetting: String {
         case dayOf = "dayOf"
         case oneDay = "oneDay"
-        case fiveDays = "fiveDays"
+        case oneWeek = "oneWeek"
         case all = "all"
     }
     
@@ -52,27 +52,31 @@ class ProfileController {
         NSUserDefaults.standardUserDefaults().setObject(notificationIsSet, forKey: notificationBoolKey)
     }
     
-    func saveNotificationStatus(notificationSetting: NotificationSetting) {
+    /// Saves a notification setting
+    func saveNotificationSetting(notificationSetting: NotificationSetting) {
         let setting = notificationSetting.rawValue
         NSUserDefaults.standardUserDefaults().setObject(setting, forKey: notificationSettingKey)
     }
-
+    
     /// Loads notification settings
-    func loadNotificationSetting() {
+    func loadNotificationSetting() -> String {
         if let setting = NSUserDefaults.standardUserDefaults().objectForKey(notificationSettingKey) as? String {
+            
             switch setting {
             case NotificationSetting.dayOf.rawValue:
-                break
+                return NotificationSetting.dayOf.rawValue
             case NotificationSetting.oneDay.rawValue:
-                break
-            case NotificationSetting.fiveDays.rawValue:
-                break
+                return NotificationSetting.oneDay.rawValue
+            case NotificationSetting.oneWeek.rawValue:
+                return NotificationSetting.oneWeek.rawValue
             default:
-                break
+                return NotificationSetting.all.rawValue
             }
-            
+        } else {
+            return "NoSettingSet"
         }
     }
+    
     
     func checkIfNotificationsAreEnabled() -> Bool {
         let settings =  UIApplication.sharedApplication().currentUserNotificationSettings()
