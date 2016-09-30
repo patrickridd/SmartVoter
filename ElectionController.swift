@@ -67,9 +67,9 @@ class ElectionController {
             let elections = electionsArray.flatMap{Election(jsonDictionary: $0)}
             
             for election in elections {
-//                if election.id == "2000" || election.name.lowercaseString.containsString("test") {
-//                    continue
-//                }
+                if election.id == "2000" || election.name.lowercaseString.containsString("test") {
+                    continue
+                }
                 guard let url = infoBaseURL else {
                     completion(nil)
                     return

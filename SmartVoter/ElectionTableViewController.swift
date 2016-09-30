@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ElectionTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -46,6 +47,20 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
     }
     
+    @IBAction func clickHereButtonTapped(sender: AnyObject) {
+        guard let url = NSURL(string: "https://developers.google.com/civic-information/docs/civic_info_api_data_availability_schedule.pdf") else {
+            return
+        }
+        let safariVC = SFSafariViewController(URL: url)
+        if #available(iOS 10.0, *) {
+            safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+        } else {
+            UIApplication.sharedApplication().statusBarStyle = .Default
+        }
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(safariVC, animated: true, completion: nil)
+        })
+    }
     
     func setRightButton() {
         let image = UIImage(named: "Settings-100")?.imageWithRenderingMode(.AlwaysTemplate)

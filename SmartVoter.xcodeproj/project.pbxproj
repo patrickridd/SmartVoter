@@ -14,6 +14,8 @@
 		21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */; };
 		21648E701D922E5800B966ED /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6F1D922E5800B966ED /* ProfileController.swift */; };
 		21D097371D9E0778006BC9A3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D097361D9E0778006BC9A3 /* SettingsController.swift */; };
+		21D0974E1D9F213C006BC9A3 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D097471D9F20B7006BC9A3 /* Charts.framework */; };
+		21D0974F1D9F21B8006BC9A3 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21D097471D9F20B7006BC9A3 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E726DE1D90914900ADC64F /* AppDelegate.swift */; };
 		21E726E41D90914900ADC64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E21D90914900ADC64F /* Main.storyboard */; };
 		21E726E61D90914900ADC64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E51D90914900ADC64F /* Assets.xcassets */; };
@@ -49,55 +51,46 @@
 		648BA9761D9DB9B800B95D31 /* CandidateID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9751D9DB9B800B95D31 /* CandidateID.swift */; };
 		648BA9781D9DBD9400B95D31 /* ContributorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9771D9DBD9400B95D31 /* ContributorController.swift */; };
 		64B19D641D9ECD9600C07D8E /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */; };
-		64B19D741D9ECF3B00C07D8E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B19D6D1D9ECF2200C07D8E /* Charts.framework */; };
-		64B19D751D9ECF3B00C07D8E /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64B19D6D1D9ECF2200C07D8E /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */; };
 		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
 		A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A290B9291D99C54800A7C34C /* CustomTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		21D097461D9F20B7006BC9A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D0973F1D9F20B7006BC9A3 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		21D097481D9F20B7006BC9A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D0973F1D9F20B7006BC9A3 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		21D0974A1D9F20B7006BC9A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D0973F1D9F20B7006BC9A3 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
+			remoteInfo = "Charts-OSX";
+		};
+		21D0974C1D9F20B7006BC9A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D0973F1D9F20B7006BC9A3 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
 		21E726F01D90914900ADC64F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 21E726D31D90914900ADC64F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 21E726DA1D90914900ADC64F;
 			remoteInfo = SmartVoter;
-		};
-		64B19D6C1D9ECF2200C07D8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06165F241D8110E600722320;
-			remoteInfo = Charts;
-		};
-		64B19D6E1D9ECF2200C07D8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06165F2E1D8110E600722320;
-			remoteInfo = ChartsTests;
-		};
-		64B19D701D9ECF2200C07D8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06B120D51D811E6200D14B02;
-			remoteInfo = ChartsRealm;
-		};
-		64B19D721D9ECF2200C07D8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06B120FF1D811F1600D14B02;
-			remoteInfo = ChartsRealmTests;
-		};
-		64B19D761D9ECF3B00C07D8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 06165F231D8110E600722320;
-			remoteInfo = Charts;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -108,7 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				64B19D751D9ECF3B00C07D8E /* Charts.framework in Embed Frameworks */,
+				21D0974F1D9F21B8006BC9A3 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +116,7 @@
 		21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocationController.swift; sourceTree = "<group>"; };
 		21648E6F1D922E5800B966ED /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		21D097361D9E0778006BC9A3 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		21D0973F1D9F20B7006BC9A3 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-Chart3.0-Swift2.3/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		21E726DB1D90914900ADC64F /* SmartVoter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartVoter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E726DE1D90914900ADC64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E726E31D90914900ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,7 +156,6 @@
 		648BA9751D9DB9B800B95D31 /* CandidateID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateID.swift; sourceTree = "<group>"; };
 		648BA9771D9DBD9400B95D31 /* ContributorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributorController.swift; sourceTree = "<group>"; };
 		64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
-		64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Downloads/Charts-2.3.0/Charts.xcodeproj"; sourceTree = "<group>"; };
 		64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailTableViewController.swift; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		A290B9291D99C54800A7C34C /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -173,7 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64B19D741D9ECF3B00C07D8E /* Charts.framework in Frameworks */,
+				21D0974E1D9F213C006BC9A3 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,10 +180,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21D097401D9F20B7006BC9A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21D097471D9F20B7006BC9A3 /* Charts.framework */,
+				21D097491D9F20B7006BC9A3 /* Charts.framework */,
+				21D0974B1D9F20B7006BC9A3 /* Charts.framework */,
+				21D0974D1D9F20B7006BC9A3 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		21E726D21D90914900ADC64F = {
 			isa = PBXGroup;
 			children = (
-				64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */,
+				21D0973F1D9F20B7006BC9A3 /* Charts.xcodeproj */,
 				21E726DD1D90914900ADC64F /* SmartVoter */,
 				21E726F21D90914900ADC64F /* SmartVoterTests */,
 				21E726DC1D90914900ADC64F /* Products */,
@@ -284,17 +288,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		64B19D661D9ECF2200C07D8E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				64B19D6D1D9ECF2200C07D8E /* Charts.framework */,
-				64B19D6F1D9ECF2200C07D8E /* ChartsTests.xctest */,
-				64B19D711D9ECF2200C07D8E /* ChartsRealm.framework */,
-				64B19D731D9ECF2200C07D8E /* ChartsRealmTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A223503F1D9434280023F2BC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,7 +319,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				64B19D771D9ECF3B00C07D8E /* PBXTargetDependency */,
 			);
 			name = SmartVoter;
 			productName = SmartVoter;
@@ -386,8 +378,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 64B19D661D9ECF2200C07D8E /* Products */;
-					ProjectRef = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
+					ProductGroup = 21D097401D9F20B7006BC9A3 /* Products */;
+					ProjectRef = 21D0973F1D9F20B7006BC9A3 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -399,32 +391,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		64B19D6D1D9ECF2200C07D8E /* Charts.framework */ = {
+		21D097471D9F20B7006BC9A3 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = 64B19D6C1D9ECF2200C07D8E /* PBXContainerItemProxy */;
+			remoteRef = 21D097461D9F20B7006BC9A3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		64B19D6F1D9ECF2200C07D8E /* ChartsTests.xctest */ = {
+		21D097491D9F20B7006BC9A3 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 21D097481D9F20B7006BC9A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21D0974B1D9F20B7006BC9A3 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 21D0974A1D9F20B7006BC9A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21D0974D1D9F20B7006BC9A3 /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = 64B19D6E1D9ECF2200C07D8E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64B19D711D9ECF2200C07D8E /* ChartsRealm.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ChartsRealm.framework;
-			remoteRef = 64B19D701D9ECF2200C07D8E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64B19D731D9ECF2200C07D8E /* ChartsRealmTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsRealmTests.xctest;
-			remoteRef = 64B19D721D9ECF2200C07D8E /* PBXContainerItemProxy */;
+			remoteRef = 21D0974C1D9F20B7006BC9A3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -513,11 +505,6 @@
 			isa = PBXTargetDependency;
 			target = 21E726DA1D90914900ADC64F /* SmartVoter */;
 			targetProxy = 21E726F01D90914900ADC64F /* PBXContainerItemProxy */;
-		};
-		64B19D771D9ECF3B00C07D8E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = 64B19D761D9ECF3B00C07D8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
