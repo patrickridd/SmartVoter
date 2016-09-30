@@ -317,7 +317,11 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             detailViewController.address = address.asAString
             detailViewController.official = official
         }
-    }
+        
+        if segue.identifier == "barViewSegue" {
+            guard let detailVC = segue.destinationViewController as?  BarChartViewController else { return }
+            detailVC.official = official
+        }
     
     
 }

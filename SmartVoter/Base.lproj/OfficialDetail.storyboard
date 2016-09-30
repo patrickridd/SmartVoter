@@ -113,6 +113,9 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkG-hS-HbI">
                                                                     <state key="normal" title="Button" image="Bar Chart-80"/>
+                                                                    <connections>
+                                                                        <segue destination="DOF-VU-1DA" kind="show" id="uNG-PX-CWW"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -250,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="1244" y="653.52323838080963"/>
         </scene>
-        <!--View Controller-->
+        <!--Bar Chart View Controller-->
         <scene sceneID="ISz-lv-Nso">
             <objects>
-                <viewController id="DOF-VU-1DA" sceneMemberID="viewController">
+                <viewController id="DOF-VU-1DA" customClass="BarChartViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T1w-9R-Wch"/>
                         <viewControllerLayoutGuide type="bottom" id="5qJ-lf-DgA"/>
@@ -261,13 +264,27 @@
                     <view key="view" contentMode="scaleToFill" id="sYj-NV-ixh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMk-aA-0B4">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TMk-aA-0B4" secondAttribute="trailing" id="MMj-c5-guO"/>
+                            <constraint firstItem="TMk-aA-0B4" firstAttribute="top" secondItem="T1w-9R-Wch" secondAttribute="bottom" id="bnD-qL-byB"/>
+                            <constraint firstItem="TMk-aA-0B4" firstAttribute="leading" secondItem="sYj-NV-ixh" secondAttribute="leading" id="fNk-da-PZ1"/>
+                            <constraint firstItem="5qJ-lf-DgA" firstAttribute="top" secondItem="TMk-aA-0B4" secondAttribute="bottom" id="oE2-LQ-K5c"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="barChartView" destination="TMk-aA-0B4" id="cho-9x-iLp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMd-7V-SEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="1310"/>
+            <point key="canvasLocation" x="1244" y="1355"/>
         </scene>
         <!--Official Address Map View Controller-->
         <scene sceneID="N68-hI-F6n">
