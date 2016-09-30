@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -109,8 +110,7 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitolBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="1Sp-tz-7ad"/>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo Small" translatesAutoresizingMaskIntoConstraints="NO" id="Bzi-hO-wix">
-                                                    <frame key="frameInset" minX="168" minY="394" width="40" height="40"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Small" translatesAutoresizingMaskIntoConstraints="NO" id="Bzi-hO-wix">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="JPS-7W-oBx"/>
                                                         <constraint firstAttribute="height" constant="40" id="KXx-JN-rDp"/>
@@ -171,12 +171,21 @@
                                                 </button>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-9p-C3v">
                                                     <segments>
-                                                        <segment title="2 Weeks"/>
-                                                        <segment title="1 Week"/>
-                                                        <segment title="Day Before"/>
+                                                        <segment title="Day of"/>
+                                                        <segment title="1 Day"/>
+                                                        <segment title="5 days"/>
+                                                        <segment title="All"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.80328536033630371" green="0.39727848768234253" blue="0.39622598886489868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="segmentControlTapped:" destination="bz1-MI-kn5" eventType="valueChanged" id="RLJ-8T-gMp"/>
+                                                    </connections>
                                                 </segmentedControl>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose When You Want To Be Notified" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHP-C9-56L">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1Sp-tz-7ad" firstAttribute="top" secondItem="Wrv-bO-8sj" secondAttribute="topMargin" constant="-8" id="6as-ia-hqB"/>
@@ -191,6 +200,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="gid-NH-Qpa" secondAttribute="trailing" id="ILx-ys-85D"/>
                                                 <constraint firstItem="izM-NT-X29" firstAttribute="top" secondItem="Wrv-bO-8sj" secondAttribute="top" id="Ir7-oW-a27"/>
                                                 <constraint firstItem="gid-NH-Qpa" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leading" id="JFU-jP-csC"/>
+                                                <constraint firstItem="eHP-C9-56L" firstAttribute="width" secondItem="cg6-9p-C3v" secondAttribute="width" multiplier="3/4" id="M2n-I0-2a9"/>
                                                 <constraint firstItem="rv8-Hj-ra6" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="NCF-bm-moL"/>
                                                 <constraint firstItem="mhx-yN-KHu" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="NlM-sa-NOd"/>
                                                 <constraint firstItem="QaK-Mq-h2T" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" constant="-20" id="Oc1-3R-2pa"/>
@@ -199,7 +209,9 @@
                                                 <constraint firstItem="cg6-9p-C3v" firstAttribute="top" secondItem="tzm-HH-6yM" secondAttribute="bottom" constant="30" id="OmO-LZ-xsm"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="QaK-Mq-h2T" secondAttribute="bottom" constant="-10" id="PKK-Qg-hQ7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QaK-Mq-h2T" secondAttribute="trailing" constant="-20" id="PLW-x0-CGD"/>
+                                                <constraint firstItem="eHP-C9-56L" firstAttribute="top" secondItem="cg6-9p-C3v" secondAttribute="bottom" constant="5" id="QQl-w9-6SU"/>
                                                 <constraint firstItem="pxs-J2-sTB" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="Tha-we-0yg"/>
+                                                <constraint firstItem="eHP-C9-56L" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="TlG-Ms-TqN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tzm-HH-6yM" secondAttribute="trailing" constant="110" id="Tyv-vu-wvT"/>
                                                 <constraint firstItem="Bzi-hO-wix" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="UO0-E8-r3f"/>
                                                 <constraint firstItem="gid-NH-Qpa" firstAttribute="centerY" secondItem="Wrv-bO-8sj" secondAttribute="centerY" constant="-40" id="Wue-c2-QSu"/>
@@ -250,6 +262,7 @@
                         <outlet property="doneButtonLabel" destination="bSZ-1n-RuW" id="5ms-JM-nta"/>
                         <outlet property="livingAddress" destination="bD5-dU-fbY" id="1vl-mJ-cHX"/>
                         <outlet property="saveButtonLabel" destination="rcM-nu-UVQ" id="5rb-I9-M3N"/>
+                        <outlet property="segmentControlLabel" destination="cg6-9p-C3v" id="JiG-bH-ggz"/>
                         <outlet property="segmentedControl" destination="cg6-9p-C3v" id="Lhc-zp-Oyn"/>
                         <outlet property="stateTextField" destination="U0b-jO-Vew" id="aZE-Z4-1CB"/>
                         <outlet property="statusLabel" destination="Ho0-jq-54z" id="WKg-YQ-wIs"/>

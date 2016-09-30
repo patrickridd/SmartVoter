@@ -48,13 +48,13 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="ELECTION'S WEBSITE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
-                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Election's Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ELECTION'S OFFICE NUMBER:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
-                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election's Office Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -95,8 +95,8 @@
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="trailing" secondItem="cRo-3A-EhA" secondAttribute="trailing" id="8i8-qt-mD5"/>
                             <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="5s6-SN-HCw" secondAttribute="centerX" id="Ctn-N3-yAl"/>
-                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="30" id="GuF-Dp-2mS"/>
-                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="Wjf-SB-d26" secondAttribute="bottom" constant="30" id="QWi-my-nIg"/>
+                            <constraint firstItem="Qm6-T3-eQo" firstAttribute="top" secondItem="E3v-zm-v7r" secondAttribute="bottom" constant="60" id="GuF-Dp-2mS"/>
+                            <constraint firstItem="E3v-zm-v7r" firstAttribute="top" secondItem="Wjf-SB-d26" secondAttribute="bottom" constant="25" id="QWi-my-nIg"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="ShD-E1-2qV"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="U0i-pc-2Z1"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="byI-fm-IJw"/>
@@ -107,7 +107,7 @@
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" id="sY3-2T-vc4"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="Jc5-pR-84w" secondAttribute="leading" id="t1K-zk-0X3"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="cRo-3A-EhA" secondAttribute="leading" id="wmJ-Gw-ZWb"/>
-                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="50" id="xkR-sq-heY"/>
+                            <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="35" id="xkR-sq-heY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG"/>

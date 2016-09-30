@@ -39,6 +39,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     @IBOutlet weak var changeSettingsButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var segmentControlLabel: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         roundButtonCorners()
         datePicker.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.6)
         setupTitleView()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.setupNotificationLabel), name: WillEnterForeground, object: nil)
+        setupNotificationLabelAndSegmentControl()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.setupNotificationLabelAndSegmentControl), name: WillEnterForeground, object: nil)
     }
     
     
@@ -125,43 +127,41 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
 
     }
     
+    @IBAction func segmentControlTapped(sender: AnyObject) {
+        scheduleNotifications()
+    }
     
-    func setupNotificationLabel() {
-        let notificationStatus = checkIfNotificationsAreEnabled()
+    func scheduleNotifications() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            
+            break
+        case 1:
+            break
+        case 2:
+            
+            break
+        default:
+            
+            break
+        }
+    }
+    
+    func setupNotificationLabelAndSegmentControl() {
+        let notificationStatus = ProfileController.sharedController.checkIfNotificationsAreEnabled()
         
         if notificationStatus {
             statusLabel.textColor = UIColor.bradsBlue()
             statusLabel.text = "ON"
+            scheduleNotifications()
         } else {
             statusLabel.textColor = UIColor.navigationRed()
             statusLabel.text = "OFF"
+            segmentedControl.enabled = false
         }
         
     }
 
-    
-    func checkIfNotificationsAreEnabled() -> Bool {
-        let settings =  UIApplication.sharedApplication().currentUserNotificationSettings()
-        if settings?.types == UIUserNotificationType.None {
-            return false
-        } else {
-            return true
-        }
-//        if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)]){ // Check it's iOS 8 and above
-//            UIUserNotificationSettings *grantedSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
-//            
-//            if (grantedSettings.types == UIUserNotificationTypeNone) {
-//                NSLog(@"No permiossion granted");
-//            }
-//            else if (grantedSettings.types & UIUserNotificationTypeSound & UIUserNotificationTypeAlert ){
-//                NSLog(@"Sound and alert permissions ");
-//            }
-//            else if (grantedSettings.types  & UIUserNotificationTypeAlert){
-//                NSLog(@"Alert Permission Granted");
-//            }
-//        }
-    }
-    
     func roundButtonCorners() {
         updateLabel.layer.masksToBounds = true
         updateLabel.layer.cornerRadius = 8.0
