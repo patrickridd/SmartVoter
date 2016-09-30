@@ -13,6 +13,7 @@
 		21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E691D91DF3B00B966ED /* PollingLocation.swift */; };
 		21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */; };
 		21648E701D922E5800B966ED /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6F1D922E5800B966ED /* ProfileController.swift */; };
+		21D097371D9E0778006BC9A3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D097361D9E0778006BC9A3 /* SettingsController.swift */; };
 		21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E726DE1D90914900ADC64F /* AppDelegate.swift */; };
 		21E726E41D90914900ADC64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E21D90914900ADC64F /* Main.storyboard */; };
 		21E726E61D90914900ADC64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E51D90914900ADC64F /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		21648E691D91DF3B00B966ED /* PollingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocation.swift; sourceTree = "<group>"; };
 		21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocationController.swift; sourceTree = "<group>"; };
 		21648E6F1D922E5800B966ED /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		21D097361D9E0778006BC9A3 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		21E726DB1D90914900ADC64F /* SmartVoter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartVoter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E726DE1D90914900ADC64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E726E31D90914900ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				21E7270E1D9099BB00ADC64F /* NetworkController.swift */,
 				21E727151D909A3700ADC64F /* ImageController.swift */,
 				21648E6F1D922E5800B966ED /* ProfileController.swift */,
+				21D097361D9E0778006BC9A3 /* SettingsController.swift */,
 			);
 			name = "Model Controller";
 			path = ..;
@@ -373,6 +376,7 @@
 				21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */,
 				64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */,
 				640411641D91E25400B57A4C /* Social.swift in Sources */,
+				21D097371D9E0778006BC9A3 /* SettingsController.swift in Sources */,
 				5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */,
 				21E727161D909A3700ADC64F /* ImageController.swift in Sources */,
 			);

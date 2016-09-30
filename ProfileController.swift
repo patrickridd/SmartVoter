@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileController {
     
     let urlKey = "urlKey"
     let addressKey = "addressKey"
     let notificationBoolKey = "notificationBoolKey"
+    let notificationSettingKey = "notificationSettingKey"
     
     static var electionWebsite: String?
     static var electionPhoneNumber: String?
@@ -23,6 +25,14 @@ class ProfileController {
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     var notificationIsSet: Bool?
     
+    
+    
+    enum NotificationSetting: String {
+        case dayOf = "dayOf"
+        case oneDay = "oneDay"
+        case fiveDays = "fiveDays"
+        case all = "all"
+    }
     
     /// Saves User's Home Address to NSUserDefaults
     func saveAddressToUserDefault(address: Address) {
@@ -42,12 +52,45 @@ class ProfileController {
         NSUserDefaults.standardUserDefaults().setObject(notificationIsSet, forKey: notificationBoolKey)
     }
     
+    func saveNotificationStatus(notificationSetting: NotificationSetting) {
+        let setting = notificationSetting.rawValue
+        NSUserDefaults.standardUserDefaults().setObject(setting, forKey: notificationSettingKey)
+    }
+
+    /// Loads notification settings
+    func loadNotificationSetting() {
+        if let setting = NSUserDefaults.standardUserDefaults().objectForKey(notificationSettingKey) as? String {
+            switch setting {
+            case NotificationSetting.dayOf.rawValue:
+                break
+            case NotificationSetting.oneDay.rawValue:
+                break
+            case NotificationSetting.fiveDays.rawValue:
+                break
+            default:
+                break
+            }
+            
+        }
+    }
+    
+    func checkIfNotificationsAreEnabled() -> Bool {
+        let settings =  UIApplication.sharedApplication().currentUserNotificationSettings()
+        if settings?.types == UIUserNotificationType.None {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    
     /// Loads notification bool to see if it has been set or not
     func loadNotificationStatus() -> Bool? {
         let status: Bool? = NSUserDefaults.standardUserDefaults().objectForKey(notificationBoolKey) as? Bool
         self.notificationIsSet = status
         return self.notificationIsSet ?? nil
     }
+    
     
     /// Loads Users Address
     func loadAddress() ->Address? {
@@ -59,6 +102,7 @@ class ProfileController {
             return nil
         }
     }
+    
     
     /// Loads Voting Registration URL
     func loadURL() -> String? {
@@ -75,10 +119,7 @@ class ProfileController {
         return noSpaces
     }
 
-    
-    
-    
-    
+       
     /// Network Call to get polling Locations.
     static func getPollingAddress(address: Address, completion: () -> Void) {
         guard let electionURL = electionURL else {
@@ -143,15 +184,8 @@ class ProfileController {
                         ProfileController.sharedController.saveRegisterToVoteURL(registrationURL)
                         completion()
                     }
-
-                    
-                
                 }
-                
-                
             }
         }
     }
-    
-    
 }

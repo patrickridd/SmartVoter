@@ -42,7 +42,7 @@ class ElectionController {
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     static let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
     static let electionURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/elections")
-    static var electionDate = String()
+    static var electionDate: String?
     static var electionName = String()
     static var pollingLocation = [String]()
     
@@ -118,13 +118,13 @@ class ElectionController {
     
     /// Schedules Notification of when the Election is
     static func scheduleElectionNotification() {
-        
-        guard let date = dateFormatter.dateFromString(ElectionController.electionDate + "T00:00:00-00:00") else {
+        let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
+        guard let date = dateFormatter.dateFromString(ElectionController.electionDate! + "T00:00:00-00:00") else {
             return
         }
         
         // If the day of the election is before the present day, don't schedule the notification because it has already happened.
-        if date.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
+        if date.timeIntervalSince1970 < NSDate().timeIntervalSince1970 || !acceptNotification {
             return
         }
         
