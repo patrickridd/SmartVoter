@@ -5,6 +5,7 @@
 //  Created by Patrick Ridd on 9/27/16.
 //  Copyright © 2016 PatrickRidd. All rights reserved.
 //
+
 extension UITextField {
     class func connectFields(fields:[UITextField]) -> Void {
         guard let last = fields.last else {
@@ -19,11 +20,9 @@ extension UITextField {
     }
 }
 
-
 import UIKit
 
 class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-    
     
     @IBOutlet weak var updateLabel: UIButton!
     @IBOutlet weak var zipTextField: UITextField!
@@ -45,24 +44,19 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         super.viewDidLoad()
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
-        guard let address = ProfileController.sharedController.loadAddress() else {
-            return
-        }
+        guard let address = ProfileController.sharedController.loadAddress() else { return }
         updateLivingAddressLabel(address)
         setupView()
         setupTextFields()
         setupKeyboardNotifications()
         roundButtonCorners()
         datePicker.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.6)
-        setupTitleView()
         setupNotificationLabelAndSegmentControl()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.setupNotificationLabelAndSegmentControl), name: WillEnterForeground, object: nil)
     }
     
+    // Changes the view to show textfields and blurview so the user can update their address.
     
-    
-
-    /// Changes the view to show textfields and blurview so the user can update their address.
     @IBAction func updateAddressButtonTappedWithSender(sender: AnyObject) {
         doneButtonLabel.title = "Cancel"
         saveButtonLabel.title = "Save"
@@ -75,34 +69,34 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         zipTextField.hidden = false
         segmentedControl.hidden = true
         changeSettingsButton.hidden = true
-
     }
     
+    // Dismisses the SettingTableViewController
     
-    /// Dismisses the SettingTableViewController
     @IBAction func doneButtonTappedWithSender(sender: AnyObject) {
         if doneButtonLabel.title == "Cancel" {
-           setupView()
+            setupView()
             zipTextField.resignFirstResponder()
             streetTextField.resignFirstResponder()
             cityTextField.resignFirstResponder()
             stateTextField.resignFirstResponder()
         } else {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.dismissViewControllerAnimated(true, completion: nil)
-        })
+            dispatch_async(dispatch_get_main_queue(), {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
         }
     }
     
-    /// Allows user to change notification setting by taking them to ios Settings.
+    // Allows user to change notification setting by taking them to ios Settings.
+    
     @IBAction func changeSettingsButtonTapped(sender: AnyObject) {
         if let appSettings = NSURL(string: UIApplicationOpenSettingsURLString) {
             UIApplication.sharedApplication().openURL(appSettings)
         }
-
     }
     
-    /// Saves new address or returns to normal view if there is an incorrect input
+    // Saves new address or returns to normal view if there is an incorrect input
+    
     @IBAction func saveButtonTappedWithSender(sender: AnyObject) {
         stateTextField.resignFirstResponder()
         zipTextField.resignFirstResponder()
@@ -112,7 +106,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             let cityText = cityTextField.text where cityText.characters.count > 0,
             let streetText = streetTextField.text where streetText.characters.count > 0,
             let zipText = zipTextField.text where zipText.characters.count > 0  else {
-                
                 self.setupView()
                 return
         }
@@ -124,7 +117,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             let nc = NSNotificationCenter.defaultCenter()
             nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
         })
-
     }
     
     @IBAction func segmentControlTapped(sender: AnyObject) {
@@ -134,15 +126,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     func scheduleNotifications() {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            
             break
         case 1:
             break
         case 2:
-            
             break
         default:
-            
             break
         }
     }
@@ -160,9 +149,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             statusLabel.text = "OFF"
             segmentedControl.enabled = false
         }
-        
     }
-
+    
     func roundButtonCorners() {
         updateLabel.layer.masksToBounds = true
         updateLabel.layer.cornerRadius = 8.0
@@ -170,22 +158,13 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         changeSettingsButton.layer.cornerRadius = 8.0
     }
     
-    /// Updates the label with a new address
+    // Updates the label with a new address
     func updateLivingAddressLabel(address: Address) {
         let allCapsAddress = address.asAString.uppercaseString
         self.livingAddress.text = allCapsAddress
     }
     
-    
-    /// Places the logo title in the navigation item's titleView
-    func setupTitleView() {
-        let image = UIImage(named:"SettingsWhiteBorder")
-        let imageView = UIImageView(image: image)
-        navigationItem.titleView = imageView
-    }
-    
-    
-    /// Sets initial view with blur view and textfields hidden
+    // Sets initial view with blur view and textfields hidden
     func setupView() {
         doneButtonLabel.title = "Done"
         saveButtonLabel.title = ""
@@ -202,11 +181,9 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         zipTextField.hidden = true
         segmentedControl.hidden = false
         changeSettingsButton.hidden = false
-    
     }
     
-    
-    /// Sets delegate for textFields
+    // Sets delegate for textFields
     func setupTextFields() {
         streetTextField.delegate = self
         cityTextField.delegate = self
@@ -230,7 +207,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         }
     }
     
-    /// Changes frame depending on the height of the keyboard, numberpad, and/or pickerView.
+    // Changes frame depending on the height of the keyboard, numberpad, and/or pickerView.
+    
     func raiseView(height: CGFloat) {
         if !keyboardShown {
             view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - height)
@@ -250,7 +228,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         keyboardHeight = height
     }
     
-    /// Changes the view's frame back to default after keyboard hides.
+    // Changes the view's frame back to default after keyboard hides.
+    
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height + keyboardSize.height)
@@ -258,8 +237,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         }
     }
     
+    // Sets up textfield connections
     
-    /// Sets up textfield connections
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         UITextField.connectFields([streetTextField,cityTextField,stateTextField,zipTextField])
         return true
@@ -270,6 +249,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     }
     
     // MARK: - PickerView
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -287,5 +267,11 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         stateTextField.text = Address.states[row].rawValue
     }
-    
 }
+
+
+
+
+
+
+
