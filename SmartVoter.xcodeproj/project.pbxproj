@@ -487,11 +487,8 @@
 				21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */,
 				64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */,
 				640411641D91E25400B57A4C /* Social.swift in Sources */,
-<<<<<<< 12ce20e8f329073d10e86827040344ae25f8761e
 				21D097371D9E0778006BC9A3 /* SettingsController.swift in Sources */,
-=======
 				64B19D641D9ECD9600C07D8E /* BarChartViewController.swift in Sources */,
->>>>>>> added barChart
 				5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */,
 				21E727161D909A3700ADC64F /* ImageController.swift in Sources */,
 			);
