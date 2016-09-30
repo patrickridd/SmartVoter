@@ -153,6 +153,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         if notificationStatus {
             statusLabel.textColor = UIColor.bradsBlue()
             statusLabel.text = "ON"
+            segmentedControl.enabled = true
             scheduleNotifications()
         } else {
             statusLabel.textColor = UIColor.navigationRed()

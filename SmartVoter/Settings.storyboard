@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -181,7 +180,7 @@
                                                         <action selector="segmentControlTapped:" destination="bz1-MI-kn5" eventType="valueChanged" id="RLJ-8T-gMp"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose When You Want To Be Notified" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHP-C9-56L">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When Do You Want To Be Notified For Elections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHP-C9-56L">
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -200,7 +199,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="gid-NH-Qpa" secondAttribute="trailing" id="ILx-ys-85D"/>
                                                 <constraint firstItem="izM-NT-X29" firstAttribute="top" secondItem="Wrv-bO-8sj" secondAttribute="top" id="Ir7-oW-a27"/>
                                                 <constraint firstItem="gid-NH-Qpa" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leading" id="JFU-jP-csC"/>
-                                                <constraint firstItem="eHP-C9-56L" firstAttribute="width" secondItem="cg6-9p-C3v" secondAttribute="width" multiplier="3/4" id="M2n-I0-2a9"/>
                                                 <constraint firstItem="rv8-Hj-ra6" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="NCF-bm-moL"/>
                                                 <constraint firstItem="mhx-yN-KHu" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="NlM-sa-NOd"/>
                                                 <constraint firstItem="QaK-Mq-h2T" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" constant="-20" id="Oc1-3R-2pa"/>
@@ -214,6 +212,7 @@
                                                 <constraint firstItem="eHP-C9-56L" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="TlG-Ms-TqN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tzm-HH-6yM" secondAttribute="trailing" constant="110" id="Tyv-vu-wvT"/>
                                                 <constraint firstItem="Bzi-hO-wix" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="UO0-E8-r3f"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eHP-C9-56L" secondAttribute="trailing" constant="10" id="VQT-Ys-00X"/>
                                                 <constraint firstItem="gid-NH-Qpa" firstAttribute="centerY" secondItem="Wrv-bO-8sj" secondAttribute="centerY" constant="-40" id="Wue-c2-QSu"/>
                                                 <constraint firstItem="pxs-J2-sTB" firstAttribute="top" secondItem="Bzi-hO-wix" secondAttribute="bottom" constant="5" id="XH4-qO-2K3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bD5-dU-fbY" secondAttribute="trailing" constant="5" id="Xec-r4-8SM"/>
@@ -224,6 +223,7 @@
                                                 <constraint firstItem="1rN-WE-i6s" firstAttribute="top" secondItem="pxs-J2-sTB" secondAttribute="bottom" constant="5" id="eRB-LS-rkb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cg6-9p-C3v" secondAttribute="trailing" constant="25" id="eii-HL-j2n"/>
                                                 <constraint firstItem="1Sp-tz-7ad" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" id="icC-lM-Uvl"/>
+                                                <constraint firstItem="eHP-C9-56L" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leadingMargin" constant="10" id="pYs-py-ofD"/>
                                                 <constraint firstAttribute="trailing" secondItem="k0D-qR-Trr" secondAttribute="trailing" id="qQG-h0-nyU"/>
                                                 <constraint firstItem="cg6-9p-C3v" firstAttribute="centerX" secondItem="Wrv-bO-8sj" secondAttribute="centerX" id="tk6-Qm-1u6"/>
                                                 <constraint firstItem="k0D-qR-Trr" firstAttribute="leading" secondItem="Wrv-bO-8sj" secondAttribute="leading" id="xl2-TW-WRa"/>
