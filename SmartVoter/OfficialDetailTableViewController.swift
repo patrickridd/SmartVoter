@@ -112,12 +112,12 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
                 phoneNumberNoCharacter = phoneNumberNoCharacter.stringByReplacingOccurrencesOfString(
                     "\\D", withString: "", options: .RegularExpressionSearch,
                     range: phoneNumberNoCharacter.startIndex..<phoneNumberNoCharacter.endIndex)
-               // print(officialPhoneNumber)
+                // print(officialPhoneNumber)
                 if let phoneCallURL:NSURL = NSURL(string: "tel:\(phoneNumberNoCharacter ?? "No Number Found")") {
                     let application:UIApplication = UIApplication.sharedApplication()
                     if (application.canOpenURL(phoneCallURL)) {
                         application.openURL(phoneCallURL);
-                     //   print (officialPhoneNumber)
+                        //   print (officialPhoneNumber)
                     }
                 }
             }
@@ -317,7 +317,10 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             detailViewController.address = address.asAString
             detailViewController.official = official
         }
+        
+        if segue.identifier == "barViewSegue" {
+            guard let detailVC = segue.destinationViewController as?  BarChartViewController else { return }
+            detailVC.official = official
+        }
     }
-    
-    
 }

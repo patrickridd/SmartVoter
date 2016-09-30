@@ -47,6 +47,9 @@
 		648BA9741D9DB99F00B95D31 /* Contributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9731D9DB99F00B95D31 /* Contributions.swift */; };
 		648BA9761D9DB9B800B95D31 /* CandidateID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9751D9DB9B800B95D31 /* CandidateID.swift */; };
 		648BA9781D9DBD9400B95D31 /* ContributorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9771D9DBD9400B95D31 /* ContributorController.swift */; };
+		64B19D641D9ECD9600C07D8E /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */; };
+		64B19D741D9ECF3B00C07D8E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B19D6D1D9ECF2200C07D8E /* Charts.framework */; };
+		64B19D751D9ECF3B00C07D8E /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64B19D6D1D9ECF2200C07D8E /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */; };
 		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
 		A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A290B9291D99C54800A7C34C /* CustomTabBarController.swift */; };
@@ -60,7 +63,56 @@
 			remoteGlobalIDString = 21E726DA1D90914900ADC64F;
 			remoteInfo = SmartVoter;
 		};
+		64B19D6C1D9ECF2200C07D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		64B19D6E1D9ECF2200C07D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		64B19D701D9ECF2200C07D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		64B19D721D9ECF2200C07D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120FF1D811F1600D14B02;
+			remoteInfo = ChartsRealmTests;
+		};
+		64B19D761D9ECF3B00C07D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		64B19D781D9ECF3C00C07D8E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				64B19D751D9ECF3B00C07D8E /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateTableViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +159,8 @@
 		648BA9731D9DB99F00B95D31 /* Contributions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contributions.swift; sourceTree = "<group>"; };
 		648BA9751D9DB9B800B95D31 /* CandidateID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateID.swift; sourceTree = "<group>"; };
 		648BA9771D9DBD9400B95D31 /* ContributorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributorController.swift; sourceTree = "<group>"; };
+		64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
+		64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Downloads/Charts-2.3.0/Charts.xcodeproj"; sourceTree = "<group>"; };
 		64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailTableViewController.swift; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		A290B9291D99C54800A7C34C /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -117,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B19D741D9ECF3B00C07D8E /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +188,7 @@
 		21E726D21D90914900ADC64F = {
 			isa = PBXGroup;
 			children = (
+				64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */,
 				21E726DD1D90914900ADC64F /* SmartVoter */,
 				21E726F21D90914900ADC64F /* SmartVoterTests */,
 				21E726DC1D90914900ADC64F /* Products */,
@@ -174,6 +230,7 @@
 		21E727041D90958400ADC64F /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */,
 				21E727021D90949800ADC64F /* ElectionTableViewController.swift */,
 				51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */,
 				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
@@ -224,6 +281,17 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		64B19D661D9ECF2200C07D8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64B19D6D1D9ECF2200C07D8E /* Charts.framework */,
+				64B19D6F1D9ECF2200C07D8E /* ChartsTests.xctest */,
+				64B19D711D9ECF2200C07D8E /* ChartsRealm.framework */,
+				64B19D731D9ECF2200C07D8E /* ChartsRealmTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A223503F1D9434280023F2BC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,10 +318,12 @@
 				21E726D71D90914900ADC64F /* Sources */,
 				21E726D81D90914900ADC64F /* Frameworks */,
 				21E726D91D90914900ADC64F /* Resources */,
+				64B19D781D9ECF3C00C07D8E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				64B19D771D9ECF3B00C07D8E /* PBXTargetDependency */,
 			);
 			name = SmartVoter;
 			productName = SmartVoter;
@@ -311,6 +381,12 @@
 			mainGroup = 21E726D21D90914900ADC64F;
 			productRefGroup = 21E726DC1D90914900ADC64F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 64B19D661D9ECF2200C07D8E /* Products */;
+					ProjectRef = 64B19D651D9ECF2200C07D8E /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				21E726DA1D90914900ADC64F /* SmartVoter */,
@@ -318,6 +394,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		64B19D6D1D9ECF2200C07D8E /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 64B19D6C1D9ECF2200C07D8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		64B19D6F1D9ECF2200C07D8E /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 64B19D6E1D9ECF2200C07D8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		64B19D711D9ECF2200C07D8E /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = 64B19D701D9ECF2200C07D8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		64B19D731D9ECF2200C07D8E /* ChartsRealmTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsRealmTests.xctest;
+			remoteRef = 64B19D721D9ECF2200C07D8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		21E726D91D90914900ADC64F /* Resources */ = {
@@ -380,7 +487,11 @@
 				21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */,
 				64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */,
 				640411641D91E25400B57A4C /* Social.swift in Sources */,
+<<<<<<< 12ce20e8f329073d10e86827040344ae25f8761e
 				21D097371D9E0778006BC9A3 /* SettingsController.swift in Sources */,
+=======
+				64B19D641D9ECD9600C07D8E /* BarChartViewController.swift in Sources */,
+>>>>>>> added barChart
 				5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */,
 				21E727161D909A3700ADC64F /* ImageController.swift in Sources */,
 			);
@@ -401,6 +512,11 @@
 			isa = PBXTargetDependency;
 			target = 21E726DA1D90914900ADC64F /* SmartVoter */;
 			targetProxy = 21E726F01D90914900ADC64F /* PBXContainerItemProxy */;
+		};
+		64B19D771D9ECF3B00C07D8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 64B19D761D9ECF3B00C07D8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -539,6 +655,7 @@
 		21E726F91D90914900ADC64F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CVQEUYD92N;
 				INFOPLIST_FILE = SmartVoter/Info.plist;
@@ -552,6 +669,7 @@
 		21E726FA1D90914900ADC64F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CVQEUYD92N;
 				INFOPLIST_FILE = SmartVoter/Info.plist;
