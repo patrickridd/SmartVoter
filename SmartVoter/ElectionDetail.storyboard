@@ -82,12 +82,14 @@
                                             <frame key="frameInset" width="375" height="197"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-ph-vVX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-ph-vVX">
+                                                    <frame key="frameInset" minX="8" minY="8" width="359" height="33"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNh-fC-TqE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNh-fC-TqE">
+                                                    <frame key="frameInset" minX="8" minY="42" width="359" height="27.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -194,16 +196,16 @@
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDB-hx-Tv5">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="KUJ-YD-FNV"/>
+                                    <constraint firstAttribute="height" constant="34" id="KUJ-YD-FNV"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="eUz-D0-HNe">
+                                    <barButtonItem image="Back" id="eUz-D0-HNe">
                                         <connections>
                                             <action selector="goBack" destination="E2q-hi-sHp" id="Yaf-7Y-BDR"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="goN-Vb-qHl"/>
-                                    <barButtonItem systemItem="fastForward" id="oUn-n8-qle">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dSK-of-PXL"/>
+                                    <barButtonItem image="Forward" id="oUn-n8-qle">
                                         <connections>
                                             <action selector="goForward" destination="E2q-hi-sHp" id="Af5-9Q-zeV"/>
                                         </connections>
@@ -214,7 +216,7 @@
                                             <action selector="reload" destination="E2q-hi-sHp" id="oIg-d3-Kxr"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="XeG-Y8-XPe"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="edF-CV-8UC"/>
                                     <barButtonItem systemItem="stop" id="1I7-Gd-FP3">
                                         <connections>
                                             <action selector="stopLoading" destination="E2q-hi-sHp" id="fnC-4T-R7M"/>
@@ -259,8 +261,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back" width="11" height="19"/>
         <image name="BradMailFade" width="50" height="50"/>
         <image name="BradPhoneFade" width="50" height="50"/>
         <image name="BradSafariFade" width="50" height="50"/>
+        <image name="Forward" width="11" height="19"/>
     </resources>
 </document>
