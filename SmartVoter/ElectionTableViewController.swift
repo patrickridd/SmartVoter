@@ -11,6 +11,7 @@ import UIKit
 class ElectionTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noContestView: UIView!
     
     let rightButton = UIButton()
     let logo = UIImage(named: "TextLogoNoCheck")
@@ -23,7 +24,7 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
         setRightButton()
         let customTabBarItem: UITabBarItem = UITabBarItem(title: "Elections", image: unselectedTabImage, selectedImage: selectedImage)
         self.tabBarItem = customTabBarItem
-        
+        self.noContestView.hidden = true
         let logoImageView = UIImageView(image: logo)
         self.navigationItem.titleView = logoImageView
         
@@ -34,6 +35,9 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         ElectionController.getContest(livingAddress.asAString) { (contests) in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if contests?.count == 0 || contests == nil {
+                    self.presentNoContestsView()
+                }
                 self.tableView.reloadData()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             })
@@ -65,6 +69,10 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     
+    func presentNoContestsView() {
+        self.noContestView.hidden = false
+    }
+
     
     // MARK: - Table view data source
     

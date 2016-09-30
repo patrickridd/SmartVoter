@@ -145,7 +145,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             SettingsController.scheduleNotficationForAllOptions()
         }
     }
-    
+        
     func setupNotificationLabelAndSegmentControl() {
         let notificationStatus = ProfileController.sharedController.checkIfNotificationsAreEnabled()
         
@@ -179,7 +179,15 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             segmentedControl.selectedSegmentIndex = 0
         }  
     }
-
+    
+    func setupTitleView(){
+        if let font = UIFont(name: "Avenir", size: 28) {
+            let attributes =
+           [NSForegroundColorAttributeName: UIColor.whiteColor(),
+           NSFontAttributeName: font]
+            UINavigationBar.appearance().titleTextAttributes = attributes
+        }
+    }
 
     func roundButtonCorners() {
         updateLabel.layer.masksToBounds = true
@@ -193,6 +201,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         let allCapsAddress = address.asAString.uppercaseString
         self.livingAddress.text = allCapsAddress
     }
+    
+    
     
     // Sets initial view with blur view and textfields hidden
     func setupView() {
