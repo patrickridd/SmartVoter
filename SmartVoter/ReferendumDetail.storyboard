@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f37-mV-hQz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Referendum Detail View Controller-->
+        <scene sceneID="qus-NK-eRd">
+            <objects>
+                <viewController id="f37-mV-hQz" customClass="ReferendumDetailViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nLx-Ud-can"/>
+                        <viewControllerLayoutGuide type="bottom" id="rMd-S0-bAz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QXi-Z1-0Du">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X6m-cH-cNU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="3R5-QX-dum"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referendum Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-vO-bCH">
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vF-TC-sSm">
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbL-ZM-fNz">
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCO-gJ-glN">
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6k-dX-A1v">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="QSb-yw-GFR"/>
+                                    <constraint firstAttribute="height" constant="35" id="rD8-r1-E1C"/>
+                                </constraints>
+                                <state key="normal" image="BradSafariFade"/>
+                                <connections>
+                                    <action selector="toSafariButtonPressed:" destination="f37-mV-hQz" eventType="touchUpInside" id="xQp-Fx-jAZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KbL-ZM-fNz" firstAttribute="top" secondItem="2vF-TC-sSm" secondAttribute="bottom" constant="8" id="807-iE-hzv"/>
+                            <constraint firstAttribute="trailing" secondItem="KbL-ZM-fNz" secondAttribute="trailing" constant="16" id="H1M-FH-sTL"/>
+                            <constraint firstItem="W6k-dX-A1v" firstAttribute="leading" secondItem="CCO-gJ-glN" secondAttribute="trailing" constant="8" id="HGw-UR-hkR"/>
+                            <constraint firstItem="eaU-vO-bCH" firstAttribute="leading" secondItem="QXi-Z1-0Du" secondAttribute="leading" constant="16" id="IP3-Ai-2Xt"/>
+                            <constraint firstItem="2vF-TC-sSm" firstAttribute="leading" secondItem="QXi-Z1-0Du" secondAttribute="leading" constant="16" id="Ihd-6u-rCR"/>
+                            <constraint firstItem="KbL-ZM-fNz" firstAttribute="leading" secondItem="QXi-Z1-0Du" secondAttribute="leading" constant="16" id="LlD-JI-Njr"/>
+                            <constraint firstItem="X6m-cH-cNU" firstAttribute="leading" secondItem="QXi-Z1-0Du" secondAttribute="leading" id="Pkc-yR-Drt"/>
+                            <constraint firstItem="eaU-vO-bCH" firstAttribute="top" secondItem="X6m-cH-cNU" secondAttribute="bottom" constant="8" id="R8p-0v-8Jf"/>
+                            <constraint firstAttribute="trailing" secondItem="W6k-dX-A1v" secondAttribute="trailing" constant="16" id="RMs-RC-DXJ"/>
+                            <constraint firstAttribute="trailing" secondItem="eaU-vO-bCH" secondAttribute="trailing" constant="16" id="VXO-Kb-313"/>
+                            <constraint firstItem="CCO-gJ-glN" firstAttribute="top" secondItem="KbL-ZM-fNz" secondAttribute="bottom" constant="8" id="aTB-cj-vax"/>
+                            <constraint firstItem="2vF-TC-sSm" firstAttribute="top" secondItem="eaU-vO-bCH" secondAttribute="bottom" constant="8" id="aZb-Gs-ka1"/>
+                            <constraint firstItem="W6k-dX-A1v" firstAttribute="top" secondItem="KbL-ZM-fNz" secondAttribute="bottom" constant="8" id="aZx-Dp-md1"/>
+                            <constraint firstItem="CCO-gJ-glN" firstAttribute="leading" secondItem="QXi-Z1-0Du" secondAttribute="leading" constant="16" id="bSJ-IQ-Z8y"/>
+                            <constraint firstItem="X6m-cH-cNU" firstAttribute="top" secondItem="nLx-Ud-can" secondAttribute="bottom" id="gzx-RG-8ee"/>
+                            <constraint firstAttribute="trailing" secondItem="X6m-cH-cNU" secondAttribute="trailing" id="ksb-Gx-8Wx"/>
+                            <constraint firstAttribute="trailing" secondItem="2vF-TC-sSm" secondAttribute="trailing" constant="16" id="yoA-ry-ad7"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="KbL-ZM-fNz" id="S21-jQ-3kU"/>
+                        <outlet property="electionDateLabel" destination="2vF-TC-sSm" id="H6B-aT-MZL"/>
+                        <outlet property="flagImageView" destination="X6m-cH-cNU" id="Biw-qu-THy"/>
+                        <outlet property="referendumTitleLabel" destination="eaU-vO-bCH" id="oem-hB-re8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ey-O6-aYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768.8" y="221.73913043478262"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BradSafariFade" width="50" height="50"/>
+    </resources>
+</document>

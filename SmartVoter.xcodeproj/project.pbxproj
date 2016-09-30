@@ -52,6 +52,8 @@
 		648BA9781D9DBD9400B95D31 /* ContributorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9771D9DBD9400B95D31 /* ContributorController.swift */; };
 		64B19D641D9ECD9600C07D8E /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */; };
 		64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */; };
+		A20F69911D9F172C0058227D /* ReferendumDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20F69901D9F172C0058227D /* ReferendumDetail.storyboard */; };
+		A20F69931D9F1CD20058227D /* ReferendumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F69921D9F1CD20058227D /* ReferendumDetailViewController.swift */; };
 		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
 		A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A290B9291D99C54800A7C34C /* CustomTabBarController.swift */; };
 /* End PBXBuildFile section */
@@ -157,6 +159,8 @@
 		648BA9771D9DBD9400B95D31 /* ContributorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributorController.swift; sourceTree = "<group>"; };
 		64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailTableViewController.swift; sourceTree = "<group>"; };
+		A20F69901D9F172C0058227D /* ReferendumDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReferendumDetail.storyboard; sourceTree = "<group>"; };
+		A20F69921D9F1CD20058227D /* ReferendumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferendumDetailViewController.swift; sourceTree = "<group>"; };
 		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		A290B9291D99C54800A7C34C /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +243,7 @@
 				64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */,
 				21E727021D90949800ADC64F /* ElectionTableViewController.swift */,
 				51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */,
+				A20F69921D9F1CD20058227D /* ReferendumDetailViewController.swift */,
 				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
 				51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */,
 				64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */,
@@ -294,6 +299,7 @@
 				5159E6A81D9995A200B41F65 /* SignUp.storyboard */,
 				21E726E21D90914900ADC64F /* Main.storyboard */,
 				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
+				A20F69901D9F172C0058227D /* ReferendumDetail.storyboard */,
 				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
 				21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */,
 				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
@@ -435,6 +441,7 @@
 				21E726E41D90914900ADC64F /* Main.storyboard in Resources */,
 				21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */,
 				21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */,
+				A20F69911D9F172C0058227D /* ReferendumDetail.storyboard in Resources */,
 				215E6EA21D9ADC99009E75EC /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +472,7 @@
 				640411621D91DF2800B57A4C /* Address.swift in Sources */,
 				2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */,
 				21648E701D922E5800B966ED /* ProfileController.swift in Sources */,
+				A20F69931D9F1CD20058227D /* ReferendumDetailViewController.swift in Sources */,
 				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
 				A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */,
 				510145F31D9EE16E0028E36A /* CandidateIDController.swift in Sources */,

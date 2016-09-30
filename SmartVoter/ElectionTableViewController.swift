@@ -112,12 +112,21 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCellWithIdentifier("electionCell", forIndexPath: indexPath) as? ElectionTableViewCell else { return UITableViewCell() }
         let contest = ElectionController.sortedContests[indexPath.section][indexPath.row]
         
         cell.updateWithElection(contest)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            performSegueWithIdentifier("toElectionDetailSegue", sender: self)
+        } else {
+            performSegueWithIdentifier("toReferendumDetailSegue", sender: self)
+        }
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -151,6 +160,10 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toElectionDetailSegue" {
             guard let destinationVC = segue.destinationViewController as? ElectionDetailViewController, indexPath = tableView.indexPathForSelectedRow else { return }
+            let contest = ElectionController.sortedContests[indexPath.section][indexPath.row]
+            destinationVC.contest = contest
+        } else if segue.identifier == "toReferendumDetailSegue" {
+            guard let destinationVC = segue.destinationViewController as? ReferendumDetailViewController, indexPath = tableView.indexPathForSelectedRow else { return }
             let contest = ElectionController.sortedContests[indexPath.section][indexPath.row]
             destinationVC.contest = contest
         }

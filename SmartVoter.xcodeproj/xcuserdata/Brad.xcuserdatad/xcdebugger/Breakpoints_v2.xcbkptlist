@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartVoter/ElectionDetailViewController.swift"
-            timestampString = "496709364.579139"
+            timestampString = "496968070.226662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "tableView(tableView:willDisplayHeaderView:forSection:)"
             landmarkType = "7">
          </BreakpointContent>
