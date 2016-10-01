@@ -25,26 +25,36 @@
                                             <constraint firstAttribute="height" constant="200" id="hBZ-ae-UWx"/>
                                         </constraints>
                                     </imageView>
-                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUZ-cT-XX9">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUZ-cT-XX9">
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hsg-Um-ZtX">
+                                                <color key="backgroundColor" red="0.1215686275" green="0.36078431370000003" blue="0.54901960780000003" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Election" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvS-QH-qMe">
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="PvS-QH-qMe" firstAttribute="top" secondItem="XUZ-cT-XX9" secondAttribute="top" constant="2" id="56I-P7-EY1"/>
+                                            <constraint firstItem="Hsg-Um-ZtX" firstAttribute="top" secondItem="XUZ-cT-XX9" secondAttribute="top" id="PUF-2d-sa3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hsg-Um-ZtX" secondAttribute="trailing" id="anG-qQ-FEH"/>
                                             <constraint firstAttribute="trailing" secondItem="PvS-QH-qMe" secondAttribute="trailing" constant="8" id="dmD-I3-y4o"/>
+                                            <constraint firstAttribute="bottom" secondItem="Hsg-Um-ZtX" secondAttribute="bottom" id="hQS-GL-pSo"/>
                                             <constraint firstItem="PvS-QH-qMe" firstAttribute="leading" secondItem="XUZ-cT-XX9" secondAttribute="leading" constant="8" id="oBX-Nw-8eo"/>
                                             <constraint firstAttribute="bottom" secondItem="PvS-QH-qMe" secondAttribute="bottom" constant="2" id="wPE-Hu-q4j"/>
+                                            <constraint firstItem="Hsg-Um-ZtX" firstAttribute="leading" secondItem="XUZ-cT-XX9" secondAttribute="leading" id="xgo-eP-27o"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m33-4S-Nyc">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m33-4S-Nyc">
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-yc-b59">
+                                                <color key="backgroundColor" red="0.12156862745098039" green="0.36078431372549019" blue="0.5490196078431373" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqR-Iz-l6B">
-                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -54,15 +64,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="BqR-Iz-l6B" secondAttribute="trailing" constant="8" id="7ON-vh-WZ1"/>
                                             <constraint firstItem="ybu-qc-KSj" firstAttribute="leading" secondItem="m33-4S-Nyc" secondAttribute="leading" constant="8" id="Jcv-fl-Ncl"/>
                                             <constraint firstItem="BqR-Iz-l6B" firstAttribute="top" secondItem="ybu-qc-KSj" secondAttribute="bottom" id="JeU-PT-skQ"/>
+                                            <constraint firstItem="2Ei-yc-b59" firstAttribute="leading" secondItem="m33-4S-Nyc" secondAttribute="leading" id="O2J-T7-gEx"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Ei-yc-b59" secondAttribute="trailing" id="TQQ-fm-kYO"/>
                                             <constraint firstAttribute="trailing" secondItem="ybu-qc-KSj" secondAttribute="trailing" constant="8" id="VSC-gS-Am4"/>
                                             <constraint firstItem="BqR-Iz-l6B" firstAttribute="leading" secondItem="m33-4S-Nyc" secondAttribute="leading" constant="8" id="Zvs-oe-EJX"/>
                                             <constraint firstItem="ybu-qc-KSj" firstAttribute="top" secondItem="m33-4S-Nyc" secondAttribute="top" constant="2" id="bs2-dr-YDA"/>
+                                            <constraint firstAttribute="bottom" secondItem="2Ei-yc-b59" secondAttribute="bottom" id="hpN-nH-tWU"/>
                                             <constraint firstAttribute="bottom" secondItem="BqR-Iz-l6B" secondAttribute="bottom" constant="2" id="huU-68-7SR"/>
+                                            <constraint firstItem="2Ei-yc-b59" firstAttribute="top" secondItem="m33-4S-Nyc" secondAttribute="top" id="jrE-0p-8ix"/>
                                         </constraints>
                                     </view>
                                 </subviews>
