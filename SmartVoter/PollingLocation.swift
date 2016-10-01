@@ -32,7 +32,6 @@ class PollingLocation {
         self.zip = zip
         self.locationName = locationName
         self.pollingHours = pollingHours
-        
     }
     
     init?(jsonDictionary: [String:AnyObject]) {
@@ -42,9 +41,7 @@ class PollingLocation {
             city = addressDictionary[cityKey],
             state = addressDictionary[stateKey],
             zip = addressDictionary[zipKey],
-            pollingHours = jsonDictionary[pollingKey] as? String else {
-                return nil
-        }
+            pollingHours = jsonDictionary[pollingKey] as? String else { return nil }
         
         self.streetName = streetName
         self.city = city
@@ -52,6 +49,16 @@ class PollingLocation {
         self.zip = zip
         self.locationName = locationName
         self.pollingHours = pollingHours
-        
     }
 }
+
+
+
+
+
+
+
+
+
+
+

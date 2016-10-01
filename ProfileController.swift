@@ -25,8 +25,6 @@ class ProfileController {
     static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     var notificationIsSet: Bool?
     
-    
-    
     enum NotificationSetting: String {
         case dayOf = "dayOf"
         case oneDay = "oneDay"
@@ -34,31 +32,31 @@ class ProfileController {
         case all = "all"
     }
     
-    /// Saves User's Home Address to NSUserDefaults
+    // Saves User's Home Address to NSUserDefaults
     func saveAddressToUserDefault(address: Address) {
         self.address = address
         let data = NSKeyedArchiver.archivedDataWithRootObject(address)
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: addressKey)
     }
     
-    /// Saves Voting Registration URL to NSUserDefaults
+    // Saves Voting Registration URL to NSUserDefaults
     func saveRegisterToVoteURL(url: String) {
         NSUserDefaults.standardUserDefaults().setObject(url, forKey: urlKey)
     }
     
-    /// Saves election notification status
+    // Saves election notification status
     func saveNotificationBool(notificationIsSet: Bool) {
         self.notificationIsSet = notificationIsSet
         NSUserDefaults.standardUserDefaults().setObject(notificationIsSet, forKey: notificationBoolKey)
     }
     
-    /// Saves a notification setting
+    // Saves a notification setting
     func saveNotificationSetting(notificationSetting: NotificationSetting) {
         let setting = notificationSetting.rawValue
         NSUserDefaults.standardUserDefaults().setObject(setting, forKey: notificationSettingKey)
     }
     
-    /// Loads notification settings
+    // Loads notification settings
     func loadNotificationSetting() -> String {
         if let setting = NSUserDefaults.standardUserDefaults().objectForKey(notificationSettingKey) as? String {
             
@@ -77,7 +75,6 @@ class ProfileController {
         }
     }
     
-    
     func checkIfNotificationsAreEnabled() -> Bool {
         let settings =  UIApplication.sharedApplication().currentUserNotificationSettings()
         if settings?.types == UIUserNotificationType.None {
@@ -86,20 +83,18 @@ class ProfileController {
             return true
         }
     }
-
     
-    /// Loads notification bool to see if it has been set or not
+    // Loads notification bool to see if it has been set or not
     func loadNotificationStatus() -> Bool? {
         let status: Bool? = NSUserDefaults.standardUserDefaults().objectForKey(notificationBoolKey) as? Bool
         self.notificationIsSet = status
         return self.notificationIsSet ?? nil
     }
     
-    
-    /// Loads Users Address
+    // Loads Users Address
     func loadAddress() ->Address? {
         if let data = NSUserDefaults.standardUserDefaults().objectForKey(addressKey) as? NSData {
-        let address = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Address
+            let address = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Address
             self.address = address
             return address
         } else {
@@ -107,14 +102,13 @@ class ProfileController {
         }
     }
     
-    
-    /// Loads Voting Registration URL
+    // Loads Voting Registration URL
     func loadURL() -> String? {
         let url = NSUserDefaults.standardUserDefaults().objectForKey(urlKey) as? String
         return url ?? nil
     }
     
-    /// Formats number to make telephone call.
+    // Formats number to make telephone call.
     func formatNumberForCall(number: String) -> String {
         let phoneWhite = number.lowercaseString.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).joinWithSeparator(" ")
         let noPunc =  phoneWhite.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).joinWithSeparator("")
@@ -122,9 +116,8 @@ class ProfileController {
         
         return noSpaces
     }
-
-       
-    /// Network Call to get polling Locations.
+    
+    // Network Call to get polling Locations.
     static func getPollingAddress(address: Address, completion: () -> Void) {
         guard let electionURL = electionURL else {
             completion()
@@ -160,7 +153,6 @@ class ProfileController {
                         PollingLocationController.sharedController.pollingLocations = pollingLocations
                         completion()
                     }
-                
                     
                     guard let stateDictionary = jsonDictionary["state"] as? [[String:AnyObject]] else {
                         completion()
@@ -178,7 +170,7 @@ class ProfileController {
                         }
                         
                         if let electionJurisdiction = stateArray["local_jurisdiction"] as? [String:AnyObject],
-                        let electionDictionary = electionJurisdiction["electionAdministrationBody"] as? [String:AnyObject],
+                            let electionDictionary = electionJurisdiction["electionAdministrationBody"] as? [String:AnyObject],
                             let officialsArray = electionDictionary["electionOfficials"] as? [[String:AnyObject]] {
                             for official in officialsArray {
                                 let number = official["officePhoneNumber"] as? String
@@ -193,3 +185,15 @@ class ProfileController {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

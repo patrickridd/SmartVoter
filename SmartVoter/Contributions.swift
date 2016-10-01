@@ -17,7 +17,6 @@ class Contributions {
     private let kFullName = "cand_name"
     private let kOrganization = "org_name"
     private let kTotoal = "total"
-    
    
     var organization: String?
     var total: String?
@@ -36,5 +35,4 @@ class Contributions {
             self.total = total
         }
     }
-    
 }

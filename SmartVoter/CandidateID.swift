@@ -20,7 +20,6 @@ class CandidateID {
     var fullName: String?
     var candidateId: String?
     
-    
     init?(dictionary: [String: AnyObject])  {
         
         guard let attributesDictionary = dictionary[kAttributes] as? [String : AnyObject],

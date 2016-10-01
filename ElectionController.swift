@@ -46,15 +46,12 @@ class ElectionController {
     static var electionName = String()
     static var pollingLocation = [String]()
     
-    
-    /// Gets an Array of upcomming elections for ElectionTableViewController
+    // Gets an Array of upcomming elections for ElectionTableViewController
     static func getContest(address: String, completion: ([Contest]?) -> Void) {
-        
         guard let electionURL = electionURL else {
             completion(nil)
             return
         }
-        
         let parameters = ["key":apiKey]
         
         NetworkController.performRequestForURL(electionURL, httpMethod: .Get, urlParameters: parameters, body: nil) { (data, error) in
@@ -62,7 +59,6 @@ class ElectionController {
                 electionsArray = jsonDictionary["elections"] as? [[String:String]] else {
                     return
             }
-            
             
             let elections = electionsArray.flatMap{Election(jsonDictionary: $0)}
             
@@ -100,7 +96,6 @@ class ElectionController {
                     let contests = contestsDictionary.flatMap{Contest(dictionary: $0, electionName: election.name, electionDay: election.electionDay)}
                     self.contests = contests
                     completion(contests)
-                    
                 }
                 // Gets Voter Registration URL
                 guard let stateDictionary = jsonDictionary["state"] as? [[String:AnyObject]] else {
@@ -109,16 +104,14 @@ class ElectionController {
                 if stateDictionary.count > 0 {
                     let stateArray = stateDictionary[0]
                     guard let electionBodyDictionary = stateArray["electionAdministrationBody"] as? [String:AnyObject],
-                        let registrationURL = electionBodyDictionary["electionRegistrationUrl"] as? String else {
-                            return
-                    }
+                        let registrationURL = electionBodyDictionary["electionRegistrationUrl"] as? String else { return }
                     ProfileController.sharedController.saveRegisterToVoteURL(registrationURL)
                 }   
             }
         }
     }
     
-    /// Schedules Notification of when the Election is
+    // Schedules Notification of when the Election is
     static func scheduleElectionNotification() {
         let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
         guard let date = dateFormatter.dateFromString(ElectionController.electionDate! + "T00:00:00-00:00") else {
@@ -137,16 +130,13 @@ class ElectionController {
         localNotification.fireDate = date
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         ProfileController.sharedController.saveNotificationBool(true)
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+
+
+
+
+
+
+
+

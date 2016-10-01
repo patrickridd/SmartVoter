@@ -15,8 +15,6 @@ class NetworkController {
         case Post = "POST"
         case Patch = "PATCH"
         case Delete = "DELETE"
-        
-        
     }
     
     static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String: String]? = nil, header: [String: String]? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) ->Void)?) {

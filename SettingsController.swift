@@ -14,8 +14,6 @@ class SettingsController {
     static let sharedController = SettingsController()
     static let calendar = NSCalendar.currentCalendar()
     
-    
-    
     let urlKey = "urlKey"
     let addressKey = "addressKey"
     let notificationBoolKey = "notificationBoolKey"
@@ -28,7 +26,6 @@ class SettingsController {
     static var electionDay = String()
     static var electionName = String()
     
-    
     enum NotificationSetting: String {
         case dayOf = "dayOf"
         case oneDay = "oneDay"
@@ -36,14 +33,15 @@ class SettingsController {
         case all = "all"
     }
     
+    // MARK: - Notifications
     
-    /// Saves a notification setting
+    // Saves a notification setting
     func saveNotificationSetting(notificationSetting: NotificationSetting) {
         let setting = notificationSetting.rawValue
         NSUserDefaults.standardUserDefaults().setObject(setting, forKey: notificationSettingKey)
     }
     
-    /// Loads notification settings
+    // Loads notification settings
     func loadNotificationSetting() -> String {
         if let setting = NSUserDefaults.standardUserDefaults().objectForKey(notificationSettingKey) as? String {
             
@@ -71,17 +69,86 @@ class SettingsController {
         }
     }
     
-    
-    /// Loads notification bool to see if it has been set or not
+    // Loads notification bool to see if it has been set or not
     func loadNotificationStatus() -> Bool? {
         let status: Bool? = NSUserDefaults.standardUserDefaults().objectForKey(notificationBoolKey) as? Bool
         self.notificationIsSet = status
         return self.notificationIsSet ?? nil
     }
     
+    static func scheduleDayOfNotification() {
+        let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
+        guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00") else {
+            return
+        }
+        
+        // If the day of the election is before the present day, don't schedule the notification because it has already happened.
+        if electionDay.timeIntervalSince1970 < NSDate().timeIntervalSince1970 || !acceptNotification {
+            return
+        }
+        
+        let localNotification = UILocalNotification()
+        localNotification.alertTitle = "\(ElectionController.electionName)"
+        localNotification.alertBody = "Don't Forget To Vote Today"
+        localNotification.category = "VoteTime"
+        localNotification.fireDate = electionDay
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        ProfileController.sharedController.saveNotificationSetting(.dayOf)
+    }
     
+    // Shedules Notification one day before the Election.
+    static func scheduleOneDayNotification() {
+        let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
+        guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00"), let dayBeforeElection = calendar.dateByAddingUnit(.Day, value: -1, toDate: electionDay, options: []) else {
+            return
+        }
+        
+        // If the day of the election is before the present day, don't schedule the notification because it has already happened.
+        if dayBeforeElection.timeIntervalSince1970 < NSDate().timeIntervalSince1970 || !acceptNotification {
+            return
+        }
+        
+        let localNotification = UILocalNotification()
+        localNotification.alertTitle = "\(ElectionController.electionName)"
+        localNotification.alertBody = "Tomorrow Is The Election Don't Forget To Vote"
+        localNotification.category = "TomorrowVoteTime"
+        localNotification.fireDate = dayBeforeElection
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        ProfileController.sharedController.saveNotificationSetting(.oneDay)
+    }
     
-    /// Network Call to get polling Locations.
+    // Shedules Notification five days before the Election.
+    static func scheduleOneWeekNotification() {
+        let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
+        guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00"), let oneWeekBeforeElection = calendar.dateByAddingUnit(.Day, value: -7, toDate: electionDay, options: []) else {
+            return
+        }
+        
+        // If the day of the election is before the present day, don't schedule the notification because it has already happened.
+        if oneWeekBeforeElection.timeIntervalSince1970 < NSDate().timeIntervalSince1970 || !acceptNotification {
+            return
+        }
+        
+        let localNotification = UILocalNotification()
+        localNotification.alertTitle = "\(ElectionController.electionName)"
+        localNotification.alertBody = "One Week Before The Election Don't Forget To Vote"
+        localNotification.category = "TomorrowVoteTime"
+        localNotification.fireDate = oneWeekBeforeElection
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        ProfileController.sharedController.saveNotificationSetting(.oneWeek)
+    }
+    
+    // Shedules Notifications for five days before, one day before, and the day of the Election.
+    static func scheduleNotficationForAllOptions() {
+        scheduleDayOfNotification()
+        scheduleOneDayNotification()
+        scheduleOneWeekNotification()
+        ProfileController.sharedController.saveNotificationSetting(.all)
+    }
+    
+    // MARK: - Polling Locations
+    
+    // Network Call to get polling Locations.
     static func getElectionDate(address: Address, completion: () -> Void) {
         guard let electionURL = electionURL else {
             completion()
@@ -122,84 +189,15 @@ class SettingsController {
             }
         }
     }
-    
-        
-        static func scheduleDayOfNotification() {
-            let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
-              guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00") else {
-                    return
-            }
-            
-            // If the day of the election is before the present day, don't schedule the notification because it has already happened.
-            if electionDay.timeIntervalSince1970 < NSDate().timeIntervalSince1970 || !acceptNotification {
-                return
-            }
-            
-            let localNotification = UILocalNotification()
-            localNotification.alertTitle = "\(ElectionController.electionName)"
-            localNotification.alertBody = "Don't Forget To Vote Today"
-            localNotification.category = "VoteTime"
-            localNotification.fireDate = electionDay
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-            ProfileController.sharedController.saveNotificationSetting(.dayOf)
-        }
-        
-        /// Shedules Notification one day before the Election.
-        static func scheduleOneDayNotification() {
-            let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
-            guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00"), let dayBeforeElection = calendar.dateByAddingUnit(.Day, value: -1, toDate: electionDay, options: []) else {
-                return
-            }
-            
-            
-            // If the day of the election is before the present day, don't schedule the notification because it has already happened.
-            if dayBeforeElection.timeIntervalSince1970 < NSDate().timeIntervalSince1970 || !acceptNotification {
-                return
-            }
-            
-            let localNotification = UILocalNotification()
-            localNotification.alertTitle = "\(ElectionController.electionName)"
-            localNotification.alertBody = "Tomorrow Is The Election Don't Forget To Vote"
-            localNotification.category = "TomorrowVoteTime"
-            localNotification.fireDate = dayBeforeElection
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-            ProfileController.sharedController.saveNotificationSetting(.oneDay)
-        }
-        
-        /// Shedules Notification five days before the Election.
-        static func scheduleOneWeekNotification() {
-            let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
-            guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00"), let oneWeekBeforeElection = calendar.dateByAddingUnit(.Day, value: -7, toDate: electionDay, options: []) else {
-                return
-            }
-            
-            
-            // If the day of the election is before the present day, don't schedule the notification because it has already happened.
-            if oneWeekBeforeElection.timeIntervalSince1970 < NSDate().timeIntervalSince1970 || !acceptNotification {
-                return
-            }
-            
-            let localNotification = UILocalNotification()
-            localNotification.alertTitle = "\(ElectionController.electionName)"
-            localNotification.alertBody = "One Week Before The Election Don't Forget To Vote"
-            localNotification.category = "TomorrowVoteTime"
-            localNotification.fireDate = oneWeekBeforeElection
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-            ProfileController.sharedController.saveNotificationSetting(.oneWeek)
-        }
-        
-        /// Shedules Notifications for five days before, one day before, and the day of the Election.
-        static func scheduleNotficationForAllOptions() {
-            scheduleDayOfNotification()
-            scheduleOneDayNotification()
-            scheduleOneWeekNotification()
-            ProfileController.sharedController.saveNotificationSetting(.all)
-        }
-        
-        
-        
-        
-        
-        
-        
 }
+
+
+
+
+
+
+
+
+
+
+

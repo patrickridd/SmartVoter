@@ -9,15 +9,13 @@
 import Foundation
 
 class Address: NSObject, NSCoding {
-
+    
     var line1: String
     var city: String
     var state: String
     var zip: String
     
-    
     init(line1: String, city: String, state: String, zip: String) {
-        
         self.line1 = line1
         self.city = city
         self.state = state
@@ -25,12 +23,10 @@ class Address: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-       guard let line1 = aDecoder.decodeObjectForKey("line1") as? String,
-        let city = aDecoder.decodeObjectForKey("city") as? String,
-        let state = aDecoder.decodeObjectForKey("state") as? String,
-        let zip = aDecoder.decodeObjectForKey("zip") as? String else {
-            return nil
-        }
+        guard let line1 = aDecoder.decodeObjectForKey("line1") as? String,
+            let city = aDecoder.decodeObjectForKey("city") as? String,
+            let state = aDecoder.decodeObjectForKey("state") as? String,
+            let zip = aDecoder.decodeObjectForKey("zip") as? String else { return nil }
         self.init(line1: line1, city: city, state: state, zip: zip)
     }
     
@@ -44,7 +40,6 @@ class Address: NSObject, NSCoding {
     var asAString: String {
         return "\(line1), \(city.capitalizedString), \(state), \(zip)"
     }
-    
     
     enum State: String {
         case Alabama = "Alabama"
@@ -97,16 +92,19 @@ class Address: NSObject, NSCoding {
         case WestVirginia = "West Virginia"
         case Wisconsin = "Wisconsin"
         case Wyoming = "Wyoming"
-    
     }
     
-    static let states: [State] = [.Alabama, .Alaska, .Arizona, .Arkansas, .California, .Colorado, .Connecticut, .Delaware, .Florida, .Georgia, .Hawaii, .Idaho, .Illinois, .Indiana, .Iowa, .Kansas,
-                                  .Kentucky, .Louisiana, .Maine, .Maryland, .Massachusetts, .Michigan, .Minnesota, .Mississippi, .Missouri, .Montana, .Nebraska, .Nevada, .NewHampshire, .NewJersey,
-                                  .NewMexico, .NewYork, .NorthCarolina, .NorthDakota, .Ohio, .Oklahoma, .Oregon, .Pennsylvania, .RhodeIsland, .SouthCarolina, .SouthDakota, .Tennessee, .Texas, .Utah,
-                                  .Vermont, .Virginia, .Washington, .WestVirginia, .Wisconsin, .Wyoming]
+    static let states: [State] = [.Alabama, .Alaska, .Arizona, .Arkansas, .California,
+                                  .Colorado, .Connecticut, .Delaware, .Florida, .Georgia,
+                                  .Hawaii, .Idaho, .Illinois, .Indiana, .Iowa,
+                                  .Kansas, .Kentucky, .Louisiana, .Maine, .Maryland,
+                                  .Massachusetts, .Michigan, .Minnesota, .Mississippi, .Missouri,
+                                  .Montana, .Nebraska, .Nevada, .NewHampshire, .NewJersey,
+                                  .NewMexico, .NewYork, .NorthCarolina, .NorthDakota, .Ohio,
+                                  .Oklahoma, .Oregon, .Pennsylvania, .RhodeIsland, .SouthCarolina,
+                                  .SouthDakota, .Tennessee, .Texas, .Utah, .Vermont,
+                                  .Virginia, .Washington, .WestVirginia, .Wisconsin, .Wyoming]
     
-
-
     enum StateAbbreviations: String {
         case Alabama = "AL"
         case Alaska = "AK"
@@ -158,10 +156,7 @@ class Address: NSObject, NSCoding {
         case WestVirginia = "WV"
         case Wisconsin = "WI"
         case Wyoming = "WY"
-
     }
-
-
 }
 
 

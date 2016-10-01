@@ -21,14 +21,9 @@ struct Election {
     init?(jsonDictionary: [String:String]) {
         guard let name = jsonDictionary[nameKey],
             electionDay = jsonDictionary[dayKey],
-            id = jsonDictionary[idKey] else {
-                return nil
-        }
-        
+            id = jsonDictionary[idKey] else { return nil }
         self.name = name
         self.electionDay = electionDay
         self.id = id
-
     }
-    
 }

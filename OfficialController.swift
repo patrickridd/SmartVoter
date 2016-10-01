@@ -62,12 +62,12 @@ class OfficialController {
             }
             
             guard let jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String: AnyObject],
-            officesArrayOfDictionaries = jsonDictionary["offices"] as? [[String: AnyObject]],
+                officesArrayOfDictionaries = jsonDictionary["offices"] as? [[String: AnyObject]],
                 officials = jsonDictionary["officials"] as? [[String:AnyObject]]
-            else {
-                print("Unable to Serialize JSON: \(responseDataString)")
-                return}
-    
+                else {
+                    print("Unable to Serialize JSON: \(responseDataString)")
+                    return}
+            
             let offices = officesArrayOfDictionaries.flatMap{Office(dictionary: $0)}
             self.offices = offices
             var officiales = [Official]()
@@ -80,7 +80,6 @@ class OfficialController {
                     }
                 }
             }
-            
             OfficialController.officials = officiales
             completion()
         }

@@ -20,7 +20,6 @@ class Contest {
     let electionDay: String
     let electionName: String
     
-    
     init?(dictionary: [String: AnyObject], electionName: String, electionDay: String) {
         guard let type = dictionary["type"] as? String,
             districtDictionary = dictionary["district"] as? [String : AnyObject],
@@ -44,15 +43,12 @@ class Contest {
         
         if let candidatesArray = dictionary["candidates"] as? [[String : AnyObject]] {
             for candidateDictionary in candidatesArray {
-                guard let name = candidateDictionary["name"] as? String else {
-                    return nil
-                }
+                guard let name = candidateDictionary["name"] as? String else { return nil }
                 
                 let party = candidateDictionary["party"] as? String
                 let webAddress = candidateDictionary["candidateUrl"] as? String
                 let phoneNumber = candidateDictionary["phone"] as? String
                 let emailAddress = candidateDictionary["email"] as? String
-                
                 
                 let candidate = Candidate(name: name, party: party, websiteURL: webAddress, phone: phoneNumber, email: emailAddress)
                 candidates.append(candidate)

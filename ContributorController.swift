@@ -16,7 +16,7 @@ class ContributorController {
     
     init() {
         fetchContributors("N00007360") { (contributoins) in
-      //      print("\(contributoins)")
+            //
         }
     }
     
@@ -28,21 +28,23 @@ class ContributorController {
             print("Failed to get baseURL")
             return
         }
-        
         NetworkController.performRequestForURL(unwrappedURL, httpMethod: .Get, urlParameters: urlParamaters, header: nil, body: nil) { (data, error) in
             guard let  data = data else {
-            print("Error No data returned")
-            return
-        }
-        
+                print("Error No data returned")
+                return
+            }
             guard let  jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String : AnyObject] else {
                 print("Error serialization failed \(error?.localizedDescription)")
                 completion(contributoins: [])
                 return
             }
             print (jsonDictionary)
-            
         }
-        
     }
 }
+
+
+
+
+
+

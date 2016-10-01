@@ -34,7 +34,7 @@ class CandidateIDController {
                     return }
             
             let candidateIDs = legislatorDictionary.flatMap{CandidateID(dictionary: $0)}
-            let canidateID = candidateIDs
+            let _ = candidateIDs
         }
     }
 }

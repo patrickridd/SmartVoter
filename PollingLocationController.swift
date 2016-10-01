@@ -15,8 +15,7 @@ class PollingLocationController {
     static let sharedController = PollingLocationController()
     var pollingLocations = [PollingLocation]()
     
-    
-    /// Takes Polling Addresses and completion closure returns an array of Polling CLLocations
+    // Takes Polling Addresses and completion closure returns an array of Polling CLLocations
     func geoCodePollingAddresses(completion: (pollingLocationCLLocation: [(location: CLLocation, pollingLocation: PollingLocation)])->Void) {
         let geocoder = CLGeocoder()
         var locations = [(location:CLLocation, pollingLocation: PollingLocation)]()
@@ -29,24 +28,22 @@ class PollingLocationController {
             geocoder.geocodeAddressString(formattedAddress) { (placemark, error) in
                 
                 guard let placemark = placemark?.first,
-                    let location = placemark.location else {
-                        return
-                }
+                    let location = placemark.location else { return }
                 locations.append(location: location, pollingLocation: pollingLocation)
                 completion(pollingLocationCLLocation: locations)
-
             }
         }
     }
     
-    /// This method formats the pollingLocations address properties into a single address and returns it as a String.
+    // This method formats the pollingLocations address properties into a single address and returns it as a String.
     func formatPollingAdress(pollingLocation: PollingLocation) -> String {
-    
         let address = "\(pollingLocation.streetName), \(pollingLocation.zip), \(pollingLocation.city), \(pollingLocation.state)"
-        
         return address
     }
-    
-    
-    
 }
+
+
+
+
+
+

@@ -44,7 +44,6 @@ class Official {
         self.social = []
     }
     
-    
     init?(dictionary: [String: AnyObject], office: Office)  {
         
         // Only Return nil if we can't get Official's name.
@@ -93,6 +92,7 @@ class Official {
             email = emailArray.first {
             self.email = email
         }
+        
         // Get Social media items
         var temp = [Social]()
         if let socialArray = dictionary[kSocial] as? [[String: AnyObject]]{
@@ -104,8 +104,12 @@ class Official {
             }
         }
         self.social = temp
-       // print(social)
-
     }
-    
 }
+
+
+
+
+
+
+
