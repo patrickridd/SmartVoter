@@ -32,7 +32,9 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     
     let eventStore = EKEventStore()
     let toolbarView = UIView(frame: CGRectMake(0, 0, 10, 40))
-    
+    var keyboardShown = false
+    var keyboardHeight: CGFloat?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 150
@@ -258,8 +260,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         setupKeyboardAccessoryView()
     }
     
-    var keyboardShown = false
-    var keyboardHeight: CGFloat?
     
     func setupKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
@@ -301,8 +301,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             keyboardShown = false
         }
     }
-    
-    
+  
     func customToolbarView() {
         
         let doneButton = UIButton()
