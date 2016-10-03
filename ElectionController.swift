@@ -18,7 +18,7 @@ class ElectionController {
         return formatter
     }()
     
-   static let dateToStringFormatter: NSDateFormatter = {
+    static let dateToStringFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
         formatter.dateStyle = .ShortStyle
         formatter.doesRelativeDateFormatting = true
@@ -63,9 +63,9 @@ class ElectionController {
             let elections = electionsArray.flatMap{Election(jsonDictionary: $0)}
             
             for election in elections {
-//                if election.id == "2000" || election.name.lowercaseString.containsString("test") {
-//                    continue
-//                }
+                //                if election.id == "2000" || election.name.lowercaseString.containsString("test") {
+                //                    continue
+                //                }
                 guard let url = infoBaseURL else {
                     completion(nil)
                     return
@@ -86,13 +86,6 @@ class ElectionController {
                     
                     self.electionDate = date
                     self.electionName = electionName
-                    if let notificationIsSet = ProfileController.sharedController.loadNotificationStatus() {
-                        if !notificationIsSet {
-                            scheduleElectionNotification()
-                        }
-                    } else {
-                        self.scheduleElectionNotification()
-                    }
                     let contests = contestsDictionary.flatMap{Contest(dictionary: $0, electionName: election.name, electionDay: election.electionDay)}
                     self.contests = contests
                     completion(contests)
@@ -106,31 +99,11 @@ class ElectionController {
                     guard let electionBodyDictionary = stateArray["electionAdministrationBody"] as? [String:AnyObject],
                         let registrationURL = electionBodyDictionary["electionRegistrationUrl"] as? String else { return }
                     ProfileController.sharedController.saveRegisterToVoteURL(registrationURL)
-                }   
+                }
             }
         }
     }
     
-    // Schedules Notification of when the Election is
-    static func scheduleElectionNotification() {
-        let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
-        guard let date = dateFormatter.dateFromString(ElectionController.electionDate! + "T00:00:00-00:00") else {
-            return
-        }
-        
-        // If the day of the election is before the present day, don't schedule the notification because it has already happened.
-        if date.timeIntervalSince1970 < NSDate().timeIntervalSince1970 || !acceptNotification {
-            return
-        }
-        
-        let localNotification = UILocalNotification()
-        localNotification.alertTitle = "\(ElectionController.electionName)"
-        localNotification.alertBody = "Don't forget to Vote Today"
-        localNotification.category = "VoteTime"
-        localNotification.fireDate = date
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        ProfileController.sharedController.saveNotificationBool(true)
-    }
 }
 
 

@@ -8,23 +8,27 @@
 
 import Foundation
 import UIKit
+import EventKit
 
 class SettingsController {
     
     static let sharedController = SettingsController()
-    static let calendar = NSCalendar.currentCalendar()
+    let calendar = NSCalendar.currentCalendar()
     
     let urlKey = "urlKey"
     let addressKey = "addressKey"
     let notificationBoolKey = "notificationBoolKey"
     let notificationSettingKey = "notificationSettingKey"
+    let eventIDKey = "eventIDKey"
     
-    static let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
-    static let electionURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/elections")
-    static let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
+    let eventStore = EKEventStore()
+    
+    let infoBaseURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/voterinfo")
+    let electionURL = NSURL(string: "https://www.googleapis.com/civicinfo/v2/elections")
+    let apiKey = "AIzaSyCJoqWI3cD5VRDcWzThID1ATEweZ5R7j9I"
     var notificationIsSet: Bool?
-    static var electionDay = String()
-    static var electionName = String()
+    var electionDay = String()
+    var electionName = String()
     
     enum NotificationSetting: String {
         case dayOf = "dayOf"
@@ -76,7 +80,7 @@ class SettingsController {
         return self.notificationIsSet ?? nil
     }
     
-    static func scheduleDayOfNotification() {
+    func scheduleDayOfNotification() {
         let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
         guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00") else {
             return
@@ -97,7 +101,7 @@ class SettingsController {
     }
     
     // Shedules Notification one day before the Election.
-    static func scheduleOneDayNotification() {
+    func scheduleOneDayNotification() {
         let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
         guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00"), let dayBeforeElection = calendar.dateByAddingUnit(.Day, value: -1, toDate: electionDay, options: []) else {
             return
@@ -118,7 +122,7 @@ class SettingsController {
     }
     
     // Shedules Notification five days before the Election.
-    static func scheduleOneWeekNotification() {
+    func scheduleOneWeekNotification() {
         let acceptNotification = ProfileController.sharedController.checkIfNotificationsAreEnabled()
         guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00"), let oneWeekBeforeElection = calendar.dateByAddingUnit(.Day, value: -7, toDate: electionDay, options: []) else {
             return
@@ -139,17 +143,64 @@ class SettingsController {
     }
     
     // Shedules Notifications for five days before, one day before, and the day of the Election.
-    static func scheduleNotficationForAllOptions() {
+    func scheduleNotficationForAllOptions() {
         scheduleDayOfNotification()
         scheduleOneDayNotification()
         scheduleOneWeekNotification()
         ProfileController.sharedController.saveNotificationSetting(.all)
     }
     
-    // MARK: - Polling Locations
+    /// Creates event for upcoming election and places it on the calendar.
+    func createElectionEventInCalendar() {
+        // Check to see if an event has already been saved by checking for its eventID
+        if let eventID = self.loadEventID() {
+            let oldEvent = eventStore.eventWithIdentifier(eventID)
+            // If there is an event check to see if it is an older event. If so set the eventID to nil and create a new event
+            if oldEvent?.endDate.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
+                saveEventID(nil)
+            } else {
+                return
+            }
+        }
+        
+            guard let electionDay = ElectionController.dateFormatter.dateFromString(self.electionDay + "T00:00:00-00:00"),
+                let dayAfterElection = calendar.dateByAddingUnit(.Day, value: 1, toDate: electionDay, options: []) else {
+                    return
+            }
+            
+            // If the Election has already happened, dont create event and return.
+            if electionDay.timeIntervalSince1970 < NSDate().timeIntervalSince1970 { return }
+            
+            let event = EKEvent(eventStore: eventStore)
+            event.title = self.electionName
+            event.startDate = electionDay
+            event.endDate = dayAfterElection
+            event.calendar = eventStore.defaultCalendarForNewEvents
+            let alarm:EKAlarm = EKAlarm(relativeOffset: -60*60*6)
+            event.alarms = [alarm]
+            
+            do {
+                try eventStore.saveEvent(event, span: .ThisEvent)
+                saveEventID(event.eventIdentifier)
+            } catch  let error as NSError {
+                print("Could not save Event. Error: \(error.localizedDescription)")
+            }
+        
+    }
+    
+    /// Saves Event ID once the event is set.
+    func saveEventID(eventIdentifier: String?) {
+        NSUserDefaults.standardUserDefaults().setObject(eventIdentifier, forKey: self.eventIDKey)
+    }
+    
+    /// Loads Event ID, and if nothing has been saved, it returns nil.
+    func loadEventID() -> String?  {
+        let eventID: String? = NSUserDefaults.standardUserDefaults().objectForKey(self.eventIDKey) as? String
+        return eventID
+    }
     
     // Network Call to get polling Locations.
-    static func getElectionDate(address: Address, completion: () -> Void) {
+    func getElectionDate(address: Address, completion: () -> Void) {
         guard let electionURL = electionURL else {
             completion()
             return
@@ -167,11 +218,11 @@ class SettingsController {
             
             for election in elections {
                 
-                guard let url = infoBaseURL else {
+                guard let url = self.infoBaseURL else {
                     completion()
                     return
                 }
-                let urlParameters = ["address":"\(address.asAString)", "electionId":election.id,"key":"\(apiKey)"]
+                let urlParameters = ["address":"\(address.asAString)", "electionId":election.id,"key":"\(self.apiKey)"]
                 
                 NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters, body: nil) { (data, error) in
                     guard let data = data,

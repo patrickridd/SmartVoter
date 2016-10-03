@@ -65,9 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         
         let alert = UIAlertController(title: notification.alertTitle, message: notification.alertBody , preferredStyle: .Alert)
-        let action = UIAlertAction(title: "Dismiss", style: .Default) { (_) in
-           ProfileController.sharedController.saveNotificationBool(false)
-        }
+        let action = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
         alert.addAction(action)
         window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
 

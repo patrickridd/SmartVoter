@@ -21,6 +21,8 @@ extension UITextField {
 }
 
 import UIKit
+import EventKit
+
 
 class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -42,6 +44,9 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var segmentControlLabel: UISegmentedControl!
     
+    let eventStore = EKEventStore()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 150
@@ -54,8 +59,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         roundButtonCorners()
         datePicker.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 0.6)
         setupTitleView()
-        SettingsController.getElectionDate(address) {
+        SettingsController.sharedController.getElectionDate(address) {
             self.setupNotificationLabelAndSegmentControl()
+            self.checkCalendarAuthorizationStatus()
+
         }
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.setupNotificationLabelAndSegmentControl), name: WillEnterForeground, object: nil)
 
@@ -136,13 +143,13 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     func scheduleNotifications() {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            SettingsController.scheduleDayOfNotification()
+            SettingsController.sharedController.scheduleDayOfNotification()
         case 1:
-            SettingsController.scheduleOneDayNotification()
+            SettingsController.sharedController.scheduleOneDayNotification()
         case 2:
-            SettingsController.scheduleOneWeekNotification()
+            SettingsController.sharedController.scheduleOneWeekNotification()
         default:
-            SettingsController.scheduleNotficationForAllOptions()
+            SettingsController.sharedController.scheduleNotficationForAllOptions()
         }
     }
         
@@ -180,6 +187,35 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         }  
     }
     
+    func checkCalendarAuthorizationStatus() {
+        let status = EKEventStore.authorizationStatusForEntityType(EKEntityType.Event)
+        
+        switch (status) {
+        case EKAuthorizationStatus.NotDetermined:
+            // This happens on first-run
+            requestAccessToCalendar()
+        case EKAuthorizationStatus.Authorized:
+            SettingsController.sharedController.createElectionEventInCalendar()
+            break
+            
+        case EKAuthorizationStatus.Restricted, EKAuthorizationStatus.Denied:
+            break
+        }
+    }
+    
+    func requestAccessToCalendar() {
+        eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {
+            (accessGranted: Bool, error: NSError?) in
+            if accessGranted == true {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.checkCalendarAuthorizationStatus()
+                })
+            } else {
+                return
+            }
+        })
+    }
+
     func setupTitleView(){
         if let font = UIFont(name: "Avenir", size: 28) {
             let attributes =
