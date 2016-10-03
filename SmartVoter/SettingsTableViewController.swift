@@ -6,20 +6,6 @@
 //  Copyright © 2016 PatrickRidd. All rights reserved.
 //
 
-extension UITextField {
-    class func connectFields(fields:[UITextField]) -> Void {
-        guard let last = fields.last else {
-            return
-        }
-        for i in 0 ..< fields.count - 1 {
-            fields[i].returnKeyType = .Next
-            fields[i].addTarget(fields[i+1], action: #selector(UIResponder.becomeFirstResponder), forControlEvents: .EditingDidEndOnExit)
-        }
-        last.returnKeyType = .Done
-        last.addTarget(last, action: #selector(UIResponder.resignFirstResponder), forControlEvents: .EditingDidEndOnExit)
-    }
-}
-
 import UIKit
 import EventKit
 
@@ -45,7 +31,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     @IBOutlet weak var segmentControlLabel: UISegmentedControl!
     
     let eventStore = EKEventStore()
-
+    let toolbarView = UIView(frame: CGRectMake(0, 0, 10, 40))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -268,6 +254,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         datePicker.delegate = self
         datePicker.dataSource = self
         stateTextField.inputView = datePicker
+        customToolbarView()
+        setupKeyboardAccessoryView()
     }
     
     var keyboardShown = false
@@ -314,6 +302,98 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         }
     }
     
+    
+    func customToolbarView() {
+        
+        let doneButton = UIButton()
+        let forward = UIButton()
+        let back = UIButton()
+        
+        toolbarView.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        back.translatesAutoresizingMaskIntoConstraints = false
+        forward.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        doneButton.backgroundColor = .clearColor()
+        doneButton.setTitle("Done", forState: .Normal)
+        doneButton.setTitleColor(.whiteColor(), forState: .Normal)
+        doneButton.addTarget(self, action: #selector(doneButtonTapped), forControlEvents: .TouchUpInside)
+        
+        forward.backgroundColor = .clearColor()
+        forward.setTitle("Next", forState: .Normal)
+        forward.setTitleColor(.whiteColor(), forState: .Normal)
+        forward.addTarget(self, action: #selector(forwardButtonTapped), forControlEvents: .TouchUpInside)
+        
+        back.backgroundColor = .clearColor()
+        back.setTitle("Prev", forState: .Normal)
+        back.setTitleColor(.whiteColor(), forState: .Normal)
+        back.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
+        
+        let testView = UIView()
+        testView.backgroundColor = .whiteColor()
+        
+        toolbarView.addSubview(doneButton)
+        toolbarView.addSubview(forward)
+        toolbarView.addSubview(back)
+        toolbarView.addSubview(testView)
+        
+        doneButton.centerXAnchor.constraintEqualToAnchor(toolbarView.trailingAnchor, constant: -30).active = true
+        doneButton.centerYAnchor.constraintEqualToAnchor(toolbarView.centerYAnchor).active = true
+        doneButton.widthAnchor.constraintEqualToConstant(50)
+        doneButton.heightAnchor.constraintEqualToConstant(20).active = true
+        
+        back.centerXAnchor.constraintEqualToAnchor(toolbarView.leadingAnchor, constant: +28).active = true
+        back.centerYAnchor.constraintEqualToAnchor(toolbarView.centerYAnchor).active = true
+        back.widthAnchor.constraintEqualToConstant(50).active = true
+        back.heightAnchor.constraintEqualToConstant(20).active = true
+        
+        forward.centerXAnchor.constraintEqualToAnchor(toolbarView.leadingAnchor, constant: +80).active = true
+        forward.centerYAnchor.constraintEqualToAnchor(toolbarView.centerYAnchor).active = true
+        forward.widthAnchor.constraintEqualToConstant(50).active = true
+        forward.heightAnchor.constraintEqualToConstant(20).active = true
+        
+    }
+    
+    func doneButtonTapped(sender: UIButton!) {
+        print("Done Button Tapped")
+        [streetTextField, cityTextField, stateTextField, zipTextField].forEach { (textField) in
+            textField.resignFirstResponder()
+        }
+    }
+    
+    func forwardButtonTapped(sender: UIButton!)  {
+        if streetTextField.isFirstResponder() {
+            cityTextField.becomeFirstResponder()
+        } else if cityTextField.isFirstResponder() {
+            stateTextField.becomeFirstResponder()
+        } else if stateTextField.isFirstResponder() {
+            zipTextField.becomeFirstResponder()
+        } else {
+            zipTextField.resignFirstResponder()
+        }
+    }
+    
+    func backButtonTapped(sender: UIButton!) {
+        if zipTextField.isFirstResponder() {
+            stateTextField.becomeFirstResponder()
+        } else if stateTextField.isFirstResponder() {
+            cityTextField.becomeFirstResponder()
+        } else if cityTextField.isFirstResponder() {
+            streetTextField.becomeFirstResponder()
+        } else {
+            streetTextField.resignFirstResponder()
+        }
+    }
+    
+    func setupKeyboardAccessoryView() {
+        streetTextField.inputAccessoryView = toolbarView
+        cityTextField.inputAccessoryView = toolbarView
+        stateTextField.inputAccessoryView = toolbarView
+        zipTextField.inputAccessoryView = toolbarView
+    }
+
+    
     // Sets up textfield connections
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -348,7 +428,19 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
 
 
 
-
+extension UITextField {
+    class func connectFields(fields:[UITextField]) -> Void {
+        guard let last = fields.last else {
+            return
+        }
+        for i in 0 ..< fields.count - 1 {
+            fields[i].returnKeyType = .Next
+            fields[i].addTarget(fields[i+1], action: #selector(UIResponder.becomeFirstResponder), forControlEvents: .EditingDidEndOnExit)
+        }
+        last.returnKeyType = .Done
+        last.addTarget(last, action: #selector(UIResponder.resignFirstResponder), forControlEvents: .EditingDidEndOnExit)
+    }
+}
 
 
 

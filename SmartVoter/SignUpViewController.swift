@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
-    func customToolbarView() {
+     func customToolbarView() {
         
         let doneButton = UIButton()
         let forward = UIButton()
