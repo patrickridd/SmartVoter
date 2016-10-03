@@ -174,6 +174,7 @@ class SettingsController {
             let event = EKEvent(eventStore: eventStore)
             event.title = self.electionName
             event.startDate = electionDay
+            event.allDay = true
             event.endDate = dayAfterElection
             event.calendar = eventStore.defaultCalendarForNewEvents
             let alarm:EKAlarm = EKAlarm(relativeOffset: -60*60*6)
