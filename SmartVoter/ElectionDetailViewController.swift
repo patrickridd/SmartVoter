@@ -28,10 +28,18 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    
     func setupView() {
-        guard let contest = contest else { return }
+        guard let contest = contest,
+            let electionNSDate = ElectionController.dateFormatter.dateFromString(contest.electionDay + "T00:00:00-00:00") else {
+                return
+        }
         
-        dateLabel.text = "Election Day: \(contest.electionDay)"
+        let electionDay = ElectionController.dateToStringFormatter.stringFromDate(electionNSDate)
+    
+        
+       // let electionDay = ElectionController.dateToStringFormatter.stringFromDate(electionNewDate)
+        dateLabel.text = "Election Day: \(electionDay)"
         if contest.type == "General" {
             electionTypeLabel.text = contest.office
             descriptionLabel.text = contest.scope.capitalizedString

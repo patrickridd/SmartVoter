@@ -20,9 +20,11 @@ class ElectionController {
     
     static let dateToStringFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
-        formatter.dateStyle = .ShortStyle
+        formatter.dateFormat = "mm-DD-yyyy"
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .NoStyle
         formatter.doesRelativeDateFormatting = true
-        formatter.timeStyle = .LongStyle
+        
         return formatter
     }()
     static var contests = [Contest]()
