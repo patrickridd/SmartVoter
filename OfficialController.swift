@@ -30,11 +30,10 @@ class OfficialController {
                     stateOfficials.append(official)
                 }
             } else if office.division.containsString("country") {
-                guard let name = official.name else { return [] }
                 
-                if name.containsString("Obama") {
+                if office.name.lowercaseString == "president of the united states" {
                     federalOfficials.insert(official, atIndex: 0)
-                } else if office.name.containsString("Vice") {
+                } else if office.name.lowercaseString == "vice-president of the united states" {
                     federalOfficials.insert(official, atIndex: 1)
                 } else if office.name.containsString("House") {
                     federalOfficials.insert(official, atIndex: federalOfficials.endIndex)
