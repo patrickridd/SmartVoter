@@ -27,11 +27,13 @@ class ReferendumDetailViewController: UIViewController {
     // MARK: - Setup view
     
     func setupView() {
-        guard let contest = contest, let state = ProfileController.sharedController.address?.state.capitalizedString else { return }
-        
+        guard let contest = contest, let state = ProfileController.sharedController.address?.state.capitalizedString,
+            let electionNSDate = ElectionController.dateFormatter.dateFromString(contest.electionDay + "T00:00:00-00:00") else { return
+        }
+        let electionDay = ElectionController.dateToStringFormatter.stringFromDate(electionNSDate)
         flagImageView.image = UIImage(named: "\(state)-flag-large")
         referendumTitleLabel.text = contest.referendumTitle?.capitalizedString
-        electionDateLabel.text = "Election Day: \(contest.electionDay)"
+        electionDateLabel.text = "Election Day: \(electionDay)"
         descriptionLabel.text = contest.referendumSubtitle?.capitalizedString
     }
     
