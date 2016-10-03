@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xON-X5-OoR" id="2j6-g3-sqr">
-                                            <frame key="frameInset" width="375" height="88"/>
+                                            <frame key="frameInset" width="375" height="88.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-sO-Bdp">
@@ -78,13 +78,13 @@
                                             <constraint firstAttribute="width" secondItem="qPA-2X-o95" secondAttribute="height" id="j6S-kj-9zh"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Election Data For Your State Has Yet To Be Updated For Upcoming Elections" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-iB-Jqk">
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Election Data for your State has yet to be updated for upcoming Elections" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-iB-Jqk">
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Find Out When Your Data Should Be Updated " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-CZ-b24">
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To find out when your Elections should be updated " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-CZ-b24">
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -100,15 +100,15 @@
                                 <color key="tintColor" red="0.099376998841762543" green="0.36066305637359619" blue="0.56003880500793457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="xpf-IQ-UG2" firstAttribute="top" secondItem="3YU-CZ-b24" secondAttribute="bottom" constant="10" id="4xY-ny-QlF"/>
-                                    <constraint firstItem="wvs-iB-Jqk" firstAttribute="top" secondItem="xAE-pR-LeO" secondAttribute="top" constant="20" id="8cc-cC-NyR"/>
                                     <constraint firstItem="xpf-IQ-UG2" firstAttribute="centerX" secondItem="xAE-pR-LeO" secondAttribute="centerX" id="9sV-pC-gxp"/>
                                     <constraint firstItem="qPA-2X-o95" firstAttribute="centerX" secondItem="xAE-pR-LeO" secondAttribute="centerX" id="GQZ-jw-m0F"/>
                                     <constraint firstAttribute="trailing" secondItem="wvs-iB-Jqk" secondAttribute="trailing" constant="20" id="GhB-Cg-nk9"/>
                                     <constraint firstAttribute="trailing" secondItem="3YU-CZ-b24" secondAttribute="trailing" constant="20" id="Glr-15-qEw"/>
+                                    <constraint firstItem="qPA-2X-o95" firstAttribute="centerY" secondItem="xAE-pR-LeO" secondAttribute="centerY" id="WVb-lM-9yA"/>
                                     <constraint firstAttribute="trailing" secondItem="qPA-2X-o95" secondAttribute="trailing" constant="71" id="cWf-o8-NxA"/>
                                     <constraint firstItem="wvs-iB-Jqk" firstAttribute="leading" secondItem="xAE-pR-LeO" secondAttribute="leading" constant="20" id="eHq-G5-67n"/>
-                                    <constraint firstItem="qPA-2X-o95" firstAttribute="top" secondItem="wvs-iB-Jqk" secondAttribute="bottom" constant="12" id="hru-sf-vO2"/>
-                                    <constraint firstItem="3YU-CZ-b24" firstAttribute="top" secondItem="qPA-2X-o95" secondAttribute="bottom" constant="20" id="ncz-u2-9bY"/>
+                                    <constraint firstItem="qPA-2X-o95" firstAttribute="top" secondItem="wvs-iB-Jqk" secondAttribute="bottom" constant="40" id="hru-sf-vO2"/>
+                                    <constraint firstItem="3YU-CZ-b24" firstAttribute="top" secondItem="qPA-2X-o95" secondAttribute="bottom" constant="40" id="ncz-u2-9bY"/>
                                     <constraint firstItem="3YU-CZ-b24" firstAttribute="leading" secondItem="xAE-pR-LeO" secondAttribute="leading" constant="20" id="rNP-dG-17m"/>
                                 </constraints>
                             </view>
