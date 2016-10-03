@@ -23,6 +23,8 @@ class ElectionTableViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         _ = ContributorController() 
         setRightButton()
+        tableView.estimatedRowHeight = 375
+        tableView.rowHeight = UITableViewAutomaticDimension
         let customTabBarItem: UITabBarItem = UITabBarItem(title: "Elections", image: unselectedTabImage, selectedImage: selectedImage)
         self.tabBarItem = customTabBarItem
         self.noContestView.hidden = true
