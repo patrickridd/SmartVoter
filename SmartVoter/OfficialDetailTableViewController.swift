@@ -205,7 +205,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         for social in socialArray {
             guard let youtubeId = social.id else { return }
             if social.type == "YouTube" {
-                let url = NSURL(string:"youtube://channel/\(youtubeId)")!
+                guard let url = NSURL(string:"youtube://user/\(youtubeId)") else { return }
                 if UIApplication.sharedApplication().canOpenURL(url)  {
                     UIApplication.sharedApplication().openURL(url)
                 } else {
