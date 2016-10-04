@@ -132,23 +132,45 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             presentViewController(alertController, animated: true, completion: nil)
         }
     }
+    //    func open(scheme: String) {
+    //        if let url = NSURL(string: scheme) {
+    //            UIApplication.sharedApplication().canOpenURL(url)
+    //        }
+    //    }
     
     @IBAction func facebookButtonTapped(sender: AnyObject) {
         guard let socialArray = official?.social else { return }
         for social in socialArray {
             if social.type == "Facebook" {
+                
                 guard let id = social.id else { return }
-                let facebookURL = "https://www.facebook.com/\(id)"
-                guard let urls = NSURL(string: facebookURL) else { return }
                 
-                let safariVC = SFSafariViewController(URL: urls)
-                if #available(iOS 10.0, *) {
-                    safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
-                } else {
-                    UIApplication.sharedApplication().statusBarStyle = .Default
+                if (id.lowercaseString.rangeOfCharacterFromSet(NSCharacterSet.letterCharacterSet()) != nil) {
+                    
+                    guard let id = social.id else { return }
+                    let facebookURL = "https://www.facebook.com/\(id)"
+                    guard let urls = NSURL(string: facebookURL) else { return }
+                    
+                    let safariVC = SFSafariViewController(URL: urls)
+                    if #available(iOS 10.0, *) {
+                        safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                    } else {
+                        UIApplication.sharedApplication().statusBarStyle = .Default
+                    }
+                    
+                    presentViewController(safariVC, animated: true, completion: nil)
                 }
-                
-                presentViewController(safariVC, animated: true, completion: nil)
+                    
+                else {
+                    guard let url = NSURL(string: "fb://profile/\(id)") else { return }
+                    let facebookURL = url
+                    if UIApplication.sharedApplication().canOpenURL(facebookURL) {
+                        UIApplication.sharedApplication().openURL(facebookURL)
+                    } else {
+                        UIApplication.sharedApplication().openURL(NSURL(string: "https://www.facebook.com/\(id)")!)
+                    }
+                    
+                }
             }
         }
     }
@@ -156,19 +178,24 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     @IBAction func googlePlusButtonTapped(sender: AnyObject) {
         guard let socialArray = official?.social else { return }
         for social in socialArray {
+            guard let id = social.id else { return }
             if social.type == "GooglePlus"  {
-                guard let id = social.id else { return }
-                let googlePlusURL = "https://plus.google.com/\(id)"
-                guard let urls = NSURL(string: googlePlusURL) else { return }
-                
-                let safariVC = SFSafariViewController(URL: urls)
-                if #available(iOS 10.0, *) {
-                    safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                guard let googlePlusURL = NSURL(string: "gplus://plus.google.com/u/0/\(id)") else { return }
+                if UIApplication.sharedApplication().canOpenURL(googlePlusURL) {
+                    UIApplication.sharedApplication().openURL(googlePlusURL)
+                    //                } else {
+                    //                    UIApplication.sharedApplication().openURL(NSURL(string: "https://plus.google.com/PageId")!)
                 } else {
-                    UIApplication.sharedApplication().statusBarStyle = .Default
+                    let googlePlusURL = "https://plus.google.com/\(id)"
+                    guard let urls = NSURL(string: googlePlusURL) else { return }
+                    let safariVC = SFSafariViewController(URL: urls)
+                    if #available(iOS 10.0, *) {
+                        safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                    } else {
+                        UIApplication.sharedApplication().statusBarStyle = .Default
+                    }
+                    presentViewController(safariVC, animated: true, completion: nil)
                 }
-                
-                presentViewController(safariVC, animated: true, completion: nil)
             }
         }
     }
@@ -176,19 +203,24 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     @IBAction func youTubeButtonTapped(sender: AnyObject) {
         guard let socialArray = official?.social else { return }
         for social in socialArray {
+            guard let youtubeId = social.id else { return }
             if social.type == "YouTube" {
-                guard let id = social.id else { return }
-                let twitterURL = "https://www.youtube.com/user/\(id)"
-                guard let urls = NSURL(string: twitterURL) else { return }
-                
-                let safariVC = SFSafariViewController(URL: urls)
-                if #available(iOS 10.0, *) {
-                    safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                let url = NSURL(string:"youtube://channel/\(youtubeId)")!
+                if UIApplication.sharedApplication().canOpenURL(url)  {
+                    UIApplication.sharedApplication().openURL(url)
                 } else {
-                    UIApplication.sharedApplication().statusBarStyle = .Default
+                    let twitterURL = "https://www.youtube.com/user/\(youtubeId)"
+                    guard let urls = NSURL(string: twitterURL) else { return }
+                    
+                    let safariVC = SFSafariViewController(URL: urls)
+                    if #available(iOS 10.0, *) {
+                        safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                    } else {
+                        UIApplication.sharedApplication().statusBarStyle = .Default
+                    }
+                    
+                    presentViewController(safariVC, animated: true, completion: nil)
                 }
-                
-                presentViewController(safariVC, animated: true, completion: nil)
             }
         }
     }
@@ -197,21 +229,27 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     @IBAction func twittlerButtonTapped(sender: AnyObject) {
         guard let socialArray = official?.social else { return }
         for social in socialArray {
+            guard let id = social.id else { return }
             if social.type == "Twitter" {
-                guard let id = social.id else { return }
-                let twitterURL = "https://www.twitter.com/\(id)"
-                guard let urls = NSURL(string: twitterURL) else { return }
-                
-                let safariVC = SFSafariViewController(URL: urls)
-                if #available(iOS 10.0, *) {
-                    safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                guard let twitterURL = NSURL(string: "twitter://user?screen_name=\(id)") else { return }
+                if UIApplication.sharedApplication().canOpenURL(twitterURL) {
+                    UIApplication.sharedApplication().openURL(twitterURL)
+                    print(twitterURL)
                 } else {
-                    UIApplication.sharedApplication().statusBarStyle = .Default
+                    let twitterURL = "https://www.twitter.com/\(id)"
+                    guard let urls = NSURL(string: twitterURL) else { return }
+                    let safariVC = SFSafariViewController(URL: urls)
+                    if #available(iOS 10.0, *) {
+                        safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
+                    } else {
+                        UIApplication.sharedApplication().statusBarStyle = .Default
+                    }
+                    presentViewController(safariVC, animated: true, completion: nil)
                 }
-                presentViewController(safariVC, animated: true, completion: nil)
             }
         }
     }
+    
     
     // MARK: Email helper functions
     
@@ -235,6 +273,13 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     }
     
     //  MARK: Helper Functions
+    
+    func schemeAvailable(scheme: String) -> Bool {
+        if let url = NSURL(string: scheme) {
+            return UIApplication.sharedApplication().canOpenURL(url)
+        }
+        return false
+    }
     
     func upDateBackgroundColor () {
         
@@ -318,9 +363,9 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             detailViewController.official = official
         }
         
-//        if segue.identifier == "barViewSegue" {
-//            guard let detailVC = segue.destinationViewController as?  BarChartViewController else { return }
-//            detailVC.official = official
-//        }
+        //        if segue.identifier == "barViewSegue" {
+        //            guard let detailVC = segue.destinationViewController as?  BarChartViewController else { return }
+        //            detailVC.official = official
+        //        }
     }
 }

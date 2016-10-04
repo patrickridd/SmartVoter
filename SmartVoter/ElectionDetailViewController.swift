@@ -140,9 +140,6 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         presentViewController(safariVC, animated: true, completion: nil)
     }
     
-//    func setupWebView() {
-//        
-//    }
     
 }
 
