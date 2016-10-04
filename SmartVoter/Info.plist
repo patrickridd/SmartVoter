@@ -23,6 +23,13 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tel:</string>
+		<string>gplus</string>
+		<string>mgc</string>
+		<string>hasgplus3</string>
+		<string>hasgplus4</string>
+		<string>fb</string>
+		<string>twitter</string>
+		<string>youtube</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
