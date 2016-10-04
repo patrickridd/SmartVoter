@@ -70,8 +70,13 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
         }
         if let annotationView = annotationView {
             annotationView.canShowCallout = true
-            annotationView.image = UIImage(named: "liberty.png")
-        }
+            let mapImage = UIImage(named:"FlagPoleWithPinTopDark")
+            let size = CGSize(width: 34, height: 45)
+            UIGraphicsBeginImageContext(size)
+            mapImage?.drawInRect(CGRectMake(0, 0, size.width, size.height))
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            annotationView.image = resizedImage        }
         
         return annotationView
     }

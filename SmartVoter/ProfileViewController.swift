@@ -11,10 +11,11 @@ import CoreLocation
 import MapKit
 import SafariServices
 
+
 private var kAssociationKeyNextField: UInt8 = 0
 
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var registerToVoteLabel: UIButton!
     @IBOutlet weak var placesToVoteLabel: UILabel!
@@ -33,6 +34,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mapView.delegate = self
         
         setupProfileViewController()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updatePollingLocation), name: ProfileViewController.addressChangedNotification, object: nil)
@@ -165,6 +167,49 @@ class ProfileViewController: UIViewController {
         self.registrationURL = ProfileController.sharedController.loadURL()
     }
     
+    /// Sets annotation Image to Flag Pole.
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !annotation.isKindOfClass(MKUserLocation) else {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        
+        var annotationView: MKAnnotationView?
+        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(annotationIdentifier) {
+            annotationView = dequeuedAnnotationView
+            annotationView?.annotation = annotation
+        }
+        else {
+            let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            av.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+            annotationView = av
+        }
+        if let annotationView = annotationView {
+            annotationView.canShowCallout = true
+            annotationView.image = UIImage(named: "FlagPoleWithPinTopDark")
+        }
+        return annotationView
+    }
+    
+    
+    /// Call out sends User to Maps for directions.
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            
+            if let annotation = view.annotation {
+                let latitude = annotation.coordinate.latitude
+                let longitude = annotation.coordinate.longitude
+                
+                let coordinate = CLLocationCoordinate2DMake(latitude,longitude)
+                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+                mapItem.name = annotation.title ?? "Polling Location"
+                mapItem.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+            }
+        }
+    }
+
+    
     /// Gets User's Polling Locations as CLLocations and populates them on a map.
     func populateMapView() {
         PollingLocationController.sharedController.geoCodePollingAddresses { (pollingLocationCLLocation) in
@@ -186,7 +231,6 @@ class ProfileViewController: UIViewController {
                     annotation.subtitle = pollingLocation.streetName
                 }
                 annotation.title = pollingLocation.locationName
-                
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self.mapView.showsUserLocation = true
                 self.mapView.setRegion(region, animated: true)

@@ -11,13 +11,14 @@ import CoreLocation
 import MapKit
 
 class PollingLocationController {
+
+    let geocoder = CLGeocoder()
     
     static let sharedController = PollingLocationController()
     var pollingLocations = [PollingLocation]()
     
     // Takes Polling Addresses and completion closure returns an array of Polling CLLocations
     func geoCodePollingAddresses(completion: (pollingLocationCLLocation: [(location: CLLocation, pollingLocation: PollingLocation)])->Void) {
-        let geocoder = CLGeocoder()
         var locations = [(location:CLLocation, pollingLocation: PollingLocation)]()
         if pollingLocations.count == 0 {
             completion(pollingLocationCLLocation: [])
@@ -40,6 +41,8 @@ class PollingLocationController {
         let address = "\(pollingLocation.streetName), \(pollingLocation.zip), \(pollingLocation.city), \(pollingLocation.state)"
         return address
     }
+    
+    
 }
 
 
