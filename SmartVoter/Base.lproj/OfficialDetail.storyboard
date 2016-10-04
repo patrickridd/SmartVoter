@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NEf-vV-1NR">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NEf-vV-1NR">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -127,14 +127,14 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-Wh-Nto">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-Wh-Nto">
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-tJ-eJS">
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="7lz-Uq-P67"/>
                                                                 <constraint firstAttribute="width" constant="35" id="IEV-6S-U93"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="twitter"/>
+                                                            <state key="normal" title="Button" image="Twitter"/>
                                                             <connections>
                                                                 <action selector="twittlerButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="Oae-DN-SQm"/>
                                                             </connections>
@@ -144,7 +144,7 @@
                                                                 <constraint firstAttribute="width" constant="35" id="i0x-kp-hPS"/>
                                                                 <constraint firstAttribute="height" constant="35" id="r2g-Wf-tEa"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="youTube"/>
+                                                            <state key="normal" title="Button" image="YouTube"/>
                                                             <connections>
                                                                 <action selector="youTubeButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="coZ-DB-qVc"/>
                                                             </connections>
@@ -154,7 +154,7 @@
                                                                 <constraint firstAttribute="height" constant="35" id="3G8-kL-TGS"/>
                                                                 <constraint firstAttribute="width" constant="35" id="dFn-5j-190"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="googlePlus"/>
+                                                            <state key="normal" title="Button" image="GooglePlus"/>
                                                             <connections>
                                                                 <action selector="googlePlusButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="9Hx-qc-u70"/>
                                                             </connections>
@@ -164,7 +164,7 @@
                                                                 <constraint firstAttribute="height" constant="35" id="jqd-by-spT"/>
                                                                 <constraint firstAttribute="width" constant="35" id="qWO-nJ-B5q"/>
                                                             </constraints>
-                                                            <state key="normal" image="facebook"/>
+                                                            <state key="normal" image="Facebook"/>
                                                             <connections>
                                                                 <action selector="facebookButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="OKO-8z-hm4"/>
                                                             </connections>
@@ -190,7 +190,7 @@
                                                 <constraint firstItem="mUc-oB-gMR" firstAttribute="leading" secondItem="TJm-Za-ZYb" secondAttribute="leading" id="Oay-dG-ogy"/>
                                                 <constraint firstItem="tNd-dh-oJE" firstAttribute="leading" secondItem="TJm-Za-ZYb" secondAttribute="leading" constant="8" id="Pqn-8I-QsC"/>
                                                 <constraint firstItem="qi9-Wh-Nto" firstAttribute="leading" secondItem="GbI-TM-G9U" secondAttribute="trailing" constant="8" id="SoO-3g-Qg8"/>
-                                                <constraint firstItem="qi9-Wh-Nto" firstAttribute="top" secondItem="PpI-nn-RGg" secondAttribute="bottom" constant="10" id="T7p-2Q-pTU"/>
+                                                <constraint firstItem="qi9-Wh-Nto" firstAttribute="top" secondItem="PpI-nn-RGg" secondAttribute="bottom" constant="5" id="T7p-2Q-pTU"/>
                                                 <constraint firstItem="PpI-nn-RGg" firstAttribute="top" secondItem="bNP-Zi-ZZu" secondAttribute="bottom" constant="40" id="Vi0-j1-zn3"/>
                                                 <constraint firstItem="WBM-lO-rWQ" firstAttribute="centerX" secondItem="TJm-Za-ZYb" secondAttribute="centerX" id="Y57-oO-RjQ"/>
                                                 <constraint firstItem="mUc-oB-gMR" firstAttribute="top" secondItem="TJm-Za-ZYb" secondAttribute="top" id="axP-l5-xxi"/>
@@ -200,7 +200,7 @@
                                                 <constraint firstItem="FGC-P4-kGg" firstAttribute="leading" secondItem="TJm-Za-ZYb" secondAttribute="leading" constant="8" id="fih-c8-8d2"/>
                                                 <constraint firstAttribute="trailing" secondItem="PpI-nn-RGg" secondAttribute="trailing" constant="16" id="g9C-Qn-JsC"/>
                                                 <constraint firstItem="PpI-nn-RGg" firstAttribute="leading" secondItem="TJm-Za-ZYb" secondAttribute="leading" constant="8" id="kU1-HB-NLn"/>
-                                                <constraint firstItem="GbI-TM-G9U" firstAttribute="top" secondItem="PpI-nn-RGg" secondAttribute="bottom" constant="14" id="pmH-3u-VSB"/>
+                                                <constraint firstItem="GbI-TM-G9U" firstAttribute="top" secondItem="PpI-nn-RGg" secondAttribute="bottom" constant="9" id="pmH-3u-VSB"/>
                                                 <constraint firstAttribute="trailing" secondItem="mUc-oB-gMR" secondAttribute="trailing" id="raL-RV-QJ6"/>
                                                 <constraint firstAttribute="trailing" secondItem="FGC-P4-kGg" secondAttribute="trailing" constant="8" id="sfz-eb-3qG"/>
                                                 <constraint firstItem="WBM-lO-rWQ" firstAttribute="top" secondItem="TJm-Za-ZYb" secondAttribute="top" constant="25" id="xJ2-K2-IJC"/>
@@ -312,9 +312,9 @@
         <image name="BradPhoneFade" width="50" height="50"/>
         <image name="BradSafariFade" width="50" height="50"/>
         <image name="DefaultImage" width="293" height="385"/>
-        <image name="facebook" width="48" height="48"/>
-        <image name="googlePlus" width="48" height="48"/>
-        <image name="twitter" width="48" height="48"/>
-        <image name="youTube" width="48" height="48"/>
+        <image name="Facebook" width="50" height="50"/>
+        <image name="GooglePlus" width="50" height="50"/>
+        <image name="Twitter" width="50" height="50"/>
+        <image name="YouTube" width="50" height="50"/>
     </resources>
 </document>
