@@ -3,7 +3,7 @@ SmartVoter - Find Your Elected Officials and Elections
 
 About the App
 ===================
-----------
+
 A quick resource to learn more about your representatives and upcoming elections. SmartVoter informs you of Candidates, Referendums, and of where to vote. With SmartVoter you will never forget to vote again! 
 
 
@@ -38,3 +38,4 @@ Technologies Used
 **AppStore:** https://itunes.apple.com/us/app/smartvoter-find-elected-officials/id1159405068?ls=1&mt=8
 
 **Website:** http://4sythb.wixsite.com/smartvoter
+
