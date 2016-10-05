@@ -1,12 +1,13 @@
 SmartVoter - Find Your Elected Officials and Elections
 ===================
 
-https://cloud.githubusercontent.com/assets/6131413/19134254/2d3138a4-8b1a-11e6-9108-4436f9bf9286.png
-
 About the App
 ===================
 ----------
 A quick resource to learn more about your representatives and upcoming elections. SmartVoter informs you of Candidates, Referendums, and of where to vote. With SmartVoter you will never forget to vote again! 
+
+
+<img width="1101" alt="screen shot 2016-10-05 at 4 13 44 pm" src="https://cloud.githubusercontent.com/assets/6131413/19134901/28b43e58-8b1e-11e6-8a30-ded63acfc8c7.png">
 
 
 
@@ -33,3 +34,7 @@ Technologies Used
 	 - Title logo and app icon were created.
 	 - Button were finely crafted to match overall design.
 	 - Flags for MapView and Tab Bar icons were were developed.
+	
+https://itunes.apple.com/us/app/smartvoter-find-elected-officials/id1159405068?ls=1&mt=8
+
+http://4sythb.wixsite.com/smartvoter
