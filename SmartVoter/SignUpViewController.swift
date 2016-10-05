@@ -66,13 +66,9 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         back.setTitleColor(.whiteColor(), forState: .Normal)
         back.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
 
-        let testView = UIView()
-        testView.backgroundColor = .whiteColor()
-        
         toolbarView.addSubview(doneButton)
         toolbarView.addSubview(forward)
         toolbarView.addSubview(back)
-        toolbarView.addSubview(testView)
         
         doneButton.centerXAnchor.constraintEqualToAnchor(toolbarView.trailingAnchor, constant: -30).active = true
         doneButton.centerYAnchor.constraintEqualToAnchor(toolbarView.centerYAnchor).active = true
@@ -131,7 +127,15 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if streetText.isFirstResponder() {
+            cityText.becomeFirstResponder()
+        } else if cityText.isFirstResponder() {
+            stateText.becomeFirstResponder()
+        } else if stateText.isFirstResponder() {
+            zipText.becomeFirstResponder()
+        } else {
+            zipText.resignFirstResponder()
+        }
         return true
     }
     
