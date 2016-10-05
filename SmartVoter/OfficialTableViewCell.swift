@@ -66,7 +66,8 @@ class OfficialTableViewCell: UITableViewCell {
             } else if official.party == "Libertarian" {
                 officialsImageView.image = UIImage(named: "Libertarian.png")
             } else {
-                officialsImageView.image = UIImage(named: "DefaultImage")
+                guard let state = ProfileController.sharedController.address?.state.capitalizedString else { return }
+                officialsImageView.image = UIImage(named: "\(state)-flag-large")
             }
         }
     }

@@ -62,13 +62,17 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         socialMediaLabel.text = "Social Media"
         
         partyLabel.text = "\(official.party ?? "Representative did not provide party affiliation") Party"
-        guard let photoURL = official.photoURL else { return }
-        if let photo = official.image {
-            self.officialImageView.image = photo
-        } else {
-            ImageController.imageForURL(photoURL) { (image) in
-                self.officialImageView.image = image
+        if let photoURL = official.photoURL {
+            if let photo = official.image {
+                self.officialImageView.image = photo
+            } else {
+                ImageController.imageForURL(photoURL) { (image) in
+                    self.officialImageView.image = image
+                }
             }
+        } else {
+            guard let state = ProfileController.sharedController.address?.state.capitalizedString else { return }
+            self.officialImageView.image = UIImage(named: "\(state)-flag-large")
         }
     }
     
