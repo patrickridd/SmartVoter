@@ -35,6 +35,6 @@ Technologies Used
 	 - Button were finely crafted to match overall design.
 	 - Flags for MapView and Tab Bar icons were were developed.
 	
-https://itunes.apple.com/us/app/smartvoter-find-elected-officials/id1159405068?ls=1&mt=8
+**AppStore:** https://itunes.apple.com/us/app/smartvoter-find-elected-officials/id1159405068?ls=1&mt=8
 
-http://4sythb.wixsite.com/smartvoter
+**Website:** http://4sythb.wixsite.com/smartvoter
