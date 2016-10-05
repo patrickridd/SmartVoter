@@ -21,7 +21,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="el7-OX-CBj" id="TJm-Za-ZYb">
-                                            <frame key="frameInset" width="375" height="665"/>
+                                            <frame key="frameInset" width="375" height="665.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-oB-gMR">
@@ -134,7 +134,7 @@
                                                                 <constraint firstAttribute="height" constant="35" id="7lz-Uq-P67"/>
                                                                 <constraint firstAttribute="width" constant="35" id="IEV-6S-U93"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="twitter"/>
+                                                            <state key="normal" title="Button" image="Twitter"/>
                                                             <connections>
                                                                 <action selector="twittlerButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="Oae-DN-SQm"/>
                                                             </connections>
@@ -144,7 +144,7 @@
                                                                 <constraint firstAttribute="width" constant="35" id="i0x-kp-hPS"/>
                                                                 <constraint firstAttribute="height" constant="35" id="r2g-Wf-tEa"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="youTube"/>
+                                                            <state key="normal" title="Button" image="YouTube"/>
                                                             <connections>
                                                                 <action selector="youTubeButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="coZ-DB-qVc"/>
                                                             </connections>
@@ -154,7 +154,7 @@
                                                                 <constraint firstAttribute="height" constant="35" id="3G8-kL-TGS"/>
                                                                 <constraint firstAttribute="width" constant="35" id="dFn-5j-190"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="googlePlus"/>
+                                                            <state key="normal" title="Button" image="GooglePlus"/>
                                                             <connections>
                                                                 <action selector="googlePlusButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="9Hx-qc-u70"/>
                                                             </connections>
@@ -164,7 +164,7 @@
                                                                 <constraint firstAttribute="height" constant="35" id="jqd-by-spT"/>
                                                                 <constraint firstAttribute="width" constant="35" id="qWO-nJ-B5q"/>
                                                             </constraints>
-                                                            <state key="normal" image="facebook"/>
+                                                            <state key="normal" image="Facebook"/>
                                                             <connections>
                                                                 <action selector="facebookButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="OKO-8z-hm4"/>
                                                             </connections>
@@ -312,9 +312,9 @@
         <image name="BradPhoneFade" width="50" height="50"/>
         <image name="BradSafariFade" width="50" height="50"/>
         <image name="DefaultImage" width="293" height="385"/>
-        <image name="facebook" width="50" height="50"/>
-        <image name="googlePlus" width="50" height="50"/>
-        <image name="twitter" width="50" height="50"/>
-        <image name="youTube" width="50" height="50"/>
+        <image name="Facebook" width="50" height="50"/>
+        <image name="GooglePlus" width="50" height="50"/>
+        <image name="Twitter" width="50" height="50"/>
+        <image name="YouTube" width="50" height="50"/>
     </resources>
 </document>
