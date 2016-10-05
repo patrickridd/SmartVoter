@@ -99,17 +99,13 @@ class OfficialAddressMapViewController: UIViewController, MKMapViewDelegate, CLL
         if control == view.rightCalloutAccessoryView {
             
             if let annotation = view.annotation {
-                guard let newAddress = address else { return }
-                forwardGeocodeAddress(newAddress) { (location) in
-                    let annotation = MKPointAnnotation()
-                    guard let coordinate = location?.coordinate else { return }
-                    guard let officialNames = self.official?.name else { return }
-                    annotation.coordinate = coordinate
-                    annotation.title = officialNames
-                    annotation.subtitle = newAddress
-                    
-                    self.performSegueWithIdentifier("toDetailFromAnnotation", sender: annotation)
-                }
+                let latitude = annotation.coordinate.latitude
+                let longitude = annotation.coordinate.longitude
+                
+                let coordinate = CLLocationCoordinate2DMake(latitude,longitude)
+                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+                mapItem.name = annotation.subtitle ?? "Directions to Office of \(official?.name)"
+                mapItem.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
             }
         }
     }
