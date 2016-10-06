@@ -254,21 +254,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMk-aA-0B4">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8c-Ih-HMv" customClass="BarChartView" customModule="Charts">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="TMk-aA-0B4" secondAttribute="trailing" id="MMj-c5-guO"/>
-                            <constraint firstItem="TMk-aA-0B4" firstAttribute="top" secondItem="T1w-9R-Wch" secondAttribute="bottom" id="bnD-qL-byB"/>
-                            <constraint firstItem="TMk-aA-0B4" firstAttribute="leading" secondItem="sYj-NV-ixh" secondAttribute="leading" id="fNk-da-PZ1"/>
-                            <constraint firstItem="5qJ-lf-DgA" firstAttribute="top" secondItem="TMk-aA-0B4" secondAttribute="bottom" id="oE2-LQ-K5c"/>
+                            <constraint firstItem="l8c-Ih-HMv" firstAttribute="top" secondItem="T1w-9R-Wch" secondAttribute="bottom" id="3pn-TB-8Rs"/>
+                            <constraint firstItem="l8c-Ih-HMv" firstAttribute="leading" secondItem="sYj-NV-ixh" secondAttribute="leading" id="KYa-vU-2ST"/>
+                            <constraint firstItem="5qJ-lf-DgA" firstAttribute="top" secondItem="l8c-Ih-HMv" secondAttribute="bottom" id="c6K-mQ-EoH"/>
+                            <constraint firstAttribute="trailing" secondItem="l8c-Ih-HMv" secondAttribute="trailing" id="db7-jy-hAd"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="barChartView" destination="TMk-aA-0B4" id="cho-9x-iLp"/>
+                        <outlet property="barChartView" destination="l8c-Ih-HMv" id="lbQ-eh-ju8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMd-7V-SEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

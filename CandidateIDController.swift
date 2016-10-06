@@ -14,12 +14,12 @@ class CandidateIDController {
     static let apiKey = "37ae7a868a4d18f7a8bb41383e006cb1"
     static let baseURL = NSURL(string: "http://www.opensecrets.org/api/?method=getLegislators")
     
-    static func getCandidateID(id: String, completion: ()-> Void) {
+    static func getCandidateID(id: String, completion: (candidateID: CandidateID?)-> Void) {
         guard let url = baseURL else{
             print("NO URL FOUND (CandidateIDController)")
             return
         }
-        let urlParameters = ["id": id, "apikey": apiKey]
+        let urlParameters = ["method": "getLegislators", "id": id, "apikey": apiKey, "output" : "json"]
         
         NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters, body: nil) { (data, error) in
             guard let data = data,
