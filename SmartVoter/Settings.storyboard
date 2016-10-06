@@ -23,7 +23,7 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="549"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mr4-X4-jeI" id="Wrv-bO-8sj">
-                                            <frame key="frameInset" width="375" height="548.5"/>
+                                            <frame key="frameInset" width="375" height="548"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="1NO-7s-m1z">
@@ -181,9 +181,9 @@
                                                         <constraint firstAttribute="height" constant="25" id="PV6-b8-JcE"/>
                                                     </constraints>
                                                     <segments>
-                                                        <segment title="Day of"/>
+                                                        <segment title="Day Of"/>
                                                         <segment title="1 Day"/>
-                                                        <segment title="5 days"/>
+                                                        <segment title="1 Week"/>
                                                         <segment title="All"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.80328536033630371" green="0.39727848768234253" blue="0.39622598886489868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

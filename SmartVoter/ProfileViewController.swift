@@ -11,9 +11,7 @@ import CoreLocation
 import MapKit
 import SafariServices
 
-
 private var kAssociationKeyNextField: UInt8 = 0
-
 
 class ProfileViewController: UIViewController, MKMapViewDelegate {
     
@@ -29,6 +27,7 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
     var livingAddress: Address?
     var pollingLocations: [CLLocation]?
     var registrationURL: String?
+    var rockTheVoteURL = "https://register2.rockthevote.com/registrants/map/?partner=35990"
     
     let rightButton = UIButton()
     
@@ -104,10 +103,13 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
     
     /// Takes user to website where they can register to vote.
     @IBAction func registerToVoteButtonTappedWithSender(sender: AnyObject) {
-        guard let urlString = self.registrationURL, let url = NSURL(string: urlString) else {
+        let urlString = self.registrationURL ?? self.rockTheVoteURL
+        guard let url = NSURL(string: urlString) else {
             return
         }
+        
         let safariVC = SFSafariViewController(URL: url)
+        
         if #available(iOS 10.0, *) {
             safariVC.preferredBarTintColor = UIColor(red: 0.780, green: 0.298, blue: 0.298, alpha: 1.00)
         } else {
@@ -139,7 +141,6 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
             self.presentViewController(settingsTVC, animated: true, completion: nil)
         })
     }
-    
     
     func updatePollingLocation() {
         guard let address = ProfileController.sharedController.loadAddress() else {
