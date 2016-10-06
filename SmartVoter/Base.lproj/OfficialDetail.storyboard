@@ -283,7 +283,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="W0D-nr-zty">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Hhb-bG-bpm">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="Hhb-bG-bpm">
                             <connections>
                                 <action selector="saveChart:" destination="DOF-VU-1DA" id="VME-bV-Tus"/>
                             </connections>

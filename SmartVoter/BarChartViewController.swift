@@ -34,8 +34,7 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
         }
         
         barChartView.delegate = self
-        barChartView.noDataText = "Were sorry no data was found for this Representative"
-
+        barChartView.noDataTextDescription = "Were sorry, we couldn't find any fundraising data for this official"
         
     }
     
@@ -78,7 +77,7 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
     func setChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [BarChartDataEntry] = []
         barChartView.descriptionText = ""
-
+        
         for i in 0..<dataPoints.count {
             let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
@@ -94,16 +93,21 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
         barChartView.data = chartData
         
     }
-  
+    
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         print("\(entry.value) \(organizations![entry.xIndex])")
     }
     
     @IBAction func saveChart(sender: AnyObject) {
-        barChartView.saveToCameraRoll()
+        let bounds = UIScreen.mainScreen().bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        self.view.drawViewHierarchyInRect(bounds, afterScreenUpdates: false)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let activityViewController = UIActivityViewController(activityItems: [img!], applicationActivities: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+        
     }
     
-   
-    
-    
 }
+
