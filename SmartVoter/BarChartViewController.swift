@@ -34,6 +34,8 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
         }
         
         barChartView.delegate = self
+        barChartView.noDataText = "Were sorry no data was found for this Representative"
+
         
     }
     
@@ -75,7 +77,8 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
     
     func setChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [BarChartDataEntry] = []
-        
+        barChartView.descriptionText = ""
+
         for i in 0..<dataPoints.count {
             let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
@@ -84,8 +87,10 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Money provided in US Dollars")
         let chartData = BarChartData(xVals: organizations, dataSet: chartDataSet)
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
-        barChartView.xAxis.labelPosition = .Bottom
-        chartDataSet.colors = ChartColorTemplates.colorful()
+        barChartView.xAxis.labelPosition = .BothSided
+        chartDataSet.colors = ChartColorTemplates.liberty()
+        let yaxis = barChartView.getAxis(ChartYAxis.AxisDependency.Right)
+        yaxis.drawLabelsEnabled = false
         barChartView.data = chartData
         
     }
@@ -97,6 +102,8 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
     @IBAction func saveChart(sender: AnyObject) {
         barChartView.saveToCameraRoll()
     }
+    
+   
     
     
 }
