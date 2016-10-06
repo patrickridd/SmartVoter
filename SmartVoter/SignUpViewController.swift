@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var stateText: UITextField!
     @IBOutlet weak var zipText: UITextField!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     static let addressAddedNotification = "addressAddedNotification"
     
@@ -38,6 +39,15 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         customToolbarView()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if let _ = ProfileController.sharedController.loadAddress() {
+            cancelButton.hidden = false
+            cancelButton.enabled = true
+        } else {
+            cancelButton.hidden = true
+            cancelButton.enabled = false
+        }
+    }
     
      func customToolbarView() {
         
@@ -139,18 +149,24 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @IBAction func submitButtonTappedWithSender(sender: AnyObject) {
-        guard let streetAddress = streetText.text,
-            city = cityText.text,
-            state = stateText.text,
-            zip = zipText.text else {return}
+        guard let streetAddress = streetText.text where streetAddress.characters.count > 0,
+            let city = cityText.text where city.characters.count > 0,
+            let state = stateText.text where state.characters.count > 0,
+            let zip = zipText.text where zip.characters.count > 0 else {return}
         let address = Address(line1: streetAddress, city: city, state: state, zip: zip)
         ProfileController.sharedController.saveAddressToUserDefault(address)
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             let nc = NSNotificationCenter.defaultCenter()
             nc.postNotificationName(SignUpViewController.addressAddedNotification, object: self)
+            nc.postNotificationName(ProfileViewController.addressChangedNotification, object: self)
         })
         self.dismissViewControllerAnimated(false, completion: nil)
     }
+    
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     func textfieldDelegates() {
         streetText.delegate = self

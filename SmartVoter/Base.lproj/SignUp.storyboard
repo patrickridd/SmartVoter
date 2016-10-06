@@ -86,17 +86,28 @@
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpd-PO-nqd">
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelButtonTapped:" destination="cH9-Oo-EPV" eventType="touchUpInside" id="5b6-N9-WbG"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="87c-Sg-TlJ" firstAttribute="leading" secondItem="dN6-wA-ElP" secondAttribute="leadingMargin" id="0ku-b9-T8c"/>
                                         <constraint firstItem="87c-Sg-TlJ" firstAttribute="centerY" secondItem="dN6-wA-ElP" secondAttribute="centerY" constant="-27" id="Hez-p5-in3"/>
                                         <constraint firstItem="87c-Sg-TlJ" firstAttribute="top" secondItem="5vZ-aa-7dQ" secondAttribute="bottom" constant="10" id="O1F-cg-0z1"/>
+                                        <constraint firstItem="cpd-PO-nqd" firstAttribute="leading" secondItem="dN6-wA-ElP" secondAttribute="leading" constant="20" id="Qoa-su-6PD"/>
                                         <constraint firstItem="6F7-gx-GG5" firstAttribute="top" secondItem="87c-Sg-TlJ" secondAttribute="bottom" constant="50" id="Srn-ao-Pz4"/>
                                         <constraint firstAttribute="trailing" secondItem="5vZ-aa-7dQ" secondAttribute="trailing" constant="20" id="YUT-A8-k0f"/>
                                         <constraint firstItem="6F7-gx-GG5" firstAttribute="centerX" secondItem="dN6-wA-ElP" secondAttribute="centerX" id="Yer-hH-mux"/>
                                         <constraint firstItem="5vZ-aa-7dQ" firstAttribute="leading" secondItem="dN6-wA-ElP" secondAttribute="leading" constant="20" id="i3I-Jp-gS7"/>
                                         <constraint firstItem="87c-Sg-TlJ" firstAttribute="trailing" secondItem="dN6-wA-ElP" secondAttribute="trailingMargin" id="krg-sf-Avf"/>
                                         <constraint firstItem="5vZ-aa-7dQ" firstAttribute="top" secondItem="7AR-Go-BvL" secondAttribute="bottom" constant="25" id="mwh-Aq-8mL"/>
+                                        <constraint firstItem="cpd-PO-nqd" firstAttribute="top" secondItem="dN6-wA-ElP" secondAttribute="top" constant="20" id="sOp-na-nsJ"/>
                                         <constraint firstItem="7AR-Go-BvL" firstAttribute="centerX" secondItem="87c-Sg-TlJ" secondAttribute="centerX" id="uP1-Gt-MvC"/>
                                     </constraints>
                                 </view>
@@ -116,6 +127,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="cpd-PO-nqd" id="lgV-Le-qiA"/>
                         <outlet property="cityText" destination="9jI-n8-88d" id="nIf-8G-rDH"/>
                         <outlet property="stateText" destination="Mkn-YH-9pB" id="xfJ-Bx-mfP"/>
                         <outlet property="streetText" destination="BlQ-G3-XK3" id="9y7-OV-aCi"/>
