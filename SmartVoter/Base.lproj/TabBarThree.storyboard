@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Three View Controller-->
+        <scene sceneID="wN6-Bz-XlA">
+            <objects>
+                <viewController storyboardIdentifier="TabBarThree" id="ecr-oE-sSa" customClass="TabBarThreeViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wru-LO-LsS"/>
+                        <viewControllerLayoutGuide type="bottom" id="yRG-VQ-OED"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6lN-JD-way">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thirdTabBar" translatesAutoresizingMaskIntoConstraints="NO" id="r85-Nt-PRv"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="r85-Nt-PRv" secondAttribute="trailing" id="EzM-sn-gZL"/>
+                            <constraint firstItem="r85-Nt-PRv" firstAttribute="top" secondItem="Wru-LO-LsS" secondAttribute="bottom" constant="-20" id="Puf-US-Stv"/>
+                            <constraint firstItem="r85-Nt-PRv" firstAttribute="leading" secondItem="6lN-JD-way" secondAttribute="leading" id="TSQ-r5-wmd"/>
+                            <constraint firstItem="yRG-VQ-OED" firstAttribute="top" secondItem="r85-Nt-PRv" secondAttribute="bottom" id="g4w-0Q-jsO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sm5-G1-OWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2383" y="213"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="thirdTabBar" width="414" height="736"/>
+    </resources>
+</document>

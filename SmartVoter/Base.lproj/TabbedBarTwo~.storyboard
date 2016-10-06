@@ -136,6 +136,24 @@
             </objects>
             <point key="canvasLocation" x="1830" y="178"/>
         </scene>
+        <!--Tab Bar Two View Controller-->
+        <scene sceneID="ye9-K1-X9c">
+            <objects>
+                <viewController storyboardIdentifier="TabBarTwo" id="AaI-1Z-sbg" customClass="TabBarTwoViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vSI-op-or5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sp8-69-Buz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AdT-ID-t3B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2da-wX-jwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2318" y="341"/>
+        </scene>
         <!--TabBarOne-->
         <scene sceneID="Afn-Nq-gPR">
             <objects>
@@ -143,22 +161,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgf-KQ-2JY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1854" y="122"/>
-        </scene>
-        <!--TabBarTwo-->
-        <scene sceneID="R7C-R4-4qr">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="TabBarTwo" storyboardName="TabBarTwo" referencedIdentifier="TabBarTwo" id="cYC-FG-SSf" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ok-ps-QvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1854" y="151"/>
-        </scene>
-        <!--TabBarThree-->
-        <scene sceneID="Zp7-br-EaH">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="TabBarThree" storyboardName="TabBarThree" referencedIdentifier="TabBarThree" id="tK7-eF-eq6" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nLH-Aj-jJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2383" y="213"/>
         </scene>
     </scenes>
 </document>

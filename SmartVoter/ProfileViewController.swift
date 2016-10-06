@@ -22,7 +22,8 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var safariButton: UIButton!
     @IBOutlet weak var phoneNumberButton: UIButton!
-    
+    var locationManager: CLLocationManager!
+
     static let addressChangedNotification = "Address Changed"
     var livingAddress: Address?
     var pollingLocations: [CLLocation]?
@@ -33,10 +34,12 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager = CLLocationManager()
         self.mapView.delegate = self
-        
+        self.mapView.showsUserLocation = true
         setupProfileViewController()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updatePollingLocation), name: ProfileViewController.addressChangedNotification, object: nil)
+        checkCoreLocationPermission()
     }
     
     func setupProfileViewController() {
@@ -120,6 +123,25 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
         })
     }
     
+    func checkCoreLocationPermission() {
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.locationManager.startUpdatingLocation()
+                
+            })
+            
+            
+        } else if CLLocationManager.authorizationStatus() == .NotDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        } else if CLLocationManager.authorizationStatus() == .Restricted {
+            print("Unauthorized to user location service")
+            let alert = UIAlertController(title: "Not authorized of use location services", message: nil, preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+
     
     func setRightButton() {
         let image = UIImage(named: "Settings-100")?.imageWithRenderingMode(.AlwaysTemplate)

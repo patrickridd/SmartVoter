@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Kws-8u-fVa">
+            <objects>
+                <viewController storyboardIdentifier="TabBarOne" id="teI-lZ-iLt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eep-B7-l1r"/>
+                        <viewControllerLayoutGuide type="bottom" id="Chs-If-8ZU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EYl-ur-dCP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FirstTabBar" translatesAutoresizingMaskIntoConstraints="NO" id="SO7-ER-FWf"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SO7-ER-FWf" firstAttribute="top" secondItem="Eep-B7-l1r" secondAttribute="bottom" constant="-20" id="XSM-uB-yte"/>
+                            <constraint firstItem="Chs-If-8ZU" firstAttribute="top" secondItem="SO7-ER-FWf" secondAttribute="bottom" id="gXf-06-Pwo"/>
+                            <constraint firstItem="SO7-ER-FWf" firstAttribute="leading" secondItem="EYl-ur-dCP" secondAttribute="leading" id="rBF-ls-9MJ"/>
+                            <constraint firstAttribute="trailing" secondItem="SO7-ER-FWf" secondAttribute="trailing" id="xW8-Xe-8ph"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvg-oD-JUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="302"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FirstTabBar" width="414" height="736"/>
+    </resources>
+</document>

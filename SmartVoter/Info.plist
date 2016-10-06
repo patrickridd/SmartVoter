@@ -2,11 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+<<<<<<< HEAD
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>&quot;Smart Voter would like access to your photo library to save chart information&quot;</string>
 	<key>NSPhotoLibraryUsageDescription
 </key>
 	<string>&quot;Smart Voter would like access to your photo library to save chart information&quot;</string>
+=======
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We would like to access your location to help you find polling locations.</string>
+>>>>>>> feature/PageView
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

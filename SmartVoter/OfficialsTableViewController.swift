@@ -34,9 +34,9 @@ class OfficialsTableViewController: UIViewController, UITableViewDataSource, UIT
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reloadTableView), name: ProfileViewController.addressChangedNotification, object: nil)
         
         guard let address = ProfileController.sharedController.loadAddress() else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let signUpViewController = storyboard.instantiateViewControllerWithIdentifier("SignUpViewController") as? SignUpViewController else {return}
-            self.presentViewController(signUpViewController, animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "PageViewController", bundle: nil)
+            guard let pageViewController = storyboard.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController else {return}
+            self.presentViewController(pageViewController, animated: true, completion: nil)
             return
         }
         
