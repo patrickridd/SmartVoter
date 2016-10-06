@@ -10,12 +10,12 @@ import UIKit
 import Charts
 
 class BarChartViewController: UIViewController {
-
-     @IBOutlet weak var barChartView: BarChartView!
+    
+    @IBOutlet weak var barChartView: BarChartView!
     
     var official: Official?
     var candidates: [CandidateID]?
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,29 +26,29 @@ class BarChartViewController: UIViewController {
         
         CandidateIDController.getCandidateID(stateAbrev) { (candidateIDs) in
             self.candidates = candidateIDs
-            self.checkOfficialName()
-    }
-    
-   
-    
-    
-    func checkOfficialName() {
-        guard let officialName = official?.name,
-            let candidates = self.candidates else {
-                return
+            checkOfficialName()
         }
         
-        let matchingCandidates = candidates.filter{$0.fullName == officialName}
-        if let candidate = matchingCandidates.first,
-            let id = candidate.candidateId
-        {
-            ContributorController.sharedController.fetchContributors(id, completion: { (contributoins) in
-                print(contributoins)
-            })
+        
+        
+        
+        func checkOfficialName() {
+            guard let officialName = official?.name,
+                let candidates = self.candidates else {
+                    return
+            }
+            
+            let matchingCandidates = candidates.filter{$0.fullName == officialName}
+            if let candidate = matchingCandidates.first,
+                let id = candidate.candidateId
+            {
+                ContributorController.sharedController.fetchContributors(id, completion: { (contributoins) in
+                    print(contributoins)
+                })
+                
+            }
             
         }
         
-    }
-    
-
+        
 }

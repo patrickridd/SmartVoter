@@ -105,58 +105,58 @@ class Address: NSObject, NSCoding {
                                   .SouthDakota, .Tennessee, .Texas, .Utah, .Vermont,
                                   .Virginia, .Washington, .WestVirginia, .Wisconsin, .Wyoming]
     
-    enum StateAbbreviations: String {
-        case Alabama = "AL"
-        case Alaska = "AK"
-        case Arizona = "AZ"
-        case Arkansas = "AR"
-        case California = "CA"
-        case Colorado = "CO"
-        case Connecticut = "CT"
-        case Delaware = "DE"
-        case Florida = "FL"
-        case Georgia = "GA"
-        case Hawaii = "HI"
-        case Idaho = "ID"
-        case Illinois = "IL"
-        case Indiana = "IN"
-        case Iowa = "IA"
-        case Kansas = "KS"
-        case Kentucky = "KY"
-        case Louisiana = "LA"
-        case Maine = "ME"
-        case Maryland = "MD"
-        case Massachusetts = "MA"
-        case Michigan = "MI"
-        case Minnesota = "MN"
-        case Mississippi = "MS"
-        case Missouri = "Missouri"
-        case Montana = "MT"
-        case Nebraska = "NE"
-        case Nevada = "NV"
-        case NewHampshire = "NH"
-        case NewJersey = "NJ"
-        case NewMexico = "NM"
-        case NewYork = "NY"
-        case NorthCarolina = "NC"
-        case NorthDakota = "ND"
-        case Ohio = "OH"
-        case Oklahoma = "OK"
-        case Oregon = "OR"
-        case Pennsylvania = "PA"
-        case RhodeIsland = "RI"
-        case SouthCarolina = "SC"
-        case SouthDakota = "SD"
-        case Tennessee = "TN"
-        case Texas = "TX"
-        case Utah = "UT"
-        case Vermont = "VT"
-        case Virginia = "VA"
-        case Washington = "WA"
-        case WestVirginia = "WV"
-        case Wisconsin = "WI"
-        case Wyoming = "WY"
-    }
+    var stateAbbreviations: [String : String] =
+        ["Alabama": "AL",
+         "Alaska":"AK",
+         "Arizona":"AZ",
+         "Arkansas":"AR",
+         "California":"CA",
+         "Colorado":"CO",
+         "Connecticut":"CT",
+         "Delaware":"DE",
+         "Florida":"FL",
+         "Georgia":"GA",
+         "Hawaii":"HI",
+         "Idaho":"ID",
+         "Illinois":"IL",
+         "Indiana":"IN",
+         "Iowa":"IA",
+         "Kansas":"KS",
+         "Kentucky":"KY",
+         "Louisiana":"LA",
+         "Maine":"ME",
+         "Maryland":"MD",
+         "Michigan":"MI",
+         "Massachusetts":"MA",
+         "Mississippi":"MS",
+         "Missouri":"MO",
+         "Montata":"MT",
+         "Nebraska":"NE",
+         "Nevada":"NV",
+         "NewHampshire":"NH",
+         "NewJersey":"NJ",
+         "NewMexico":"NM",
+         "NewYork":"NY",
+         "NorthCarolina":"NC",
+         "NorthDakota":"ND",
+         "Ohio":"OH",
+         "Oklahoma":"OK",
+         "Oregon":"OR",
+         "Pennsylvania":"PA",
+         "RhodeIsland":"RI",
+         "SouthCarolina":"SC",
+         "SouthDakota":"SD",
+         "Tennessee":"TN",
+         "Texas":"TX",
+         "Utah":"UT",
+         "Vermont":"VT",
+         "Virginia":"VA",
+         "Washington":"WA",
+         "WestVirginia":"WV",
+         "Wisconsin":"WI",
+         "Wyoming":"WY"]
+
+    
 }
 
 
