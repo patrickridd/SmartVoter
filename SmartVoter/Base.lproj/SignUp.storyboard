@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -47,7 +47,12 @@
                                                 <action selector="submitButtonTappedWithSender:" destination="cH9-Oo-EPV" eventType="touchUpInside" id="kAP-ff-0zw"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smart Voter" translatesAutoresizingMaskIntoConstraints="NO" id="7AR-Go-BvL"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smart Voter" translatesAutoresizingMaskIntoConstraints="NO" id="7AR-Go-BvL">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="2Yn-Su-RpV"/>
+                                                <constraint firstAttribute="height" constant="100" id="Fvg-ZW-Nps"/>
+                                            </constraints>
+                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="87c-Sg-TlJ">
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BlQ-G3-XK3">
@@ -76,17 +81,22 @@
                                                 </textField>
                                             </subviews>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your address to see your representatives and voting information." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vZ-aa-7dQ">
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="87c-Sg-TlJ" firstAttribute="leading" secondItem="dN6-wA-ElP" secondAttribute="leadingMargin" id="0ku-b9-T8c"/>
                                         <constraint firstItem="87c-Sg-TlJ" firstAttribute="centerY" secondItem="dN6-wA-ElP" secondAttribute="centerY" constant="-27" id="Hez-p5-in3"/>
-                                        <constraint firstItem="87c-Sg-TlJ" firstAttribute="top" secondItem="7AR-Go-BvL" secondAttribute="bottom" constant="29" id="L1v-aE-qnK"/>
-                                        <constraint firstItem="7AR-Go-BvL" firstAttribute="top" secondItem="dN6-wA-ElP" secondAttribute="top" constant="73" id="Nnh-6t-E39"/>
+                                        <constraint firstItem="87c-Sg-TlJ" firstAttribute="top" secondItem="5vZ-aa-7dQ" secondAttribute="bottom" constant="10" id="O1F-cg-0z1"/>
                                         <constraint firstItem="6F7-gx-GG5" firstAttribute="top" secondItem="87c-Sg-TlJ" secondAttribute="bottom" constant="50" id="Srn-ao-Pz4"/>
-                                        <constraint firstItem="7AR-Go-BvL" firstAttribute="trailing" secondItem="6F7-gx-GG5" secondAttribute="trailing" id="YjA-Bv-lRZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="5vZ-aa-7dQ" secondAttribute="trailing" constant="20" id="YUT-A8-k0f"/>
+                                        <constraint firstItem="6F7-gx-GG5" firstAttribute="centerX" secondItem="dN6-wA-ElP" secondAttribute="centerX" id="Yer-hH-mux"/>
+                                        <constraint firstItem="5vZ-aa-7dQ" firstAttribute="leading" secondItem="dN6-wA-ElP" secondAttribute="leading" constant="20" id="i3I-Jp-gS7"/>
                                         <constraint firstItem="87c-Sg-TlJ" firstAttribute="trailing" secondItem="dN6-wA-ElP" secondAttribute="trailingMargin" id="krg-sf-Avf"/>
-                                        <constraint firstItem="7AR-Go-BvL" firstAttribute="leading" secondItem="6F7-gx-GG5" secondAttribute="leading" id="p1P-fR-oFr"/>
-                                        <constraint firstItem="87c-Sg-TlJ" firstAttribute="top" secondItem="dN6-wA-ElP" secondAttribute="top" constant="213" id="tSH-tu-Tp7"/>
+                                        <constraint firstItem="5vZ-aa-7dQ" firstAttribute="top" secondItem="7AR-Go-BvL" secondAttribute="bottom" constant="25" id="mwh-Aq-8mL"/>
                                         <constraint firstItem="7AR-Go-BvL" firstAttribute="centerX" secondItem="87c-Sg-TlJ" secondAttribute="centerX" id="uP1-Gt-MvC"/>
                                     </constraints>
                                 </view>

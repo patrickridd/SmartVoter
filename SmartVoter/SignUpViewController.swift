@@ -50,7 +50,6 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         back.translatesAutoresizingMaskIntoConstraints = false
         forward.translatesAutoresizingMaskIntoConstraints = false
         
-        
         doneButton.backgroundColor = .clearColor()
         doneButton.setTitle("Done", forState: .Normal)
         doneButton.setTitleColor(.whiteColor(), forState: .Normal)
@@ -157,6 +156,14 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         streetText.delegate = self
         cityText.delegate = self
         zipText.delegate = self
+        streetText.attributedPlaceholder = NSAttributedString(string:"Street",
+                                                               attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+        cityText.attributedPlaceholder = NSAttributedString(string:"City",
+                                                              attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+        zipText.attributedPlaceholder = NSAttributedString(string:"Zip",
+                                                              attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+        stateText.attributedPlaceholder = NSAttributedString(string:"State",
+                                                              attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
     }
     
 
