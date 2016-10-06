@@ -60,6 +60,11 @@
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wl-a6-Fbs">
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="U3e-rf-eBI">
@@ -104,6 +109,16 @@
                                                                     <state key="normal" image="BradMailFade"/>
                                                                     <connections>
                                                                         <action selector="emailButtonTapped:" destination="NEf-vV-1NR" eventType="touchUpInside" id="mmz-AY-yew"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chT-5F-DtP">
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="35" id="FZl-A7-7In"/>
+                                                                        <constraint firstAttribute="width" constant="35" id="MXo-Yf-AVx"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Button" image="LineGraph"/>
+                                                                    <connections>
+                                                                        <segue destination="DOF-VU-1DA" kind="show" id="Pbb-Mz-2uU"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -313,6 +328,7 @@
         <image name="BradSafariFade" width="50" height="50"/>
         <image name="Facebook Filled" width="50" height="50"/>
         <image name="GooglePlus" width="50" height="50"/>
+        <image name="LineGraph" width="100" height="100"/>
         <image name="Twitter" width="50" height="50"/>
         <image name="YouTube" width="50" height="50"/>
     </resources>
