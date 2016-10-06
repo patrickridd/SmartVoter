@@ -52,7 +52,7 @@ class PageViewController: UIPageViewController {
         
         pageControl.currentPageIndicatorTintColor = UIColor.bradsBlue()
         pageControl.pageIndicatorTintColor = UIColor.whiteColor()
-        pageControl.backgroundColor = UIColor.clearColor()
+        pageControl.backgroundColor = UIColor.navigationRed()
     }
     
     

@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="united-states-capitol-building-picture" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-yS-8Sv"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="united-states-capitol-building-picture-1" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-yS-8Sv"/>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy6-Oe-OH4">
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dN6-wA-ElP">
                                     <frame key="frameInset"/>
@@ -59,25 +59,25 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jI-n8-88d">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkn-YH-9pB">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-Sh-wgW">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                         </stackView>
@@ -116,13 +116,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dy6-Oe-OH4" firstAttribute="trailing" secondItem="d6H-yS-8Sv" secondAttribute="trailing" id="0Xy-ib-UUT"/>
                             <constraint firstItem="d6H-yS-8Sv" firstAttribute="leading" secondItem="fvD-O3-FjZ" secondAttribute="leading" id="1r8-73-Cy9"/>
+                            <constraint firstItem="dy6-Oe-OH4" firstAttribute="leading" secondItem="fvD-O3-FjZ" secondAttribute="leadingMargin" constant="-20" id="3SO-k1-fMs"/>
                             <constraint firstItem="dy6-Oe-OH4" firstAttribute="bottom" secondItem="mE9-ek-UFx" secondAttribute="top" id="9ff-VU-IQR"/>
                             <constraint firstItem="dy6-Oe-OH4" firstAttribute="top" secondItem="d6H-yS-8Sv" secondAttribute="top" id="MZZ-vn-k9q"/>
                             <constraint firstItem="d6H-yS-8Sv" firstAttribute="bottom" secondItem="mE9-ek-UFx" secondAttribute="top" id="VB1-R9-HRc"/>
                             <constraint firstAttribute="trailing" secondItem="d6H-yS-8Sv" secondAttribute="trailing" id="VSo-ml-zES"/>
-                            <constraint firstItem="dy6-Oe-OH4" firstAttribute="leading" secondItem="d6H-yS-8Sv" secondAttribute="leading" id="bLW-pc-HXl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dy6-Oe-OH4" secondAttribute="trailing" constant="-20" id="Vlg-OV-iFK"/>
                             <constraint firstItem="d6H-yS-8Sv" firstAttribute="top" secondItem="fvD-O3-FjZ" secondAttribute="top" id="io6-xR-oZ0"/>
                         </constraints>
                     </view>
@@ -149,6 +149,6 @@
     </scenes>
     <resources>
         <image name="Smart Voter" width="402" height="402"/>
-        <image name="united-states-capitol-building-picture" width="1920" height="1200"/>
+        <image name="united-states-capitol-building-picture-1" width="828" height="1472"/>
     </resources>
 </document>
