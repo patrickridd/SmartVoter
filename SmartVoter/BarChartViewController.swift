@@ -19,18 +19,17 @@ class BarChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guard let stateID = ProfileController.sharedController.loadAddress() else { return }
         let myKey = stateID.state.stringByReplacingOccurrencesOfString(" ", withString: "", options: [], range: nil)
         guard let stateAbrev = stateID.stateAbbreviations[myKey] else {return }
         
         CandidateIDController.getCandidateID(stateAbrev) { (candidateIDs) in
             self.candidates = candidateIDs
-            checkOfficialName()
+            
         }
-        
-        
-        
+     checkOfficialName()
+    }
+    
         
         func checkOfficialName() {
             guard let officialName = official?.name,

@@ -14,7 +14,7 @@ class CandidateIDController {
     static let apiKey = "37ae7a868a4d18f7a8bb41383e006cb1"
     static let baseURL = NSURL(string: "http://www.opensecrets.org/api/?method=getLegislators")
     
-    static func getCandidateID(id: String, completion: (candidateID: CandidateID?)-> Void) {
+    static func getCandidateID(id: String, completion: (candidateID: [CandidateID]?)-> Void) {
         guard let url = baseURL else{
             print("NO URL FOUND (CandidateIDController)")
             return
@@ -29,12 +29,16 @@ class CandidateIDController {
             }
             guard let jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String: AnyObject],
                 responseDictionary = jsonDictionary["response"] as? [String: AnyObject],
-                legislatorDictionary = responseDictionary["legislator"] as? [[String: AnyObject]] else {
+                legislatorDictionary = responseDictionary["legislator"] as? [[String: AnyObject]]
+                else {
                     print("Unable to Serialize JSON: \(responseDataString)")
                     return }
+            print(legislatorDictionary)
             
             let candidateIDs = legislatorDictionary.flatMap{CandidateID(dictionary: $0)}
             let _ = candidateIDs
+            completion(candidateID: candidateIDs)
+            
         }
     }
 }
