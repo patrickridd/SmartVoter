@@ -60,14 +60,23 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         streetAddressLabel.text = "Office Address"
         emailLabel.text = "E-mail"
         socialMediaLabel.text = "Social Media"
-        
-        partyLabel.text = "\(official.party ?? "Representative did not provide party affiliation") Party"
+        if official.party != nil {
+            guard let party = official.party else { return }
+            partyLabel.text = "\(party) Party"
+        } else {
+            partyLabel.text = "Party affiliation information is unavailable"
+        }
         if let photoURL = official.photoURL {
             if let photo = official.image {
                 self.officialImageView.image = photo
             } else {
                 ImageController.imageForURL(photoURL) { (image) in
-                    self.officialImageView.image = image
+                    if image != nil {
+                        self.officialImageView.image = image
+                    } else {
+                        guard let state = ProfileController.sharedController.address?.state.capitalizedString else { return }
+                        self.officialImageView.image = UIImage(named: "\(state)-flag-large")
+                    }
                 }
             }
         } else {
@@ -136,11 +145,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
             presentViewController(alertController, animated: true, completion: nil)
         }
     }
-    //    func open(scheme: String) {
-    //        if let url = NSURL(string: scheme) {
-    //            UIApplication.sharedApplication().canOpenURL(url)
-    //        }
-    //    }
     
     @IBAction func facebookButtonTapped(sender: AnyObject) {
         guard let socialArray = official?.social else { return }
@@ -173,7 +177,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
                     } else {
                         UIApplication.sharedApplication().openURL(NSURL(string: "https://www.facebook.com/\(id)")!)
                     }
-                    
                 }
             }
         }
@@ -187,8 +190,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
                 guard let googlePlusURL = NSURL(string: "gplus://plus.google.com/u/0/\(id)") else { return }
                 if UIApplication.sharedApplication().canOpenURL(googlePlusURL) {
                     UIApplication.sharedApplication().openURL(googlePlusURL)
-                    //                } else {
-                    //                    UIApplication.sharedApplication().openURL(NSURL(string: "https://plus.google.com/PageId")!)
                 } else {
                     let googlePlusURL = "https://plus.google.com/\(id)"
                     guard let urls = NSURL(string: googlePlusURL) else { return }
@@ -229,7 +230,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         }
     }
     
-    
     @IBAction func twittlerButtonTapped(sender: AnyObject) {
         guard let socialArray = official?.social else { return }
         for social in socialArray {
@@ -254,7 +254,6 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         }
     }
     
-    
     // MARK: Email helper functions
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
@@ -267,7 +266,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     }
     
     func showSendMailErrorAlert() {
-        _ = UIAlertController(title:"Could Not Send Email" , message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
+        _ = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration in settings and try again.", preferredStyle: .Alert)
     }
     
     // MARK: MFMailComposeViewControllerDelegate Method
@@ -286,12 +285,10 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     }
     
     func upDateBackgroundColor () {
-        
         backgroundImage.image = backgroundImage.image?.imageWithRenderingMode(.AlwaysTemplate)
         if official?.party == "Democratic" {
             backgroundImage.backgroundColor = UIColor.bradsBlue()
         } else if official?.party == "Republican" {
-            
             backgroundImage.backgroundColor = UIColor.navigationRed()
         }
     }
