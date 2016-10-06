@@ -43,6 +43,7 @@
 		21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */; };
 		21F1C6891DA71777004D3309 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F1C67C1DA7176B004D3309 /* Charts.framework */; };
 		21F1C68A1DA71777004D3309 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21F1C67C1DA7176B004D3309 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21F1C69D1DA71A38004D3309 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F1C69C1DA71A38004D3309 /* Info.plist */; };
 		510145F31D9EE16E0028E36A /* CandidateIDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510145F21D9EE16E0028E36A /* CandidateIDController.swift */; };
 		5159E6AA1D9995A200B41F65 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5159E6A81D9995A200B41F65 /* SignUp.storyboard */; };
 		5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */; };
@@ -160,7 +161,6 @@
 		21E726E31D90914900ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21E726E51D90914900ADC64F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21E726E81D90914900ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		21E726EA1D90914900ADC64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21E726EF1D90914900ADC64F /* SmartVoterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartVoterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E726F31D90914900ADC64F /* SmartVoterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartVoterTests.swift; sourceTree = "<group>"; };
 		21E726F51D90914900ADC64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -502,6 +502,7 @@
 		21F1C6721DA7176B004D3309 /* testIsCubic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIsCubic@3x.png"; sourceTree = "<group>"; };
 		21F1C6741DA7176B004D3309 /* ChartsRealmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsRealmTest.swift; sourceTree = "<group>"; };
 		21F1C6761DA7176B004D3309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F1C69C1DA71A38004D3309 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		510145F21D9EE16E0028E36A /* CandidateIDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateIDController.swift; sourceTree = "<group>"; };
 		5159E6A91D9995A200B41F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -572,7 +573,7 @@
 				21E727041D90958400ADC64F /* View Controller */,
 				A223503F1D9434280023F2BC /* Storyboards */,
 				21E726E51D90914900ADC64F /* Assets.xcassets */,
-				21E726EA1D90914900ADC64F /* Info.plist */,
+				21F1C69C1DA71A38004D3309 /* Info.plist */,
 			);
 			path = SmartVoter;
 			sourceTree = "<group>";
@@ -1513,6 +1514,7 @@
 				21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */,
 				210C06B51DA6F94300C3FAB1 /* TabBarTwo.storyboard in Resources */,
 				A20F69911D9F172C0058227D /* ReferendumDetail.storyboard in Resources */,
+				21F1C69D1DA71A38004D3309 /* Info.plist in Resources */,
 				215E6EA21D9ADC99009E75EC /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
