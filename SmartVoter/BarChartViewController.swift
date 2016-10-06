@@ -81,10 +81,11 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Money Spent")
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Money provided in US Dollars")
         let chartData = BarChartData(xVals: organizations, dataSet: chartDataSet)
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         barChartView.xAxis.labelPosition = .Bottom
+        chartDataSet.colors = ChartColorTemplates.colorful()
         barChartView.data = chartData
         
     }
@@ -92,4 +93,10 @@ class BarChartViewController: UIViewController,  ChartViewDelegate {
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         print("\(entry.value) \(organizations![entry.xIndex])")
     }
+    
+    @IBAction func saveChart(sender: AnyObject) {
+        barChartView.saveToCameraRoll()
+    }
+    
+    
 }

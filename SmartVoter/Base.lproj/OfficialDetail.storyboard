@@ -257,7 +257,7 @@
             </objects>
             <point key="canvasLocation" x="1244" y="653.52323838080963"/>
         </scene>
-        <!--Bar Chart View Controller-->
+        <!--Title-->
         <scene sceneID="ISz-lv-Nso">
             <objects>
                 <viewController id="DOF-VU-1DA" customClass="BarChartViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
@@ -275,20 +275,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l8c-Ih-HMv" firstAttribute="top" secondItem="T1w-9R-Wch" secondAttribute="bottom" id="3pn-TB-8Rs"/>
-                            <constraint firstItem="l8c-Ih-HMv" firstAttribute="leading" secondItem="sYj-NV-ixh" secondAttribute="leading" id="KYa-vU-2ST"/>
-                            <constraint firstItem="5qJ-lf-DgA" firstAttribute="top" secondItem="l8c-Ih-HMv" secondAttribute="bottom" id="c6K-mQ-EoH"/>
-                            <constraint firstAttribute="trailing" secondItem="l8c-Ih-HMv" secondAttribute="trailing" id="db7-jy-hAd"/>
+                            <constraint firstItem="l8c-Ih-HMv" firstAttribute="top" secondItem="T1w-9R-Wch" secondAttribute="bottom" id="NTk-ep-B7T"/>
+                            <constraint firstItem="5qJ-lf-DgA" firstAttribute="top" secondItem="l8c-Ih-HMv" secondAttribute="bottom" id="TVC-Ik-hGE"/>
+                            <constraint firstItem="l8c-Ih-HMv" firstAttribute="leading" secondItem="sYj-NV-ixh" secondAttribute="leading" id="gM6-ya-Own"/>
+                            <constraint firstAttribute="trailing" secondItem="l8c-Ih-HMv" secondAttribute="trailing" id="lwR-uR-9Y3"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="W0D-nr-zty">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Hhb-bG-bpm">
+                            <connections>
+                                <action selector="saveChart:" destination="DOF-VU-1DA" id="VME-bV-Tus"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barChartView" destination="l8c-Ih-HMv" id="lbQ-eh-ju8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMd-7V-SEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="1355"/>
+            <point key="canvasLocation" x="1244" y="1354.2728635682161"/>
         </scene>
         <!--Official Address Map View Controller-->
         <scene sceneID="N68-hI-F6n">
