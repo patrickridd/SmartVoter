@@ -11,7 +11,7 @@ import Foundation
 
 class CandidateID {
     
-    private let kFullName = "fistlast"
+    private let kFullName = "firstlast"
     private let kID = "cid"
     private let kResponse = "response"
     private let kAttributes = "@attributes"

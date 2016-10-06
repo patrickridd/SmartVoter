@@ -11,15 +11,15 @@ import Foundation
 class Contributions {
     
     private let kResponse = "response"
-    private let kContributor = "contributor"
+    private let kContributor =  "contributor"
     private let kContributors = "contributors"
     private let kAttributes = "@attributes"
     private let kFullName = "cand_name"
     private let kOrganization = "org_name"
-    private let kTotoal = "total"
+    private let kTotal = "total"
    
-    var organization: String?
-    var total: String?
+    var organizations: [String]? = []
+    var totals: [NSString]? = []
     
     init?(dictionary: [String: AnyObject])  {
         
@@ -30,9 +30,9 @@ class Contributions {
         for contributor in contributorArray {
             guard let attributesDictionary = contributor[kAttributes] as? [String : AnyObject],
             let organization = attributesDictionary[kOrganization] as? String,
-                let total = attributesDictionary[kTotoal] as? String else { return nil }
-            self.organization = organization
-            self.total = total
+                let total = attributesDictionary[kTotal] as? NSString else { return nil }
+            self.organizations?.append(organization)
+            self.totals?.append(total)
         }
     }
 }
