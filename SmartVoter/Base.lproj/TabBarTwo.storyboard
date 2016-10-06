@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Two View Controller-->
+        <scene sceneID="jbd-Ln-Wh7">
+            <objects>
+                <viewController storyboardIdentifier="TabBarTwo" id="5pd-Ry-ssJ" customClass="TabBarTwoViewController" customModule="SmartVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JPi-aY-mVm"/>
+                        <viewControllerLayoutGuide type="bottom" id="feO-Ma-NZW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q4n-P7-jR7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="secondTabBar" translatesAutoresizingMaskIntoConstraints="NO" id="fS7-Fn-419"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fS7-Fn-419" secondAttribute="trailing" id="Vk5-j6-Cgt"/>
+                            <constraint firstItem="fS7-Fn-419" firstAttribute="top" secondItem="JPi-aY-mVm" secondAttribute="bottom" constant="-20" id="Z28-C1-L0d"/>
+                            <constraint firstItem="feO-Ma-NZW" firstAttribute="top" secondItem="fS7-Fn-419" secondAttribute="bottom" id="r6l-s8-bns"/>
+                            <constraint firstItem="fS7-Fn-419" firstAttribute="leading" secondItem="Q4n-P7-jR7" secondAttribute="leading" id="vxd-ZJ-rBA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="fS7-Fn-419" id="G5l-RG-hHx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzU-W6-Sg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2356" y="329"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="secondTabBar" width="414" height="736"/>
+    </resources>
+</document>

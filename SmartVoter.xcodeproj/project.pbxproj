@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		210C06A01DA6C7EB00C3FAB1 /* PageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210C069F1DA6C7EB00C3FAB1 /* PageViewController.storyboard */; };
 		210C06A21DA6C8B800C3FAB1 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C06A11DA6C8B800C3FAB1 /* PageViewController.swift */; };
+		210C06A61DA6F09700C3FAB1 /* TabBarOneUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C06A51DA6F09700C3FAB1 /* TabBarOneUIViewController.swift */; };
+		210C06A91DA6F49300C3FAB1 /* TabBarOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210C06A71DA6F49300C3FAB1 /* TabBarOne.storyboard */; };
+		210C06AD1DA6F65900C3FAB1 /* TabBarTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C06AC1DA6F65900C3FAB1 /* TabBarTwoViewController.swift */; };
+		210C06B51DA6F94300C3FAB1 /* TabBarTwo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210C06B31DA6F94300C3FAB1 /* TabBarTwo.storyboard */; };
+		210C06B71DA6FA5800C3FAB1 /* TabBarThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C06B61DA6FA5800C3FAB1 /* TabBarThreeViewController.swift */; };
+		210C06BC1DA6FA9C00C3FAB1 /* TabBarThree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210C06BA1DA6FA9C00C3FAB1 /* TabBarThree.storyboard */; };
 		2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */; };
 		215E6EA21D9ADC99009E75EC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215E6EA11D9ADC99009E75EC /* Settings.storyboard */; };
 		215E6EA41D9AE374009E75EC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */; };
@@ -84,6 +90,12 @@
 /* Begin PBXFileReference section */
 		210C069F1DA6C7EB00C3FAB1 /* PageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PageViewController.storyboard; sourceTree = "<group>"; };
 		210C06A11DA6C8B800C3FAB1 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		210C06A51DA6F09700C3FAB1 /* TabBarOneUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarOneUIViewController.swift; sourceTree = "<group>"; };
+		210C06A81DA6F49300C3FAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarOne.storyboard; sourceTree = "<group>"; };
+		210C06AC1DA6F65900C3FAB1 /* TabBarTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarTwoViewController.swift; sourceTree = "<group>"; };
+		210C06B41DA6F94300C3FAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarTwo.storyboard; sourceTree = "<group>"; };
+		210C06B61DA6FA5800C3FAB1 /* TabBarThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarThreeViewController.swift; sourceTree = "<group>"; };
+		210C06BB1DA6FA9C00C3FAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarThree.storyboard; sourceTree = "<group>"; };
 		2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateTableViewCell.swift; sourceTree = "<group>"; };
 		215E6EA11D9ADC99009E75EC /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +227,9 @@
 				A290B9291D99C54800A7C34C /* CustomTabBarController.swift */,
 				215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */,
 				210C06A11DA6C8B800C3FAB1 /* PageViewController.swift */,
+				210C06A51DA6F09700C3FAB1 /* TabBarOneUIViewController.swift */,
+				210C06AC1DA6F65900C3FAB1 /* TabBarTwoViewController.swift */,
+				210C06B61DA6FA5800C3FAB1 /* TabBarThreeViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -256,8 +271,11 @@
 		A223503F1D9434280023F2BC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5159E6A81D9995A200B41F65 /* SignUp.storyboard */,
 				21E726E21D90914900ADC64F /* Main.storyboard */,
+				210C06BA1DA6FA9C00C3FAB1 /* TabBarThree.storyboard */,
+				210C06B31DA6F94300C3FAB1 /* TabBarTwo.storyboard */,
+				5159E6A81D9995A200B41F65 /* SignUp.storyboard */,
+				210C06A71DA6F49300C3FAB1 /* TabBarOne.storyboard */,
 				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
 				A20F69901D9F172C0058227D /* ReferendumDetail.storyboard */,
 				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
@@ -358,14 +376,17 @@
 			files = (
 				21E726E91D90914900ADC64F /* LaunchScreen.storyboard in Resources */,
 				21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */,
+				210C06BC1DA6FA9C00C3FAB1 /* TabBarThree.storyboard in Resources */,
 				5159E6AA1D9995A200B41F65 /* SignUp.storyboard in Resources */,
 				21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */,
+				210C06A91DA6F49300C3FAB1 /* TabBarOne.storyboard in Resources */,
 				210C06A01DA6C7EB00C3FAB1 /* PageViewController.storyboard in Resources */,
 				21E726E61D90914900ADC64F /* Assets.xcassets in Resources */,
 				21E727181D919D2300ADC64F /* Profile.storyboard in Resources */,
 				21E726E41D90914900ADC64F /* Main.storyboard in Resources */,
 				21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */,
 				21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */,
+				210C06B51DA6F94300C3FAB1 /* TabBarTwo.storyboard in Resources */,
 				A20F69911D9F172C0058227D /* ReferendumDetail.storyboard in Resources */,
 				215E6EA21D9ADC99009E75EC /* Settings.storyboard in Resources */,
 			);
@@ -387,16 +408,19 @@
 			files = (
 				519B097A1D92F48000D3149F /* Contest.swift in Sources */,
 				21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */,
+				210C06A61DA6F09700C3FAB1 /* TabBarOneUIViewController.swift in Sources */,
 				518E624C1D92EB90008AAC2C /* Office.swift in Sources */,
 				648BA9781D9DBD9400B95D31 /* ContributorController.swift in Sources */,
 				648BA9741D9DB99F00B95D31 /* Contributions.swift in Sources */,
 				21E726FF1D90941E00ADC64F /* ProfileViewController.swift in Sources */,
 				21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */,
 				648BA9761D9DB9B800B95D31 /* CandidateID.swift in Sources */,
+				210C06B71DA6FA5800C3FAB1 /* TabBarThreeViewController.swift in Sources */,
 				51C2D3341D934CAF0018109E /* OfficialAddressMapViewController.swift in Sources */,
 				640411621D91DF2800B57A4C /* Address.swift in Sources */,
 				2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */,
 				21648E701D922E5800B966ED /* ProfileController.swift in Sources */,
+				210C06AD1DA6F65900C3FAB1 /* TabBarTwoViewController.swift in Sources */,
 				A20F69931D9F1CD20058227D /* ReferendumDetailViewController.swift in Sources */,
 				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
 				A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */,
@@ -443,6 +467,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		210C06A71DA6F49300C3FAB1 /* TabBarOne.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210C06A81DA6F49300C3FAB1 /* Base */,
+			);
+			name = TabBarOne.storyboard;
+			sourceTree = "<group>";
+		};
+		210C06B31DA6F94300C3FAB1 /* TabBarTwo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210C06B41DA6F94300C3FAB1 /* Base */,
+			);
+			name = TabBarTwo.storyboard;
+			sourceTree = "<group>";
+		};
+		210C06BA1DA6FA9C00C3FAB1 /* TabBarThree.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210C06BB1DA6FA9C00C3FAB1 /* Base */,
+			);
+			name = TabBarThree.storyboard;
+			sourceTree = "<group>";
+		};
 		21E726E21D90914900ADC64F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

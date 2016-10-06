@@ -45,8 +45,8 @@ class SettingsTableViewController: UITableViewController {
     
     /// Changes the view to show textfields and blurview so the user can update their address.
     @IBAction func updateAddressButtonTappedWithSender(sender: AnyObject) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let signUpVC = storyBoard.instantiateViewControllerWithIdentifier("SignUpViewController")
+        let storyBoard = UIStoryboard(name: "SignUp", bundle: nil)
+        let signUpVC = storyBoard.instantiateViewControllerWithIdentifier("SignUp")
         
         self.presentViewController(signUpVC, animated: true, completion: nil)
     }

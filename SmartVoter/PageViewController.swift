@@ -11,13 +11,14 @@ import UIKit
 class PageViewController: UIPageViewController {
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [self.instantiateViewController("SignUpViewController")]
+        return [self.instantiateViewController("TabBarOne"),self.instantiateViewController("TabBarTwo"), self.instantiateViewController("TabBarThree"), self.instantiateViewController("SignUpViewController")]
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
-
+        stylePageControl()
+        
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
                                direction: .Forward,
@@ -46,6 +47,13 @@ class PageViewController: UIPageViewController {
         return firstViewControllerIndex
     }
     
+    private func stylePageControl() {
+        let pageControl = UIPageControl.appearanceWhenContainedInInstancesOfClasses([self.dynamicType])
+        
+        pageControl.currentPageIndicatorTintColor = UIColor.bradsBlue()
+        pageControl.pageIndicatorTintColor = UIColor.whiteColor()
+        pageControl.backgroundColor = UIColor.clearColor()
+    }
     
     
     
