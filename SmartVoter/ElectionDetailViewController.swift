@@ -37,8 +37,6 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
         
         let electionDay = ElectionController.dateToStringFormatter.stringFromDate(electionNSDate)
     
-        
-       // let electionDay = ElectionController.dateToStringFormatter.stringFromDate(electionNewDate)
         dateLabel.text = "Election Day: \(electionDay)"
         if contest.type == "General" {
             electionTypeLabel.text = contest.office
@@ -48,8 +46,12 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
             descriptionLabel.text = contest.referendumSubtitle?.capitalizedString
             tableView.hidden = true
         }
-        guard let state = ProfileController.sharedController.address?.state.capitalizedString else { return }
-        iconImageView.image = UIImage(named: "\(state)-flag-large")
+        if contest.level == "country" {
+            iconImageView.image = UIImage(named: "AmericanFlag")
+        } else {
+            guard let state = ProfileController.sharedController.address?.state.capitalizedString else { return }
+            iconImageView.image = UIImage(named: "\(state)-flag-large")
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

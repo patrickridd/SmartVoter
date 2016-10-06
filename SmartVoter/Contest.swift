@@ -12,6 +12,7 @@ class Contest {
     
     var type: String
     var scope: String
+    var level: String?
     var office: String?
     var candidates: [Candidate]?
     var referendumTitle: String?
@@ -28,6 +29,11 @@ class Contest {
         if type == "General" {
             let office = dictionary["office"] as? String
             self.office = office
+            if let levelArray = dictionary["level"] as? [String], let level = levelArray.first {
+                self.level = level
+            } else {
+                self.level = nil
+            }
             
         } else if type == "Referendum" {
             let referendumTitle = dictionary["referendumTitle"] as? String
