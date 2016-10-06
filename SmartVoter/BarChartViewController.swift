@@ -9,13 +9,16 @@
 import UIKit
 import Charts
 
-class BarChartViewController: UIViewController {
+class BarChartViewController: UIViewController,  ChartViewDelegate {
     
     @IBOutlet weak var barChartView: BarChartView!
     
     var official: Official?
     var candidates: [CandidateID]?
     var months: [String]!
+    var contributors: Contributions?
+    var organizations: [String]?
+    var totals: [Double]?
     
     
     override func viewDidLoad() {
@@ -26,15 +29,11 @@ class BarChartViewController: UIViewController {
         
         CandidateIDController.getCandidateID(stateAbrev) { (candidateIDs) in
             self.candidates = candidateIDs
+            self.checkOfficialName()
             
         }
-        checkOfficialName()
         
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-        
-        setChart(months, values: unitsSold)
-        
+        barChartView.delegate = self
         
     }
     
@@ -49,9 +48,26 @@ class BarChartViewController: UIViewController {
         if let candidate = matchingCandidates.first,
             let id = candidate.candidateId
         {
-            ContributorController.sharedController.fetchContributors(id, completion: { (contributoins) in
-                print(contributoins)
+            ContributorController.sharedController.fetchContributors(id, completion: { (contributions) in
+                print(contributions)
+                self.contributors = contributions
+                guard let contributors = contributions,
+                    let organizations = contributors.organizations else { return }
+                let totals = self.contributors?.totals
+                self.organizations = organizations
+                
+                var totalsAsDouble: [Double] {
+                    var totalsArray: [Double] = []
+                    guard let totals = totals else { return [] }
+                    for total in totals {
+                        totalsArray.append(total.doubleValue)
+                    }
+                    return totalsArray
+                }
+                self.totals = totalsAsDouble
+                self.setChart(organizations, values: totalsAsDouble)
             })
+            
             
         }
         
@@ -66,8 +82,14 @@ class BarChartViewController: UIViewController {
         }
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Money Spent")
-        let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        let chartData = BarChartData(xVals: organizations, dataSet: chartDataSet)
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        barChartView.xAxis.labelPosition = .Bottom
         barChartView.data = chartData
         
+    }
+  
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
+        print("\(entry.value) \(organizations![entry.xIndex])")
     }
 }

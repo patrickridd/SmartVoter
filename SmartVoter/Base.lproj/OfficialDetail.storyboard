@@ -118,7 +118,7 @@
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="LineGraph"/>
                                                                     <connections>
-                                                                        <segue destination="DOF-VU-1DA" kind="show" id="Pbb-Mz-2uU"/>
+                                                                        <segue destination="DOF-VU-1DA" kind="show" identifier="barViewSegue" id="Pbb-Mz-2uU"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>

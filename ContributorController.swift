@@ -15,12 +15,12 @@ class ContributorController {
     static let baseURL = "http://www.opensecrets.org/api/"
     
     init() {
-        fetchContributors("N00007360") { (contributoins) in
+        fetchContributors("N00007360") { (contributions) in
             //
         }
     }
     
-    func fetchContributors (id: String, completion: (contributoins: [Contributions]) -> Void) {
+    func fetchContributors (id: String, completion: (contributions: Contributions?) -> Void) {
         let url = NSURL(string: ContributorController.baseURL)
         let urlParamaters = ["method" : "candContrib", "cid" : id, "apikey" : ContributorController.apiKey, "output" : "json"]
         
@@ -35,10 +35,12 @@ class ContributorController {
             }
             guard let  jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String : AnyObject] else {
                 print("Error serialization failed \(error?.localizedDescription)")
-                completion(contributoins: [])
+                completion(contributions: nil)
                 return
             }
-            print (jsonDictionary)
+            
+            let contributions = Contributions(dictionary: jsonDictionary)
+            completion(contributions: contributions)
         }
     }
 }
