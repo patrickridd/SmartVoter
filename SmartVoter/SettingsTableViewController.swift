@@ -176,7 +176,8 @@ class SettingsTableViewController: UITableViewController {
         guard let address = ProfileController.sharedController.loadAddress() else {
             return
         }
-        let allCapsAddress = address.asAString.uppercaseString
+        
+        let allCapsAddress = address.asAString.capitalizedString
         self.livingAddress.text = allCapsAddress
     }
     
