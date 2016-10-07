@@ -19,6 +19,7 @@ class OfficialController {
         var federalOfficials: [Official] = []
         var stateOfficials: [Official] = []
         var localOfficials: [Official] = []
+      
         for official in OfficialController.officials {
             guard let office = official.office else { return [] }
             if office.division.containsString("county") {
@@ -30,7 +31,6 @@ class OfficialController {
                     stateOfficials.append(official)
                 }
             } else if office.division.containsString("country") {
-                
                 if office.name.lowercaseString == "president of the united states" {
                     federalOfficials.insert(official, atIndex: 0)
                 } else if office.name.lowercaseString == "vice-president of the united states" {

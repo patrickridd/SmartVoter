@@ -21,11 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-pR-84w">
-                                <frame key="frameInset" width="1000" height="1000"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Places to Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-xM-ueK">
-                                <frame key="frameInset" width="1000" height="1000"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-pR-84w"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places to Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYi-xM-ueK">
                                 <color key="backgroundColor" red="0.78352540731430054" green="0.3855588436126709" blue="0.38459816575050354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="czT-QO-AUE"/>
@@ -34,8 +31,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRo-3A-EhA">
-                                <frame key="frameInset" width="375" height="618"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRo-3A-EhA">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-zm-v7r">
                                         <color key="backgroundColor" red="0.1040595993" green="0.36065834759999998" blue="0.56003087760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,31 +57,25 @@
                                     <constraint firstItem="E3v-zm-v7r" firstAttribute="centerX" secondItem="cRo-3A-EhA" secondAttribute="centerX" constant="5" id="xuy-Cb-1vB"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
-                                <frame key="frameInset" width="323" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
-                                        <frame key="frameInset" width="273" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Election's Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
-                                                <frame key="frameInset" width="273" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Election's Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Election's Office Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
-                                                <frame key="frameInset" minY="45" width="273" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election's Office Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-bl-H51">
-                                        <frame key="frameInset" minX="288" width="35" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-bl-H51">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
-                                                <frame key="frameInset" width="35" height="35"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pCB-cP-Ll1" secondAttribute="height" multiplier="1:1" id="XUP-xC-mPC"/>
                                                     <constraint firstAttribute="height" constant="35" id="bp7-F2-aZG"/>
@@ -96,8 +86,7 @@
                                                     <action selector="safariButtonTappedWithSender:" destination="87Y-Os-bYy" eventType="touchUpInside" id="2Xw-2y-ydx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
-                                                <frame key="frameInset" minY="45" width="35" height="35"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="KXK-P7-qBV"/>
                                                     <constraint firstAttribute="width" constant="35" id="g5g-SR-xcy"/>
@@ -112,13 +101,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Fu7-ZG-lg4">
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cRo-3A-EhA" firstAttribute="bottom" secondItem="Qm6-T3-eQo" secondAttribute="top" id="2Jc-qa-Sih"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leading" id="3RV-ms-0fz"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="height" secondItem="5s6-SN-HCw" secondAttribute="height" multiplier="2/5" id="5Zd-0R-opO"/>
+                            <constraint firstItem="Fu7-ZG-lg4" firstAttribute="top" secondItem="Jc5-pR-84w" secondAttribute="bottom" constant="9" id="79a-wL-jQZ"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="trailing" secondItem="cRo-3A-EhA" secondAttribute="trailing" id="8i8-qt-mD5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fu7-ZG-lg4" secondAttribute="trailing" constant="5" id="Hsn-Hs-aDx"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="trailing" secondItem="Jc5-pR-84w" secondAttribute="trailing" id="ShD-E1-2qV"/>
                             <constraint firstItem="Jc5-pR-84w" firstAttribute="top" secondItem="ioK-8x-i9j" secondAttribute="bottom" id="U0i-pc-2Z1"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="leading" secondItem="5s6-SN-HCw" secondAttribute="leadingMargin" constant="10" id="byI-fm-IJw"/>
@@ -130,6 +124,7 @@
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="Jc5-pR-84w" secondAttribute="leading" id="t1K-zk-0X3"/>
                             <constraint firstItem="YYi-xM-ueK" firstAttribute="leading" secondItem="cRo-3A-EhA" secondAttribute="leading" id="wmJ-Gw-ZWb"/>
                             <constraint firstItem="xMH-8P-82t" firstAttribute="top" secondItem="YYi-xM-ueK" secondAttribute="bottom" constant="30" id="xkR-sq-heY"/>
+                            <constraint firstItem="cRo-3A-EhA" firstAttribute="top" secondItem="Fu7-ZG-lg4" secondAttribute="bottom" constant="9" id="xnZ-VW-jHg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="B46-k1-fZG"/>
@@ -137,6 +132,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Fu7-ZG-lg4" id="aPQ-LH-ui9"/>
                         <outlet property="electionWebsiteLabel" destination="WfB-ht-Zj8" id="1PS-M0-fre"/>
                         <outlet property="mapView" destination="Jc5-pR-84w" id="C7V-ZH-dhI"/>
                         <outlet property="phoneNumberButton" destination="nab-QL-60O" id="Roi-5Q-3sq"/>

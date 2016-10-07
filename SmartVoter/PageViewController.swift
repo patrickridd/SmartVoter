@@ -11,7 +11,7 @@ import UIKit
 class PageViewController: UIPageViewController {
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [self.instantiateViewController("TabBarOne"),self.instantiateViewController("TabBarTwo"), self.instantiateViewController("TabBarThree"), self.instantiateViewController("SignUpViewController")]
+        return [self.instantiateViewController("IntroductionID"),self.instantiateViewController("TabBarOne"),self.instantiateViewController("TabBarTwo"), self.instantiateViewController("TabBarThree"), self.instantiateViewController("SignUpViewController")]
     }()
     
     override func viewDidLoad() {

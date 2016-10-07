@@ -15,6 +15,7 @@ private var kAssociationKeyNextField: UInt8 = 0
 
 class ProfileViewController: UIViewController, MKMapViewDelegate {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var registerToVoteLabel: UIButton!
     @IBOutlet weak var placesToVoteLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -43,6 +44,7 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
     }
     
     func setupProfileViewController() {
+        self.placesToVoteLabel.text = "Finding Polling Locations"
         let logo = UIImage(named: "TextLogoNoCheck")
         let logoImageView = UIImageView(image: logo)
         self.navigationItem.titleView = logoImageView
@@ -53,8 +55,16 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
         guard let address = ProfileController.sharedController.loadAddress() else {
             return
         }
+        self.activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
         ProfileController.getPollingAddress(address) {
             self.populateMapView()
+            if self.mapView.annotations.count == 1 {
+                self.placesToVoteLabel.text = "No Data found for your Polling Locations"
+            } else {
+                self.placesToVoteLabel.text = "Your Polling Locations"
+            }
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -172,9 +182,10 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
         for annotation in allAnnotations {
             mapView.removeAnnotation(annotation)
         }
-        
+        self.activityIndicator.startAnimating()
         ProfileController.getPollingAddress(address) {
             self.populateMapView()
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -237,10 +248,8 @@ class ProfileViewController: UIViewController, MKMapViewDelegate {
     func populateMapView() {
         PollingLocationController.sharedController.geoCodePollingAddresses { (pollingLocationCLLocation) in
             if pollingLocationCLLocation.count == 0 {
-                self.placesToVoteLabel.text = "No Data found for your Polling Locations"
                 return
             }
-            self.placesToVoteLabel.text = "Your Polling Locations"
             
             let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
             

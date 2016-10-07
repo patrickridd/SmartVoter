@@ -44,6 +44,8 @@
 		21F1C6891DA71777004D3309 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F1C67C1DA7176B004D3309 /* Charts.framework */; };
 		21F1C68A1DA71777004D3309 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21F1C67C1DA7176B004D3309 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21F1C69D1DA71A38004D3309 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F1C69C1DA71A38004D3309 /* Info.plist */; };
+		21F1C6A41DA800FB004D3309 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1C6A31DA800FB004D3309 /* IntroductionViewController.swift */; };
+		21F1C6A91DA801C9004D3309 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F1C6A81DA801C9004D3309 /* Introduction.storyboard */; };
 		510145F31D9EE16E0028E36A /* CandidateIDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510145F21D9EE16E0028E36A /* CandidateIDController.swift */; };
 		5159E6AA1D9995A200B41F65 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5159E6A81D9995A200B41F65 /* SignUp.storyboard */; };
 		5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */; };
@@ -503,6 +505,8 @@
 		21F1C6741DA7176B004D3309 /* ChartsRealmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsRealmTest.swift; sourceTree = "<group>"; };
 		21F1C6761DA7176B004D3309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21F1C69C1DA71A38004D3309 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F1C6A31DA800FB004D3309 /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		21F1C6A81DA801C9004D3309 /* Introduction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		510145F21D9EE16E0028E36A /* CandidateIDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateIDController.swift; sourceTree = "<group>"; };
 		5159E6A91D9995A200B41F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -609,6 +613,7 @@
 				210C06A51DA6F09700C3FAB1 /* TabBarOneUIViewController.swift */,
 				210C06AC1DA6F65900C3FAB1 /* TabBarTwoViewController.swift */,
 				210C06B61DA6FA5800C3FAB1 /* TabBarThreeViewController.swift */,
+				21F1C6A31DA800FB004D3309 /* IntroductionViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -1338,6 +1343,7 @@
 			isa = PBXGroup;
 			children = (
 				21E726E21D90914900ADC64F /* Main.storyboard */,
+				21F1C6A81DA801C9004D3309 /* Introduction.storyboard */,
 				210C06BA1DA6FA9C00C3FAB1 /* TabBarThree.storyboard */,
 				210C06B31DA6F94300C3FAB1 /* TabBarTwo.storyboard */,
 				5159E6A81D9995A200B41F65 /* SignUp.storyboard */,
@@ -1502,6 +1508,7 @@
 			files = (
 				21E726E91D90914900ADC64F /* LaunchScreen.storyboard in Resources */,
 				21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */,
+				21F1C6A91DA801C9004D3309 /* Introduction.storyboard in Resources */,
 				210C06BC1DA6FA9C00C3FAB1 /* TabBarThree.storyboard in Resources */,
 				5159E6AA1D9995A200B41F65 /* SignUp.storyboard in Resources */,
 				21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */,
@@ -1549,6 +1556,7 @@
 				21648E701D922E5800B966ED /* ProfileController.swift in Sources */,
 				210C06AD1DA6F65900C3FAB1 /* TabBarTwoViewController.swift in Sources */,
 				A20F69931D9F1CD20058227D /* ReferendumDetailViewController.swift in Sources */,
+				21F1C6A41DA800FB004D3309 /* IntroductionViewController.swift in Sources */,
 				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
 				A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */,
 				210C06A21DA6C8B800C3FAB1 /* PageViewController.swift in Sources */,
