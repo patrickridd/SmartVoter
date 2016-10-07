@@ -1,0 +1,1852 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		210C06A01DA6C7EB00C3FAB1 /* PageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210C069F1DA6C7EB00C3FAB1 /* PageViewController.storyboard */; };
+		210C06A21DA6C8B800C3FAB1 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C06A11DA6C8B800C3FAB1 /* PageViewController.swift */; };
+		210C06A61DA6F09700C3FAB1 /* TabBarOneUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C06A51DA6F09700C3FAB1 /* TabBarOneUIViewController.swift */; };
+		210C06A91DA6F49300C3FAB1 /* TabBarOne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210C06A71DA6F49300C3FAB1 /* TabBarOne.storyboard */; };
+		210C06AD1DA6F65900C3FAB1 /* TabBarTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C06AC1DA6F65900C3FAB1 /* TabBarTwoViewController.swift */; };
+		210C06B51DA6F94300C3FAB1 /* TabBarTwo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210C06B31DA6F94300C3FAB1 /* TabBarTwo.storyboard */; };
+		210C06B71DA6FA5800C3FAB1 /* TabBarThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C06B61DA6FA5800C3FAB1 /* TabBarThreeViewController.swift */; };
+		210C06BC1DA6FA9C00C3FAB1 /* TabBarThree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210C06BA1DA6FA9C00C3FAB1 /* TabBarThree.storyboard */; };
+		2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */; };
+		215E6EA21D9ADC99009E75EC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215E6EA11D9ADC99009E75EC /* Settings.storyboard */; };
+		215E6EA41D9AE374009E75EC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */; };
+		21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E691D91DF3B00B966ED /* PollingLocation.swift */; };
+		21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */; };
+		21648E701D922E5800B966ED /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21648E6F1D922E5800B966ED /* ProfileController.swift */; };
+		21D097371D9E0778006BC9A3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D097361D9E0778006BC9A3 /* SettingsController.swift */; };
+		21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E726DE1D90914900ADC64F /* AppDelegate.swift */; };
+		21E726E41D90914900ADC64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E21D90914900ADC64F /* Main.storyboard */; };
+		21E726E61D90914900ADC64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E51D90914900ADC64F /* Assets.xcassets */; };
+		21E726E91D90914900ADC64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E726E71D90914900ADC64F /* LaunchScreen.storyboard */; };
+		21E726F41D90914900ADC64F /* SmartVoterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E726F31D90914900ADC64F /* SmartVoterTests.swift */; };
+		21E726FF1D90941E00ADC64F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E726FE1D90941E00ADC64F /* ProfileViewController.swift */; };
+		21E727031D90949800ADC64F /* ElectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727021D90949800ADC64F /* ElectionTableViewController.swift */; };
+		21E727061D90959C00ADC64F /* ElectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */; };
+		21E727081D9095AB00ADC64F /* OfficialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */; };
+		21E7270A1D90996300ADC64F /* OfficialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727091D90996300ADC64F /* OfficialController.swift */; };
+		21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E7270B1D90996A00ADC64F /* ElectionController.swift */; };
+		21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E7270E1D9099BB00ADC64F /* NetworkController.swift */; };
+		21E727111D9099DB00ADC64F /* Official.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727101D9099DB00ADC64F /* Official.swift */; };
+		21E727161D909A3700ADC64F /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E727151D909A3700ADC64F /* ImageController.swift */; };
+		21E727181D919D2300ADC64F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727171D919D2300ADC64F /* Profile.storyboard */; };
+		21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727191D919D4600ADC64F /* OfficialDetail.storyboard */; };
+		21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */; };
+		21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */; };
+		21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */; };
+		21F1C6891DA71777004D3309 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F1C67C1DA7176B004D3309 /* Charts.framework */; };
+		21F1C68A1DA71777004D3309 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21F1C67C1DA7176B004D3309 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21F1C69D1DA71A38004D3309 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F1C69C1DA71A38004D3309 /* Info.plist */; };
+		510145F31D9EE16E0028E36A /* CandidateIDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510145F21D9EE16E0028E36A /* CandidateIDController.swift */; };
+		5159E6AA1D9995A200B41F65 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5159E6A81D9995A200B41F65 /* SignUp.storyboard */; };
+		5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */; };
+		518E624C1D92EB90008AAC2C /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518E624B1D92EB90008AAC2C /* Office.swift */; };
+		519B09781D92F43B00D3149F /* Election.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B09771D92F43A00D3149F /* Election.swift */; };
+		519B097A1D92F48000D3149F /* Contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B09791D92F48000D3149F /* Contest.swift */; };
+		51C2D3301D92FFCC0018109E /* OfficialsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */; };
+		51C2D3321D934C9E0018109E /* ElectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */; };
+		51C2D3341D934CAF0018109E /* OfficialAddressMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */; };
+		640411621D91DF2800B57A4C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411611D91DF2800B57A4C /* Address.swift */; };
+		640411641D91E25400B57A4C /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640411631D91E25400B57A4C /* Social.swift */; };
+		6473387F1D958BC2006C7442 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473387E1D958BC2006C7442 /* ColorPalette.swift */; };
+		648BA9741D9DB99F00B95D31 /* Contributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9731D9DB99F00B95D31 /* Contributions.swift */; };
+		648BA9761D9DB9B800B95D31 /* CandidateID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9751D9DB9B800B95D31 /* CandidateID.swift */; };
+		648BA9781D9DBD9400B95D31 /* ContributorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA9771D9DBD9400B95D31 /* ContributorController.swift */; };
+		64B19D641D9ECD9600C07D8E /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */; };
+		64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */; };
+		A20F69911D9F172C0058227D /* ReferendumDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20F69901D9F172C0058227D /* ReferendumDetail.storyboard */; };
+		A20F69931D9F1CD20058227D /* ReferendumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F69921D9F1CD20058227D /* ReferendumDetailViewController.swift */; };
+		A21C52241D91CA9500909C0C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21C52231D91CA9500909C0C /* Candidate.swift */; };
+		A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A290B9291D99C54800A7C34C /* CustomTabBarController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21E726F01D90914900ADC64F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E726D31D90914900ADC64F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21E726DA1D90914900ADC64F;
+			remoteInfo = SmartVoter;
+		};
+		21F1C67B1DA7176B004D3309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1C50D1DA7176B004D3309 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		21F1C67D1DA7176B004D3309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1C50D1DA7176B004D3309 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		21F1C67F1DA7176B004D3309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1C50D1DA7176B004D3309 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		21F1C6811DA7176B004D3309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1C50D1DA7176B004D3309 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120FF1D811F1600D14B02;
+			remoteInfo = ChartsRealmTests;
+		};
+		21F1C6841DA7176B004D3309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1C5A61DA7176B004D3309 /* ChartsDemo-OSX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F63E1C73B4F5000983D0;
+			remoteInfo = "ChartsDemo-OSX";
+		};
+		21F1C6871DA7176B004D3309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1C5111DA7176B004D3309 /* ChartsDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5B57BBAF1A9B26AA0036A6CC;
+			remoteInfo = ChartsDemo;
+		};
+		21F1C68B1DA71777004D3309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1C50D1DA7176B004D3309 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		64B19D781D9ECF3C00C07D8E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				21F1C68A1DA71777004D3309 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		210C069F1DA6C7EB00C3FAB1 /* PageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PageViewController.storyboard; sourceTree = "<group>"; };
+		210C06A11DA6C8B800C3FAB1 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		210C06A51DA6F09700C3FAB1 /* TabBarOneUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarOneUIViewController.swift; sourceTree = "<group>"; };
+		210C06A81DA6F49300C3FAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarOne.storyboard; sourceTree = "<group>"; };
+		210C06AC1DA6F65900C3FAB1 /* TabBarTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarTwoViewController.swift; sourceTree = "<group>"; };
+		210C06B41DA6F94300C3FAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarTwo.storyboard; sourceTree = "<group>"; };
+		210C06B61DA6FA5800C3FAB1 /* TabBarThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarThreeViewController.swift; sourceTree = "<group>"; };
+		210C06BB1DA6FA9C00C3FAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarThree.storyboard; sourceTree = "<group>"; };
+		2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateTableViewCell.swift; sourceTree = "<group>"; };
+		215E6EA11D9ADC99009E75EC /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		21648E691D91DF3B00B966ED /* PollingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocation.swift; sourceTree = "<group>"; };
+		21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingLocationController.swift; sourceTree = "<group>"; };
+		21648E6F1D922E5800B966ED /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		21D097361D9E0778006BC9A3 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		21E726DB1D90914900ADC64F /* SmartVoter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartVoter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21E726DE1D90914900ADC64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		21E726E31D90914900ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		21E726E51D90914900ADC64F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21E726E81D90914900ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		21E726EF1D90914900ADC64F /* SmartVoterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartVoterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21E726F31D90914900ADC64F /* SmartVoterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartVoterTests.swift; sourceTree = "<group>"; };
+		21E726F51D90914900ADC64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21E726FE1D90941E00ADC64F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		21E727021D90949800ADC64F /* ElectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewController.swift; sourceTree = "<group>"; };
+		21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionTableViewCell.swift; sourceTree = "<group>"; };
+		21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialTableViewCell.swift; sourceTree = "<group>"; };
+		21E727091D90996300ADC64F /* OfficialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialController.swift; sourceTree = "<group>"; };
+		21E7270B1D90996A00ADC64F /* ElectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionController.swift; sourceTree = "<group>"; };
+		21E7270E1D9099BB00ADC64F /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		21E727101D9099DB00ADC64F /* Official.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Official.swift; path = ../Official.swift; sourceTree = "<group>"; };
+		21E727151D909A3700ADC64F /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		21E727171D919D2300ADC64F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		21E7271A1D919D4600ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialDetail.storyboard; sourceTree = "<group>"; };
+		21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionDetail.storyboard; sourceTree = "<group>"; };
+		21E7271F1D919D7E00ADC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OfficialTableView.storyboard; sourceTree = "<group>"; };
+		21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElectionTableView.storyboard; sourceTree = "<group>"; };
+		21F1C5011DA7176B004D3309 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		21F1C5021DA7176B004D3309 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
+		21F1C5031DA7176B004D3309 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		21F1C5051DA7176B004D3309 /* feature_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feature_graphic.png; sourceTree = "<group>"; };
+		21F1C5061DA7176B004D3309 /* feature_graphic.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = feature_graphic.psd; sourceTree = "<group>"; };
+		21F1C5071DA7176B004D3309 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		21F1C5081DA7176B004D3309 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		21F1C5091DA7176B004D3309 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		21F1C50A1DA7176B004D3309 /* Carthage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Carthage.xcconfig; sourceTree = "<group>"; };
+		21F1C50B1DA7176B004D3309 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		21F1C50C1DA7176B004D3309 /* Charts.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Charts.podspec; sourceTree = "<group>"; };
+		21F1C50D1DA7176B004D3309 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Charts.xcodeproj; sourceTree = "<group>"; };
+		21F1C5111DA7176B004D3309 /* ChartsDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ChartsDemo.xcodeproj; sourceTree = "<group>"; };
+		21F1C5161DA7176B004D3309 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		21F1C5171DA7176B004D3309 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		21F1C5191DA7176B004D3309 /* BalloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		21F1C51A1DA7176B004D3309 /* MyCustomXValueFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCustomXValueFormatter.h; sourceTree = "<group>"; };
+		21F1C51B1DA7176B004D3309 /* MyCustomXValueFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCustomXValueFormatter.m; sourceTree = "<group>"; };
+		21F1C51C1DA7176B004D3309 /* DemoBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBaseViewController.h; sourceTree = "<group>"; };
+		21F1C51D1DA7176B004D3309 /* DemoBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoBaseViewController.m; sourceTree = "<group>"; };
+		21F1C51E1DA7176B004D3309 /* DemoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoListViewController.h; sourceTree = "<group>"; };
+		21F1C51F1DA7176B004D3309 /* DemoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoListViewController.m; sourceTree = "<group>"; };
+		21F1C5201DA7176B004D3309 /* DemoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoListViewController.xib; sourceTree = "<group>"; };
+		21F1C5221DA7176B004D3309 /* AnotherBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5231DA7176B004D3309 /* AnotherBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C5241DA7176B004D3309 /* AnotherBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnotherBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5251DA7176B004D3309 /* BarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5261DA7176B004D3309 /* BarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
+		21F1C5271DA7176B004D3309 /* BarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5281DA7176B004D3309 /* BubbleChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleChartViewController.h; sourceTree = "<group>"; };
+		21F1C5291DA7176B004D3309 /* BubbleChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BubbleChartViewController.m; sourceTree = "<group>"; };
+		21F1C52A1DA7176B004D3309 /* BubbleChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubbleChartViewController.xib; sourceTree = "<group>"; };
+		21F1C52B1DA7176B004D3309 /* CandleStickChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandleStickChartViewController.h; sourceTree = "<group>"; };
+		21F1C52C1DA7176B004D3309 /* CandleStickChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandleStickChartViewController.m; sourceTree = "<group>"; };
+		21F1C52D1DA7176B004D3309 /* CandleStickChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandleStickChartViewController.xib; sourceTree = "<group>"; };
+		21F1C52E1DA7176B004D3309 /* ColoredLineChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColoredLineChartViewController.h; sourceTree = "<group>"; };
+		21F1C52F1DA7176B004D3309 /* ColoredLineChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColoredLineChartViewController.m; sourceTree = "<group>"; };
+		21F1C5301DA7176B004D3309 /* ColoredLineChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColoredLineChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5311DA7176B004D3309 /* CombinedChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CombinedChartViewController.h; sourceTree = "<group>"; };
+		21F1C5321DA7176B004D3309 /* CombinedChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CombinedChartViewController.m; sourceTree = "<group>"; };
+		21F1C5331DA7176B004D3309 /* CombinedChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CombinedChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5341DA7176B004D3309 /* CubicLineChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CubicLineChartViewController.h; sourceTree = "<group>"; };
+		21F1C5351DA7176B004D3309 /* CubicLineChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CubicLineChartViewController.m; sourceTree = "<group>"; };
+		21F1C5361DA7176B004D3309 /* CubicLineChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CubicLineChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5371DA7176B004D3309 /* HorizontalBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5381DA7176B004D3309 /* HorizontalBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C5391DA7176B004D3309 /* HorizontalBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C53A1DA7176B004D3309 /* LineChart1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineChart1ViewController.h; sourceTree = "<group>"; };
+		21F1C53B1DA7176B004D3309 /* LineChart1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineChart1ViewController.m; sourceTree = "<group>"; };
+		21F1C53C1DA7176B004D3309 /* LineChart1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChart1ViewController.xib; sourceTree = "<group>"; };
+		21F1C53D1DA7176B004D3309 /* LineChart2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineChart2ViewController.h; sourceTree = "<group>"; };
+		21F1C53E1DA7176B004D3309 /* LineChart2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineChart2ViewController.m; sourceTree = "<group>"; };
+		21F1C53F1DA7176B004D3309 /* LineChart2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChart2ViewController.xib; sourceTree = "<group>"; };
+		21F1C5401DA7176B004D3309 /* MultipleBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipleBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5411DA7176B004D3309 /* MultipleBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultipleBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C5421DA7176B004D3309 /* MultipleBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultipleBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5431DA7176B004D3309 /* MultipleLinesChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipleLinesChartViewController.h; sourceTree = "<group>"; };
+		21F1C5441DA7176B004D3309 /* MultipleLinesChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultipleLinesChartViewController.m; sourceTree = "<group>"; };
+		21F1C5451DA7176B004D3309 /* MultipleLinesChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultipleLinesChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5461DA7176B004D3309 /* NegativeStackedBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NegativeStackedBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5471DA7176B004D3309 /* NegativeStackedBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NegativeStackedBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C5481DA7176B004D3309 /* NegativeStackedBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NegativeStackedBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5491DA7176B004D3309 /* PieChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PieChartViewController.h; sourceTree = "<group>"; };
+		21F1C54A1DA7176B004D3309 /* PieChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
+		21F1C54B1DA7176B004D3309 /* PieChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PieChartViewController.xib; sourceTree = "<group>"; };
+		21F1C54C1DA7176B004D3309 /* PiePolylineChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PiePolylineChartViewController.h; sourceTree = "<group>"; };
+		21F1C54D1DA7176B004D3309 /* PiePolylineChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiePolylineChartViewController.m; sourceTree = "<group>"; };
+		21F1C54E1DA7176B004D3309 /* PiePolylineChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PiePolylineChartViewController.xib; sourceTree = "<group>"; };
+		21F1C54F1DA7176B004D3309 /* PositiveNegativeBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PositiveNegativeBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5501DA7176B004D3309 /* PositiveNegativeBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PositiveNegativeBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C5511DA7176B004D3309 /* PositiveNegativeBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositiveNegativeBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5521DA7176B004D3309 /* RadarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5531DA7176B004D3309 /* RadarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadarChartViewController.m; sourceTree = "<group>"; };
+		21F1C5541DA7176B004D3309 /* RadarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5551DA7176B004D3309 /* ScatterChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScatterChartViewController.h; sourceTree = "<group>"; };
+		21F1C5561DA7176B004D3309 /* ScatterChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScatterChartViewController.m; sourceTree = "<group>"; };
+		21F1C5571DA7176B004D3309 /* ScatterChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScatterChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5581DA7176B004D3309 /* SinusBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinusBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5591DA7176B004D3309 /* SinusBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinusBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C55A1DA7176B004D3309 /* SinusBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SinusBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C55B1DA7176B004D3309 /* StackedBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackedBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C55C1DA7176B004D3309 /* StackedBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackedBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C55D1DA7176B004D3309 /* StackedBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C55F1DA7176B004D3309 /* RealmDemoBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmDemoBaseViewController.h; sourceTree = "<group>"; };
+		21F1C5601DA7176B004D3309 /* RealmDemoBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmDemoBaseViewController.m; sourceTree = "<group>"; };
+		21F1C5611DA7176B004D3309 /* RealmDemoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmDemoData.h; sourceTree = "<group>"; };
+		21F1C5621DA7176B004D3309 /* RealmDemoData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmDemoData.m; sourceTree = "<group>"; };
+		21F1C5631DA7176B004D3309 /* RealmFloat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmFloat.h; sourceTree = "<group>"; };
+		21F1C5641DA7176B004D3309 /* RealmFloat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmFloat.m; sourceTree = "<group>"; };
+		21F1C5651DA7176B004D3309 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		21F1C5661DA7176B004D3309 /* Score.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		21F1C5671DA7176B004D3309 /* RealmDemoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmDemoListViewController.h; sourceTree = "<group>"; };
+		21F1C5681DA7176B004D3309 /* RealmDemoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmDemoListViewController.m; sourceTree = "<group>"; };
+		21F1C5691DA7176B004D3309 /* RealmDemoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmDemoListViewController.xib; sourceTree = "<group>"; };
+		21F1C56B1DA7176B004D3309 /* RealmBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C56C1DA7176B004D3309 /* RealmBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C56D1DA7176B004D3309 /* RealmBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C56E1DA7176B004D3309 /* RealmBubbleChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmBubbleChartViewController.h; sourceTree = "<group>"; };
+		21F1C56F1DA7176B004D3309 /* RealmBubbleChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmBubbleChartViewController.m; sourceTree = "<group>"; };
+		21F1C5701DA7176B004D3309 /* RealmBubbleChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmBubbleChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5711DA7176B004D3309 /* RealmCandleChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmCandleChartViewController.h; sourceTree = "<group>"; };
+		21F1C5721DA7176B004D3309 /* RealmCandleChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmCandleChartViewController.m; sourceTree = "<group>"; };
+		21F1C5731DA7176B004D3309 /* RealmCandleChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmCandleChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5741DA7176B004D3309 /* RealmHorizontalBarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmHorizontalBarChartViewController.h; sourceTree = "<group>"; };
+		21F1C5751DA7176B004D3309 /* RealmHorizontalBarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmHorizontalBarChartViewController.m; sourceTree = "<group>"; };
+		21F1C5761DA7176B004D3309 /* RealmHorizontalBarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmHorizontalBarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5771DA7176B004D3309 /* RealmLineChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmLineChartViewController.h; sourceTree = "<group>"; };
+		21F1C5781DA7176B004D3309 /* RealmLineChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmLineChartViewController.m; sourceTree = "<group>"; };
+		21F1C5791DA7176B004D3309 /* RealmLineChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmLineChartViewController.xib; sourceTree = "<group>"; };
+		21F1C57A1DA7176B004D3309 /* RealmPieChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmPieChartViewController.h; sourceTree = "<group>"; };
+		21F1C57B1DA7176B004D3309 /* RealmPieChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmPieChartViewController.m; sourceTree = "<group>"; };
+		21F1C57C1DA7176B004D3309 /* RealmPieChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmPieChartViewController.xib; sourceTree = "<group>"; };
+		21F1C57D1DA7176B004D3309 /* RealmRadarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmRadarChartViewController.h; sourceTree = "<group>"; };
+		21F1C57E1DA7176B004D3309 /* RealmRadarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmRadarChartViewController.m; sourceTree = "<group>"; };
+		21F1C57F1DA7176B004D3309 /* RealmRadarChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmRadarChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5801DA7176B004D3309 /* RealmScatterChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmScatterChartViewController.h; sourceTree = "<group>"; };
+		21F1C5811DA7176B004D3309 /* RealmScatterChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmScatterChartViewController.m; sourceTree = "<group>"; };
+		21F1C5821DA7176B004D3309 /* RealmScatterChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmScatterChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5831DA7176B004D3309 /* RealmWikiExampleChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmWikiExampleChartViewController.h; sourceTree = "<group>"; };
+		21F1C5841DA7176B004D3309 /* RealmWikiExampleChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmWikiExampleChartViewController.m; sourceTree = "<group>"; };
+		21F1C5851DA7176B004D3309 /* RealmWikiExampleChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmWikiExampleChartViewController.xib; sourceTree = "<group>"; };
+		21F1C5881DA7176B004D3309 /* Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29@2x.png"; sourceTree = "<group>"; };
+		21F1C5891DA7176B004D3309 /* Icon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29@3x.png"; sourceTree = "<group>"; };
+		21F1C58A1DA7176B004D3309 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		21F1C58B1DA7176B004D3309 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
+		21F1C58C1DA7176B004D3309 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		21F1C58D1DA7176B004D3309 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		21F1C58E1DA7176B004D3309 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		21F1C58F1DA7176B004D3309 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
+		21F1C5901DA7176B004D3309 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		21F1C5921DA7176B004D3309 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		21F1C5931DA7176B004D3309 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
+		21F1C5941DA7176B004D3309 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
+		21F1C5951DA7176B004D3309 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		21F1C5971DA7176B004D3309 /* ChartsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChartsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		21F1C5981DA7176B004D3309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F1C5991DA7176B004D3309 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21F1C59C1DA7176B004D3309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		21F1C59D1DA7176B004D3309 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21F1C59F1DA7176B004D3309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		21F1C5A11DA7176B004D3309 /* BarDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarDemoViewController.swift; sourceTree = "<group>"; };
+		21F1C5A21DA7176B004D3309 /* LineDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDemoViewController.swift; sourceTree = "<group>"; };
+		21F1C5A31DA7176B004D3309 /* PieDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieDemoViewController.swift; sourceTree = "<group>"; };
+		21F1C5A41DA7176B004D3309 /* RadarDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarDemoViewController.swift; sourceTree = "<group>"; };
+		21F1C5A51DA7176B004D3309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F1C5A61DA7176B004D3309 /* ChartsDemo-OSX.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "ChartsDemo-OSX.xcodeproj"; sourceTree = "<group>"; };
+		21F1C5AA1DA7176B004D3309 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
+		21F1C5AB1DA7176B004D3309 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
+		21F1C5AC1DA7176B004D3309 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		21F1C5AD1DA7176B004D3309 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		21F1C5AE1DA7176B004D3309 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
+		21F1C5AF1DA7176B004D3309 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		21F1C5B31DA7176B004D3309 /* ChartAnimationEasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAnimationEasing.swift; sourceTree = "<group>"; };
+		21F1C5B41DA7176B004D3309 /* ChartAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAnimator.swift; sourceTree = "<group>"; };
+		21F1C5B61DA7176B004D3309 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		21F1C5B71DA7176B004D3309 /* BarLineChartViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLineChartViewBase.swift; sourceTree = "<group>"; };
+		21F1C5B81DA7176B004D3309 /* BubbleChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartView.swift; sourceTree = "<group>"; };
+		21F1C5B91DA7176B004D3309 /* CandleStickChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickChartView.swift; sourceTree = "<group>"; };
+		21F1C5BA1DA7176B004D3309 /* ChartViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewBase.swift; sourceTree = "<group>"; };
+		21F1C5BB1DA7176B004D3309 /* CombinedChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedChartView.swift; sourceTree = "<group>"; };
+		21F1C5BC1DA7176B004D3309 /* HorizontalBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarChartView.swift; sourceTree = "<group>"; };
+		21F1C5BD1DA7176B004D3309 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		21F1C5BE1DA7176B004D3309 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		21F1C5BF1DA7176B004D3309 /* PieRadarChartViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieRadarChartViewBase.swift; sourceTree = "<group>"; };
+		21F1C5C01DA7176B004D3309 /* RadarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartView.swift; sourceTree = "<group>"; };
+		21F1C5C11DA7176B004D3309 /* ScatterChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterChartView.swift; sourceTree = "<group>"; };
+		21F1C5C31DA7176B004D3309 /* ChartAxisBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAxisBase.swift; sourceTree = "<group>"; };
+		21F1C5C41DA7176B004D3309 /* ChartComponentBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartComponentBase.swift; sourceTree = "<group>"; };
+		21F1C5C51DA7176B004D3309 /* ChartLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLegend.swift; sourceTree = "<group>"; };
+		21F1C5C61DA7176B004D3309 /* ChartLimitLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLimitLine.swift; sourceTree = "<group>"; };
+		21F1C5C71DA7176B004D3309 /* ChartMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMarker.swift; sourceTree = "<group>"; };
+		21F1C5C81DA7176B004D3309 /* ChartXAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxis.swift; sourceTree = "<group>"; };
+		21F1C5C91DA7176B004D3309 /* ChartYAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartYAxis.swift; sourceTree = "<group>"; };
+		21F1C5CC1DA7176B004D3309 /* ChartBaseDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBaseDataSet.swift; sourceTree = "<group>"; };
+		21F1C5CE1DA7176B004D3309 /* BarChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartData.swift; sourceTree = "<group>"; };
+		21F1C5CF1DA7176B004D3309 /* BarChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartDataEntry.swift; sourceTree = "<group>"; };
+		21F1C5D01DA7176B004D3309 /* BarChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5D11DA7176B004D3309 /* BarLineScatterCandleBubbleChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLineScatterCandleBubbleChartData.swift; sourceTree = "<group>"; };
+		21F1C5D21DA7176B004D3309 /* BarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5D31DA7176B004D3309 /* BubbleChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartData.swift; sourceTree = "<group>"; };
+		21F1C5D41DA7176B004D3309 /* BubbleChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartDataEntry.swift; sourceTree = "<group>"; };
+		21F1C5D51DA7176B004D3309 /* BubbleChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5D61DA7176B004D3309 /* CandleChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleChartData.swift; sourceTree = "<group>"; };
+		21F1C5D71DA7176B004D3309 /* CandleChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleChartDataEntry.swift; sourceTree = "<group>"; };
+		21F1C5D81DA7176B004D3309 /* CandleChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5D91DA7176B004D3309 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		21F1C5DA1DA7176B004D3309 /* ChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntry.swift; sourceTree = "<group>"; };
+		21F1C5DB1DA7176B004D3309 /* ChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5DC1DA7176B004D3309 /* CombinedChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedChartData.swift; sourceTree = "<group>"; };
+		21F1C5DD1DA7176B004D3309 /* LineChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartData.swift; sourceTree = "<group>"; };
+		21F1C5DE1DA7176B004D3309 /* LineChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5DF1DA7176B004D3309 /* LineRadarChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRadarChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5E01DA7176B004D3309 /* LineScatterCandleRadarChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineScatterCandleRadarChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5E11DA7176B004D3309 /* PieChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartData.swift; sourceTree = "<group>"; };
+		21F1C5E21DA7176B004D3309 /* PieChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5E31DA7176B004D3309 /* RadarChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartData.swift; sourceTree = "<group>"; };
+		21F1C5E41DA7176B004D3309 /* RadarChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5E51DA7176B004D3309 /* ScatterChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterChartData.swift; sourceTree = "<group>"; };
+		21F1C5E61DA7176B004D3309 /* ScatterChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5E81DA7176B004D3309 /* IBarChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBarChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5E91DA7176B004D3309 /* IBarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5EA1DA7176B004D3309 /* IBubbleChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBubbleChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5EB1DA7176B004D3309 /* ICandleChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICandleChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5EC1DA7176B004D3309 /* IChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5ED1DA7176B004D3309 /* ILineChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILineChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5EE1DA7176B004D3309 /* ILineRadarChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILineRadarChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5EF1DA7176B004D3309 /* ILineScatterCandleRadarChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILineScatterCandleRadarChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5F01DA7176B004D3309 /* IPieChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPieChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5F11DA7176B004D3309 /* IRadarChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRadarChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5F21DA7176B004D3309 /* IScatterChartDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IScatterChartDataSet.swift; sourceTree = "<group>"; };
+		21F1C5F41DA7176B004D3309 /* ChartDataApproximatorFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataApproximatorFilter.swift; sourceTree = "<group>"; };
+		21F1C5F51DA7176B004D3309 /* ChartDataBaseFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataBaseFilter.swift; sourceTree = "<group>"; };
+		21F1C5F71DA7176B004D3309 /* ChartDefaultFillFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDefaultFillFormatter.swift; sourceTree = "<group>"; };
+		21F1C5F81DA7176B004D3309 /* ChartDefaultXAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDefaultXAxisValueFormatter.swift; sourceTree = "<group>"; };
+		21F1C5F91DA7176B004D3309 /* ChartFillFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFillFormatter.swift; sourceTree = "<group>"; };
+		21F1C5FA1DA7176B004D3309 /* ChartXAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisValueFormatter.swift; sourceTree = "<group>"; };
+		21F1C5FC1DA7176B004D3309 /* BarChartHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartHighlighter.swift; sourceTree = "<group>"; };
+		21F1C5FD1DA7176B004D3309 /* ChartHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartHighlight.swift; sourceTree = "<group>"; };
+		21F1C5FE1DA7176B004D3309 /* ChartHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartHighlighter.swift; sourceTree = "<group>"; };
+		21F1C5FF1DA7176B004D3309 /* ChartRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRange.swift; sourceTree = "<group>"; };
+		21F1C6001DA7176B004D3309 /* CombinedHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedHighlighter.swift; sourceTree = "<group>"; };
+		21F1C6011DA7176B004D3309 /* HorizontalBarChartHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarChartHighlighter.swift; sourceTree = "<group>"; };
+		21F1C6031DA7176B004D3309 /* BarChartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartDataProvider.swift; sourceTree = "<group>"; };
+		21F1C6041DA7176B004D3309 /* BarLineScatterCandleBubbleChartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLineScatterCandleBubbleChartDataProvider.swift; sourceTree = "<group>"; };
+		21F1C6051DA7176B004D3309 /* BubbleChartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartDataProvider.swift; sourceTree = "<group>"; };
+		21F1C6061DA7176B004D3309 /* CandleChartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleChartDataProvider.swift; sourceTree = "<group>"; };
+		21F1C6071DA7176B004D3309 /* ChartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataProvider.swift; sourceTree = "<group>"; };
+		21F1C6081DA7176B004D3309 /* LineChartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartDataProvider.swift; sourceTree = "<group>"; };
+		21F1C6091DA7176B004D3309 /* ScatterChartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterChartDataProvider.swift; sourceTree = "<group>"; };
+		21F1C60B1DA7176B004D3309 /* AnimatedMoveViewJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedMoveViewJob.swift; sourceTree = "<group>"; };
+		21F1C60C1DA7176B004D3309 /* AnimatedViewPortJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedViewPortJob.swift; sourceTree = "<group>"; };
+		21F1C60D1DA7176B004D3309 /* AnimatedZoomViewJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedZoomViewJob.swift; sourceTree = "<group>"; };
+		21F1C60E1DA7176B004D3309 /* ChartViewPortJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewPortJob.swift; sourceTree = "<group>"; };
+		21F1C60F1DA7176B004D3309 /* MoveChartViewJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveChartViewJob.swift; sourceTree = "<group>"; };
+		21F1C6101DA7176B004D3309 /* ZoomChartViewJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomChartViewJob.swift; sourceTree = "<group>"; };
+		21F1C6121DA7176B004D3309 /* BarChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6131DA7176B004D3309 /* BubbleChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6141DA7176B004D3309 /* CandleStickChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6151DA7176B004D3309 /* ChartAxisRendererBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAxisRendererBase.swift; sourceTree = "<group>"; };
+		21F1C6161DA7176B004D3309 /* ChartDataRendererBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataRendererBase.swift; sourceTree = "<group>"; };
+		21F1C6171DA7176B004D3309 /* ChartLegendRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLegendRenderer.swift; sourceTree = "<group>"; };
+		21F1C6181DA7176B004D3309 /* ChartRendererBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRendererBase.swift; sourceTree = "<group>"; };
+		21F1C6191DA7176B004D3309 /* ChartXAxisRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisRenderer.swift; sourceTree = "<group>"; };
+		21F1C61A1DA7176B004D3309 /* ChartXAxisRendererBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisRendererBarChart.swift; sourceTree = "<group>"; };
+		21F1C61B1DA7176B004D3309 /* ChartXAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
+		21F1C61C1DA7176B004D3309 /* ChartXAxisRendererRadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisRendererRadarChart.swift; sourceTree = "<group>"; };
+		21F1C61D1DA7176B004D3309 /* ChartYAxisRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartYAxisRenderer.swift; sourceTree = "<group>"; };
+		21F1C61E1DA7176B004D3309 /* ChartYAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartYAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
+		21F1C61F1DA7176B004D3309 /* ChartYAxisRendererRadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartYAxisRendererRadarChart.swift; sourceTree = "<group>"; };
+		21F1C6201DA7176B004D3309 /* CombinedChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6211DA7176B004D3309 /* HorizontalBarChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6221DA7176B004D3309 /* LineChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6231DA7176B004D3309 /* LineRadarChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRadarChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6241DA7176B004D3309 /* LineScatterCandleRadarChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineScatterCandleRadarChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6251DA7176B004D3309 /* PieChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6261DA7176B004D3309 /* RadarChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6271DA7176B004D3309 /* ScatterChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterChartRenderer.swift; sourceTree = "<group>"; };
+		21F1C6291DA7176B004D3309 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
+		21F1C62A1DA7176B004D3309 /* ChartFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFill.swift; sourceTree = "<group>"; };
+		21F1C62B1DA7176B004D3309 /* ChartPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPlatform.swift; sourceTree = "<group>"; };
+		21F1C62C1DA7176B004D3309 /* ChartSelectionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSelectionDetail.swift; sourceTree = "<group>"; };
+		21F1C62D1DA7176B004D3309 /* ChartTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTransformer.swift; sourceTree = "<group>"; };
+		21F1C62E1DA7176B004D3309 /* ChartTransformerHorizontalBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTransformerHorizontalBarChart.swift; sourceTree = "<group>"; };
+		21F1C62F1DA7176B004D3309 /* ChartUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUtils.swift; sourceTree = "<group>"; };
+		21F1C6301DA7176B004D3309 /* ChartViewPortHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewPortHandler.swift; sourceTree = "<group>"; };
+		21F1C6331DA7176B004D3309 /* RealmBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBarData.swift; sourceTree = "<group>"; };
+		21F1C6341DA7176B004D3309 /* RealmBarDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBarDataSet.swift; sourceTree = "<group>"; };
+		21F1C6351DA7176B004D3309 /* RealmBarLineScatterCandleBubbleDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBarLineScatterCandleBubbleDataSet.swift; sourceTree = "<group>"; };
+		21F1C6361DA7176B004D3309 /* RealmBaseDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBaseDataSet.swift; sourceTree = "<group>"; };
+		21F1C6371DA7176B004D3309 /* RealmBubbleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBubbleData.swift; sourceTree = "<group>"; };
+		21F1C6381DA7176B004D3309 /* RealmBubbleDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBubbleDataSet.swift; sourceTree = "<group>"; };
+		21F1C6391DA7176B004D3309 /* RealmCandleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCandleData.swift; sourceTree = "<group>"; };
+		21F1C63A1DA7176B004D3309 /* RealmCandleDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCandleDataSet.swift; sourceTree = "<group>"; };
+		21F1C63B1DA7176B004D3309 /* RealmLineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLineData.swift; sourceTree = "<group>"; };
+		21F1C63C1DA7176B004D3309 /* RealmLineDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLineDataSet.swift; sourceTree = "<group>"; };
+		21F1C63D1DA7176B004D3309 /* RealmLineRadarDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLineRadarDataSet.swift; sourceTree = "<group>"; };
+		21F1C63E1DA7176B004D3309 /* RealmLineScatterCandleRadarDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLineScatterCandleRadarDataSet.swift; sourceTree = "<group>"; };
+		21F1C63F1DA7176B004D3309 /* RealmPieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPieData.swift; sourceTree = "<group>"; };
+		21F1C6401DA7176B004D3309 /* RealmPieDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPieDataSet.swift; sourceTree = "<group>"; };
+		21F1C6411DA7176B004D3309 /* RealmRadarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRadarData.swift; sourceTree = "<group>"; };
+		21F1C6421DA7176B004D3309 /* RealmRadarDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRadarDataSet.swift; sourceTree = "<group>"; };
+		21F1C6431DA7176B004D3309 /* RealmScatterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmScatterData.swift; sourceTree = "<group>"; };
+		21F1C6441DA7176B004D3309 /* RealmScatterDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmScatterDataSet.swift; sourceTree = "<group>"; };
+		21F1C6461DA7176B004D3309 /* RealmChartUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmChartUtils.swift; sourceTree = "<group>"; };
+		21F1C6481DA7176B004D3309 /* Charts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Charts.h; sourceTree = "<group>"; };
+		21F1C6491DA7176B004D3309 /* ChartsRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartsRealm.h; sourceTree = "<group>"; };
+		21F1C64A1DA7176B004D3309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F1C64D1DA7176B004D3309 /* BarChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTests.swift; sourceTree = "<group>"; };
+		21F1C64E1DA7176B004D3309 /* LineChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartTests.swift; sourceTree = "<group>"; };
+		21F1C6511DA7176B004D3309 /* testDefaultValues.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDefaultValues.png; sourceTree = "<group>"; };
+		21F1C6521DA7176B004D3309 /* testDefaultValues@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDefaultValues@2x.png"; sourceTree = "<group>"; };
+		21F1C6531DA7176B004D3309 /* testDefaultValues@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDefaultValues@3x.png"; sourceTree = "<group>"; };
+		21F1C6541DA7176B004D3309 /* testHideHorizontalGridlines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testHideHorizontalGridlines.png; sourceTree = "<group>"; };
+		21F1C6551DA7176B004D3309 /* testHideHorizontalGridlines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHideHorizontalGridlines@2x.png"; sourceTree = "<group>"; };
+		21F1C6561DA7176B004D3309 /* testHideHorizontalGridlines@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHideHorizontalGridlines@3x.png"; sourceTree = "<group>"; };
+		21F1C6571DA7176B004D3309 /* testHideLeftAxis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testHideLeftAxis.png; sourceTree = "<group>"; };
+		21F1C6581DA7176B004D3309 /* testHideLeftAxis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHideLeftAxis@2x.png"; sourceTree = "<group>"; };
+		21F1C6591DA7176B004D3309 /* testHideLeftAxis@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHideLeftAxis@3x.png"; sourceTree = "<group>"; };
+		21F1C65A1DA7176B004D3309 /* testHideRightAxis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testHideRightAxis.png; sourceTree = "<group>"; };
+		21F1C65B1DA7176B004D3309 /* testHideRightAxis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHideRightAxis@2x.png"; sourceTree = "<group>"; };
+		21F1C65C1DA7176B004D3309 /* testHideRightAxis@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHideRightAxis@3x.png"; sourceTree = "<group>"; };
+		21F1C65D1DA7176B004D3309 /* testHidesValues.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testHidesValues.png; sourceTree = "<group>"; };
+		21F1C65E1DA7176B004D3309 /* testHidesValues@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHidesValues@2x.png"; sourceTree = "<group>"; };
+		21F1C65F1DA7176B004D3309 /* testHidesValues@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHidesValues@3x.png"; sourceTree = "<group>"; };
+		21F1C6601DA7176B004D3309 /* testHideVerticalGridlines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testHideVerticalGridlines.png; sourceTree = "<group>"; };
+		21F1C6611DA7176B004D3309 /* testHideVerticalGridlines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHideVerticalGridlines@2x.png"; sourceTree = "<group>"; };
+		21F1C6621DA7176B004D3309 /* testHideVerticalGridlines@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHideVerticalGridlines@3x.png"; sourceTree = "<group>"; };
+		21F1C6641DA7176B004D3309 /* testDefaultValues.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDefaultValues.png; sourceTree = "<group>"; };
+		21F1C6651DA7176B004D3309 /* testDefaultValues@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDefaultValues@2x.png"; sourceTree = "<group>"; };
+		21F1C6661DA7176B004D3309 /* testDefaultValues@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDefaultValues@3x.png"; sourceTree = "<group>"; };
+		21F1C6671DA7176B004D3309 /* testDoesntDrawCircleHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDoesntDrawCircleHole.png; sourceTree = "<group>"; };
+		21F1C6681DA7176B004D3309 /* testDoesntDrawCircleHole@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDoesntDrawCircleHole@2x.png"; sourceTree = "<group>"; };
+		21F1C6691DA7176B004D3309 /* testDoesntDrawCircleHole@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDoesntDrawCircleHole@3x.png"; sourceTree = "<group>"; };
+		21F1C66A1DA7176B004D3309 /* testDoesntDrawCircles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDoesntDrawCircles.png; sourceTree = "<group>"; };
+		21F1C66B1DA7176B004D3309 /* testDoesntDrawCircles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDoesntDrawCircles@2x.png"; sourceTree = "<group>"; };
+		21F1C66C1DA7176B004D3309 /* testDoesntDrawCircles@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDoesntDrawCircles@3x.png"; sourceTree = "<group>"; };
+		21F1C66D1DA7176B004D3309 /* testHidesValues.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testHidesValues.png; sourceTree = "<group>"; };
+		21F1C66E1DA7176B004D3309 /* testHidesValues@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHidesValues@2x.png"; sourceTree = "<group>"; };
+		21F1C66F1DA7176B004D3309 /* testHidesValues@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testHidesValues@3x.png"; sourceTree = "<group>"; };
+		21F1C6701DA7176B004D3309 /* testIsCubic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIsCubic.png; sourceTree = "<group>"; };
+		21F1C6711DA7176B004D3309 /* testIsCubic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIsCubic@2x.png"; sourceTree = "<group>"; };
+		21F1C6721DA7176B004D3309 /* testIsCubic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIsCubic@3x.png"; sourceTree = "<group>"; };
+		21F1C6741DA7176B004D3309 /* ChartsRealmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsRealmTest.swift; sourceTree = "<group>"; };
+		21F1C6761DA7176B004D3309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F1C69C1DA71A38004D3309 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		510145F21D9EE16E0028E36A /* CandidateIDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateIDController.swift; sourceTree = "<group>"; };
+		5159E6A91D9995A200B41F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
+		5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		518E624B1D92EB90008AAC2C /* Office.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
+		519B09771D92F43A00D3149F /* Election.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Election.swift; sourceTree = "<group>"; };
+		519B09791D92F48000D3149F /* Contest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contest.swift; sourceTree = "<group>"; };
+		51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialsTableViewController.swift; sourceTree = "<group>"; };
+		51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionDetailViewController.swift; sourceTree = "<group>"; };
+		51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialAddressMapViewController.swift; sourceTree = "<group>"; };
+		640411611D91DF2800B57A4C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		640411631D91E25400B57A4C /* Social.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		6473387E1D958BC2006C7442 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		648BA9731D9DB99F00B95D31 /* Contributions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contributions.swift; sourceTree = "<group>"; };
+		648BA9751D9DB9B800B95D31 /* CandidateID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateID.swift; sourceTree = "<group>"; };
+		648BA9771D9DBD9400B95D31 /* ContributorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributorController.swift; sourceTree = "<group>"; };
+		64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
+		64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficialDetailTableViewController.swift; sourceTree = "<group>"; };
+		A20F69901D9F172C0058227D /* ReferendumDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReferendumDetail.storyboard; sourceTree = "<group>"; };
+		A20F69921D9F1CD20058227D /* ReferendumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferendumDetailViewController.swift; sourceTree = "<group>"; };
+		A21C52231D91CA9500909C0C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		A290B9291D99C54800A7C34C /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21E726D81D90914900ADC64F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21F1C6891DA71777004D3309 /* Charts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21E726EC1D90914900ADC64F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21E726D21D90914900ADC64F = {
+			isa = PBXGroup;
+			children = (
+				21F1C5001DA7176B004D3309 /* Charts-2.3.0 3 */,
+				21E726DD1D90914900ADC64F /* SmartVoter */,
+				21E726F21D90914900ADC64F /* SmartVoterTests */,
+				21E726DC1D90914900ADC64F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21E726DC1D90914900ADC64F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21E726DB1D90914900ADC64F /* SmartVoter.app */,
+				21E726EF1D90914900ADC64F /* SmartVoterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21E726DD1D90914900ADC64F /* SmartVoter */ = {
+			isa = PBXGroup;
+			children = (
+				21E726DE1D90914900ADC64F /* AppDelegate.swift */,
+				21E727141D909A0600ADC64F /* Model */,
+				21E7270D1D90996F00ADC64F /* Model Controller */,
+				21E727041D90958400ADC64F /* View Controller */,
+				A223503F1D9434280023F2BC /* Storyboards */,
+				21E726E51D90914900ADC64F /* Assets.xcassets */,
+				21F1C69C1DA71A38004D3309 /* Info.plist */,
+			);
+			path = SmartVoter;
+			sourceTree = "<group>";
+		};
+		21E726F21D90914900ADC64F /* SmartVoterTests */ = {
+			isa = PBXGroup;
+			children = (
+				21E726F31D90914900ADC64F /* SmartVoterTests.swift */,
+				21E726F51D90914900ADC64F /* Info.plist */,
+			);
+			path = SmartVoterTests;
+			sourceTree = "<group>";
+		};
+		21E727041D90958400ADC64F /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64B19D631D9ECD9600C07D8E /* BarChartViewController.swift */,
+				21E727021D90949800ADC64F /* ElectionTableViewController.swift */,
+				51C2D3311D934C9E0018109E /* ElectionDetailViewController.swift */,
+				A20F69921D9F1CD20058227D /* ReferendumDetailViewController.swift */,
+				21E727051D90959C00ADC64F /* ElectionTableViewCell.swift */,
+				51C2D3331D934CAF0018109E /* OfficialAddressMapViewController.swift */,
+				64CE2EE41D99CD530089C09D /* OfficialDetailTableViewController.swift */,
+				51C2D32F1D92FFCC0018109E /* OfficialsTableViewController.swift */,
+				21E727071D9095AB00ADC64F /* OfficialTableViewCell.swift */,
+				21E726FE1D90941E00ADC64F /* ProfileViewController.swift */,
+				2131D9FC1D949DF5008E198E /* CandidateTableViewCell.swift */,
+				6473387E1D958BC2006C7442 /* ColorPalette.swift */,
+				5159E6AB1D9995B700B41F65 /* SignUpViewController.swift */,
+				A290B9291D99C54800A7C34C /* CustomTabBarController.swift */,
+				215E6EA31D9AE374009E75EC /* SettingsTableViewController.swift */,
+				210C06A11DA6C8B800C3FAB1 /* PageViewController.swift */,
+				210C06A51DA6F09700C3FAB1 /* TabBarOneUIViewController.swift */,
+				210C06AC1DA6F65900C3FAB1 /* TabBarTwoViewController.swift */,
+				210C06B61DA6FA5800C3FAB1 /* TabBarThreeViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		21E7270D1D90996F00ADC64F /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21E727091D90996300ADC64F /* OfficialController.swift */,
+				648BA9771D9DBD9400B95D31 /* ContributorController.swift */,
+				510145F21D9EE16E0028E36A /* CandidateIDController.swift */,
+				21E7270B1D90996A00ADC64F /* ElectionController.swift */,
+				21648E6D1D91E4AB00B966ED /* PollingLocationController.swift */,
+				21E7270E1D9099BB00ADC64F /* NetworkController.swift */,
+				21E727151D909A3700ADC64F /* ImageController.swift */,
+				21648E6F1D922E5800B966ED /* ProfileController.swift */,
+				21D097361D9E0778006BC9A3 /* SettingsController.swift */,
+			);
+			name = "Model Controller";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		21E727141D909A0600ADC64F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				519B09771D92F43A00D3149F /* Election.swift */,
+				648BA9731D9DB99F00B95D31 /* Contributions.swift */,
+				648BA9751D9DB9B800B95D31 /* CandidateID.swift */,
+				21E727101D9099DB00ADC64F /* Official.swift */,
+				A21C52231D91CA9500909C0C /* Candidate.swift */,
+				519B09791D92F48000D3149F /* Contest.swift */,
+				21648E691D91DF3B00B966ED /* PollingLocation.swift */,
+				640411611D91DF2800B57A4C /* Address.swift */,
+				640411631D91E25400B57A4C /* Social.swift */,
+				518E624B1D92EB90008AAC2C /* Office.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		21F1C5001DA7176B004D3309 /* Charts-2.3.0 3 */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5011DA7176B004D3309 /* .gitignore */,
+				21F1C5021DA7176B004D3309 /* .swift-version */,
+				21F1C5031DA7176B004D3309 /* .travis.yml */,
+				21F1C5041DA7176B004D3309 /* Assets */,
+				21F1C5071DA7176B004D3309 /* Cartfile */,
+				21F1C5081DA7176B004D3309 /* Cartfile.private */,
+				21F1C5091DA7176B004D3309 /* Cartfile.resolved */,
+				21F1C50A1DA7176B004D3309 /* Carthage.xcconfig */,
+				21F1C50B1DA7176B004D3309 /* CHANGELOG.md */,
+				21F1C50C1DA7176B004D3309 /* Charts.podspec */,
+				21F1C50D1DA7176B004D3309 /* Charts.xcodeproj */,
+				21F1C5101DA7176B004D3309 /* ChartsDemo */,
+				21F1C59A1DA7176B004D3309 /* ChartsDemo-OSX */,
+				21F1C5AA1DA7176B004D3309 /* CONTRIBUTING.md */,
+				21F1C5AB1DA7176B004D3309 /* Gemfile */,
+				21F1C5AC1DA7176B004D3309 /* Gemfile.lock */,
+				21F1C5AD1DA7176B004D3309 /* LICENSE */,
+				21F1C5AE1DA7176B004D3309 /* Rakefile */,
+				21F1C5AF1DA7176B004D3309 /* README.md */,
+				21F1C5B01DA7176B004D3309 /* Source */,
+				21F1C64B1DA7176B004D3309 /* Tests */,
+			);
+			name = "Charts-2.3.0 3";
+			path = "../../../../Downloads/Charts-2.3.0 3";
+			sourceTree = "<group>";
+		};
+		21F1C5041DA7176B004D3309 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5051DA7176B004D3309 /* feature_graphic.png */,
+				21F1C5061DA7176B004D3309 /* feature_graphic.psd */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		21F1C50E1DA7176B004D3309 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C67C1DA7176B004D3309 /* Charts.framework */,
+				21F1C67E1DA7176B004D3309 /* ChartsTests.xctest */,
+				21F1C6801DA7176B004D3309 /* ChartsRealm.framework */,
+				21F1C6821DA7176B004D3309 /* ChartsRealmTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21F1C5101DA7176B004D3309 /* ChartsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5111DA7176B004D3309 /* ChartsDemo.xcodeproj */,
+				21F1C5151DA7176B004D3309 /* Classes */,
+				21F1C5861DA7176B004D3309 /* Resources */,
+				21F1C5961DA7176B004D3309 /* Supporting Files */,
+			);
+			path = ChartsDemo;
+			sourceTree = "<group>";
+		};
+		21F1C5121DA7176B004D3309 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6881DA7176B004D3309 /* ChartsDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21F1C5151DA7176B004D3309 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5161DA7176B004D3309 /* AppDelegate.h */,
+				21F1C5171DA7176B004D3309 /* AppDelegate.m */,
+				21F1C5181DA7176B004D3309 /* Components */,
+				21F1C51C1DA7176B004D3309 /* DemoBaseViewController.h */,
+				21F1C51D1DA7176B004D3309 /* DemoBaseViewController.m */,
+				21F1C51E1DA7176B004D3309 /* DemoListViewController.h */,
+				21F1C51F1DA7176B004D3309 /* DemoListViewController.m */,
+				21F1C5201DA7176B004D3309 /* DemoListViewController.xib */,
+				21F1C5211DA7176B004D3309 /* Demos */,
+				21F1C55E1DA7176B004D3309 /* RealmBase */,
+				21F1C5671DA7176B004D3309 /* RealmDemoListViewController.h */,
+				21F1C5681DA7176B004D3309 /* RealmDemoListViewController.m */,
+				21F1C5691DA7176B004D3309 /* RealmDemoListViewController.xib */,
+				21F1C56A1DA7176B004D3309 /* RealmDemos */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		21F1C5181DA7176B004D3309 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5191DA7176B004D3309 /* BalloonMarker.swift */,
+				21F1C51A1DA7176B004D3309 /* MyCustomXValueFormatter.h */,
+				21F1C51B1DA7176B004D3309 /* MyCustomXValueFormatter.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		21F1C5211DA7176B004D3309 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5221DA7176B004D3309 /* AnotherBarChartViewController.h */,
+				21F1C5231DA7176B004D3309 /* AnotherBarChartViewController.m */,
+				21F1C5241DA7176B004D3309 /* AnotherBarChartViewController.xib */,
+				21F1C5251DA7176B004D3309 /* BarChartViewController.h */,
+				21F1C5261DA7176B004D3309 /* BarChartViewController.m */,
+				21F1C5271DA7176B004D3309 /* BarChartViewController.xib */,
+				21F1C5281DA7176B004D3309 /* BubbleChartViewController.h */,
+				21F1C5291DA7176B004D3309 /* BubbleChartViewController.m */,
+				21F1C52A1DA7176B004D3309 /* BubbleChartViewController.xib */,
+				21F1C52B1DA7176B004D3309 /* CandleStickChartViewController.h */,
+				21F1C52C1DA7176B004D3309 /* CandleStickChartViewController.m */,
+				21F1C52D1DA7176B004D3309 /* CandleStickChartViewController.xib */,
+				21F1C52E1DA7176B004D3309 /* ColoredLineChartViewController.h */,
+				21F1C52F1DA7176B004D3309 /* ColoredLineChartViewController.m */,
+				21F1C5301DA7176B004D3309 /* ColoredLineChartViewController.xib */,
+				21F1C5311DA7176B004D3309 /* CombinedChartViewController.h */,
+				21F1C5321DA7176B004D3309 /* CombinedChartViewController.m */,
+				21F1C5331DA7176B004D3309 /* CombinedChartViewController.xib */,
+				21F1C5341DA7176B004D3309 /* CubicLineChartViewController.h */,
+				21F1C5351DA7176B004D3309 /* CubicLineChartViewController.m */,
+				21F1C5361DA7176B004D3309 /* CubicLineChartViewController.xib */,
+				21F1C5371DA7176B004D3309 /* HorizontalBarChartViewController.h */,
+				21F1C5381DA7176B004D3309 /* HorizontalBarChartViewController.m */,
+				21F1C5391DA7176B004D3309 /* HorizontalBarChartViewController.xib */,
+				21F1C53A1DA7176B004D3309 /* LineChart1ViewController.h */,
+				21F1C53B1DA7176B004D3309 /* LineChart1ViewController.m */,
+				21F1C53C1DA7176B004D3309 /* LineChart1ViewController.xib */,
+				21F1C53D1DA7176B004D3309 /* LineChart2ViewController.h */,
+				21F1C53E1DA7176B004D3309 /* LineChart2ViewController.m */,
+				21F1C53F1DA7176B004D3309 /* LineChart2ViewController.xib */,
+				21F1C5401DA7176B004D3309 /* MultipleBarChartViewController.h */,
+				21F1C5411DA7176B004D3309 /* MultipleBarChartViewController.m */,
+				21F1C5421DA7176B004D3309 /* MultipleBarChartViewController.xib */,
+				21F1C5431DA7176B004D3309 /* MultipleLinesChartViewController.h */,
+				21F1C5441DA7176B004D3309 /* MultipleLinesChartViewController.m */,
+				21F1C5451DA7176B004D3309 /* MultipleLinesChartViewController.xib */,
+				21F1C5461DA7176B004D3309 /* NegativeStackedBarChartViewController.h */,
+				21F1C5471DA7176B004D3309 /* NegativeStackedBarChartViewController.m */,
+				21F1C5481DA7176B004D3309 /* NegativeStackedBarChartViewController.xib */,
+				21F1C5491DA7176B004D3309 /* PieChartViewController.h */,
+				21F1C54A1DA7176B004D3309 /* PieChartViewController.m */,
+				21F1C54B1DA7176B004D3309 /* PieChartViewController.xib */,
+				21F1C54C1DA7176B004D3309 /* PiePolylineChartViewController.h */,
+				21F1C54D1DA7176B004D3309 /* PiePolylineChartViewController.m */,
+				21F1C54E1DA7176B004D3309 /* PiePolylineChartViewController.xib */,
+				21F1C54F1DA7176B004D3309 /* PositiveNegativeBarChartViewController.h */,
+				21F1C5501DA7176B004D3309 /* PositiveNegativeBarChartViewController.m */,
+				21F1C5511DA7176B004D3309 /* PositiveNegativeBarChartViewController.xib */,
+				21F1C5521DA7176B004D3309 /* RadarChartViewController.h */,
+				21F1C5531DA7176B004D3309 /* RadarChartViewController.m */,
+				21F1C5541DA7176B004D3309 /* RadarChartViewController.xib */,
+				21F1C5551DA7176B004D3309 /* ScatterChartViewController.h */,
+				21F1C5561DA7176B004D3309 /* ScatterChartViewController.m */,
+				21F1C5571DA7176B004D3309 /* ScatterChartViewController.xib */,
+				21F1C5581DA7176B004D3309 /* SinusBarChartViewController.h */,
+				21F1C5591DA7176B004D3309 /* SinusBarChartViewController.m */,
+				21F1C55A1DA7176B004D3309 /* SinusBarChartViewController.xib */,
+				21F1C55B1DA7176B004D3309 /* StackedBarChartViewController.h */,
+				21F1C55C1DA7176B004D3309 /* StackedBarChartViewController.m */,
+				21F1C55D1DA7176B004D3309 /* StackedBarChartViewController.xib */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		21F1C55E1DA7176B004D3309 /* RealmBase */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C55F1DA7176B004D3309 /* RealmDemoBaseViewController.h */,
+				21F1C5601DA7176B004D3309 /* RealmDemoBaseViewController.m */,
+				21F1C5611DA7176B004D3309 /* RealmDemoData.h */,
+				21F1C5621DA7176B004D3309 /* RealmDemoData.m */,
+				21F1C5631DA7176B004D3309 /* RealmFloat.h */,
+				21F1C5641DA7176B004D3309 /* RealmFloat.m */,
+				21F1C5651DA7176B004D3309 /* Score.h */,
+				21F1C5661DA7176B004D3309 /* Score.m */,
+			);
+			path = RealmBase;
+			sourceTree = "<group>";
+		};
+		21F1C56A1DA7176B004D3309 /* RealmDemos */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C56B1DA7176B004D3309 /* RealmBarChartViewController.h */,
+				21F1C56C1DA7176B004D3309 /* RealmBarChartViewController.m */,
+				21F1C56D1DA7176B004D3309 /* RealmBarChartViewController.xib */,
+				21F1C56E1DA7176B004D3309 /* RealmBubbleChartViewController.h */,
+				21F1C56F1DA7176B004D3309 /* RealmBubbleChartViewController.m */,
+				21F1C5701DA7176B004D3309 /* RealmBubbleChartViewController.xib */,
+				21F1C5711DA7176B004D3309 /* RealmCandleChartViewController.h */,
+				21F1C5721DA7176B004D3309 /* RealmCandleChartViewController.m */,
+				21F1C5731DA7176B004D3309 /* RealmCandleChartViewController.xib */,
+				21F1C5741DA7176B004D3309 /* RealmHorizontalBarChartViewController.h */,
+				21F1C5751DA7176B004D3309 /* RealmHorizontalBarChartViewController.m */,
+				21F1C5761DA7176B004D3309 /* RealmHorizontalBarChartViewController.xib */,
+				21F1C5771DA7176B004D3309 /* RealmLineChartViewController.h */,
+				21F1C5781DA7176B004D3309 /* RealmLineChartViewController.m */,
+				21F1C5791DA7176B004D3309 /* RealmLineChartViewController.xib */,
+				21F1C57A1DA7176B004D3309 /* RealmPieChartViewController.h */,
+				21F1C57B1DA7176B004D3309 /* RealmPieChartViewController.m */,
+				21F1C57C1DA7176B004D3309 /* RealmPieChartViewController.xib */,
+				21F1C57D1DA7176B004D3309 /* RealmRadarChartViewController.h */,
+				21F1C57E1DA7176B004D3309 /* RealmRadarChartViewController.m */,
+				21F1C57F1DA7176B004D3309 /* RealmRadarChartViewController.xib */,
+				21F1C5801DA7176B004D3309 /* RealmScatterChartViewController.h */,
+				21F1C5811DA7176B004D3309 /* RealmScatterChartViewController.m */,
+				21F1C5821DA7176B004D3309 /* RealmScatterChartViewController.xib */,
+				21F1C5831DA7176B004D3309 /* RealmWikiExampleChartViewController.h */,
+				21F1C5841DA7176B004D3309 /* RealmWikiExampleChartViewController.m */,
+				21F1C5851DA7176B004D3309 /* RealmWikiExampleChartViewController.xib */,
+			);
+			path = RealmDemos;
+			sourceTree = "<group>";
+		};
+		21F1C5861DA7176B004D3309 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5871DA7176B004D3309 /* app-icon */,
+				21F1C5901DA7176B004D3309 /* Images.xcassets */,
+				21F1C5911DA7176B004D3309 /* launch-image */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		21F1C5871DA7176B004D3309 /* app-icon */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5881DA7176B004D3309 /* Icon-29@2x.png */,
+				21F1C5891DA7176B004D3309 /* Icon-29@3x.png */,
+				21F1C58A1DA7176B004D3309 /* Icon-40@2x.png */,
+				21F1C58B1DA7176B004D3309 /* Icon-40@3x.png */,
+				21F1C58C1DA7176B004D3309 /* Icon-60@2x.png */,
+				21F1C58D1DA7176B004D3309 /* Icon-60@3x.png */,
+				21F1C58E1DA7176B004D3309 /* iTunesArtwork */,
+				21F1C58F1DA7176B004D3309 /* iTunesArtwork@2x */,
+			);
+			path = "app-icon";
+			sourceTree = "<group>";
+		};
+		21F1C5911DA7176B004D3309 /* launch-image */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5921DA7176B004D3309 /* Default-568h@2x.png */,
+				21F1C5931DA7176B004D3309 /* Default-667h@2x.png */,
+				21F1C5941DA7176B004D3309 /* Default-736h@3x.png */,
+				21F1C5951DA7176B004D3309 /* Default@2x.png */,
+			);
+			path = "launch-image";
+			sourceTree = "<group>";
+		};
+		21F1C5961DA7176B004D3309 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5971DA7176B004D3309 /* ChartsDemo-Bridging-Header.h */,
+				21F1C5981DA7176B004D3309 /* Info.plist */,
+				21F1C5991DA7176B004D3309 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21F1C59A1DA7176B004D3309 /* ChartsDemo-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C59B1DA7176B004D3309 /* ChartsDemo-OSX */,
+				21F1C5A61DA7176B004D3309 /* ChartsDemo-OSX.xcodeproj */,
+			);
+			path = "ChartsDemo-OSX";
+			sourceTree = "<group>";
+		};
+		21F1C59B1DA7176B004D3309 /* ChartsDemo-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C59C1DA7176B004D3309 /* AppDelegate.swift */,
+				21F1C59D1DA7176B004D3309 /* Assets.xcassets */,
+				21F1C59E1DA7176B004D3309 /* Main.storyboard */,
+				21F1C5A01DA7176B004D3309 /* Demos */,
+				21F1C5A51DA7176B004D3309 /* Info.plist */,
+			);
+			path = "ChartsDemo-OSX";
+			sourceTree = "<group>";
+		};
+		21F1C5A01DA7176B004D3309 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5A11DA7176B004D3309 /* BarDemoViewController.swift */,
+				21F1C5A21DA7176B004D3309 /* LineDemoViewController.swift */,
+				21F1C5A31DA7176B004D3309 /* PieDemoViewController.swift */,
+				21F1C5A41DA7176B004D3309 /* RadarDemoViewController.swift */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		21F1C5A71DA7176B004D3309 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6851DA7176B004D3309 /* ChartsDemo-OSX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21F1C5B01DA7176B004D3309 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5B11DA7176B004D3309 /* Charts */,
+				21F1C6311DA7176B004D3309 /* ChartsRealm */,
+				21F1C6471DA7176B004D3309 /* Supporting Files */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		21F1C5B11DA7176B004D3309 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5B21DA7176B004D3309 /* Animation */,
+				21F1C5B51DA7176B004D3309 /* Charts */,
+				21F1C5C21DA7176B004D3309 /* Components */,
+				21F1C5CA1DA7176B004D3309 /* Data */,
+				21F1C5F31DA7176B004D3309 /* Filters */,
+				21F1C5F61DA7176B004D3309 /* Formatters */,
+				21F1C5FB1DA7176B004D3309 /* Highlight */,
+				21F1C6021DA7176B004D3309 /* Interfaces */,
+				21F1C60A1DA7176B004D3309 /* Jobs */,
+				21F1C6111DA7176B004D3309 /* Renderers */,
+				21F1C6281DA7176B004D3309 /* Utils */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		21F1C5B21DA7176B004D3309 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5B31DA7176B004D3309 /* ChartAnimationEasing.swift */,
+				21F1C5B41DA7176B004D3309 /* ChartAnimator.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		21F1C5B51DA7176B004D3309 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5B61DA7176B004D3309 /* BarChartView.swift */,
+				21F1C5B71DA7176B004D3309 /* BarLineChartViewBase.swift */,
+				21F1C5B81DA7176B004D3309 /* BubbleChartView.swift */,
+				21F1C5B91DA7176B004D3309 /* CandleStickChartView.swift */,
+				21F1C5BA1DA7176B004D3309 /* ChartViewBase.swift */,
+				21F1C5BB1DA7176B004D3309 /* CombinedChartView.swift */,
+				21F1C5BC1DA7176B004D3309 /* HorizontalBarChartView.swift */,
+				21F1C5BD1DA7176B004D3309 /* LineChartView.swift */,
+				21F1C5BE1DA7176B004D3309 /* PieChartView.swift */,
+				21F1C5BF1DA7176B004D3309 /* PieRadarChartViewBase.swift */,
+				21F1C5C01DA7176B004D3309 /* RadarChartView.swift */,
+				21F1C5C11DA7176B004D3309 /* ScatterChartView.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		21F1C5C21DA7176B004D3309 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5C31DA7176B004D3309 /* ChartAxisBase.swift */,
+				21F1C5C41DA7176B004D3309 /* ChartComponentBase.swift */,
+				21F1C5C51DA7176B004D3309 /* ChartLegend.swift */,
+				21F1C5C61DA7176B004D3309 /* ChartLimitLine.swift */,
+				21F1C5C71DA7176B004D3309 /* ChartMarker.swift */,
+				21F1C5C81DA7176B004D3309 /* ChartXAxis.swift */,
+				21F1C5C91DA7176B004D3309 /* ChartYAxis.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		21F1C5CA1DA7176B004D3309 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5CB1DA7176B004D3309 /* Implementations */,
+				21F1C5E71DA7176B004D3309 /* Interfaces */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		21F1C5CB1DA7176B004D3309 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5CC1DA7176B004D3309 /* ChartBaseDataSet.swift */,
+				21F1C5CD1DA7176B004D3309 /* Standard */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		21F1C5CD1DA7176B004D3309 /* Standard */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5CE1DA7176B004D3309 /* BarChartData.swift */,
+				21F1C5CF1DA7176B004D3309 /* BarChartDataEntry.swift */,
+				21F1C5D01DA7176B004D3309 /* BarChartDataSet.swift */,
+				21F1C5D11DA7176B004D3309 /* BarLineScatterCandleBubbleChartData.swift */,
+				21F1C5D21DA7176B004D3309 /* BarLineScatterCandleBubbleChartDataSet.swift */,
+				21F1C5D31DA7176B004D3309 /* BubbleChartData.swift */,
+				21F1C5D41DA7176B004D3309 /* BubbleChartDataEntry.swift */,
+				21F1C5D51DA7176B004D3309 /* BubbleChartDataSet.swift */,
+				21F1C5D61DA7176B004D3309 /* CandleChartData.swift */,
+				21F1C5D71DA7176B004D3309 /* CandleChartDataEntry.swift */,
+				21F1C5D81DA7176B004D3309 /* CandleChartDataSet.swift */,
+				21F1C5D91DA7176B004D3309 /* ChartData.swift */,
+				21F1C5DA1DA7176B004D3309 /* ChartDataEntry.swift */,
+				21F1C5DB1DA7176B004D3309 /* ChartDataSet.swift */,
+				21F1C5DC1DA7176B004D3309 /* CombinedChartData.swift */,
+				21F1C5DD1DA7176B004D3309 /* LineChartData.swift */,
+				21F1C5DE1DA7176B004D3309 /* LineChartDataSet.swift */,
+				21F1C5DF1DA7176B004D3309 /* LineRadarChartDataSet.swift */,
+				21F1C5E01DA7176B004D3309 /* LineScatterCandleRadarChartDataSet.swift */,
+				21F1C5E11DA7176B004D3309 /* PieChartData.swift */,
+				21F1C5E21DA7176B004D3309 /* PieChartDataSet.swift */,
+				21F1C5E31DA7176B004D3309 /* RadarChartData.swift */,
+				21F1C5E41DA7176B004D3309 /* RadarChartDataSet.swift */,
+				21F1C5E51DA7176B004D3309 /* ScatterChartData.swift */,
+				21F1C5E61DA7176B004D3309 /* ScatterChartDataSet.swift */,
+			);
+			path = Standard;
+			sourceTree = "<group>";
+		};
+		21F1C5E71DA7176B004D3309 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5E81DA7176B004D3309 /* IBarChartDataSet.swift */,
+				21F1C5E91DA7176B004D3309 /* IBarLineScatterCandleBubbleChartDataSet.swift */,
+				21F1C5EA1DA7176B004D3309 /* IBubbleChartDataSet.swift */,
+				21F1C5EB1DA7176B004D3309 /* ICandleChartDataSet.swift */,
+				21F1C5EC1DA7176B004D3309 /* IChartDataSet.swift */,
+				21F1C5ED1DA7176B004D3309 /* ILineChartDataSet.swift */,
+				21F1C5EE1DA7176B004D3309 /* ILineRadarChartDataSet.swift */,
+				21F1C5EF1DA7176B004D3309 /* ILineScatterCandleRadarChartDataSet.swift */,
+				21F1C5F01DA7176B004D3309 /* IPieChartDataSet.swift */,
+				21F1C5F11DA7176B004D3309 /* IRadarChartDataSet.swift */,
+				21F1C5F21DA7176B004D3309 /* IScatterChartDataSet.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		21F1C5F31DA7176B004D3309 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5F41DA7176B004D3309 /* ChartDataApproximatorFilter.swift */,
+				21F1C5F51DA7176B004D3309 /* ChartDataBaseFilter.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		21F1C5F61DA7176B004D3309 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5F71DA7176B004D3309 /* ChartDefaultFillFormatter.swift */,
+				21F1C5F81DA7176B004D3309 /* ChartDefaultXAxisValueFormatter.swift */,
+				21F1C5F91DA7176B004D3309 /* ChartFillFormatter.swift */,
+				21F1C5FA1DA7176B004D3309 /* ChartXAxisValueFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		21F1C5FB1DA7176B004D3309 /* Highlight */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C5FC1DA7176B004D3309 /* BarChartHighlighter.swift */,
+				21F1C5FD1DA7176B004D3309 /* ChartHighlight.swift */,
+				21F1C5FE1DA7176B004D3309 /* ChartHighlighter.swift */,
+				21F1C5FF1DA7176B004D3309 /* ChartRange.swift */,
+				21F1C6001DA7176B004D3309 /* CombinedHighlighter.swift */,
+				21F1C6011DA7176B004D3309 /* HorizontalBarChartHighlighter.swift */,
+			);
+			path = Highlight;
+			sourceTree = "<group>";
+		};
+		21F1C6021DA7176B004D3309 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6031DA7176B004D3309 /* BarChartDataProvider.swift */,
+				21F1C6041DA7176B004D3309 /* BarLineScatterCandleBubbleChartDataProvider.swift */,
+				21F1C6051DA7176B004D3309 /* BubbleChartDataProvider.swift */,
+				21F1C6061DA7176B004D3309 /* CandleChartDataProvider.swift */,
+				21F1C6071DA7176B004D3309 /* ChartDataProvider.swift */,
+				21F1C6081DA7176B004D3309 /* LineChartDataProvider.swift */,
+				21F1C6091DA7176B004D3309 /* ScatterChartDataProvider.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		21F1C60A1DA7176B004D3309 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C60B1DA7176B004D3309 /* AnimatedMoveViewJob.swift */,
+				21F1C60C1DA7176B004D3309 /* AnimatedViewPortJob.swift */,
+				21F1C60D1DA7176B004D3309 /* AnimatedZoomViewJob.swift */,
+				21F1C60E1DA7176B004D3309 /* ChartViewPortJob.swift */,
+				21F1C60F1DA7176B004D3309 /* MoveChartViewJob.swift */,
+				21F1C6101DA7176B004D3309 /* ZoomChartViewJob.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		21F1C6111DA7176B004D3309 /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6121DA7176B004D3309 /* BarChartRenderer.swift */,
+				21F1C6131DA7176B004D3309 /* BubbleChartRenderer.swift */,
+				21F1C6141DA7176B004D3309 /* CandleStickChartRenderer.swift */,
+				21F1C6151DA7176B004D3309 /* ChartAxisRendererBase.swift */,
+				21F1C6161DA7176B004D3309 /* ChartDataRendererBase.swift */,
+				21F1C6171DA7176B004D3309 /* ChartLegendRenderer.swift */,
+				21F1C6181DA7176B004D3309 /* ChartRendererBase.swift */,
+				21F1C6191DA7176B004D3309 /* ChartXAxisRenderer.swift */,
+				21F1C61A1DA7176B004D3309 /* ChartXAxisRendererBarChart.swift */,
+				21F1C61B1DA7176B004D3309 /* ChartXAxisRendererHorizontalBarChart.swift */,
+				21F1C61C1DA7176B004D3309 /* ChartXAxisRendererRadarChart.swift */,
+				21F1C61D1DA7176B004D3309 /* ChartYAxisRenderer.swift */,
+				21F1C61E1DA7176B004D3309 /* ChartYAxisRendererHorizontalBarChart.swift */,
+				21F1C61F1DA7176B004D3309 /* ChartYAxisRendererRadarChart.swift */,
+				21F1C6201DA7176B004D3309 /* CombinedChartRenderer.swift */,
+				21F1C6211DA7176B004D3309 /* HorizontalBarChartRenderer.swift */,
+				21F1C6221DA7176B004D3309 /* LineChartRenderer.swift */,
+				21F1C6231DA7176B004D3309 /* LineRadarChartRenderer.swift */,
+				21F1C6241DA7176B004D3309 /* LineScatterCandleRadarChartRenderer.swift */,
+				21F1C6251DA7176B004D3309 /* PieChartRenderer.swift */,
+				21F1C6261DA7176B004D3309 /* RadarChartRenderer.swift */,
+				21F1C6271DA7176B004D3309 /* ScatterChartRenderer.swift */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		21F1C6281DA7176B004D3309 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6291DA7176B004D3309 /* ChartColorTemplates.swift */,
+				21F1C62A1DA7176B004D3309 /* ChartFill.swift */,
+				21F1C62B1DA7176B004D3309 /* ChartPlatform.swift */,
+				21F1C62C1DA7176B004D3309 /* ChartSelectionDetail.swift */,
+				21F1C62D1DA7176B004D3309 /* ChartTransformer.swift */,
+				21F1C62E1DA7176B004D3309 /* ChartTransformerHorizontalBarChart.swift */,
+				21F1C62F1DA7176B004D3309 /* ChartUtils.swift */,
+				21F1C6301DA7176B004D3309 /* ChartViewPortHandler.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		21F1C6311DA7176B004D3309 /* ChartsRealm */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6321DA7176B004D3309 /* Data */,
+				21F1C6451DA7176B004D3309 /* Utils */,
+			);
+			path = ChartsRealm;
+			sourceTree = "<group>";
+		};
+		21F1C6321DA7176B004D3309 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6331DA7176B004D3309 /* RealmBarData.swift */,
+				21F1C6341DA7176B004D3309 /* RealmBarDataSet.swift */,
+				21F1C6351DA7176B004D3309 /* RealmBarLineScatterCandleBubbleDataSet.swift */,
+				21F1C6361DA7176B004D3309 /* RealmBaseDataSet.swift */,
+				21F1C6371DA7176B004D3309 /* RealmBubbleData.swift */,
+				21F1C6381DA7176B004D3309 /* RealmBubbleDataSet.swift */,
+				21F1C6391DA7176B004D3309 /* RealmCandleData.swift */,
+				21F1C63A1DA7176B004D3309 /* RealmCandleDataSet.swift */,
+				21F1C63B1DA7176B004D3309 /* RealmLineData.swift */,
+				21F1C63C1DA7176B004D3309 /* RealmLineDataSet.swift */,
+				21F1C63D1DA7176B004D3309 /* RealmLineRadarDataSet.swift */,
+				21F1C63E1DA7176B004D3309 /* RealmLineScatterCandleRadarDataSet.swift */,
+				21F1C63F1DA7176B004D3309 /* RealmPieData.swift */,
+				21F1C6401DA7176B004D3309 /* RealmPieDataSet.swift */,
+				21F1C6411DA7176B004D3309 /* RealmRadarData.swift */,
+				21F1C6421DA7176B004D3309 /* RealmRadarDataSet.swift */,
+				21F1C6431DA7176B004D3309 /* RealmScatterData.swift */,
+				21F1C6441DA7176B004D3309 /* RealmScatterDataSet.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		21F1C6451DA7176B004D3309 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6461DA7176B004D3309 /* RealmChartUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		21F1C6471DA7176B004D3309 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6481DA7176B004D3309 /* Charts.h */,
+				21F1C6491DA7176B004D3309 /* ChartsRealm.h */,
+				21F1C64A1DA7176B004D3309 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21F1C64B1DA7176B004D3309 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C64C1DA7176B004D3309 /* Charts */,
+				21F1C6731DA7176B004D3309 /* ChartsRealm */,
+				21F1C6751DA7176B004D3309 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		21F1C64C1DA7176B004D3309 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C64D1DA7176B004D3309 /* BarChartTests.swift */,
+				21F1C64E1DA7176B004D3309 /* LineChartTests.swift */,
+				21F1C64F1DA7176B004D3309 /* ReferenceImages_64 */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		21F1C64F1DA7176B004D3309 /* ReferenceImages_64 */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6501DA7176B004D3309 /* ChartsTests.BarChartTests */,
+				21F1C6631DA7176B004D3309 /* ChartsTests.LineChartTests */,
+			);
+			path = ReferenceImages_64;
+			sourceTree = "<group>";
+		};
+		21F1C6501DA7176B004D3309 /* ChartsTests.BarChartTests */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6511DA7176B004D3309 /* testDefaultValues.png */,
+				21F1C6521DA7176B004D3309 /* testDefaultValues@2x.png */,
+				21F1C6531DA7176B004D3309 /* testDefaultValues@3x.png */,
+				21F1C6541DA7176B004D3309 /* testHideHorizontalGridlines.png */,
+				21F1C6551DA7176B004D3309 /* testHideHorizontalGridlines@2x.png */,
+				21F1C6561DA7176B004D3309 /* testHideHorizontalGridlines@3x.png */,
+				21F1C6571DA7176B004D3309 /* testHideLeftAxis.png */,
+				21F1C6581DA7176B004D3309 /* testHideLeftAxis@2x.png */,
+				21F1C6591DA7176B004D3309 /* testHideLeftAxis@3x.png */,
+				21F1C65A1DA7176B004D3309 /* testHideRightAxis.png */,
+				21F1C65B1DA7176B004D3309 /* testHideRightAxis@2x.png */,
+				21F1C65C1DA7176B004D3309 /* testHideRightAxis@3x.png */,
+				21F1C65D1DA7176B004D3309 /* testHidesValues.png */,
+				21F1C65E1DA7176B004D3309 /* testHidesValues@2x.png */,
+				21F1C65F1DA7176B004D3309 /* testHidesValues@3x.png */,
+				21F1C6601DA7176B004D3309 /* testHideVerticalGridlines.png */,
+				21F1C6611DA7176B004D3309 /* testHideVerticalGridlines@2x.png */,
+				21F1C6621DA7176B004D3309 /* testHideVerticalGridlines@3x.png */,
+			);
+			path = ChartsTests.BarChartTests;
+			sourceTree = "<group>";
+		};
+		21F1C6631DA7176B004D3309 /* ChartsTests.LineChartTests */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6641DA7176B004D3309 /* testDefaultValues.png */,
+				21F1C6651DA7176B004D3309 /* testDefaultValues@2x.png */,
+				21F1C6661DA7176B004D3309 /* testDefaultValues@3x.png */,
+				21F1C6671DA7176B004D3309 /* testDoesntDrawCircleHole.png */,
+				21F1C6681DA7176B004D3309 /* testDoesntDrawCircleHole@2x.png */,
+				21F1C6691DA7176B004D3309 /* testDoesntDrawCircleHole@3x.png */,
+				21F1C66A1DA7176B004D3309 /* testDoesntDrawCircles.png */,
+				21F1C66B1DA7176B004D3309 /* testDoesntDrawCircles@2x.png */,
+				21F1C66C1DA7176B004D3309 /* testDoesntDrawCircles@3x.png */,
+				21F1C66D1DA7176B004D3309 /* testHidesValues.png */,
+				21F1C66E1DA7176B004D3309 /* testHidesValues@2x.png */,
+				21F1C66F1DA7176B004D3309 /* testHidesValues@3x.png */,
+				21F1C6701DA7176B004D3309 /* testIsCubic.png */,
+				21F1C6711DA7176B004D3309 /* testIsCubic@2x.png */,
+				21F1C6721DA7176B004D3309 /* testIsCubic@3x.png */,
+			);
+			path = ChartsTests.LineChartTests;
+			sourceTree = "<group>";
+		};
+		21F1C6731DA7176B004D3309 /* ChartsRealm */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6741DA7176B004D3309 /* ChartsRealmTest.swift */,
+			);
+			path = ChartsRealm;
+			sourceTree = "<group>";
+		};
+		21F1C6751DA7176B004D3309 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21F1C6761DA7176B004D3309 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A223503F1D9434280023F2BC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				21E726E21D90914900ADC64F /* Main.storyboard */,
+				210C06BA1DA6FA9C00C3FAB1 /* TabBarThree.storyboard */,
+				210C06B31DA6F94300C3FAB1 /* TabBarTwo.storyboard */,
+				5159E6A81D9995A200B41F65 /* SignUp.storyboard */,
+				210C06A71DA6F49300C3FAB1 /* TabBarOne.storyboard */,
+				21E727211D919D9D00ADC64F /* ElectionTableView.storyboard */,
+				A20F69901D9F172C0058227D /* ReferendumDetail.storyboard */,
+				21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */,
+				21E7271C1D919D5800ADC64F /* ElectionDetail.storyboard */,
+				21E727191D919D4600ADC64F /* OfficialDetail.storyboard */,
+				21E727171D919D2300ADC64F /* Profile.storyboard */,
+				21E726E71D90914900ADC64F /* LaunchScreen.storyboard */,
+				215E6EA11D9ADC99009E75EC /* Settings.storyboard */,
+				210C069F1DA6C7EB00C3FAB1 /* PageViewController.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21E726DA1D90914900ADC64F /* SmartVoter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21E726F81D90914900ADC64F /* Build configuration list for PBXNativeTarget "SmartVoter" */;
+			buildPhases = (
+				21E726D71D90914900ADC64F /* Sources */,
+				21E726D81D90914900ADC64F /* Frameworks */,
+				21E726D91D90914900ADC64F /* Resources */,
+				64B19D781D9ECF3C00C07D8E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21F1C68C1DA71777004D3309 /* PBXTargetDependency */,
+			);
+			name = SmartVoter;
+			productName = SmartVoter;
+			productReference = 21E726DB1D90914900ADC64F /* SmartVoter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21E726EE1D90914900ADC64F /* SmartVoterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21E726FB1D90914900ADC64F /* Build configuration list for PBXNativeTarget "SmartVoterTests" */;
+			buildPhases = (
+				21E726EB1D90914900ADC64F /* Sources */,
+				21E726EC1D90914900ADC64F /* Frameworks */,
+				21E726ED1D90914900ADC64F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21E726F11D90914900ADC64F /* PBXTargetDependency */,
+			);
+			name = SmartVoterTests;
+			productName = SmartVoterTests;
+			productReference = 21E726EF1D90914900ADC64F /* SmartVoterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21E726D31D90914900ADC64F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = PatrickRidd;
+				TargetAttributes = {
+					21E726DA1D90914900ADC64F = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = CVQEUYD92N;
+						LastSwiftMigration = 0800;
+					};
+					21E726EE1D90914900ADC64F = {
+						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
+						TestTargetID = 21E726DA1D90914900ADC64F;
+					};
+				};
+			};
+			buildConfigurationList = 21E726D61D90914900ADC64F /* Build configuration list for PBXProject "SmartVoter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21E726D21D90914900ADC64F;
+			productRefGroup = 21E726DC1D90914900ADC64F /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 21F1C50E1DA7176B004D3309 /* Products */;
+					ProjectRef = 21F1C50D1DA7176B004D3309 /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 21F1C5A71DA7176B004D3309 /* Products */;
+					ProjectRef = 21F1C5A61DA7176B004D3309 /* ChartsDemo-OSX.xcodeproj */;
+				},
+				{
+					ProductGroup = 21F1C5121DA7176B004D3309 /* Products */;
+					ProjectRef = 21F1C5111DA7176B004D3309 /* ChartsDemo.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				21E726DA1D90914900ADC64F /* SmartVoter */,
+				21E726EE1D90914900ADC64F /* SmartVoterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		21F1C67C1DA7176B004D3309 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 21F1C67B1DA7176B004D3309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21F1C67E1DA7176B004D3309 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 21F1C67D1DA7176B004D3309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21F1C6801DA7176B004D3309 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = 21F1C67F1DA7176B004D3309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21F1C6821DA7176B004D3309 /* ChartsRealmTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsRealmTests.xctest;
+			remoteRef = 21F1C6811DA7176B004D3309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21F1C6851DA7176B004D3309 /* ChartsDemo-OSX.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "ChartsDemo-OSX.app";
+			remoteRef = 21F1C6841DA7176B004D3309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21F1C6881DA7176B004D3309 /* ChartsDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ChartsDemo.app;
+			remoteRef = 21F1C6871DA7176B004D3309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21E726D91D90914900ADC64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21E726E91D90914900ADC64F /* LaunchScreen.storyboard in Resources */,
+				21E727221D919D9D00ADC64F /* ElectionTableView.storyboard in Resources */,
+				210C06BC1DA6FA9C00C3FAB1 /* TabBarThree.storyboard in Resources */,
+				5159E6AA1D9995A200B41F65 /* SignUp.storyboard in Resources */,
+				21E727201D919D7E00ADC64F /* OfficialTableView.storyboard in Resources */,
+				210C06A91DA6F49300C3FAB1 /* TabBarOne.storyboard in Resources */,
+				210C06A01DA6C7EB00C3FAB1 /* PageViewController.storyboard in Resources */,
+				21E726E61D90914900ADC64F /* Assets.xcassets in Resources */,
+				21E727181D919D2300ADC64F /* Profile.storyboard in Resources */,
+				21E726E41D90914900ADC64F /* Main.storyboard in Resources */,
+				21E7271D1D919D5800ADC64F /* ElectionDetail.storyboard in Resources */,
+				21E7271B1D919D4600ADC64F /* OfficialDetail.storyboard in Resources */,
+				210C06B51DA6F94300C3FAB1 /* TabBarTwo.storyboard in Resources */,
+				A20F69911D9F172C0058227D /* ReferendumDetail.storyboard in Resources */,
+				21F1C69D1DA71A38004D3309 /* Info.plist in Resources */,
+				215E6EA21D9ADC99009E75EC /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21E726ED1D90914900ADC64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21E726D71D90914900ADC64F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519B097A1D92F48000D3149F /* Contest.swift in Sources */,
+				21648E6A1D91DF3B00B966ED /* PollingLocation.swift in Sources */,
+				210C06A61DA6F09700C3FAB1 /* TabBarOneUIViewController.swift in Sources */,
+				518E624C1D92EB90008AAC2C /* Office.swift in Sources */,
+				648BA9781D9DBD9400B95D31 /* ContributorController.swift in Sources */,
+				648BA9741D9DB99F00B95D31 /* Contributions.swift in Sources */,
+				21E726FF1D90941E00ADC64F /* ProfileViewController.swift in Sources */,
+				21648E6E1D91E4AB00B966ED /* PollingLocationController.swift in Sources */,
+				648BA9761D9DB9B800B95D31 /* CandidateID.swift in Sources */,
+				210C06B71DA6FA5800C3FAB1 /* TabBarThreeViewController.swift in Sources */,
+				51C2D3341D934CAF0018109E /* OfficialAddressMapViewController.swift in Sources */,
+				640411621D91DF2800B57A4C /* Address.swift in Sources */,
+				2131D9FD1D949DF5008E198E /* CandidateTableViewCell.swift in Sources */,
+				21648E701D922E5800B966ED /* ProfileController.swift in Sources */,
+				210C06AD1DA6F65900C3FAB1 /* TabBarTwoViewController.swift in Sources */,
+				A20F69931D9F1CD20058227D /* ReferendumDetailViewController.swift in Sources */,
+				21E7270C1D90996A00ADC64F /* ElectionController.swift in Sources */,
+				A290B92A1D99C54800A7C34C /* CustomTabBarController.swift in Sources */,
+				210C06A21DA6C8B800C3FAB1 /* PageViewController.swift in Sources */,
+				510145F31D9EE16E0028E36A /* CandidateIDController.swift in Sources */,
+				6473387F1D958BC2006C7442 /* ColorPalette.swift in Sources */,
+				51C2D3301D92FFCC0018109E /* OfficialsTableViewController.swift in Sources */,
+				21E7270A1D90996300ADC64F /* OfficialController.swift in Sources */,
+				21E727081D9095AB00ADC64F /* OfficialTableViewCell.swift in Sources */,
+				21E727031D90949800ADC64F /* ElectionTableViewController.swift in Sources */,
+				21E727111D9099DB00ADC64F /* Official.swift in Sources */,
+				21E726DF1D90914900ADC64F /* AppDelegate.swift in Sources */,
+				A21C52241D91CA9500909C0C /* Candidate.swift in Sources */,
+				21E727061D90959C00ADC64F /* ElectionTableViewCell.swift in Sources */,
+				215E6EA41D9AE374009E75EC /* SettingsTableViewController.swift in Sources */,
+				51C2D3321D934C9E0018109E /* ElectionDetailViewController.swift in Sources */,
+				519B09781D92F43B00D3149F /* Election.swift in Sources */,
+				21E7270F1D9099BB00ADC64F /* NetworkController.swift in Sources */,
+				64CE2EE51D99CD530089C09D /* OfficialDetailTableViewController.swift in Sources */,
+				640411641D91E25400B57A4C /* Social.swift in Sources */,
+				21D097371D9E0778006BC9A3 /* SettingsController.swift in Sources */,
+				64B19D641D9ECD9600C07D8E /* BarChartViewController.swift in Sources */,
+				5159E6AC1D9995B700B41F65 /* SignUpViewController.swift in Sources */,
+				21E727161D909A3700ADC64F /* ImageController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21E726EB1D90914900ADC64F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21E726F41D90914900ADC64F /* SmartVoterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21E726F11D90914900ADC64F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21E726DA1D90914900ADC64F /* SmartVoter */;
+			targetProxy = 21E726F01D90914900ADC64F /* PBXContainerItemProxy */;
+		};
+		21F1C68C1DA71777004D3309 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 21F1C68B1DA71777004D3309 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		210C06A71DA6F49300C3FAB1 /* TabBarOne.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210C06A81DA6F49300C3FAB1 /* Base */,
+			);
+			name = TabBarOne.storyboard;
+			sourceTree = "<group>";
+		};
+		210C06B31DA6F94300C3FAB1 /* TabBarTwo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210C06B41DA6F94300C3FAB1 /* Base */,
+			);
+			name = TabBarTwo.storyboard;
+			sourceTree = "<group>";
+		};
+		210C06BA1DA6FA9C00C3FAB1 /* TabBarThree.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210C06BB1DA6FA9C00C3FAB1 /* Base */,
+			);
+			name = TabBarThree.storyboard;
+			sourceTree = "<group>";
+		};
+		21E726E21D90914900ADC64F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21E726E31D90914900ADC64F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		21E726E71D90914900ADC64F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21E726E81D90914900ADC64F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		21E727191D919D4600ADC64F /* OfficialDetail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21E7271A1D919D4600ADC64F /* Base */,
+			);
+			name = OfficialDetail.storyboard;
+			sourceTree = "<group>";
+		};
+		21E7271E1D919D7E00ADC64F /* OfficialTableView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21E7271F1D919D7E00ADC64F /* Base */,
+			);
+			name = OfficialTableView.storyboard;
+			sourceTree = "<group>";
+		};
+		21F1C59E1DA7176B004D3309 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21F1C59F1DA7176B004D3309 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5159E6A81D9995A200B41F65 /* SignUp.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5159E6A91D9995A200B41F65 /* Base */,
+			);
+			name = SignUp.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		21E726F61D90914900ADC64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		21E726F71D90914900ADC64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21E726F91D90914900ADC64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CVQEUYD92N;
+				INFOPLIST_FILE = SmartVoter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PatrickRidd.SmartVoter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		21E726FA1D90914900ADC64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CVQEUYD92N;
+				INFOPLIST_FILE = SmartVoter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PatrickRidd.SmartVoter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+		21E726FC1D90914900ADC64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmartVoterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PatrickRidd.SmartVoterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartVoter.app/SmartVoter";
+			};
+			name = Debug;
+		};
+		21E726FD1D90914900ADC64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmartVoterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PatrickRidd.SmartVoterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartVoter.app/SmartVoter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21E726D61D90914900ADC64F /* Build configuration list for PBXProject "SmartVoter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21E726F61D90914900ADC64F /* Debug */,
+				21E726F71D90914900ADC64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21E726F81D90914900ADC64F /* Build configuration list for PBXNativeTarget "SmartVoter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21E726F91D90914900ADC64F /* Debug */,
+				21E726FA1D90914900ADC64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21E726FB1D90914900ADC64F /* Build configuration list for PBXNativeTarget "SmartVoterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21E726FC1D90914900ADC64F /* Debug */,
+				21E726FD1D90914900ADC64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21E726D31D90914900ADC64F /* Project object */;
+}
