@@ -62,19 +62,19 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMH-8P-82t">
-                                <frame key="frameInset" width="323" height="80"/>
+                                <frame key="frameInset" width="323" height="98"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-FC-lMf">
-                                        <frame key="frameInset" width="273" height="80"/>
+                                        <frame key="frameInset" width="264" height="98"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Election's Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-ht-Zj8">
-                                                <frame key="frameInset" width="273" height="35"/>
+                                                <frame key="frameInset" width="264" height="44"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Election's Office Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-SB-d26">
-                                                <frame key="frameInset" minY="45" width="273" height="35"/>
+                                                <frame key="frameInset" minY="54" width="264" height="44"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -82,14 +82,14 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-bl-H51">
-                                        <frame key="frameInset" minX="288" width="35" height="80"/>
+                                        <frame key="frameInset" minX="279" width="44" height="98"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-cP-Ll1">
-                                                <frame key="frameInset" width="35" height="35"/>
+                                                <frame key="frameInset" width="44" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pCB-cP-Ll1" secondAttribute="height" multiplier="1:1" id="XUP-xC-mPC"/>
-                                                    <constraint firstAttribute="height" constant="35" id="bp7-F2-aZG"/>
-                                                    <constraint firstAttribute="width" constant="35" id="taW-8V-FIt"/>
+                                                    <constraint firstAttribute="height" constant="44" id="bp7-F2-aZG"/>
+                                                    <constraint firstAttribute="width" constant="44" id="taW-8V-FIt"/>
                                                 </constraints>
                                                 <state key="normal" image="BradSafariFade"/>
                                                 <connections>
@@ -97,10 +97,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nab-QL-60O">
-                                                <frame key="frameInset" minY="45" width="35" height="35"/>
+                                                <frame key="frameInset" minY="54" width="44" height="44"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="KXK-P7-qBV"/>
-                                                    <constraint firstAttribute="width" constant="35" id="g5g-SR-xcy"/>
+                                                    <constraint firstAttribute="height" constant="44" id="KXK-P7-qBV"/>
+                                                    <constraint firstAttribute="width" constant="44" id="g5g-SR-xcy"/>
                                                     <constraint firstAttribute="width" secondItem="nab-QL-60O" secondAttribute="height" multiplier="1:1" id="n9w-fe-bMB"/>
                                                 </constraints>
                                                 <state key="normal" image="BradPhoneFade"/>

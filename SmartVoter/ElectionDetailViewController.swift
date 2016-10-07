@@ -108,7 +108,7 @@ class ElectionDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func makePhoneCall(candidate: Candidate) {
         
-        let alertController = UIAlertController(title: "Would you like to call the office of \(candidate.name ?? "No Contact Found")?", message: "Press the Call button to make a call.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Would you like to call the office of \(candidate.name ?? "No Contact Found")?", message: nil, preferredStyle: .Alert)
         
         let yesAction = UIAlertAction(title: "Call", style: .Default) { (action) -> Void in
             

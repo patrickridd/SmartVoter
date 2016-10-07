@@ -39,13 +39,13 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
         super.viewDidLoad()
         guard let official = official else { return }
         
+        tableView.estimatedRowHeight = 375
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         updateOfficials(official)
         upDateBackgroundColor()
         updateSocialButtons()
         hideTextField()
-        
-        tableView.estimatedRowHeight = 375
-        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     // MARK: - Table view data source
@@ -107,7 +107,7 @@ class OfficialDetailTableViewController: UITableViewController, MFMailComposeVie
     @IBAction func phoneButtonTapped(sender: AnyObject) {
         if let official = official {
             
-            let alertController = UIAlertController(title: "Would you like to call the office of \(official.name ?? "No Contact Found")?", message: "Press the Call button to make a call.", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Would you like to call the office of \(official.name ?? "No Contact Found")?", message: nil, preferredStyle: .Alert)
             
             let yesAction = UIAlertAction(title: "Call", style: .Default) { (action) -> Void in
                 
